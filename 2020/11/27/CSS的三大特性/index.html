@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>文章分类 | 白瑕的外星殖民所</title>
+  <title>CSS的三大特性 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="CSS的三大特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS的三大特性">
+<meta property="og:url" content="http://example.com/2020/11/27/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="CSS的三大特性">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2018-06-11T02:13:21.000Z">
-<meta property="article:modified_time" content="2021-01-14T06:33:45.447Z">
+<meta property="og:image" content="http://example.com/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B%E4%B8%80.png">
+<meta property="og:image" content="http://example.com/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B2.png">
+<meta property="article:published_time" content="2020-11-27T02:30:56.000Z">
+<meta property="article:modified_time" content="2021-01-14T10:09:00.733Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B%E4%B8%80.png">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
   
@@ -154,20 +161,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-CSS的三大特性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      文章分类
+      CSS的三大特性
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-06-11T02:13:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
+        <a href="/2020/11/27/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2020-11-27T02:30:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
 </a>
 
         <!-- 需要添加的位置 -->
@@ -189,7 +196,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="CSS的三大特性"><a href="#CSS的三大特性" class="headerlink" title="CSS的三大特性"></a>CSS的三大特性</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
+@[TOC](目录)
+
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p><font color=#999AAA >下面我会依次阐述这三种特性使用时的注意事项与方法。</p>
+<h1 id="一、CSS层叠性"><a href="#一、CSS层叠性" class="headerlink" title="一、CSS层叠性"></a>一、CSS层叠性</h1><p>在对一个元素所设置的多个不同选择器 或者 一个选择器内，对同一样式不同的值，会造成样式冲突，此时需要考虑CSS的层叠性，CSS将根据层叠特性来决定使用哪种样式。</p>
+<p>特性简述：当出现上述情况时，CSS将会采用距离目标元素的代码最近的样式，就近原则。<br>如下所示：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>示例：CSS层叠性<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>依据上述，以上代码显示出盒子的颜色应当为天蓝色。<br>以下为另一种情况：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码的运行结果为黄色，下方控制黄色的选择器距离目标元素更近。</p>
+<h1 id="二、CSS继承性"><a href="#二、CSS继承性" class="headerlink" title="二、CSS继承性"></a>二、CSS继承性</h1><p>在对子级标签的样式进行设置时需要注意，其会继承其父标签中部分能被其自身继承的样式，而且“继承父元素样式”被使用的优先级低于“使用该元素被直接设定的样式”，恰当的利用这一特性可以缩减代码量，例如对多个同父子元素内字体与背景色的设置，就可以直接为其父元素设置样式，使所有子标签样式相同。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: skyblue;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #继承性2 &#123;</span><br><span class="line">    <span class="attribute">color</span>: yellow;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>示例：CSS继承性1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;继承性2&quot;</span>&gt;</span>示例：CSS继承性2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>示例：CSS继承性3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这段代码运行后，显示效果如下<br><img src="/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B%E4%B8%80.png" alt="示例1"><br>可以看到的是子级元素继承了父级元素的样式，但出现针对自己的样式时依然会优先使用自己专属的样式（跟能叫外卖就不会去食堂吃大锅菜是一样的）。</p>
+<h1 id="三、CSS优先级"><a href="#三、CSS优先级" class="headerlink" title="三、CSS优先级"></a>三、CSS优先级</h1><p>前面在说到CSS选择器的时候我说到了CSS的权重、优先级相关，这里也算是对那节内容的补充吧。在选择器相同的时候将需要考虑我们前面说的“层叠性”特性，而当选择器不同时，将需要考虑CSS的“优先级“特性。“选择器权重”这一概念是被“优先级”这一概念包含在内的。<br>|选择器|选择器权重  |<br>|–|–|<br>| 继承或 *全选 |  0，0，0，0|<br>|元素选择器|0，0，0，1 |<br>|类选择器、伪类选择器|0，0，1，0<br>|ID选择器|0，1，0，0|<br>| 继承或 *全选 |  0，0，0，0|<br>|行内样式style=” “|1，0，0，0 |<br>|!important 重要|无穷大|</p>
+<p>这些权重值基本可以看作数学数值个十百千，理所当然的是占位越高权重越大，在多个可选的选择器内，权重大的选择器将会被优先采用，而若是在样式后跟上!important，则选择器必定被采用，因其权重为“无限大”。<br>下面请看一个示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: grey;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #优先级 &#123;</span><br><span class="line">    <span class="attribute">color</span>: yellow;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .示例 &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;示例&quot;</span> <span class="attr">id</span>=<span class="string">&quot;优先级&quot;</span>&gt;</span>示例：优先级<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>若是按照“层叠性”的就近原则，此处应当采用class=”示例”设置的样式，但此处的选择器众多，应当参照“优先级”特性而非“层叠性”特性；<br>ID选择器因为在所示三种选择器中为权重最高(0,1,0,0)的一种，所以即便在中间放置也依然被优先采用了。<br>看下!important的用法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: grey<span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #优先级 &#123;</span><br><span class="line">    <span class="attribute">color</span>: yellow;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;示例&quot;</span> <span class="attr">id</span>=<span class="string">&quot;优先级&quot;</span>&gt;</span>示例：优先级<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>还是刚才的HTML代码，这次我为标签选择器中的颜色样式添加了!important，那么是否整个标签选择器的样式都会被采用？<br><img src="/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B2.png" alt="示例2"><br>并没有，标签选择器中的颜色样式因为加大权重被使用，而标签选择器中的其他属性（比如设置的字号）并不能被采用，!important仅能加强某个样式属性的权重，并不能加强整个选择器的权重。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><font color=#999AAA >
+以上便是CSS三大特性的相关，在下独自整理，可能并不全面，如果有帮助到您，在下荣幸之至，如果您发现了我的错误与缺陷，在下恳请您的指点，多谢！
       
 
       
@@ -218,7 +252,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/CSS//" class="article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -268,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/27/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,6 +344,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2020/12/06/JS%E9%A2%84%E8%A7%A3%E6%9E%90%E6%9C%BA%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JS预解析机制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/22/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E7%A7%8D%E7%B1%BB&%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS選擇器的种类&amp;使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,10 +377,55 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">CSS的三大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81CSS%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">一、CSS层叠性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CSS%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">二、CSS继承性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CSS%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.</span> <span class="toc-text">三、CSS优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: 'your clientID',
+  clientSecret: 'your clientSecret',
+  repo: 'git_comment',
+  owner: 'findtheonlyway',
+  admin: ['erbiduo'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+  
+  
 
 
           </div>
@@ -347,7 +475,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
