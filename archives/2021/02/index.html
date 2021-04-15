@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>CSS中position定位属性的使用 | 白瑕的外星殖民所</title>
+  <title>Archives: 2021/2 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS中定位属性的使用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CSS中position定位属性的使用">
-<meta property="og:url" content="http://example.com/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="白瑕的外星殖民所">
+<meta property="og:url" content="http://example.com/archives/2021/02/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
-<meta property="og:description" content="CSS中定位属性的使用">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-19T15:02:24.000Z">
-<meta property="article:modified_time" content="2021-01-14T10:21:33.064Z">
 <meta property="article:author" content="白瑕">
-<meta property="article:tag" content="CSS">
-<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
@@ -159,101 +153,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS中Position定位属性的使用" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      CSS中position定位属性的使用
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/02/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2021-02-24T18:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/">浏览器缓存机制</a>
     </h1>
   
 
-        
-        <a href="/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-11-19T15:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-19</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-        <!-- 添加完成 -->
-
-        
-    
-    
-        
-          <span class="archive-article-date">
-              阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
-    
-    
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS中定位属性的使用"><a href="#CSS中定位属性的使用" class="headerlink" title="CSS中定位属性的使用"></a>CSS中定位属性的使用</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-<a id="more"></a>
-
-<h4 id="CSS中定位属性的使用-1"><a href="#CSS中定位属性的使用-1" class="headerlink" title="CSS中定位属性的使用"></a>CSS中定位属性的使用</h4><p>网页元素默认占用文档流，插入或生成元素后，其将默认按照从左到右的顺序依次排列，这将导致页面中的各种元素因空间占用问题难以被设计至目标效果。<br>若将整个页面看做一个二层透明，底层白色的双层结构的俯视，那我们可以简单的理解为『大部分元素默认占用底层空间』，但是各种元素共一层，每个个体都占有一部分空间，那么将导致我们无法把操作的元素放置到俯视视角的目标位置。<br>为了摆脱底层的空间占用限制，有效利用二层空间帮我们达到目标效果，可以使用CSS中的定位属性，添加了定位属性的元素将拥有”浮动”效果，会脱离文档流（可简单理解为脱离上面说的白色底层)，进入漂浮状态，即可以使用”二层空间”，可达到这样漂浮效果的还有display:float、z-index等，本篇主要讲position属性（定位属性）。<br>position属性用于为目标元素确定位置（确定漂浮态位置），其后可以跟从6种定位方法（其中position:static、position:relative无法使目标元素脱离文档流):</p>
-<pre><code>position:static
-position:fixed
-position:relative
-position:absolute
-position:inherit
-position:sticky</code></pre>
-<p>接下来依次阐述</p>
-<h2 id="position-static"><a href="#position-static" class="headerlink" title="position:static"></a>position:static</h2><p>定位属性的默认值，即『无定位』，目标元素将依然存在于正常文档流中，使用此种定位与不对目标元素施加定位将会是同种效果，对受static影响的元素设置right,bottom,top,left将无效，同样的其他元素若相对受static影响的元素设置left,bottom,right,top也将无效。对其设置margin和padding有效。</p>
-<h2 id="position-fixed"><a href="#position-fixed" class="headerlink" title="position:fixed"></a>position:fixed</h2><p>这种定位方法被称为“固定定位”，这种方法以浏览器边框作为参照，注意这里的 参照 不受浏览器边框尺寸变化影响，其以可视窗口作为参照物，改变浏览器可视窗口显示尺寸后目标元素与浏览器边框的距离不会改变，如此定位的元素也不受上下左右滚动条的影响，其会随着底层和漂浮层移动，与其保持相对静止，常看到跟随屏幕滚动的“回到顶部”就是利用JS和该定位制作。可以使目标元素脱离文档流进入漂浮状态。后面添加left,right,top,bottom来对位置进行调整,浏览器的坐标系坐标原点在左上角，依据此来进行调整（建议用截图工具测量）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  .固定定位 &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: 10px;</span><br><span class="line">    left: 10px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="position-relative"><a href="#position-relative" class="headerlink" title="position:relative"></a>position:relative</h2><p>这种定位方法被称为“相对定位”，所谓“相对”既是相对定位前其在正常文档流中的位置（的左上角为坐标原点）进行定位，移动受relative影响的元素时这个元素原本所占的空间依然在原处不改变，可以对其设置right,left,top,bottom进行目标元素位置的调整。另外受这种定位影响的元素可以被受position：absolute影响的元素选中为“包含者”来作为自身absolute定位的参照物，absolute会以就近原则选择距离自己最近的受定位的父元素作参照，这个特点便是“子绝父相”（这种叫法并不严谨），在编写时可以父元素使用相对定位，子元素使用绝对定位，避免调整元素时导致其他元素错位。</p>
-<h2 id="position：absolute"><a href="#position：absolute" class="headerlink" title="position：absolute"></a>position：absolute</h2><p>这种方法被称为“绝对定位”，会选取与受定位元素辈分最近的、已经 受到定位的、父级元素 进行定位，前提是这个父级元素受到的定位不是position:static。跟从上方所说，这种定位方法设置了“子绝父相”结构的组成部分——子元素部分 的位置，利用“受到absolute定位的元素会选取距离自己最近的受到定位的父元素进行定位”的特点，可以将受到absolute影响的元素放入受到relative定位的元素中作为其子元素，这样在后面调整某个模块时仅调节relative定位的父元素即可让整个模块完好的移动。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    .父级元素 &#123;</span><br><span class="line">      position: relative;</span><br><span class="line">      top: 10px;</span><br><span class="line">      left: 10px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .子级元素 &#123;</span><br><span class="line">      position: absolute;</span><br><span class="line">      top: 10px;</span><br><span class="line">      left: 20px;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;父级元素&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;子级元素&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="position-inherit"><a href="#position-inherit" class="headerlink" title="position:inherit"></a>position:inherit</h2><p>我一直觉得这种定位方法很特殊……inherit也可以作为其他属性的值来使用，这里我只说它跟在position后时的情况，“inherit”这个单词的意思为“继承”，它在定位中的用途也一如它的汉意：受inherit影响的元素将会使用与其父元素相同的定位方式，注意是仅继承定位方式，而不一定会以父元素作为参照来定位。可以对其设置right,bottom,left,top来进行定位，具体定位规则依据继承来的不同的定位而不同。因为其与上级元素两元素间有父子关系，所以被称作 定位：继承；</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  .父级元素 &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: 20px;</span><br><span class="line">    right: 30px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .子级元素 &#123;</span><br><span class="line">    position: inherit;</span><br><span class="line"><span class="css">    <span class="comment">/*此处子级元素继承父级元素，定位方式为fixed固定定位*/</span></span></span><br><span class="line">    top: 100px;</span><br><span class="line">    right: 150px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position:sticky"></a>position:sticky</h2><p>这种方法被称为“粘性定位”，受粘性定位的元素依据页面滚动，在position:relative与position:fixed两定位方法之间进行切换。在页面的滚动不超出目标区域时，它的表现更加偏向position:relative; 而当页面滚动超出目标区域时，它的表现更加偏向position:fixed它会将目标元素固定在目标位置。其定位表现是：在跨越特定阈值前为相对定位的定位方法，超过阈值之后为固定定位的定位方法（可以拿这个来做“回到顶部”）。这个特定阈值指的是 top, right, bottom 或 left 之一，也就是仅指定 top, right, bottom 或 left 四个阈值之一，才可使粘性定位生效，否则其行为与相对定位相同。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">div</span><span class="selector-class">.sticky</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span>: <span class="selector-tag">-webkit-sticky</span>; <span class="comment">/*仅Safari需要加入此条*/</span></span></span><br><span class="line">    position: sticky;</span><br><span class="line">    top: 10px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在对页面上的元素进行设计时，优先设置主体（页面主体）元素作为页面中心，以其作为原点进行其他元素的定位，可以防止中途定位某个元素时其他元素跟着动的尴尬情况，减少不必要的工作量，方便后期修改。</p>
-<p>以上是我据本阶段的学习得出的一些经验与心得，如果对您起到帮助，在下十分荣幸；若是您发现了我的不足，恳请您的指点！</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thanks:·)<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
@@ -261,7 +194,7 @@ position:sticky</code></pre>
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -269,152 +202,22 @@ position:sticky</code></pre>
         		<li class="article-tag-list-item">
         			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端/CSS//" class="article-tag-list-link color4">CSS</a>
-        		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/11/22/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E7%A7%8D%E7%B1%BB&%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CSS選擇器的种类&amp;使用
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS%E4%B8%AD%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">CSS中定位属性的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E4%B8%AD%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8-1"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">CSS中定位属性的使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-static"><span class="toc-number">1.1.</span> <span class="toc-text">position:static</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-fixed"><span class="toc-number">1.2.</span> <span class="toc-text">position:fixed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-relative"><span class="toc-number">1.3.</span> <span class="toc-text">position:relative</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position%EF%BC%9Aabsolute"><span class="toc-number">1.4.</span> <span class="toc-text">position：absolute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-inherit"><span class="toc-number">1.5.</span> <span class="toc-text">position:inherit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-sticky"><span class="toc-number">1.6.</span> <span class="toc-text">position:sticky</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
-      <div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-
-<script>
-var gitalk = new Gitalk({
-  clientID: 'your clientID',
-  clientSecret: 'your clientSecret',
-  repo: 'git_comment',
-  owner: 'findtheonlyway',
-  admin: ['erbiduo'],
-  id: md5(window.location.pathname),
-  distractionFreeMode: true
-})
-
-gitalk.render('gitalk-container')
-</script>
-  
-  
+    
 
 
           </div>
@@ -464,8 +267,8 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
