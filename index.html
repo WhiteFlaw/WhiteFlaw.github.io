@@ -186,25 +186,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Http的Cache机制"><a href="#Http的Cache机制" class="headerlink" title="Http的Cache机制"></a>Http的Cache机制</h1><p>由四个部分组成，Last-Modified（If-Modified-Since）、Etag（If-None-Match）、Cache-Control、Expires ，我会在下文更详细说明它们在Cache机制中的作用。<br>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="一、关于Web缓存"><a href="#一、关于Web缓存" class="headerlink" title="一、关于Web缓存"></a>一、关于Web缓存</h1><h2 id="1-Web缓存-概念"><a href="#1-Web缓存-概念" class="headerlink" title="1.Web缓存-概念"></a>1.Web缓存-概念</h2><p>Web缓存（即HTTP缓存），是指Web资源（如html页面，图片，js等）存在于Web服务器和客户端（浏览器）之间的副本。<br> Web缓存系统既可以指设备，也可以指计算机程序。</p>
-<h2 id="2-Web缓存-作用"><a href="#2-Web缓存-作用" class="headerlink" title="2.Web缓存-作用"></a>2.Web缓存-作用</h2><p>其是被用于临时存储（即缓存）Web资源（如html页面，图片，JavaScript等），以减少服务器延迟，节约带宽（网络带宽会影响数据的提交与回发的速度）的一种信息技术。Web缓存系统会保存下通过这套系统传输的资源的副本；如果满足某些条件，则可以由缓存满足后续由Browser发出的请求。</p>
-<h1 id="二、客户端缓存使用机制"><a href="#二、客户端缓存使用机制" class="headerlink" title="二、客户端缓存使用机制"></a>二、客户端缓存使用机制</h1><p>浏览器缓存体系分为两种结构，Last-Modified（If-Modified-Since）、Etag（If-None-Match） 、Expires、Cache-Control四者参与其中。<br>在浏览器向服务器请求资源时，有以下两种情况：<br>客户端发送请求给服务器=&gt;检查本地缓存=&gt;发现本地无缓存（或不可用）=&gt;请求服务器发送=&gt;服务器返回静态资源=&gt;呈现并缓存至本地;<br>和<br>客户端发送请求给服务器=&gt;检查本地缓存=&gt;发现本地有可用缓存=&gt;反馈至服务器“有可用缓存”=&gt;服务器自动返回状态码=&gt;客户端调用缓存。<br>说简单些，就是请求到了资源或者请求到了“304你用缓存吧”这样请求到或者请求不到的区别，但是请求的机制依然分为两种，在这两种机制中也各自包含了自己的请求到和请求不到的情况。</p>
-<ol>
-<li><p>下面介绍第一种机制：Last-Modified / If-Modified-Since机制<br>这种机制的工作原理是利用响应头Last-Modified获取Web组件的最近修改时间（即这部分资源最近一次缓存的时间），将其赋值给客户端发出的请求头If-Modified-Since，再向服务器进行请求，服务器会判定是使用告知使用缓存还是发送新资源。<br>结合上面说的请求到了和没请求到的情况，来写出请求的流程：<br>客户端需要发出请求 &gt;&gt;&gt; 客户端将【由上次请求的响应头(Last-Modified-Since)获取的Web组件的最近更改时间】赋值给这次的请求头If-Modified-Since &gt;&gt;&gt; 请求被发送至服务器询问是否发生改动 &gt;&gt;&gt; 服务器根据请求头（If-Modified-Since）的Web资源更改时间来决定进行的操作（返回新的资源以及这次的更改时间或者自动返回304提示可调用缓存）<br>可想而知服务器进行判定的内容：如果传来的最后一次更改的时间早于服务器端最新一次资源更新的时间，那么就需要同步来更新资源，便发送新的资源；反之若是传来的最后一次更改的时间在最新一次资源更新后，那么客户端缓存的就已经是最新的资源，直接调用缓存不再需要传输数据。</p>
-</li>
-<li><p> 接着介绍第二种机制：ETag/If-None-Match机制<br>这种机制的工作原理是利用响应头ETag获取Web组件的特征串（即这部分资源），将其赋值给客户端发出的请求头If-None-Match，再向服务器进行请求，服务器会判定是使用告知使用缓存还是发送新资源。<br>结合上面说的请求到了和没请求到的情况，那么请求的流程：<br>客户端需要发出请求 &gt;&gt;&gt; 客户端将【由上次请求的响应头(ETag)获取的Web组件的特征率】赋值给这次的请求头If-None-Match &gt;&gt;&gt; 请求被发送至服务器询问是否发生改动 &gt;&gt;&gt; 服务器根据请求头（If-None-Match）的Web资源特征串来决定进行的操作（返回新的资源以及这次的特征串或者自动返回304提示可调用缓存）。</p>
-</li>
-</ol>
-<h1 id="三、服务端告知客户端缓存请求"><a href="#三、服务端告知客户端缓存请求" class="headerlink" title="三、服务端告知客户端缓存请求"></a>三、服务端告知客户端缓存请求</h1><p>当服务器发出响应的时候，可以通过以下两种方式来告诉客户端缓存请求：</p>
-<ol>
-<li><p>Expires：<br>其返回的是缓存的失效时间，只要当前时间在其返回的日期之前，客户端都会认为缓存是有效的。这也造成了这种方法的缺陷：一旦服务器端和客户端的时间设置不同就会造成无法在正确的时间将缓存失效。</p>
-</li>
-<li><p>Cache-Control，其返回缓存的有效期（时间段），表示从现在起，到未来某段时间内，缓存都是有效的，这样就避免了服务端和客户端时间不一致的问题。</p>
-</li>
-</ol>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一开始只是对AJAX里setRequestHeader()参数的设置规则比较好奇，就去查了下……<br>如果这篇文帮到了您，我很荣幸。<br>如果您发现有不妥的地方，恳请您指点。</p>
-
+        <h1 id="Http的Cache机制"><a href="#Http的Cache机制" class="headerlink" title="Http的Cache机制"></a>Http的Cache机制</h1><p>由四个部分组成，Last-Modified（If-Modified-Since）、Etag（If-None-Match）、Cache-Control、Expires ，我会在下文更详细说明它们在Cache机制中的作用。</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+        
       
 
       
@@ -373,7 +357,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript预解析"><a href="#JavaScript预解析" class="headerlink" title="JavaScript预解析"></a>JavaScript预解析</h2>
+        <h2 id="JavaScript预解析"><a href="#JavaScript预解析" class="headerlink" title="JavaScript预解析"></a>JavaScript预解析</h2><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
         
       
 
