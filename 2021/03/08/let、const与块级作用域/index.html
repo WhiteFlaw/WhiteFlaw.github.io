@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>分区-JavaScript | 白瑕的外星殖民所</title>
+  <title>let、const与块级作用域 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分区-JavaScript">
-<meta property="og:url" content="http://example.com/%E5%88%86%E5%8C%BA-JavaScript/index.html">
+  <meta name="description" content="let、const块级声明与块级作用域绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="let、const与块级作用域">
+<meta property="og:url" content="http://example.com/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="let、const块级声明与块级作用域绑定">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-15T06:35:05.000Z">
-<meta property="article:modified_time" content="2021-04-15T06:35:05.655Z">
+<meta property="article:published_time" content="2021-03-08T13:52:46.000Z">
+<meta property="article:modified_time" content="2021-04-15T07:10:22.039Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
@@ -155,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-let、const与块级作用域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分区-JavaScript
+      let、const与块级作用域
     </h1>
   
 
         
-        <a href="/%E5%88%86%E5%8C%BA-JavaScript/index.html" class="archive-article-date">
-  	<time datetime="2021-04-15T06:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
+        <a href="/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="archive-article-date">
+  	<time datetime="2021-03-08T13:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
 </a>
 
         <!-- 需要添加的位置 -->
@@ -190,7 +194,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="let、const块级声明与块级作用域绑定"><a href="#let、const块级声明与块级作用域绑定" class="headerlink" title="let、const块级声明与块级作用域绑定"></a>let、const块级声明与块级作用域绑定</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
+
+<p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="let、const与块级作用域"><a href="#let、const与块级作用域" class="headerlink" title="let、const与块级作用域"></a>let、const与块级作用域</h1><p>在ES6之前JS的作用域有三种，它们分别为：<br>全局作用域<br>函数作用域<br>Eval作用域<br>为了让JavaScript更加灵活，ES6版本新引入了C系语言的“块级作用域”这一概念，伴随这一概念诞生的是两种新的变量声明方法，他们依赖于块级作用域而存在(块级作用域的存在也依赖于let和const)，下文细说。</p>
+<h1 id="一、什么是块级作用域？"><a href="#一、什么是块级作用域？" class="headerlink" title="一、什么是块级作用域？"></a>一、什么是块级作用域？</h1><p>块级作用域（词法作用域）：存在于函数内和成对的大括号内，是函数或大括号{}圈定的一块代码块里形成的一个单独的作用域。实际上这么说并不严谨，因为在ES6以前这种大括号就存在了，函数也是很早就有，但那时候还并没有块级作用域这一概念，所以</p>
+<p>||仅仅在大括号中有let或者const这两个 用来声明块级标识符的关键字 声明了东西的时候，这个大括号内才是一片块级作用域||</p>
+<p>“块级声明”就是在这块被圈起来的作用域里使用let或者const声明变量（也是要声明出来才能让此处成为块级作用域），执行流一旦走出let块级变量所在的块级作用域，这个块级变量会被立刻销毁返回undefined（作用域外无法访问）。</p>
+<h1 id="二、let声明"><a href="#二、let声明" class="headerlink" title="二、let声明"></a>二、let声明</h1><p>let的使用方法与var相同，仅将var替换为let即可，其余无需改动，在函数内或一对大括号内使用，将在函数内部/大括号内形成一个块级作用域。由于其不会像var声明变量一样被提升优先解析，一般将使用let进行块级声明的代码放在代码块的顶部，以使整个代码块都能使用其声明物。其可以用于声明全局变量，但仅能在script域中生效。<br>但若是欲使用let来重新声明变量以完成对变量的更新，不可使用var的直接覆盖法。<br>let更新变量方法：当待更新的变量存在于母作用域，而用于更新母作用域中的变量的let存在于子作用域时，可以直接用let来覆写母作用域中的同名变量，而子作用域中的let覆写的这个变量也不会仅仅是只在子作用域中生效，其会在全局上改变这个变量的值。</p>
+<p>在进行for循环语句时，使用let来声明变量i（循环的key）可以达到在for内形成块级作用域的目的，变量i将不能在循环外被访问。let形成的块级作用域也可以解决在for循环内放函数导致变量共用产生的问题。<br>在for(  in  )和for(  of  )这两种循环形式中，let通过在每次循环时创建新的绑定而不是修改绑定来保证自身的运行，同时使循环体依照循环次数能够访问到相应的值。</p>
+<h1 id="三、const声明"><a href="#三、const声明" class="headerlink" title="三、const声明"></a>三、const声明</h1><p>const声明的仅能为常量，出于与变量的区别，const声明出的常量，值不能像变量一样改变，所以必须为每个声明出的常量进行初始化。所谓初始化就是为它赋一个值，这个值就是初始化后的结果，若是仅仅使用const声明一个常量而不为其赋值（初始化），则会抛出语法错误。<br>const同于let，也是一个块级标识符，那么它声明的常量也是仅仅在当前这个代码块（块级作用域）内部有效。由于其不会像var声明变量一样被提升优先解析，一般将使用const进行块级声明的代码放在代码块的顶部，以使整个代码块都能使用其声明物。<br>若是欲使用const来重新声明常量以完成对常量的更新，也不可使用var的直接覆盖法。<br>const更新常量方法：其与let不同，无论与严格/非严格模式下，其声明的常量（除对象外）都不能被再赋值，其并非不支持修改值，而是不支持修改绑定，导致看起来是不能修改值。但若是用其来定义一个对象，我们就可以修改对象的属性值，其值可以修改这条便体现出来。<br>const定义的对象的更改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = &#123;</span><br><span class="line">   属性:<span class="string">&quot;值1&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"> <span class="comment">//以下是正确修改</span></span><br><span class="line">demo.属性 = <span class="string">&quot;值2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以下是错误修改</span></span><br><span class="line">demo = &#123;</span><br><span class="line">属性：<span class="string">&quot;值2&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面的例子里const绑定的是对象demo，const不支持修改绑定，故最后一种修改了绑定的方法抛出了语法错误，而第一种修改方法仅仅改变了值，这是受到const支持的行为，没有抛出错误。</p>
+<p>const可以在循环语句中使用，但是其在不同的循环语句中会表现出不同的行为。在for循环中使用const来定义（初始化）i（即循环的key），那么就会抛出错误，执行“i++”这条语句时，const发现它试图修改常量，就抛出了错误。因此在循环语句中，const能声明的变量仅仅能是那些在后续的循环中不会被循环语句修改的变量。<br>在for(  in  )和for(  of  )这两种循环形式中，const通过在每次循环时创建新的绑定而不是修改绑定来保证自身的运行，同时使循环体依照循环次数能够访问到相应的值。</p>
+<h1 id="四、let与const的缺点"><a href="#四、let与const的缺点" class="headerlink" title="四、let与const的缺点"></a>四、let与const的缺点</h1><h2 id="1-let"><a href="#1-let" class="headerlink" title="1.let"></a>1.let</h2><p>不能重声明，无论用何种方法（包括const），在一作用域内声明了一个变量后，不能在该作用域内再次使用let来声明一个同名的变量来对该变量进行更新，若是直接试图用let来更新同名变量会抛出语法错误。<br>解析JavaScript代码时不能自动提升，需要写在最上面。<br>需要注意作用域。</p>
+<h2 id="2-const"><a href="#2-const" class="headerlink" title="2.const"></a>2.const</h2><p>不能重声明，无论用何种方法（包括let），在一作用域内声明了一个变量后，不能在该作用域内再次使用const来声明一个同名的变量来对该变量进行更新，若是直接试图用const来更新同名变量会抛出语法错误。<br>解析JavaScript代码时不能自动提升，需要写在最上面。<br>写到不同的循环里会表现出不同的行为，在for循环中使用可能会引发错误。<br>需要注意作用域。</p>
+<h1 id="五、体现于全局作用域处相比var的优点"><a href="#五、体现于全局作用域处相比var的优点" class="headerlink" title="五、体现于全局作用域处相比var的优点"></a>五、体现于全局作用域处相比var的优点</h1><p>当使用var来声明全局变量时，这个全局变量会被全局对象作为一个新属性添加到全局属性里，若是全局属性里本就有这次要添加进去的新属性，这次添加会将原本的属性覆写，为后面的使用造成麻烦。<br>但如果使用let或者const来声明全局变量，会在全局作用域下创建一个新的绑定，但是这个绑定不会全局对象添加为一个全局属性，如果原有全局属性和这次声明的全局变量发生名上的冲突，原有属性将不会被覆写，两者会共同存在，但是这个“共同存在”仅仅局限于名字上，声明一个全局变量为demo，并且假设原本有一个全局属性window.demo，那么：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = <span class="string">&quot;HelloWorld&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(demo);<span class="comment">//输出HelloWorld</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;demo&quot;</span> <span class="keyword">in</span> <span class="built_in">window</span>);<span class="comment">//输出false</span></span><br></pre></td></tr></table></figure>
+<p>由此可见使用let和const声明变量可以避免对全局作用域产生破坏。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在声明大多数值时使用const，因为大多数值在声明（初始化）后便不需要再改变，预料之外的变量改变通常会成为错误的源头，而在处理少数需要跟随情况变化的值时使用let。</p>
+
       
 
       
@@ -219,7 +243,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/ES6//" class="article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +323,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E5%88%86%E5%8C%BA-JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +335,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/03/28/CSS%E5%8A%A8%E7%94%BB%E6%9E%84%E6%88%90%E8%A7%A3%E5%89%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS动画构成解剖
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XMLHttpRequest对象解读&amp;AJAX使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +367,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#let%E3%80%81const%E5%9D%97%E7%BA%A7%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A"><span class="toc-number">1.</span> <span class="toc-text">let、const块级声明与块级作用域绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">2.</span> <span class="toc-text">let、const与块级作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">一、什么是块级作用域？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81let%E5%A3%B0%E6%98%8E"><span class="toc-number">4.</span> <span class="toc-text">二、let声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81const%E5%A3%B0%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">三、const声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81let%E4%B8%8Econst%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">6.</span> <span class="toc-text">四、let与const的缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-let"><span class="toc-number">6.1.</span> <span class="toc-text">1.let</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-const"><span class="toc-number">6.2.</span> <span class="toc-text">2.const</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BD%93%E7%8E%B0%E4%BA%8E%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%A4%84%E7%9B%B8%E6%AF%94var%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">五、体现于全局作用域处相比var的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -380,7 +466,7 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

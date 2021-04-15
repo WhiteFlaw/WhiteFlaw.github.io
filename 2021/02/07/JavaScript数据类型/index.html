@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>分区-JavaScript | 白瑕的外星殖民所</title>
+  <title>JavaScript数据类型 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分区-JavaScript">
-<meta property="og:url" content="http://example.com/%E5%88%86%E5%8C%BA-JavaScript/index.html">
+  <meta name="description" content="JavaScript数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数据类型">
+<meta property="og:url" content="http://example.com/2021/02/07/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="JavaScript数据类型">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-15T06:35:05.000Z">
-<meta property="article:modified_time" content="2021-04-15T06:35:05.655Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210207012704366.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-02-06T17:29:42.000Z">
+<meta property="article:modified_time" content="2021-04-15T07:09:46.095Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210207012704366.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
   
@@ -155,20 +161,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-JavaScript数据类型" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分区-JavaScript
+      JavaScript数据类型
     </h1>
   
 
         
-        <a href="/%E5%88%86%E5%8C%BA-JavaScript/index.html" class="archive-article-date">
-  	<time datetime="2021-04-15T06:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
+        <a href="/2021/02/07/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2021-02-06T17:29:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-07</time>
 </a>
 
         <!-- 需要添加的位置 -->
@@ -190,7 +196,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
+@[TOC](文章目录)
+
+
+<h2 id="前言、数据分类的重要性"><a href="#前言、数据分类的重要性" class="headerlink" title="前言、数据分类的重要性"></a>前言、数据分类的重要性</h2><p>不同类型的数据占用的存储空间不同，为方便将数据按所需内存大小分类，以充分利用存储空间，定义出了各种数据类型。<br>JS是一种弱类型语言，在不需要提前声明变量的数据类型，在程序运行过程中，数据的类型会被自动确定，相同的变量在使用时也能被当作不同的类型使用。数据类型的分类方法多样，这里我用 简单数据类型 和 复杂数据类型 来分类说明。</p>
+<h1 id="一、简单数据类型"><a href="#一、简单数据类型" class="headerlink" title="一、简单数据类型"></a>一、简单数据类型</h1><p>这里我把简单数据类型分为基本的类型和特殊类型。</p>
+<h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><p>接下来就是给最基础的数据分类：数字型、字符串型、布尔型</p>
+<h3 id="1-数字型"><a href="#1-数字型" class="headerlink" title="1.数字型"></a>1.数字型</h3><p>数字型数据的值有两种——整型值、浮点型值<br>整型值顾名思义就是整数作值，这里补充一下各种进制下整型值的写法：<br>在书写八进制数时，应该在书写的整型数前加“0”以表示该数值为八进制数。<br>八进制数序列范围为0-7，书写时：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num3 = <span class="number">03</span>  <span class="comment">//对应十进制数3</span></span><br><span class="line">num6 = <span class="number">06</span>  <span class="comment">//对应十进制数6</span></span><br></pre></td></tr></table></figure>
+<p>在书写16进制数时，应该在书写的整型数前加“0x”以表示该数值为十六进制数。十六进制数序列范围0-9和A-F</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num1 = <span class="number">0xB</span>  <span class="comment">//对应十进制数11</span></span><br><span class="line">num2 = <span class="number">0x6</span>  <span class="comment">//对应十进制数6</span></span><br></pre></td></tr></table></figure>
+<p>在浏览器里输出这些数值时默认转换为10进制输出。</p>
+<p>浮点型值，就是带小数点的数字了。</p>
+<p>数字型值里的最大值Number.MAX_VALUE<br>除无穷大”Infinity”，任何一个数字型的值都将小于它<br>数字型值里的最大值Number.MIN_VALUE<br>除无穷小”-Infinity”，任何一个数字型中的值都将大于它<br>判断某变量输出的值是否为数字：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(inNaN(变量))</span><br></pre></td></tr></table></figure>
+<p>输出值为true则为非数字型，false则为数字型</p>
+<h3 id="2-字符串型"><a href="#2-字符串型" class="headerlink" title="2.字符串型"></a>2.字符串型</h3><p>这一类型的值全部都要加引号，单双引号皆可，可以反复嵌套，数字型的值加上引号也将变为字符串型（弱类型语言）。这里最好使用单引号，因为HTML结构中多使用双引号，各种转义符在引号中不能生效，会被直接判定为内容来直接输出。<br>字符串之间可使用加号来进行拼接。</p>
+<h3 id="3-布尔型"><a href="#3-布尔型" class="headerlink" title="3.布尔型"></a>3.布尔型</h3><p>布尔型值有两个：true和false。<br>经常跟判定语句用在一起的值….</p>
+<h2 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h2><p>我把undefined和unll单独作为一组，因其较为特殊<br>undefined：变量已被声明，但是未赋值，无值。<br>null：有值，但是值为空。</p>
+<h1 id="二、复杂数据类型"><a href="#二、复杂数据类型" class="headerlink" title="二、复杂数据类型"></a>二、复杂数据类型</h1><p>也叫引用数据类型，包括对象型、数组型、函数型。<br>先简单说一下他们的基本结构，不多扩展了….</p>
+<h2 id="1-对象型"><a href="#1-对象型" class="headerlink" title="1.对象型"></a>1.对象型</h2><p>JS对象，是一组自定义属性与其值的集合。<br>使用对象字面量来创建</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx =&#123;</span><br><span class="line">       name:xxx,</span><br><span class="line">       age:<span class="number">120</span>,</span><br><span class="line">       hobby:xx</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>使用 对象名.属性名 的形式或 对象名[‘属性名’]来调用里面的自定义属性，在php中会用到。<br>或使用“new Object()”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">xxx.属性 = <span class="string">&#x27;值&#x27;</span>;</span><br><span class="line">xxx.属性 = <span class="string">&#x27;值&#x27;</span>;</span><br><span class="line">xxx.属性 = <span class="string">&#x27;值&#x27;</span>;</span><br><span class="line">xxx.自定义方法名 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>使用xxx.方法名()来调用方法，其他属性的调用同上。</p>
+<h2 id="2-数组型"><a href="#2-数组型" class="headerlink" title="2.数组型"></a>2.数组型</h2><p>一组数据的集合，每个数据被称为元素，这些元素可以是任意类型的数据。与对象相同的是可以用字面量和New方式来创建。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx = [<span class="number">1</span> , <span class="string">&#x27;my&#x27;</span> , <span class="literal">true</span>]</span><br><span class="line"><span class="keyword">var</span> xxx = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span> , <span class="string">&#x27;my&#x27;</span> , <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<p>数组中的元素由左向右有着0123…这样的索引号，提取元素时可以使用：数组名[索引号]，也因此不能只在数组里写一个元素。</p>
+<h2 id="3-函数型"><a href="#3-函数型" class="headerlink" title="3.函数型"></a>3.函数型</h2><p>可将一部分代码封装并支持在需要时直接调用，不调用不会执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 自定义名(<span class="params">形参</span>) </span>&#123;</span><br><span class="line">          <span class="comment">//函数体</span></span><br><span class="line">       &#125;</span><br><span class="line">    自定义名(实参)  <span class="comment">//调用</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、简单和复杂数据类型的区别"><a href="#三、简单和复杂数据类型的区别" class="headerlink" title="三、简单和复杂数据类型的区别"></a>三、简单和复杂数据类型的区别</h2><h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p>占用空间固定，存储在栈里，有各自开辟的栈内存，方法一结束就销毁自己的那块内存。操作的是值本身。<br>简单(基本)数据类型是按值访问的，因为可以直接操作保存在变量中的实际值，单看有些难理解。<br>常见的例子就是用一个变量a给变量b赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//输出0，a依然为4</span></span><br></pre></td></tr></table></figure>
+<p>我觉得这有些类似于JQuery对象拷贝里的浅拷贝方式，这是JQuery进行对象拷贝时对于复杂数据类型的处理办法，仅copy一个“始”的地址给“终”（方便分清拷贝的双方，我引入了始和终、内存的内和外）。<br>“始”在内存外的数据会在内存中开辟一个空间来存放“始”的对象，两者关系是仅内存外影响内存内；“终”会请求调用“始”内存内的对象，但是“始”的对象不给看，仅拿出一个地址，这个地址会实时的更新，因为它连接着“始”内存内的对象，但是这个地址就只能看看，它没法对内存内“始”的对象做任何事，整个就是个单向影响的关系。见下图…<br><img src="https://img-blog.csdnimg.cn/20210207012704366.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>换成数据类型的话复制出去的不是一个“始”的地址，而是变量“始”值的复制品。两个变量分别存储在各自的内存里，所以不会互相影响。</p>
+<h3 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h3><p>占用空间不固定，保存在堆中。堆内存中的对象使用完后不会被立刻销毁而是保留待用，直到没有任何变量引用这个对象才会被销毁。操作的是指向对象的指针。<br>（是对值的操作会影响内存里的对象，“牵一发而动全身”，共存于堆中，变量之间存在相互影响的关系）<br>让我想到JQuery里的深拷贝，但是这些数据之间即使有复制操作，完成后也是同步改变的，而深拷贝完成后便不再有联系，相同点是都对内存里的对象进行了操作。<br>以下是栗子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [m , u , i];</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b[<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">//[m , u ,0]</span></span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>简单数据类型（值类型）直接赋值不影响原数据，复杂数据类型（引用类型）直接赋值会导致原数据同步改变。</p>
+
       
 
       
@@ -219,7 +263,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/JavaScript//" class="article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +343,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E5%88%86%E5%8C%BA-JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/07/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +355,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/02/24/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%881%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript正则表达式（1）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/14/%E6%AD%A1%E8%BF%8E%EF%BC%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">歡迎來到白瑕的星球！</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +387,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">JavaScript数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E3%80%81%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">前言、数据分类的重要性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">一、简单数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.数字型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9E%8B"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.字符串型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B8%83%E5%B0%94%E5%9E%8B"><span class="toc-number">2.1.3.</span> <span class="toc-text">3.布尔型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">特殊类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">二、复杂数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AF%B9%E8%B1%A1%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">1.对象型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E7%BB%84%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text">2.数组型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%87%BD%E6%95%B0%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">3.函数型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E5%92%8C%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.4.</span> <span class="toc-text">三、简单和复杂数据类型的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.1.</span> <span class="toc-text">简单数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.2.</span> <span class="toc-text">复杂数据类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -380,7 +486,7 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

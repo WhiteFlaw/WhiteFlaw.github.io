@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>分区-JavaScript | 白瑕的外星殖民所</title>
+  <title>Vue生命周期解析 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分区-JavaScript">
-<meta property="og:url" content="http://example.com/%E5%88%86%E5%8C%BA-JavaScript/index.html">
+  <meta name="description" content="Vue生命周期解析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue生命周期解析">
+<meta property="og:url" content="http://example.com/2021/04/14/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="Vue生命周期解析">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-15T06:35:05.000Z">
-<meta property="article:modified_time" content="2021-04-15T06:35:05.655Z">
+<meta property="article:published_time" content="2021-04-14T14:20:42.000Z">
+<meta property="article:modified_time" content="2021-04-15T07:07:51.336Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
@@ -155,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-Vue生命周期解析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分区-JavaScript
+      Vue生命周期解析
     </h1>
   
 
         
-        <a href="/%E5%88%86%E5%8C%BA-JavaScript/index.html" class="archive-article-date">
-  	<time datetime="2021-04-15T06:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
+        <a href="/2021/04/14/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2021-04-14T14:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
 </a>
 
         <!-- 需要添加的位置 -->
@@ -190,7 +194,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Vue生命周期解析"><a href="#Vue生命周期解析" class="headerlink" title="Vue生命周期解析"></a>Vue生命周期解析</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
+@[TOC](文章目录)
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>升学，找工作，失业，找工作，买房，成家，一些人甚至至死都没能跑完这条人生的长路，他们的一生在奔波中度过，却不曾看到过一丝沿途的风景。</p>
+<p>Vue是一个这样的人，在他短暂而被安排的明明白白的人生路途中，只剩下奔波，沿途的风景未能让他驻足一瞬，他创造的诸多美好，却从无法看哪怕是一眼。 狗头)</p>
+<h1 id="一、甚麽是-Vue的生命周期-？"><a href="#一、甚麽是-Vue的生命周期-？" class="headerlink" title="一、甚麽是[Vue的生命周期]？"></a>一、甚麽是[Vue的生命周期]？</h1><p>Vue的每个组件都是独立的，正因如此，Vue的每个组件也都有各自的生命周期（就像人的肺和肾都有自己的寿命），他们共同组成了[Vue的生命周期]。</p>
+<p>Vue并不像人的生命周期一样有生老病死，如果Vue对象不被销毁，Vue会一直在那里，所以“生命周期”这个词在此处大可不必完全解读为“生命周期”原本的意思，知道是Vue创立后固定要做的那么些事儿就好了。</p>
+<h1 id="二、生命周期函数"><a href="#二、生命周期函数" class="headerlink" title="二、生命周期函数"></a>二、生命周期函数</h1><p>有时我们需要在Vue执行到某一步时，执行某些操作，那么可以利用这些生命周期函数来完成，把要执行的命令写进这些生命周期函数里，在Vue执行到这些函数的所在时，就会顺带完成你需要的操作，而我们首先要知道这些周期函数在什么时候会被执行、他们都是哪些。</p>
+<h2 id="1-beforeCreate"><a href="#1-beforeCreate" class="headerlink" title="1.beforeCreate"></a>1.beforeCreate</h2><p>在示例初始化、data observer配置和事件配置完成之间调用</p>
+<h2 id="2-created"><a href="#2-created" class="headerlink" title="2.created"></a>2.created</h2><p>初始化依赖和注入，data初始化完毕，计算属性和event/watch事件进行回调后，DOM树挂载前。</p>
+<h2 id="3-beforeMount"><a href="#3-beforeMount" class="headerlink" title="3.beforeMount"></a>3.beforeMount</h2><p>挂载前，创建虚拟el前，生成模板template后。</p>
+<h2 id="4-mounted"><a href="#4-mounted" class="headerlink" title="4.mounted"></a>4.mounted</h2><p>挂载完成，DOM树渲染完毕后。</p>
+<h2 id="5-beforeDestory"><a href="#5-beforeDestory" class="headerlink" title="5.beforeDestory"></a>5.beforeDestory</h2><p>Vue实例销毁前。</p>
+<h2 id="6-destoryed"><a href="#6-destoryed" class="headerlink" title="6.destoryed"></a>6.destoryed</h2><p>Vue所有子组件销毁后。</p>
+<h2 id="7-beforeUpdate"><a href="#7-beforeUpdate" class="headerlink" title="7.beforeUpdate"></a>7.beforeUpdate</h2><p>数据data有更新，已被调用后。</p>
+<h2 id="8-updated"><a href="#8-updated" class="headerlink" title="8.updated"></a>8.updated</h2><p>虚拟DOM重新渲染发生变化的数据。</p>
+<h1 id="三、Vue的一生要做些甚麽？"><a href="#三、Vue的一生要做些甚麽？" class="headerlink" title="三、Vue的一生要做些甚麽？"></a>三、Vue的一生要做些甚麽？</h1><h2 id="1-Vue对象创立，Vue出生。"><a href="#1-Vue对象创立，Vue出生。" class="headerlink" title="1.Vue对象创立，Vue出生。"></a>1.Vue对象创立，Vue出生。</h2><p>构造函数生成Vue实例；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue();</span><br></pre></td></tr></table></figure>
+<h2 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h2><p>原步骤Init Event&Lifecycle;<br>初始化事件相关：Event;<br>初始化各生命周期函数：Lifecycle（也叫钩子函数）；</p>
+<h2 id="2-5BeforeCreated函数调用"><a href="#2-5BeforeCreated函数调用" class="headerlink" title="2.5BeforeCreated函数调用"></a>2.5BeforeCreated函数调用</h2><p>生命周期函数BeforeCreated被调用。</p>
+<h2 id="3-继续初始化"><a href="#3-继续初始化" class="headerlink" title="3.继续初始化"></a>3.继续初始化</h2><p>原步骤Init injections &amp; reactivity<br>初始化依赖提供：provide；<br>初始化依赖注入：injections；<br>初始化Vue响应式的核心：reactivity ；<br>provide提供依赖，提供的依赖可以是一个对象，或者是一个能返回对象的函数。依赖内包含了属性和属性值，属性值可以是一个对象。<br>injections 注入依赖，在后代组件里使用 inject 选项来为其注入需要添加在这个实例上的属性，包含from和default默认值。<br>reactivity系列是Vue响应式的核心。</p>
+<h2 id="3-5Create函数调用"><a href="#3-5Create函数调用" class="headerlink" title="3.5Create函数调用"></a>3.5Create函数调用</h2><p>生命周期函数Create被调用。</p>
+<h2 id="4-判断el是否挂载了DOM"><a href="#4-判断el是否挂载了DOM" class="headerlink" title="4.判断el是否挂载了DOM"></a>4.判断el是否挂载了DOM</h2><p>没有挂载就挂载一个。<br>有就直接下一步。<br>this._init末的$mount函数开始运作。</p>
+<h2 id="5-判断是否有模板"><a href="#5-判断是否有模板" class="headerlink" title="5.判断是否有模板"></a>5.判断是否有模板</h2><p>模板template作为模板占位符，用来包裹HTML元素，其不会被渲染到页面上，可以有三种写法：作为option属性写在Vue对象里、直接作为HTML标签、写在script标签里（第三个官方推荐写法,为script标签里的type属性赋值”x-template”）。<br>有template模板<br>把模板template转换为render函数（render函数会在后续渲染DOM中发挥作用）。<br>无template模板<br>将el挂载的对象的外层HTML作为模板template。<br>没有对象就new一个啊（不是）<br>this._init末的$mount函数运作完毕。</p>
+<h2 id="5-5beforeMount函数调用"><a href="#5-5beforeMount函数调用" class="headerlink" title="5.5beforeMount函数调用"></a>5.5beforeMount函数调用</h2><p>生命周期函数beforeMount被调用。</p>
+<h2 id="5-6前面生成的render函数被调用"><a href="#5-6前面生成的render函数被调用" class="headerlink" title="5.6前面生成的render函数被调用"></a>5.6前面生成的render函数被调用</h2><p>render函数被调用来生成虚拟DOM，虚拟DOM是渲染好的。</p>
+<h2 id="6-虚拟el创建，DOM替换"><a href="#6-虚拟el创建，DOM替换" class="headerlink" title="6.虚拟el创建，DOM替换"></a>6.虚拟el创建，DOM替换</h2><p>原步骤Create vm $el and replace “el” with it.<br>Vue实例下的虚拟el创建，虚拟DOM替换原本的DOM。<br> -render方法在此处运作生成虚拟DOM对象。</p>
+<h2 id="6-5-DOM树渲染至页面完毕"><a href="#6-5-DOM树渲染至页面完毕" class="headerlink" title="6.5.DOM树渲染至页面完毕"></a>6.5.DOM树渲染至页面完毕</h2><p>虚拟DOM挂载完毕，DOM树已经成功渲染至页面，页面已经具有样式，可以进行正常DOM操作。</p>
+<h2 id="7-Mounted函数调用。"><a href="#7-Mounted函数调用。" class="headerlink" title="7.Mounted函数调用。"></a>7.Mounted函数调用。</h2><p>生命周期函数Munted调用。</p>
+<h2 id="8-准备完毕Mounted状态"><a href="#8-准备完毕Mounted状态" class="headerlink" title="8.准备完毕Mounted状态"></a>8.准备完毕Mounted状态</h2><p>如果在这个状态出现了数据更新需要再次渲染来更新页面：<br>生命周期函数BeforeUpdate调用；<br>虚拟DOM重新渲染，但仅以最小的DOM开支渲染发生变化的部分，其他部分复用，节省工作量。</p>
+<h2 id="9-Vue实例被请求销毁"><a href="#9-Vue实例被请求销毁" class="headerlink" title="9.Vue实例被请求销毁"></a>9.Vue实例被请求销毁</h2><h2 id="9-5BeforeDestory函数调用"><a href="#9-5BeforeDestory函数调用" class="headerlink" title="9.5BeforeDestory函数调用"></a>9.5BeforeDestory函数调用</h2><p>生命周期函数BeforeDestory调用。</p>
+<h2 id="10-清除各Vue组件"><a href="#10-清除各Vue组件" class="headerlink" title="10.清除各Vue组件"></a>10.清除各Vue组件</h2><p>清除watchers、child子组件、components和eventlistener事件监听 等等……</p>
+<h2 id="11-组件销毁完毕"><a href="#11-组件销毁完毕" class="headerlink" title="11.组件销毁完毕"></a>11.组件销毁完毕</h2><h2 id="12-Destory函数调用"><a href="#12-Destory函数调用" class="headerlink" title="12.Destory函数调用"></a>12.Destory函数调用</h2><p>生命周期函数Destory调用。</p>
+<p>至此Vue的一段生命周期便执行完成，它完成了它的使命，暂时。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>今天先告一段落…<br>终于考完试了！打算下面几天都拿来肝文了！<br>明天添加一些Vue源码片段来展示各个生命周</p>
+
       
 
       
@@ -219,7 +259,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/Vue//" class="article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +339,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E5%88%86%E5%8C%BA-JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/14/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +351,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/04/15/v-for%E6%8C%87%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          v-for指令使用指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/28/CSS%E5%8A%A8%E7%94%BB%E6%9E%84%E6%88%90%E8%A7%A3%E5%89%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS动画构成解剖</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +383,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">Vue生命周期解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%94%9A%E9%BA%BD%E6%98%AF-Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">一、甚麽是[Vue的生命周期]？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">二、生命周期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-beforeCreate"><span class="toc-number">4.1.</span> <span class="toc-text">1.beforeCreate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-created"><span class="toc-number">4.2.</span> <span class="toc-text">2.created</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-beforeMount"><span class="toc-number">4.3.</span> <span class="toc-text">3.beforeMount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mounted"><span class="toc-number">4.4.</span> <span class="toc-text">4.mounted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-beforeDestory"><span class="toc-number">4.5.</span> <span class="toc-text">5.beforeDestory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-destoryed"><span class="toc-number">4.6.</span> <span class="toc-text">6.destoryed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-beforeUpdate"><span class="toc-number">4.7.</span> <span class="toc-text">7.beforeUpdate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-updated"><span class="toc-number">4.8.</span> <span class="toc-text">8.updated</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Vue%E7%9A%84%E4%B8%80%E7%94%9F%E8%A6%81%E5%81%9A%E4%BA%9B%E7%94%9A%E9%BA%BD%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">三、Vue的一生要做些甚麽？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Vue%E5%AF%B9%E8%B1%A1%E5%88%9B%E7%AB%8B%EF%BC%8CVue%E5%87%BA%E7%94%9F%E3%80%82"><span class="toc-number">5.1.</span> <span class="toc-text">1.Vue对象创立，Vue出生。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">5.2.</span> <span class="toc-text">2.初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5BeforeCreated%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.3.</span> <span class="toc-text">2.5BeforeCreated函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%A7%E7%BB%AD%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">5.4.</span> <span class="toc-text">3.继续初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5Create%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.5.</span> <span class="toc-text">3.5Create函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%A4%E6%96%ADel%E6%98%AF%E5%90%A6%E6%8C%82%E8%BD%BD%E4%BA%86DOM"><span class="toc-number">5.6.</span> <span class="toc-text">4.判断el是否挂载了DOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E6%A8%A1%E6%9D%BF"><span class="toc-number">5.7.</span> <span class="toc-text">5.判断是否有模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5beforeMount%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.8.</span> <span class="toc-text">5.5beforeMount函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6%E5%89%8D%E9%9D%A2%E7%94%9F%E6%88%90%E7%9A%84render%E5%87%BD%E6%95%B0%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="toc-number">5.9.</span> <span class="toc-text">5.6前面生成的render函数被调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%99%9A%E6%8B%9Fel%E5%88%9B%E5%BB%BA%EF%BC%8CDOM%E6%9B%BF%E6%8D%A2"><span class="toc-number">5.10.</span> <span class="toc-text">6.虚拟el创建，DOM替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-DOM%E6%A0%91%E6%B8%B2%E6%9F%93%E8%87%B3%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%AF%95"><span class="toc-number">5.11.</span> <span class="toc-text">6.5.DOM树渲染至页面完毕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Mounted%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E3%80%82"><span class="toc-number">5.12.</span> <span class="toc-text">7.Mounted函数调用。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%87%86%E5%A4%87%E5%AE%8C%E6%AF%95Mounted%E7%8A%B6%E6%80%81"><span class="toc-number">5.13.</span> <span class="toc-text">8.准备完毕Mounted状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Vue%E5%AE%9E%E4%BE%8B%E8%A2%AB%E8%AF%B7%E6%B1%82%E9%94%80%E6%AF%81"><span class="toc-number">5.14.</span> <span class="toc-text">9.Vue实例被请求销毁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-5BeforeDestory%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.15.</span> <span class="toc-text">9.5BeforeDestory函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%B8%85%E9%99%A4%E5%90%84Vue%E7%BB%84%E4%BB%B6"><span class="toc-number">5.16.</span> <span class="toc-text">10.清除各Vue组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E7%BB%84%E4%BB%B6%E9%94%80%E6%AF%81%E5%AE%8C%E6%AF%95"><span class="toc-number">5.17.</span> <span class="toc-text">11.组件销毁完毕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Destory%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.18.</span> <span class="toc-text">12.Destory函数调用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -380,7 +482,7 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

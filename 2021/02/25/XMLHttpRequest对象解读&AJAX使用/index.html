@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>分区-JavaScript | 白瑕的外星殖民所</title>
+  <title>XMLHttpRequest对象解读&amp;AJAX使用 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分区-JavaScript">
-<meta property="og:url" content="http://example.com/%E5%88%86%E5%8C%BA-JavaScript/index.html">
+  <meta name="description" content="AJAX技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XMLHttpRequest对象解读&amp;AJAX使用">
+<meta property="og:url" content="http://example.com/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="AJAX技术">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-15T06:35:05.000Z">
-<meta property="article:modified_time" content="2021-04-15T06:35:05.655Z">
+<meta property="article:published_time" content="2021-02-25T14:38:00.000Z">
+<meta property="article:modified_time" content="2021-04-15T07:10:43.444Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="AJAX">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
@@ -155,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-XMLHttpRequest对象解读&amp;AJAX使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分区-JavaScript
+      XMLHttpRequest对象解读&amp;AJAX使用
     </h1>
   
 
         
-        <a href="/%E5%88%86%E5%8C%BA-JavaScript/index.html" class="archive-article-date">
-  	<time datetime="2021-04-15T06:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
+        <a href="/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-02-25T14:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
 </a>
 
         <!-- 需要添加的位置 -->
@@ -190,7 +194,195 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="AJAX技术"><a href="#AJAX技术" class="headerlink" title="AJAX技术"></a>AJAX技术</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
+@[TOC](文章目录)
+
+<h1 id="Ajax技术的诞生"><a href="#Ajax技术的诞生" class="headerlink" title="Ajax技术的诞生"></a>Ajax技术的诞生</h1><p>Web应用程序是一种新的潮流，但伴随Web的逐渐发展，出现的是等待；<br>等待服务器的响应，等待刷新和生成。在这样的背景下，2005年，Ajax诞生了。</p>
+<h1 id="一、Ajax的概念？"><a href="#一、Ajax的概念？" class="headerlink" title="一、Ajax的概念？"></a>一、Ajax的概念？</h1><p>Ajax(Asynchronous Javascript And XML)这个短语由Adaptive Path的Jesse James Garrett发明,，其并非某种语言，Ajax是由HTML、JavaScript、DHTML(DynamicHTML)和DOM四者结合组成的构建网站的方法，这一方法可以将Web界面转化成交互性的Ajax应用程序。<br>JavaScript：Ajax技术得以在应用程序中运行的核心代码，其构成Ajax代码的主体。<br>HTML：用于建立Web表单并确定用用程序其他部分使用的字段。<br>DHTML:借助div、span以及其他动态HTML元素对HTML的标记来动态更新表单。<br>DOM（文档对象模型）:借助JavaScript处理HTML结构，也可以处理XML结构的数据。 </p>
+<h1 id="二、XMLHttpRequest对象的概念"><a href="#二、XMLHttpRequest对象的概念" class="headerlink" title="二、XMLHttpRequest对象的概念"></a>二、XMLHttpRequest对象的概念</h1><p>XMLHttpRequest对象是一个JavaScript对象，如果说Ajax是一条鱼，XMLHttpRequest就像这条鱼的脊柱，串通并支持着Ajax。创建XMLHttp对象的方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&quot;javascript&quot;</span> type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="keyword">var</span> xmlHttp = <span class="keyword">new</span> XMLHttpRequset();</span><br><span class="line">&lt;script&gt;  </span><br></pre></td></tr></table></figure>
+<h2 id="1-XMLHttpRequest对象的属性"><a href="#1-XMLHttpRequest对象的属性" class="headerlink" title="1.XMLHttpRequest对象的属性"></a>1.XMLHttpRequest对象的属性</h2><ol>
+<li> 状态值 readyState，可以确定请求/响应过程的当前活动阶段</li>
+</ol>
+<p>0：已建立对象。但尚未调用open()方法；<br>1：已建立对象。已经调用open()方法，未调用send()方法；<br>2：发送。已经调用send()方法，Http头未知，状态未知；<br>3：接收。已经接收到部分数据，但因为响应头及http头不全，这时若通过XMLHttp对象属性中的responseBody/Text获取数据会报错，因为数据还在传输中。<br>4：完成。已经接收到全部数据，可以在客户端正常获取数据。</p>
+<ol start="2">
+<li><p> 回调函数 onload()、onreadystatechange() 依据readyState值的变动判断是否执行自身，服务器返回的内容也是优先到这里提供给其使用。</p>
+</li>
+<li><p>字符串 responseText 作为响应主体被返回的文本。</p>
+</li>
+<li><p> XmlDocument responseXML 服务器返回的数据（Xml对象）</p>
+</li>
+<li><p>  状态码 Number states（整数），如：200、404…</p>
+</li>
+<li><p> 状态文本 String statesText （字符串），如：OK、NotFound…</p>
+</li>
+</ol>
+<h2 id="2-XMLHttpRequest对象的作用"><a href="#2-XMLHttpRequest对象的作用" class="headerlink" title="2.XMLHttpRequest对象的作用"></a>2.XMLHttpRequest对象的作用</h2><p>其是Ajax技术中用于处理服务器通信的对象，JavaScript和XMLHttpRequest对象被放在Web和服务端之间，这样Web要向服务器传输数据时会先将数据发送给JavaScript再由JavaScript在后台发送异步请求给服务器，这意味着能够同时避免页面刷新和等待服务器响应，用户可以继续正常使用应用程序。<br>在服务器返回数据给JavaScript后JavaScript会对返回的数据进行操作（比如迅速更新表单或者计算后继续请求），不会影响应用的正常使用，这便是Ajax技术产生的目的：快速动态的响应、提高交互效率。</p>
+<h1 id="三、Ajax技术基本使用"><a href="#三、Ajax技术基本使用" class="headerlink" title="三、Ajax技术基本使用"></a>三、Ajax技术基本使用</h1><p>为XMLHttp（XMLHttpRequest 对象）设置一个脚本作为链接的目标。要注意脚本的 URL 的指定方式<br>然后open()一个连接，其中指定连接方法和要连接的<br>URL，最后一个参数为是否异步，如果设为 true，那么将请求一个异步连接（这就是 Ajax 的由来）。如果使用 false，那<br>么代码发出请求后将等待服务器返回的响应。<br>xmlHttp（XMLHttpRequest 对象）的 onreadystatechange 属性可以告诉服务器在运行完成后做什么。因为异步不需要等待服务器，必须让服务器知道之后干什么以便能作出响应。<br>因为已经在请求 URL 中添加了要发送给服务器的数据（city 和 state），所以请求中不需要发送任何数据。使用值 null 调用 send()。这样就发出了请求。</p>
+<h2 id="1-使用GET法提交数据"><a href="#1-使用GET法提交数据" class="headerlink" title="1.使用GET法提交数据"></a>1.使用GET法提交数据</h2><p>GET用于向服务器查询某些信息，使用这种方法可以不设置请求头setRequestHeader()，GET也是open()中默认的打开连接的方式。使用GET法发送数据，应使用null来调用send()。使用GET进行数据提交的基本流程如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//get法提交数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url, data, success</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xmlHttp = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">if</span> (XMLHttpRequest) &#123;</span><br><span class="line">    xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  xmlHttp.open(<span class="string">&#x27;get&#x27;</span>, url)</span><br><span class="line">  <span class="comment">//open()建立到服务器的新请求</span></span><br><span class="line">  xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState == <span class="number">4</span> &amp;&amp; xmlHttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">      success(xmlHttp.responseText);</span><br><span class="line">       <span class="comment">//responseText：服务器返回的请求响应文本</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xmlHttp.send(data);</span><br><span class="line">  <span class="comment">//send()：向服务器发送请求</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-使用POST法提交数据"><a href="#2-使用POST法提交数据" class="headerlink" title="2.使用POST法提交数据"></a>2.使用POST法提交数据</h2><p>POST请求用于向服务器发送应该被保存的数据。POST请求的主体可以包含非常多的数据，而且格式不限。由于open默认方式为GET，所以要使用POST发送数据必须在open()中设置打开连接的方式为post，当post不发送数据时也不需要设置请求头。使用post法需要使用要发送的数据来调用send()使用GET进行数据提交的基本流程如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//post法提交数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params">url, data, success</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xmlHttp = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">if</span> (XMLHttpRequest) &#123;</span><br><span class="line">    xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  xmlHttp.open(<span class="string">&#x27;post&#x27;</span>, url);</span><br><span class="line">  <span class="keyword">if</span> (option.type == <span class="string">&#x27;post&#x27;</span> &amp;&amp; option.data) &#123;</span><br><span class="line">    <span class="comment">//设置请求头：在post法中data存在时需要设置，get法可以不设置请求头;</span></span><br><span class="line">    xmlHttp.setRequestHeader(<span class="string">&#x27;content-type&#x27;</span>, <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState == <span class="number">4</span> &amp;&amp; xmlHttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">      success(xmlHttp.responseText);</span><br><span class="line">      <span class="comment">//responseText：服务器返回的请求响应文本</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xmlHttp.send(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="四、JQueryAjax"><a href="#四、JQueryAjax" class="headerlink" title="四、JQueryAjax"></a>四、JQueryAjax</h1><ol>
+<li>jQueryAJAX 的方法们。<br>通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jQuery.ajax()</td>
+<td>执行异步 HTTP (Ajax) 请求。</td>
+</tr>
+<tr>
+<td>.ajaxComplete()</td>
+<td>当 Ajax 请求完成时注册要调用的处理程序。这是一个 Ajax 事件。</td>
+</tr>
+<tr>
+<td>.ajaxError()</td>
+<td>当 Ajax 请求完成且出现错误时注册要调用的处理程序。这是一个 Ajax 事件。</td>
+</tr>
+<tr>
+<td>.ajaxSend()</td>
+<td>在 Ajax 请求发送之前显示一条消息。</td>
+</tr>
+<tr>
+<td>jQuery.ajaxSetup()</td>
+<td>设置将来的 Ajax 请求的默认值。</td>
+</tr>
+<tr>
+<td>.ajaxStart()</td>
+<td>当首个 Ajax 请求完成开始时注册要调用的处理程序。这是一个 Ajax 事件。</td>
+</tr>
+<tr>
+<td>.ajaxStop()</td>
+<td>当所有 Ajax 请求完成时注册要调用的处理程序。这是一个 Ajax 事件。</td>
+</tr>
+<tr>
+<td>.ajaxSuccess()</td>
+<td>当 Ajax 请求成功完成时显示一条消息。</td>
+</tr>
+<tr>
+<td>jQuery.get()</td>
+<td>使用 HTTP GET 请求从服务器加载数据。</td>
+</tr>
+<tr>
+<td>jQuery.getJSON()</td>
+<td>使用 HTTP GET 请求从服务器加载 JSON 编码数据。</td>
+</tr>
+<tr>
+<td>jQuery.getScript()</td>
+<td>使用 HTTP GET 请求从服务器加载 JavaScript 文件，然后执行该文件。</td>
+</tr>
+<tr>
+<td>.load()</td>
+<td>从服务器加载数据，然后把返回到 HTML 放入匹配元素。</td>
+</tr>
+<tr>
+<td>jQuery.param()</td>
+<td>创建数组或对象的序列化表示，适合在 URL 查询字符串或 Ajax 请求中使用。</td>
+</tr>
+<tr>
+<td>jQuery.post()</td>
+<td>使用 HTTP POST 请求从服务器加载数据。</td>
+</tr>
+<tr>
+<td>.serialize()</td>
+<td>将表单内容序列化为字符串。</td>
+</tr>
+<tr>
+<td>.serializeArray()</td>
+<td>序列化表单元素，返回 JSON 数据结构数据。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jQuery.ajax()</td>
+<td>请求地址url、请求方式type/method、请求头headers、发送的数据data、即将发送信息至服务器的内容编码类型contentType、规定异步async、以毫秒设置请求超时timeout、发送请求前执行的函数beforeSend、完成回调函数(全局)complete、成功回调函数(全局)success、失败回调函数(全局)error、accepts通过请求头发送给服务器，告诉服务器当前客户端接受的数据类型、转换服务器端返回的数据dataType、将返回的内容转换成xml格式”xml”、将返回的内容转换成普通文本格式”text”、将返回的内容转换成普通文本格式（在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。） “html”、将返回值当作JS执行再将返回内容转换成普通文本格式”script”、将返回的内容转换成相应的JS对象”json”</td>
+</tr>
+<tr>
+<td>.ajaxComplete()</td>
+<td>Ajax 事件，请求完成时运行的函数。</td>
+</tr>
+<tr>
+<td>.ajaxError()</td>
+<td>Ajax 事件，请求失败时运行的函数。</td>
+</tr>
+<tr>
+<td>.ajaxSend()</td>
+<td>请求即将发送时运行的函数。</td>
+</tr>
+<tr>
+<td>jQuery.ajaxSetup()</td>
+<td>设置将来的 Ajax 请求的默认值。</td>
+</tr>
+<tr>
+<td>.ajaxStart()</td>
+<td>Ajax 事件，AJAX 请求开始时运行的函数。</td>
+</tr>
+<tr>
+<td>.ajaxStop()</td>
+<td>Ajax事件，AJAX 请求完成时运行的函数</td>
+</tr>
+<tr>
+<td>.ajaxSuccess()</td>
+<td>Ajax时间，AJAX 请求成功时运行的函数</td>
+</tr>
+<tr>
+<td>jQuery.get()</td>
+<td>请求地址url、要发送的数据data、成功回调函数success、dataType</td>
+</tr>
+<tr>
+<td>jQuery.getJSON()</td>
+<td>请求地址url、data、success</td>
+</tr>
+<tr>
+<td>jQuery.getScript()</td>
+<td>请求地址url、要发送的数据data、成功回调函数success</td>
+</tr>
+<tr>
+<td>.load()</td>
+<td>加载数据，填充HTML，请求地址url、发送的数据data、function</td>
+</tr>
+<tr>
+<td>jQuery.param()</td>
+<td>param() 方法创建数组或对象的序列化表示形式。需要序列化的数组或对象object，布尔值指定是否使用参数序列化trad。</td>
+</tr>
+<tr>
+<td>jQuery.post()</td>
+<td>请求地址url、要发送的数据data、成功回调函数success、内容格式dataType:</td>
+</tr>
+<tr>
+<td>.serialize()</td>
+<td>通过序列化表单值创建 URL 编码文本字符串</td>
+</tr>
+<tr>
+<td>.serializeArray()</td>
+<td>通过序列化表单值来创建对象（name 和 value）的数组，返回 JSON 数据结构数据。</td>
+</tr>
+<tr>
+<td>2. JQuery封装的Ajax函数的基本使用流程</td>
+<td></td>
+</tr>
+<tr>
+<td>JQueryAjax其实也就是封装过后的、JavaScript代码写的Ajax函数，虽然复原其内部原理比较困难，但其产生重要效果的部分其实与我们上文中写的Ajax代码大同小异。它的基本使用方法如下：</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">&#x27;.xxx&#x27;</span>).blur(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">      url: <span class="string">&#x27;接口地址&#x27;</span>,</span><br><span class="line">      type: <span class="string">&#x27;发送方法&#x27;</span>,</span><br><span class="line">      data: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">      <span class="comment">//不止可以写这些;</span></span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//成功后要执行的操作，形参（此处data）为函数内部操作提供数据。</span></span><br><span class="line">        $(.tips).html(data.shuju).fadeOut(<span class="number">2000</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>JQueryAjax简化了Ajax技术的使用流程。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>如果这篇文帮到了您，我很荣幸。<br>如果您发现有不妥的地方，恳请您指点。</p>
+
       
 
       
@@ -219,7 +411,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AJAX</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/AJAX//" class="article-tag-list-link color5">AJAX</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +491,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/%E5%88%86%E5%8C%BA-JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +503,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          let、const与块级作用域
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器缓存机制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +535,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">AJAX技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">2.</span> <span class="toc-text">Ajax技术的诞生</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Ajax%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">一、Ajax的概念？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text">二、XMLHttpRequest对象的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">4.1.</span> <span class="toc-text">1.XMLHttpRequest对象的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">2.XMLHttpRequest对象的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Ajax%E6%8A%80%E6%9C%AF%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">三、Ajax技术基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8GET%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text">1.使用GET法提交数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8POST%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">5.2.</span> <span class="toc-text">2.使用POST法提交数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81JQueryAjax"><span class="toc-number">6.</span> <span class="toc-text">四、JQueryAjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -380,7 +634,7 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
