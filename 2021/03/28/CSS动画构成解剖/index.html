@@ -161,7 +161,8 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS动画构成解剖" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSS动画构成解剖"
+  class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -172,31 +173,33 @@
     </h1>
   
 
-        
-        <a href="/2021/03/28/CSS%E5%8A%A8%E7%94%BB%E6%9E%84%E6%88%90%E8%A7%A3%E5%89%96/" class="archive-article-date">
+          
+            <a href="/2021/03/28/CSS%E5%8A%A8%E7%94%BB%E6%9E%84%E6%88%90%E8%A7%A3%E5%89%96/" class="archive-article-date">
   	<time datetime="2021-03-28T14:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-28</time>
 </a>
 
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-        <!-- 添加完成 -->
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                    <!-- 添加完成 -->
 
-        
-    
-    
-        
-          <span class="archive-article-date">
-              阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
-    
-    
+                    
+
+
+                      
+                        <span class="archive-article-date">
+                          阅读量 <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                        
+
+
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CSS动画特效的基本构成"><a href="#CSS动画特效的基本构成" class="headerlink" title="CSS动画特效的基本构成"></a>CSS动画特效的基本构成</h1><p>  自制定和发布以来，CSS规范便颇受世人青睐。&lt;hr style=” border:solid; width:100px; height:1px;” color=#000000 size=1”&gt;</p>
+        <div class="article-entry" itemprop="articleBody">
+          
+
+                
+                      <h1 id="CSS动画特效的基本构成"><a href="#CSS动画特效的基本构成" class="headerlink" title="CSS动画特效的基本构成"></a>CSS动画特效的基本构成</h1><p>  自制定和发布以来，CSS规范便颇受世人青睐。&lt;hr style=” border:solid; width:100px; height:1px;” color=#000000 size=1”&gt;</p>
 <a id="more"></a>
 <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
 <h1 id="CSS动画效果"><a href="#CSS动画效果" class="headerlink" title="CSS动画效果"></a>CSS动画效果</h1><p>特别是对于专业网页设计者来说，CSS无疑是给他们的设计者带来了新的希望······运用CSS，不仅能设计出精美的网页效果，而且还能提高网页的可访问性，可维护性，从而为网页设计节省大量的时间和精力。<br>                             ————摘自《CSS权威指南》</p>
@@ -277,34 +280,12 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.row1</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  animation: keyname 15s linear infinite; //关键帧函数名keyname</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.row2</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: keyname <span class="number">20s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.row3</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: keyname <span class="number">40s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> keyname &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">500px</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">100px</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这次总结了一些比较基础的CSS特效的构成模式，当然并不是所有的CSS特效都是这样的构造，如果您对这方面感兴趣的话，还是要去更多的搜集资料和各种属性、写法，但上面介绍的这些，通过与CSS和JS的结合，已经能构建出比较可观的特效，以下便是基于上述知识构建出的纯CSS特效。<br><img src="https://img-blog.csdnimg.cn/2021032822013513.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>如果这篇文章帮到了您，我很荣幸，也期待您的指点：· ）</p>
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thanks:·)<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+                        
+                          
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -320,7 +301,7 @@
 		</ul>
 	</div>
 
-      
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -337,10 +318,10 @@
 	</div>
 
 
-      
+                  
 
-      
-        
+                      
+                        
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -390,9 +371,9 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+                          
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
 
@@ -416,8 +397,8 @@
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+    
+      <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -447,19 +428,19 @@
 </aside>
 
 
+        
+          
 
-  
-  
-  
+                
 
-  
+                      
 
-  
+                            
 
-  
+                                
 
-  
-      <div id="gitalk-container"></div>
+                                      
+                                        <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
@@ -477,10 +458,9 @@ var gitalk = new Gitalk({
 
 gitalk.render('gitalk-container')
 </script>
-  
-  
+                                          
 
-
+                                            
           </div>
         </div>
       </div>
