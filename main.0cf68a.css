@@ -7,7 +7,6 @@
 
 
 
-
 /*tag-cloud*/
 .tag-cloud {
   text-align: center;
@@ -109,7 +108,7 @@
  margin-left: 5px;
  }
  .category-list-count:before {
- content: '共 ';
+ content: '一共 ';
  }
  .category-list-count:after {
  content: ' 篇文章';
