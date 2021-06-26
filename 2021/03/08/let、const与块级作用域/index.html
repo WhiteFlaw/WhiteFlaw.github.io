@@ -16,9 +16,8 @@
 <meta property="og:description" content="let、const块级声明与块级作用域绑定">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-08T13:52:46.000Z">
-<meta property="article:modified_time" content="2021-04-15T07:10:22.039Z">
+<meta property="article:modified_time" content="2021-06-26T07:20:03.575Z">
 <meta property="article:author" content="白瑕">
-<meta property="article:tag" content="前端">
 <meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
   
@@ -198,9 +197,9 @@
 
                 
                       <h1 id="let、const块级声明与块级作用域绑定"><a href="#let、const块级声明与块级作用域绑定" class="headerlink" title="let、const块级声明与块级作用域绑定"></a>let、const块级声明与块级作用域绑定</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
 <a id="more"></a>
 
-<p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
 <h1 id="let、const与块级作用域"><a href="#let、const与块级作用域" class="headerlink" title="let、const与块级作用域"></a>let、const与块级作用域</h1><p>在ES6之前JS的作用域有三种，它们分别为：<br>全局作用域<br>函数作用域<br>Eval作用域<br>为了让JavaScript更加灵活，ES6版本新引入了C系语言的“块级作用域”这一概念，伴随这一概念诞生的是两种新的变量声明方法，他们依赖于块级作用域而存在(块级作用域的存在也依赖于let和const)，下文细说。</p>
 <h1 id="一、什么是块级作用域？"><a href="#一、什么是块级作用域？" class="headerlink" title="一、什么是块级作用域？"></a>一、什么是块级作用域？</h1><p>块级作用域（词法作用域）：存在于函数内和成对的大括号内，是函数或大括号{}圈定的一块代码块里形成的一个单独的作用域。实际上这么说并不严谨，因为在ES6以前这种大括号就存在了，函数也是很早就有，但那时候还并没有块级作用域这一概念，所以</p>
 <p>||仅仅在大括号中有let或者const这两个 用来声明块级标识符的关键字 声明了东西的时候，这个大括号内才是一片块级作用域||</p>
@@ -228,10 +227,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
@@ -512,10 +507,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -532,7 +523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +535,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
