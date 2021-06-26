@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: AJAX | 白瑕的外星殖民所</title>
+  <title>Vue3 插槽使用详解 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="白瑕的外星殖民所">
-<meta property="og:url" content="http://example.com/tags/AJAX/index.html">
+  <meta name="description" content="Vue在2.6.0,版本更新了有关插槽的大量内容,具名插槽和作用域插槽引入了一个新的语法v-slot来取代slot和slot-scope这两个已废弃但未移除的属性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3 插槽使用详解">
+<meta property="og:url" content="http://example.com/2021/06/25/Vue3%20%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
+<meta property="og:description" content="Vue在2.6.0,版本更新了有关插槽的大量内容,具名插槽和作用域插槽引入了一个新的语法v-slot来取代slot和slot-scope这两个已废弃但未移除的属性。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-25T15:24:48.000Z">
+<meta property="article:modified_time" content="2021-06-26T07:34:31.986Z">
 <meta property="article:author" content="白瑕">
+<meta property="article:tag" content="Vue.js">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕的外星殖民所" type="application/atom+xml">
@@ -153,48 +158,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue3 插槽使用详解"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-25T14:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/">XMLHttpRequest对象解读&amp;AJAX使用</a>
+    <h1 class="article-title" itemprop="name">
+      Vue3 插槽使用详解
     </h1>
   
 
-        <div class="article-info info-on-right">
           
+            <a href="/2021/06/25/Vue3%20%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2021-06-25T15:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
+</a>
+
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                    <!-- 添加完成 -->
+
+                    
+
+
+                      
+                        <span class="archive-article-date">
+                          阅读量 <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                        
+
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+
+                
+                      <p>Vue在2.6.0,版本更新了有关插槽的大量内容,具名插槽和作用域插槽引入了一个新的语法v-slot来取代slot和slot-scope这两个已废弃但未移除的属性。</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<a id="more"></a>
+
+<h1 id="前言-认识slot"><a href="#前言-认识slot" class="headerlink" title="前言-认识slot"></a>前言-认识slot</h1><p>&lt; slot&gt;&lt; /slot&gt;一般被写在子组件里,可以被父组件内写的东西”插”满,把它看作是一个帮 [未来要填充的东西] 提前占位的空框,就像那些一个人占了自习室一整排的可恶的家伙.<br>我想我用程序里的名词来比喻可能比较好理解?slot就像子组件里一个可以传入参数的函数,你可以从父组件里往里传各种标签作为它的参数.</p>
+<p>感谢你浪费一分钟生命读完了这段废话,我们开始吧 doge)</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p>先说下父子组件的概念吧,打个比方,如果父组件是App.vue,子组件就可以是components里的各种.vue文件.</p>
+<h1 id="一、作用域插槽"><a href="#一、作用域插槽" class="headerlink" title="一、作用域插槽"></a>一、作用域插槽</h1><p>或许一个插槽会需要在父组件内不同的地方多次调用,但是却需要以不同的渲染结果出现,又或者插槽填充物需要访问子组件中的数据才能正常工作;</p>
+<p>这时候就可以用作用域插槽了,作用域插槽的渲染是在子组件完成,利用这个特点,在子组件的slot上利用v-bind / v-for什么的绑定上填充物需要的各种数据,这样填充完成后在子组件渲染时就可以从子组件拿数据来渲染了.<br>绑定在 &lt; slot&gt; 上的属性被称为”插槽prop”,也就是此处的user属性了</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在子组件内;</span></span><br><span class="line">&lt;span&gt;</span><br><span class="line">  &lt;slot v-bind:user=<span class="string">&quot;user&quot;</span>&gt;</span><br><span class="line">    &#123;&#123; user.lastName &#125;&#125;</span><br><span class="line">  &lt;/slot&gt;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>而在父级作用域内使用v-slot属性来取代已经被官方废弃的slot-scope属性;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在父组件内;</span></span><br><span class="line">&lt;current-user&gt;</span><br><span class="line"><span class="comment">//current-user:子组件;</span></span><br><span class="line">  &lt;template v-slot:<span class="keyword">default</span>=<span class="string">&quot;slotProps(可自定义)&quot;</span>&gt;</span><br><span class="line">  <span class="comment">/* !!我还是推荐你用简写:&lt;template v-slot=&quot;slotProps&quot;&gt;,</span></span><br><span class="line"><span class="comment">    那个:default看起来很奇怪!! */</span></span><br><span class="line">  <span class="comment">/* 使用template来包裹用于填充slot的html结构,</span></span><br><span class="line"><span class="comment">    非具名插槽不能填名字 */</span></span><br><span class="line">  <span class="comment">/* (估计这slotProps就是子组件的user) */</span></span><br><span class="line">  </span><br><span class="line">    &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">    <span class="comment">//此处差值表达式明显需要使用子组件内的数据来渲染;</span></span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/current-user&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>作用域插槽会被解析为一个传入了slotProps作参的函数:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">slotProps</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 插槽内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>v-slot 的值实际上可以是任何 [能作为函数的参数来传入] 的东西;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-slot=<span class="string">&quot;&#123; user &#125;&quot;</span>&gt;</span><br><span class="line"><span class="comment">/* 这里给v-solt赋了个对象 */</span> </span><br><span class="line">  &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h2 id="动态指令参数与插槽"><a href="#动态指令参数与插槽" class="headerlink" title="动态指令参数与插槽"></a>动态指令参数与插槽</h2><p>从 2.6.0 开始，可以用方括号括起来的JS表达式作为一个指令(v-bind啥的)的参数,比如在此例中</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//随便定义一个变量randomName,这个变量是动态变化的;</span></span><br><span class="line">&lt;a v-bind:[randomName]=<span class="string">&quot;user&quot;</span>&gt; ... &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>或者:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对不同的事件绑定处理函数;</span></span><br><span class="line">&lt;a v-on:[randomEventName]=<span class="string">&quot;differentFunction&quot;</span>&gt; ... &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>在2.6版本新增的内容中,动态指令参数也可以用在 v-slot 上，来定义动态的插槽名:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-layout&gt;</span><br><span class="line">  &lt;template v-slot:[动态指令参数]&gt;</span><br><span class="line">  <span class="comment">/* 动态指令参数,就像前面的randomEventName */</span></span><br><span class="line">    ...</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/base-layout&gt;</span><br></pre></td></tr></table></figure>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h1 id="二、具名插槽"><a href="#二、具名插槽" class="headerlink" title="二、具名插槽"></a>二、具名插槽</h1><p>有name属性的就是具名插槽了,没有的就是匿名插槽(这么说作用域插槽也属于匿名插槽?).</p>
+<p>有时我们会需要在子组件某处写一堆的插槽,又需要在父组件各处分别使用这些插槽.某些方面计算机是很笨的,它不会看得出哪个插槽该填什么东西,也不知道你在这里填的东西是要给哪个插槽,这就得给它规定一下,不然…不然这傲娇它就直接不给你填了.</p>
+<p>2.6版本之前具名插槽有直接使用name属性来规定目标的方法(废弃,但没移除),但是今天试了下,好像已经不行了(我没有成功…),那这里就只记录官方推的新方法了.</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p>总之只要出现使用多个插槽的情况,那就用具名插槽吧!<br>使用&lt; template&gt;来包裹某插槽的填充物,在template标签的v-slot属性后面写上对应插槽的name属性值.<br>先来看看子组件吧:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;tab-bar-item&quot;</span>&gt;</span><br><span class="line">    &lt;slot name=<span class="string">&quot;item-icon&quot;</span>&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot name=<span class="string">&quot;item-text&quot;</span>&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;!-- 插槽slot最终会被父组件里传入的html元素替换,在插槽上写样式类的东西不会生效,可以用div来包裹slot,利用样式继承性来完成样式修改 --&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>父组件:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在父组件内</span></span><br><span class="line">  &lt;tab-bar-item&gt;</span><br><span class="line">  </span><br><span class="line">    &lt;template v-slot:item-icon&gt;</span><br><span class="line">    <span class="comment">/* !!2.6新增:可简写为&lt;template #item-icon&gt; !!*/</span></span><br><span class="line">         <span class="comment">/* 这部分填充入插槽:item-icon */</span></span><br><span class="line">      &lt;img src=<span class="string">&quot;#&quot;</span> /&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">  </span><br><span class="line">    &lt;template v-slot:item-text&gt;</span><br><span class="line">        <span class="comment">/* !!2.6新增:可简写为&lt;template #item-text&gt;!! */</span></span><br><span class="line">        <span class="comment">/* 这部分填充入插槽:item-text */</span></span><br><span class="line">      &lt;div&gt;首页&lt;/div&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/tab-bar-item&gt;</span><br></pre></td></tr></table></figure>
+<p>这样所有在template包裹下的填充内容都会被填入对应的插槽,但如果没有被template包裹呢?<br>那样就相当于写了个这:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-slot:<span class="keyword">default</span>&gt;</span><br><span class="line"><span class="comment">/* 隐含的名字“default”(默认) */</span></span><br><span class="line">  &lt;p&gt;我是内容&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>Vue官方文档:没有被包裹在带有 v-slot 的 <template> 中的内容都会被视为默认插槽的内容.</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>注意 v-slot 只能添加在 <template> 上 (只有一种例外情况);<br>我为什么要把这些玩意儿写在插槽里,这么麻烦为什么不直接写那些标签?<br>是,我一开始也在问我自己为什么不直接写标签而要写插槽,跟套娃一样.</p>
+<p>后来我意识到这些放在插槽里的东西可以让插槽所在区域的内容动态化,”不写死”的思想又一次在这里得到了体现,只不过这次的变量是插槽里的那段html代码;<br>而且,如果直接向父组件中的子组件里填充html结构,没有slot占位是渲染不出来(无法创建)的(其实在子组件内的slot上写样式也是不行的,slot一旦渲染就会被替换成填充物,自己的样式就跟着一块被替换下去了,啥都看不见,我们得拿个div什么的把slot包起来然后在div上写样式,让样式继承到未来的填充物上.</p>
+<p>写了仨小时,回头看了一眼,崩溃了,参考的是2.6的文档.<br>马上滚去看了v3的文档,幸亏差的不多,改动也大多都在v2.6完成了,这波是老天帮忙.</p>
+
+                        
+                          
+        </div>
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AJAX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,26 +268,156 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/前端/AJAX//" class="article-tag-list-link color5">AJAX</a>
+        			<a href="/categories/前端/Vue-js//" class="article-tag-list-link color2">Vue.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+                  
+
+                      
+                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/25/Vue3%20%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                          
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/06/26/%E6%AD%A1%E8%BF%8E%EF%BC%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ver4.0.0 重大更新！
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/06/22/Auto.js%2060%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%20&%20%E4%BD%9C%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Auto.js 60条常用命令&amp;作用</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
     
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80-%E8%AE%A4%E8%AF%86slot"><span class="toc-number">1.</span> <span class="toc-text">前言-认识slot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD"><span class="toc-number">2.</span> <span class="toc-text">一、作用域插槽</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%8C%87%E4%BB%A4%E5%8F%82%E6%95%B0%E4%B8%8E%E6%8F%92%E6%A7%BD"><span class="toc-number">2.1.</span> <span class="toc-text">动态指令参数与插槽</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text">二、具名插槽</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
 
 
+        
+          
+
+                
+
+                      
+
+                            
+
+                                
+
+                                      
+                                        <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: 'your clientID',
+  clientSecret: 'your clientSecret',
+  repo: 'git_comment',
+  owner: 'findtheonlyway',
+  admin: ['erbiduo'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+                                          
+
+                                            
           </div>
         </div>
       </div>
@@ -271,9 +465,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
