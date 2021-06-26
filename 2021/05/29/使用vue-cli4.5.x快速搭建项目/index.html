@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>使用Vue-cli4.5.x快速搭建项目 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@TOC   我不太适应ESLint,我这里就不逞能了……最下的单元测试(unit Testing)和端到端测试(E to E Testing),有需求的话就开; 4.单项配置选中第一项””Choose Vue version来进行单项配置:是否为vue-router启用HTML5的history模式?这个推荐启用,会让你的url更加整洁好看,可读性更高;在SPA页面中,不少方法会依赖于HTML5">
+  <meta name="description" content="使用Vue-cli4.5.x快速搭建项目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Vue-cli4.5.x快速搭建项目">
 <meta property="og:url" content="http://example.com/2021/05/29/%E4%BD%BF%E7%94%A8vue-cli4.5.x%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
-<meta property="og:description" content="@TOC   我不太适应ESLint,我这里就不逞能了……最下的单元测试(unit Testing)和端到端测试(E to E Testing),有需求的话就开; 4.单项配置选中第一项””Choose Vue version来进行单项配置:是否为vue-router启用HTML5的history模式?这个推荐启用,会让你的url更加整洁好看,可读性更高;在SPA页面中,不少方法会依赖于HTML5">
+<meta property="og:description" content="使用Vue-cli4.5.x快速搭建项目">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210529124320376.jpg#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210529125408133.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210529132822468.jpg#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210529133143645.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-05-29T05:51:12.000Z">
-<meta property="article:modified_time" content="2021-06-26T06:20:56.100Z">
+<meta property="article:modified_time" content="2021-06-26T07:02:58.633Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="vue.js">
@@ -210,8 +210,8 @@
           
 
                 
-                      <p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <h1 id="使用Vue-cli4-5-x快速搭建项目"><a href="#使用Vue-cli4-5-x快速搭建项目" class="headerlink" title="使用Vue-cli4.5.x快速搭建项目"></a>使用Vue-cli4.5.x快速搭建项目</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<a id="more"></a>
 
 <h1 id="一、安装vue-cli"><a href="#一、安装vue-cli" class="headerlink" title="一、安装vue-cli"></a>一、安装vue-cli</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i @vue/cli -g</span><br></pre></td></tr></table></figure>
 <h1 id="二、创建项目"><a href="#二、创建项目" class="headerlink" title="二、创建项目"></a>二、创建项目</h1><p>vue-cli会创建一个完整的项目文件夹,内部包含src等,我们仅需要cd进打算放置这个项目文件的文件夹内执行如下代码即可;</p>
@@ -383,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85vue-cli"><span class="toc-number">1.</span> <span class="toc-text">一、安装vue-cli</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">二、创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.</span> <span class="toc-text">1.生成项目文件;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.选择生成配置方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%92%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">2.3.</span> <span class="toc-text">3.插件选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8D%95%E9%A1%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">2.4.</span> <span class="toc-text">4.单项配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%80%89%E6%8B%A9%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">2.5.</span> <span class="toc-text">5.选择包管理工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-VueUI%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">三.VueUI修改配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84-%E5%88%A0%E9%99%A4%E5%B7%B2%E4%BF%9D%E5%AD%98%E7%9A%84%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">附-删除已保存的配置选项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Vue-cli4-5-x%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">使用Vue-cli4.5.x快速搭建项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85vue-cli"><span class="toc-number">2.</span> <span class="toc-text">一、安装vue-cli</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">二、创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">1.生成项目文件;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">2.选择生成配置方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%92%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">3.3.</span> <span class="toc-text">3.插件选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8D%95%E9%A1%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">3.4.</span> <span class="toc-text">4.单项配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%80%89%E6%8B%A9%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">3.5.</span> <span class="toc-text">5.选择包管理工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-VueUI%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">三.VueUI修改配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84-%E5%88%A0%E9%99%A4%E5%B7%B2%E4%BF%9D%E5%AD%98%E7%9A%84%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">5.</span> <span class="toc-text">附-删除已保存的配置选项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -559,15 +559,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,7 +567,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

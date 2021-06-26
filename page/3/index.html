@@ -155,112 +155,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-let、const与块级作用域"
-  class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/">let、const与块级作用域</a>
-    </h1>
-  
-
-          
-            <a href="/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="archive-article-date">
-  	<time datetime="2021-03-08T13:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
-</a>
-
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计-->
-              
-                    <!-- 添加完成 -->
-
-                    
-
-
-                      
-
-
-      </header>
-      
-        <div class="article-entry" itemprop="articleBody">
-          
-
-                
-                  <h1 id="let、const块级声明与块级作用域绑定"><a href="#let、const块级声明与块级作用域绑定" class="headerlink" title="let、const块级声明与块级作用域绑定"></a>let、const块级声明与块级作用域绑定</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-                    
-                          
-        </div>
-        <div class="article-info article-info-index">
-          
-              
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端/ES6//" class="article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                  
-                    <p class="article-more-link">
-                      <a class="article-more-a" href="/2021/03/08/let%E3%80%81const%E4%B8%8E%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/">
-                        seeMore >>
-                      </a>
-                    </p>
-                    
-
-                      
-                            <div class="clearfix"></div>
-        </div>
-  </div>
-</article>
-
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-        
-  
     <article id="post-XMLHttpRequest对象解读&amp;AJAX使用"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -606,36 +500,8 @@
           
 
                 
-                      <h1 id="在Vue-cli-4-x-中配置样式"><a href="#在Vue-cli-4-x-中配置样式" class="headerlink" title="在Vue-cli 4.x 中配置样式"></a>在Vue-cli 4.x 中配置样式</h1><p>在使用vue-cli 4.x搭建项目完毕后,你可以选择在项目目录下创建”style”文件夹,在里面创建scss文件来作为全局可用的样式文件.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="为什么要配置全局样式"><a href="#为什么要配置全局样式" class="headerlink" title="为什么要配置全局样式"></a>为什么要配置全局样式</h1><p>其实也可以选择不创建全局样式文件,如果你愿意每创建一个页面都在它目录下的独有scss文件中重新规定它的所有样式…..</p>
-<p>所以建立它吧,这会让你省下那些重复的工作.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="一、插件准备"><a href="#一、插件准备" class="headerlink" title="一、插件准备"></a>一、插件准备</h1><p>你需要安装3个插件: dart-sass   &amp;  sass-resources-loader  &amp;  sass-loader<br>安装dart-sass  &amp;  sassresource-loader</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install sass sass-loader -D</span><br><span class="line"><span class="comment">//这个指令会安装dart-sass和sass-loader;</span></span><br><span class="line"><span class="comment">//node-sass安装中经常出现各种问题;</span></span><br><span class="line"><span class="comment">//性能也比不上dart-sass,在2020年末被替代;</span></span><br></pre></td></tr></table></figure>
-<p>安装sass-resources-loader</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i sass-resources-loader -D</span><br><span class="line"><span class="comment">//ver2.2.2,当前的最新版;</span></span><br></pre></td></tr></table></figure>
-<p>我的配置信息:<br><img src="https://img-blog.csdnimg.cn/2021061722051944.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="二、开始配置"><a href="#二、开始配置" class="headerlink" title="二、开始配置"></a>二、开始配置</h1><h2 id="1-vue-config-js配置"><a href="#1-vue-config-js配置" class="headerlink" title="1.vue.config.js配置"></a>1.vue.config.js配置</h2><p>你可能已经发现在vue-cli4.x创建的项目中不再有config和dist了,对,所有的配置我们都要在vue.config.js中完成.<br>那么,在项目目录下直接创建vue.config.js,然后进入下一步.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    publicPath: process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span> ? <span class="string">&#x27;&#x27;</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    outputDir: process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span> ? <span class="string">&#x27;dist&#x27;</span> : <span class="string">&#x27;devDist&#x27;</span>,</span><br><span class="line">    lintOnSave: <span class="literal">false</span>,</span><br><span class="line">    css: &#123;</span><br><span class="line">        loaderOptions: &#123;</span><br><span class="line">            scss: &#123;</span><br><span class="line">                AdditionalData: <span class="string">`@import &quot;./src/style/main.scss&quot;;`</span></span><br><span class="line">    <span class="comment">/*ver8.x改为prependData: `@import &quot;./src/style/main.scss&quot;;`,运行时请去掉本注释 */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>因为我们现在只配置全局scss需要的配置,那…..<br>我就只写这一部分需要的配置了,如果想一步到位的话CSDN搜索vue-cli4 vue.config.js配置即可.</p>
-<h2 id="App-vue配置"><a href="#App-vue配置" class="headerlink" title=".App.vue配置"></a>.App.vue配置</h2><p>很简单的一步,在App.vue的&lt; style &gt;标签中加入lang属性:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>即可.</p>
-<p>好吧,我们在全局scss文件里随便写点什么:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background-color: rgb(<span class="number">177</span>, <span class="number">60</span>, <span class="number">82</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20210617225216749.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>到此说明我们的全局scss文件引入成功了.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="附1-全局样式不显示的部分可能"><a href="#附1-全局样式不显示的部分可能" class="headerlink" title="附1-全局样式不显示的部分可能"></a>附1-全局样式不显示的部分可能</h1><h2 id="1-检查是否出现浏览器默认样式覆盖"><a href="#1-检查是否出现浏览器默认样式覆盖" class="headerlink" title="1.检查是否出现浏览器默认样式覆盖"></a>1.检查是否出现浏览器默认样式覆盖</h2><p>浏览器会自带着对于生效的样式,这个样式有时会盖过我们赋予页面的样式,呼出控制台,进入样式面板,取消对那些与你的样式发生冲突的样式的勾选,观察样式是否生效.<br><img src="https://img-blog.csdnimg.cn/2021061723071690.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>如果你进行了这步后全局样式生效了,那么你需要寻找并下载一个重置浏览器样式的css文件normalize.scss,在main.scss即全局样式文件内将其引入即可.</p>
-<h2 id="2-检查是否出现第三方插件样式覆盖"><a href="#2-检查是否出现第三方插件样式覆盖" class="headerlink" title="2.检查是否出现第三方插件样式覆盖"></a>2.检查是否出现第三方插件样式覆盖</h2><p>就拿我在用的ant-design-vue来说,它的包内就有一个”antd.css”文件,内部的background-color样式就会与我的全局样式产生冲突.</p>
-<h1 id="附2-Vue页面控件单独样式配置"><a href="#附2-Vue页面控件单独样式配置" class="headerlink" title="附2-Vue页面控件单独样式配置"></a>附2-Vue页面控件单独样式配置</h1><p>我想你可以看到你的那些页面都是在View这个文件夹里的?就在这里面创建某个页面的专属样式文件,然后在需要的文件内import引入即可.<br>如图,在View目录下创建scss文件.<br><img src="https://img-blog.csdnimg.cn/20210617224550671.jpg#pic_center" alt="在这里插入图片描述"><br>好的,然后在Login.vue内引入它.<br><img src="https://img-blog.csdnimg.cn/20210617224613354.jpg#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>前段时间参加了学校的HTML5设计大赛……<br>为了爆肝作品一直都没更新,前天交了作品,是时候该赶赶进度了! XD</p>
-
-                        
+                  <h1 id="在Vue-cli-4-x-中配置样式"><a href="#在Vue-cli-4-x-中配置样式" class="headerlink" title="在Vue-cli 4.x 中配置样式"></a>在Vue-cli 4.x 中配置样式</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1236,9 +1102,115 @@
 
         
   
+    <article id="post-CSS中Position定位属性的使用"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">CSS中position定位属性的使用</a>
+    </h1>
+  
+
+          
+            <a href="/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-11-19T15:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-19</time>
+</a>
+
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                    <!-- 添加完成 -->
+
+                    
+
+
+                      
+
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+
+                
+                  <h1 id="CSS中定位属性的使用"><a href="#CSS中定位属性的使用" class="headerlink" title="CSS中定位属性的使用"></a>CSS中定位属性的使用</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
+                          
+        </div>
+        <div class="article-info article-info-index">
+          
+              
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/CSS//" class="article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                  
+                    <p class="article-more-link">
+                      <a class="article-more-a" href="/2020/11/19/CSS%E4%B8%ADPosition%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                        seeMore >>
+                      </a>
+                    </p>
+                    
+
+                      
+                            <div class="clearfix"></div>
+        </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 
@@ -1376,15 +1348,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1392,7 +1356,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

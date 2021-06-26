@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>解读箭头函数this指向 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@TOC   更离谱的是如果函数体只有一行,你可以不写大括号.导致有时候会写出来一些看着不太像函数的函数: 1aaa &#x3D; num &#x3D;&gt; num * num 1render: h &#x3D;&gt; h(App) 二、this指向问题箭头函数的this指向与用其他写法的函数不同  箭头函数中的this引用的是距离最近的作用域中的this,从this的所在处向外层层寻找,直到有this的定义.   12">
+  <meta name="description" content="解读箭头函数this指向">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解读箭头函数this指向">
 <meta property="og:url" content="http://example.com/2021/05/29/%E8%A7%A3%E8%AF%BB%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E6%8C%87%E5%90%91/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
-<meta property="og:description" content="@TOC   更离谱的是如果函数体只有一行,你可以不写大括号.导致有时候会写出来一些看着不太像函数的函数: 1aaa &#x3D; num &#x3D;&gt; num * num 1render: h &#x3D;&gt; h(App) 二、this指向问题箭头函数的this指向与用其他写法的函数不同  箭头函数中的this引用的是距离最近的作用域中的this,从this的所在处向外层层寻找,直到有this的定义.   12">
+<meta property="og:description" content="解读箭头函数this指向">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210529150229305.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-05-29T07:07:14.000Z">
-<meta property="article:modified_time" content="2021-06-26T06:19:24.083Z">
+<meta property="article:modified_time" content="2021-06-26T07:02:35.675Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JavaScript">
@@ -199,8 +199,8 @@
           
 
                 
-                      <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <h1 id="解读箭头函数this指向"><a href="#解读箭头函数this指向" class="headerlink" title="解读箭头函数this指向"></a>解读箭头函数this指向</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+<a id="more"></a>
 
 <h1 id="一、熟悉箭头函数"><a href="#一、熟悉箭头函数" class="headerlink" title="一、熟悉箭头函数"></a>一、熟悉箭头函数</h1><p>箭头函数是ES6新增的语法,当准备把函数作为参数传递时,用箭头函数看起来会比较简洁,简洁,但是可读性略差(尤其是它被省略的根本不像个函数的时候).</p>
 <h2 id="1-传一个参数"><a href="#1-传一个参数" class="headerlink" title="1.传一个参数"></a>1.传一个参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = 参数 =&gt; &#123;</span><br><span class="line">  xxx函数体</span><br><span class="line">  xxx函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -361,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%86%9F%E6%82%89%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">一、熟悉箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BC%A0%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1.传一个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%A0%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">2.传多个参数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二、this指向问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E8%AF%BB%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E6%8C%87%E5%90%91"><span class="toc-number">1.</span> <span class="toc-text">解读箭头函数this指向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%86%9F%E6%82%89%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">一、熟悉箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BC%A0%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">1.传一个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%A0%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.传多个参数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">二、this指向问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -537,15 +537,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,7 +545,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Webpack執行打包:“You may need an appropriate loader to handle this file type“ | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目场景：使用webpack對CSS文件和一JS文件進行打包   原因分析：錯誤:嘗試將webpack &amp; css-loader &amp; style-loader安裝到最近一級文件夾,完成後嘗試無效.正確:猜測是版本問題:webpack找到css-loader &amp; style-loader包,結果版本問題導致無法使用. 解决方案：於是嘗試匹配版本,選取4個包發佈時間相近,使用人">
+  <meta name="description" content="项目场景：使用webpack對CSS文件和一JS文件進行打包   原因分析：錯誤:嘗試將webpack &amp; css-loader &amp; style-loader安裝到最近一級文件夾,完成後嘗試無效.正確:猜測是版本問題:webpack找到css-loader &amp; style-loader包,結果版本問題導致無法使用. 解决方案：於是嘗試匹配版本,選取4個包發佈時間相近,使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack執行打包:“You may need an appropriate loader to handle this file type“">
 <meta property="og:url" content="http://example.com/2021/05/10/Webpack%E5%9F%B7%E8%A1%8C%E6%89%93%E5%8C%85%E2%80%9CYou%20may%20need%20an%20appropriate%20loader%20to%20handle%20this%20file%20type%E2%80%9C/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
-<meta property="og:description" content="项目场景：使用webpack對CSS文件和一JS文件進行打包   原因分析：錯誤:嘗試將webpack &amp; css-loader &amp; style-loader安裝到最近一級文件夾,完成後嘗試無效.正確:猜測是版本問題:webpack找到css-loader &amp; style-loader包,結果版本問題導致無法使用. 解决方案：於是嘗試匹配版本,選取4個包發佈時間相近,使用人">
+<meta property="og:description" content="项目场景：使用webpack對CSS文件和一JS文件進行打包   原因分析：錯誤:嘗試將webpack &amp; css-loader &amp; style-loader安裝到最近一級文件夾,完成後嘗試無效.正確:猜測是版本問題:webpack找到css-loader &amp; style-loader包,結果版本問題導致無法使用. 解决方案：於是嘗試匹配版本,選取4個包發佈時間相近,使用">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210510140437375.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210510135325125.jpg">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210510140121612.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-05-10T06:03:06.000Z">
-<meta property="article:modified_time" content="2021-06-26T06:51:39.348Z">
+<meta property="article:modified_time" content="2021-06-26T07:01:29.241Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="Bug">
@@ -201,7 +201,8 @@
           
 
                 
-                      <h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p><font color=#999AAA >使用webpack對CSS文件和一JS文件進行打包</p>
+                      <a id="more"></a>
+<h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p><font color=#999AAA >使用webpack對CSS文件和一JS文件進行打包</p>
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
 <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p><font color=#999AAA >配置webpack.config.js完成;webpack &amp; webpack-cli安裝完成;css-loader &amp; style-loader安裝到上級文件夾完成,執行打包時輸入webpack顯示如下:<br><img src="https://img-blog.csdnimg.cn/20210510140437375.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也沒有生成Hash值<br><img src="https://img-blog.csdnimg.cn/20210510135325125.jpg" alt="在这里插入图片描述"><br>“您或許需要loader來處理這種類型的文件”,但我已經安裝了正確的loader.</p>
@@ -525,15 +526,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,7 +534,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

@@ -267,266 +267,8 @@
           
 
                 
-                      <h1 id="Auto-js-常用命令及作用"><a href="#Auto-js-常用命令及作用" class="headerlink" title="Auto.js 常用命令及作用"></a>Auto.js 常用命令及作用</h1><p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="函数-amp-信息获取"><a href="#函数-amp-信息获取" class="headerlink" title="函数 &amp; 信息获取"></a>函数 &amp; 信息获取</h1><p>——-先获取,才能操控.<br>| 命令 | 目的 |<br>|–|–|<br>| sleep(ms) | 暂停执行?ms |<br>| currentPackage() | 返回最近一次/当前运行的应用的包名 |<br>| currentActivity() | 返回最近一次/当前运行的应用名(Activity名) |<br>| setClip(文本) | 设置剪贴板内容 |<br>| getClip() | 获取当前系统剪贴板的内容 |<br>| waitForActivity(activityName, 检索间隔) | 等待指定Activity启动 |<br>| waitForPackage(PackageName, 检索间隔) | 等待指定Package对应的应用启动 |<br>| requiresAutojsVersion(版本号) | 需要AutoJS达到某个版本 |<br>| random(min, max) | 返回区间内的随机整数 |<br>| runtime.requestPermissions(权限名) | 动态申请安卓权限 |<br>|device.keepScreenOn(持续时间)| 保持屏幕常亮?ms |</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="对应用命令"><a href="#对应用命令" class="headerlink" title="对应用命令"></a>对应用命令</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>app.versionCode</td>
-<td>获取当前所在软件版本号</td>
-</tr>
-<tr>
-<td>app.versionName</td>
-<td>获取当前所在软件版本名</td>
-</tr>
-<tr>
-<td>app.launchApp(应用名)</td>
-<td>启动应用by应用名</td>
-</tr>
-<tr>
-<td>app.launch(包名)</td>
-<td>启动应用by包名</td>
-</tr>
-<tr>
-<td>app.getAppName(包名)</td>
-<td>获取应用包名对应的应用名</td>
-</tr>
-<tr>
-<td>app.openUrl(URL)</td>
-<td>打开某URL</td>
-</tr>
-<tr>
-<td>app.uninstall</td>
-<td>卸载当前所在的应用</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>console.show()</td>
-<td>屏幕显示Console</td>
-</tr>
-<tr>
-<td>console.hide()</td>
-<td>屏幕隐藏Console</td>
-</tr>
-<tr>
-<td>console.clear()</td>
-<td>清空Console内容</td>
-</tr>
-<tr>
-<td>console.log(xxx)</td>
-<td>….</td>
-</tr>
-<tr>
-<td>console.warn(xxx)</td>
-<td>输出蓝色字体,警告</td>
-</tr>
-<tr>
-<td>console.info(xxx)</td>
-<td>输出绿色字体,重要</td>
-</tr>
-<tr>
-<td>console.err(xxx)</td>
-<td>输出红色字体,报错警告</td>
-</tr>
-<tr>
-<td>console.assert(判定式, 信息文本)</td>
-<td>判定式false则输出信息文本并终止运行</td>
-</tr>
-<tr>
-<td>console.time(计时器标签,可省略)</td>
-<td>生成并启动定时器,即刻开始计时</td>
-</tr>
-<tr>
-<td>console.timeEnd(计时器标签)</td>
-<td>即刻终止标签为??的定时器,并console出时间</td>
-</tr>
-<tr>
-<td>console.setSize(宽, 高)</td>
-<td>设置Console大小</td>
-</tr>
-<tr>
-<td>console.setPosition(横, 纵)</td>
-<td>设置Console位置</td>
-</tr>
-<tr>
-<td>log(???)</td>
-<td>返回???</td>
-</tr>
-<tr>
-<td>toastLog(文本)</td>
-<td>浮出气泡并打印到Console</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="屏幕操作模拟"><a href="#屏幕操作模拟" class="headerlink" title="屏幕操作模拟"></a>屏幕操作模拟</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>setScreenMetrics(宽, 高)</td>
-<td>设置脚本运行时适用的屏幕尺寸(px),若实际尺寸不一致,脚本会缩放自身比例以求兼容</td>
-</tr>
-<tr>
-<td>click(x, y)</td>
-<td>模拟点击某位置</td>
-</tr>
-<tr>
-<td>longClick(x, y)</td>
-<td>模拟长按某位置,时间默认</td>
-</tr>
-<tr>
-<td>press(x, y, 持续时长)</td>
-<td>模拟长按,持续?ms</td>
-</tr>
-<tr>
-<td>swipe(起点x, 起点y, 终点x, 终点y, 滑动全程耗时)</td>
-<td>模拟定时定位滑动手势</td>
-</tr>
-<tr>
-<td>gesture(全程耗时, [点1x, 点1y], [点2x, 点2y], …)</td>
-<td>模拟定时定位复杂滑动手势</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="硬件按键监听"><a href="#硬件按键监听" class="headerlink" title="硬件按键监听"></a>硬件按键监听</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>events.observeKey()</td>
-<td>按键监听,启动 !</td>
-</tr>
-<tr>
-<td>events.onKeyDown(按键名, 回调函数)</td>
-<td>注册按键按下监听函数</td>
-</tr>
-<tr>
-<td>events.onKeyUp(按键名, 回调函数)</td>
-<td>注册按键弹起监听函数</td>
-</tr>
-<tr>
-<td>events.onceKeyDown(按键名, 回调函数)</td>
-<td>注册仅首次生效的按键按下监听函数</td>
-</tr>
-<tr>
-<td>events.onceKeyUp(按键名, 回调函数)</td>
-<td>注册仅首次生效的按键弹起监听函数</td>
-</tr>
-<tr>
-<td>events.removeAllKeyDownListeners(按键名)</td>
-<td>删除对该按键的所有按下监听</td>
-</tr>
-<tr>
-<td>events.removeAllKeyUpListeners(按键名)</td>
-<td>删除对该按键的所有弹起监听</td>
-</tr>
-<tr>
-<td>volume_up</td>
-<td>音量+键</td>
-</tr>
-<tr>
-<td>volume_down</td>
-<td>音量-键</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="屏幕按键监听"><a href="#屏幕按键监听" class="headerlink" title="屏幕按键监听"></a>屏幕按键监听</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>events.observeTouch()</td>
-<td>屏幕按键监听,启动 !(需拿到root权限)</td>
-</tr>
-<tr>
-<td>events.setTouchEventTimeout(时间间隔)</td>
-<td>设定两次触摸事件的最小间隔(ms)</td>
-</tr>
-<tr>
-<td>events.getTouchEventTimeout()</td>
-<td>返回两次触摸事件的最小间隔(ms)</td>
-</tr>
-<tr>
-<td>events.onTouch(回调函数)</td>
-<td>注册触摸回调函数,只要有屏幕触摸,就回调函数</td>
-</tr>
-<tr>
-<td>events.removeAllTouchListeners()</td>
-<td>移除全部屏幕触摸监听函数</td>
-</tr>
-<tr>
-<td>events.on(“事件”,回调函数)</td>
-<td>当有屏幕按键事件时会触发事件</td>
-</tr>
-<tr>
-<td>Key</td>
-<td>事件,有屏幕按键按下/弹起都会触发</td>
-</tr>
-<tr>
-<td>key_up</td>
-<td>事件,有屏幕按键弹起就触发</td>
-</tr>
-<tr>
-<td>key_down</td>
-<td>事件,有屏幕按键按下就触发</td>
-</tr>
-<tr>
-<td>toast</td>
-<td>事件,有应用弹出气泡就会触发</td>
-</tr>
-<tr>
-<td>notification</td>
-<td>事件,有应用发出通知会触发该事件</td>
-</tr>
-<tr>
-<td>home</td>
-<td>主屏幕键</td>
-</tr>
-<tr>
-<td>back</td>
-<td>返回</td>
-</tr>
-<tr>
-<td>menu</td>
-<td>菜单(运行中应用)</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="末"><a href="#末" class="headerlink" title="末"></a>末</h1><p>参赛组的训练计划开始与我制定的自己的学习流程冲突,他们不能打扰我.</p>
-<p>话说Auto.js该分到哪个类别的文章啊喂!</p>
-
-                        
+                  <h1 id="Auto-js-常用命令及作用"><a href="#Auto-js-常用命令及作用" class="headerlink" title="Auto.js 常用命令及作用"></a>Auto.js 常用命令及作用</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -631,56 +373,8 @@
           
 
                 
-                      <h1 id="vue-cli4-路由配置"><a href="#vue-cli4-路由配置" class="headerlink" title="vue-cli4 路由配置"></a>vue-cli4 路由配置</h1><p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="前言-vue路由"><a href="#前言-vue路由" class="headerlink" title="前言-vue路由"></a>前言-vue路由</h1><p>Vue-router是Vue官方的路由插件,与Vue.js深度集成.<br>在使用了vue-router的单页面应用中,url的改变会引起组件的切换,从而达到页面切换的效果,所以如何让URL按照我们的意愿去改变和URL改变后页面去向何处是配置vue-router的两大问题.</p>
-<p><strong>[SPA网页]</strong>前端渲染使得单页面富应用的SPA页面得以实现,整个网页只有一个HTML页面,静态资源服务器里只有一套HTML &amp; CSS,甚至只有一套JS.</p>
-<p><strong>[富应用]</strong> 得以实现依赖于发送至服务端的一个新的请求URL从服务器中获取到资源后,前端路由会负责分配资源给页面的相应组件;</p>
-<p><strong>[单页面]</strong> 的实现需要url在前端改变,前端路由出现后,前端路由会根据router的监听,从映射关系里找到需要改变的部分,抽取分配新的资源,并仅仅重新渲染需要改变的部分;</p>
-<h1 id="一、最基本路由配置"><a href="#一、最基本路由配置" class="headerlink" title="一、最基本路由配置"></a>一、最基本路由配置</h1><p>首先得安装vue-router,怎么装就不说了……<br>在我们安装vue-router成功后,项目文件的src内会出现一个”router”文件夹,这个文件夹内会有一个index.js,对router的配置就主要在这里完成了.<br><img src="https://img-blog.csdnimg.cn/20210619171915991.jpg#pic_center" alt="在这里插入图片描述"><br>打开它,然后在 routes 数组中进行配置,一个页面的路由在这个数组里被集合为一个对象,其内部包括path和component等属性,对应着URL怎么样改变会做出怎样的反应;</p>
-<h2 id="1-配置router-index-js"><a href="#1-配置router-index-js" class="headerlink" title="1.配置router/index.js"></a>1.配置router/index.js</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在router/index.js,全部;</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">&#x27;../views/Home.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">   <span class="comment">//在此处配置路由;</span></span><br><span class="line">]</span><br><span class="line"><span class="comment">//在router4中使用createRouter替代了new VueRouter;</span></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123; </span><br><span class="line">  history: createWebHistory(process.env.BASE_URL),</span><br><span class="line">  routes</span><br><span class="line">  <span class="comment">//在此处引入所有页面的路由配置数组routes;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router   </span><br><span class="line"><span class="comment">//导出包含着所有路由配置的router对象,</span></span><br><span class="line"><span class="comment">//在main.js中注入后供全局使用;</span></span><br></pre></td></tr></table></figure>
-<p>component属性:值为一个页面,这个页面控件需要提前引入.</p>
-<p>path属性:规定URL内出现什么时跳转到component属性对应的页面.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在router/index.js,末尾部分略去;</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">&#x27;../views/Home.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">&#x27;../views/About.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> News <span class="keyword">from</span> <span class="string">&#x27;../views/News.vue&#x27;</span></span><br><span class="line"><span class="comment">//引入3个页面控件;</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">&#x27;/&#x27;</span>,  <span class="comment">/* 规定初始URL对应的页面 */</span></span><br><span class="line">        name: <span class="string">&#x27;Home&#x27;</span>,</span><br><span class="line">        component: Home   <span class="comment">/* 规定默认在Home页面 */</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">        path: <span class="string">&#x27;/about&#x27;</span>,<span class="comment">/* 规定URL新增段为/about时跳转 */</span></span><br><span class="line">        name: <span class="string">&#x27;About&#x27;</span>,</span><br><span class="line">        component: About  <span class="comment">/* 跳转至About */</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">        path: <span class="string">&#x27;/news&#x27;</span>, <span class="comment">/* 规定URL新增段为/news时跳转 */</span></span><br><span class="line">        name: <span class="string">&quot;News&quot;</span>,</span><br><span class="line">        component: News  <span class="comment">/* 跳转至News */</span></span><br><span class="line">   &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h2 id="2-配置App-vue"><a href="#2-配置App-vue" class="headerlink" title="2.配置App.vue"></a>2.配置App.vue</h2><p>前面规定好了url改变为不同字符时会怎样进行跳转,现在得想想怎么才能让URL改变了,以我们的方式改变.<br>因为只有App.vue会被render渲染,大家一开始看到的和仅仅能操作的都只有App.vue,所以我们对URL改变方式的规定只能在这里进行.</p>
-<p>认识两种新的标签,他们已经在全局被注册过了.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=<span class="string">&quot;要在URL上添加的字符&quot;</span>&gt;XXX&lt;/router-link&gt;</span><br><span class="line"><span class="comment">//&lt;router-link&gt;会被渲染成为&lt;a&gt;;</span></span><br><span class="line">&lt;router-view /&gt;</span><br><span class="line"><span class="comment">//这俩需要组合使用;</span></span><br></pre></td></tr></table></figure>
-<p>App.vue里所有的页面跳转都由&lt; router-link&gt;通过改变URL进行驱动.</p>
-<p>&lt; router-view&gt;是一个占位标签,它规定了router-link标签需要显示在什么位置<br>,总之你删了它,router-link就显示不了了(那都不重要,我们先说路由吧……).</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是在App.vue中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- to属性规定如何改变URL; --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Tag属性规定router-link标签需要被渲染成什么HTML元素; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;a&quot;</span>&gt;</span>Home页面<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> |</span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/about&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;a&quot;</span>&gt;</span>About页面<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> |</span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/news&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;a&quot;</span>&gt;</span>News页面<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> |</span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/login&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;a&quot;</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后你就可以<code>npm run serve</code>跑起你的项目来看看了;<br><img src="https://img-blog.csdnimg.cn/20210619183503789.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>可以看到依据Tag属性的规定是多了4个a标签的,我们点进去News看下,<br><img src="https://img-blog.csdnimg.cn/20210619183637795.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>URL依据router-link的to属性的值改变了,页面正确的跳转.<br>到此基本的路由配置就完成了.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="二、路由懒加载技术"><a href="#二、路由懒加载技术" class="headerlink" title="二、路由懒加载技术"></a>二、路由懒加载技术</h1><p>把不同的路由对应的组件分离,仅当某路由被触发时才会加载对应组件,会更加高效,并且第三方  &amp;  底层支撑  &amp;  公共App 除外, 其他的Vue页面组件都在服务器,随用随请求,确保对页面的影响最小.</p>
-<p>其实就是改变一下router/index.js里对各个组件的引入方法啦……<br>通过箭头函数的方法进行.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/about&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;About&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/About.vue&#x27;</span>)</span><br><span class="line">    <span class="comment">//直接在这里引入了About并且赋值给了component;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/news&#x27;</span>,</span><br><span class="line">    name: <span class="string">&quot;News&quot;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../views/News.vue&quot;</span>)</span><br><span class="line">        <span class="comment">//直接在这里引入了About并且赋值给了component;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/login&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;Login&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/Login.vue&#x27;</span>)</span><br><span class="line">        <span class="comment">//直接在这里引入了About并且赋值给了component;</span></span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="三、路由嵌套"><a href="#三、路由嵌套" class="headerlink" title="三、路由嵌套"></a>三、路由嵌套</h1><p>我们的子页面在运作时可能会需要点击替换某个部分? 用户通过App.vue进入了一个子页面,点击了查看详情我们可能会需要把某个部分替换为详情界面,改变页面某个部分的内容,这时候会需要路由嵌套技术.</p>
-<p>说简单些,就是在父页面的路由里规定子页面的路由,比如在News.vue的路由里规定NewsChild-1.vue的路由.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是缩减过的router/index.js;</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/news&#x27;</span>,</span><br><span class="line">    name: <span class="string">&quot;News&quot;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../views/News.vue&quot;</span>),</span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">&#x27;NewsChild-1&#x27;</span>, </span><br><span class="line">        <span class="comment">//子路由不用在前面写&quot;/&quot;和上一层路径,</span></span><br><span class="line">        <span class="comment">//但其实解析是是会加上的;</span></span><br><span class="line">        <span class="comment">//规定URL出现/News/NewsChild-1时,</span></span><br><span class="line">        <span class="comment">//跳转至component对应的页面;</span></span><br><span class="line">        component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../views/NewsChild-1&quot;</span>),</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>这样就规定了在News页面出现URL改变后应当进行的操作.<br>自然,我们还得规定News页面下要怎样改变URL,进入News.vue进行操作.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是News.vue; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>News<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  //规定在被触发时URL增加/News/NewsChild-1;</span><br><span class="line">  <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/News/NewsChild-1&quot;</span>&gt;</span>NewsChild-1<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后来看下渲染出的页面吧:<br><img src="https://img-blog.csdnimg.cn/20210619191138322.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击链接NewsChild-1:<br><img src="https://img-blog.csdnimg.cn/20210619191231645.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>URL变为/News/NewsChild-1,依据router-link的to属性值.<br>大可再在children数组里多嵌套几个页面组件,如法炮制即可.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="四、动态路由"><a href="#四、动态路由" class="headerlink" title="四、动态路由"></a>四、动态路由</h1><p>很多时候页面需要跳转到哪里是不能由我们写程序的来确定的,这就需要程序按照需求去自己决定,让路由得以动态改变.</p>
-<h2 id="1-动态路由配置"><a href="#1-动态路由配置" class="headerlink" title="1.动态路由配置"></a>1.动态路由配置</h2><p>说简单些,我们不把[to需要增加的URL]和[path判定跳转的URL]写死就好了,把URL里需要经常变化的部分,利用v-bind与export default中的data数据互通起来,让URL跟随数据变动.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在router/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHashHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;Home&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/Home.vue&#x27;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="comment">//我们在此处也不要把path的值写死;</span></span><br><span class="line">    path: <span class="string">&#x27;/user/:userId&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;User&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/User.vue&#x27;</span>),</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是在App.vue里 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/&quot;</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> |</span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/about&quot;</span>&gt;</span>About<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> |</span><br><span class="line">    <span class="comment">&lt;!-- 在此处使用v-bind将userId数据调用; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 将/user/作为字符串拼接给userId --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">v-bind:to</span>=<span class="string">&quot;&#x27;/user/&#x27; + userId&quot;</span>&gt;</span>用户<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">&quot;app&quot;</span>,</span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">//在此处设定userId的数据为baixia;</span></span></span><br><span class="line"><span class="javascript">      userId: <span class="string">&quot;baixia&quot;</span>,</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>来看下效果:<br><img src="https://img-blog.csdnimg.cn/2021061919392046.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>接下来点击用户:<br><img src="https://img-blog.csdnimg.cn/20210619193928138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>URL成功拼接了了data里的数据UserId,即baixia.</p>
-<h2 id="2-动态路由传参"><a href="#2-动态路由传参" class="headerlink" title="2.动态路由传参"></a>2.动态路由传参</h2><p>动态路由也是Vue传递数据的方式之一,利用$route来进行Vue页面组件(即vue文件)间的通信.<br>先来认识两个变量:<br><strong> $router</strong>: index.js末尾利用createRouter创建的路由对象<br><strong> $route</strong>: 当前正处于活跃状态下的路由对象,其中有一个params属性,全称parameters,利用它,可以取到我们URL里使用v-bind传的值.</p>
-<p>比如User.vue需要获取App.vue的data中的userId数据:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在App.vue中(发方) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">v-bind:to</span>=<span class="string">&quot;&#x27;/user/&#x27; + userId&quot;</span>&gt;</span>用户<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">&quot;app&quot;</span>,</span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      userId: <span class="string">&quot;baixia&quot;</span>,</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在user.vue中(收方)</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    name:<span class="string">&quot;user&quot;</span>,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        <span class="function"><span class="title">userId</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.$router.params.userId</span><br><span class="line"><span class="comment">//将this.$router.param.userId的值,</span></span><br><span class="line"><span class="comment">//即App.vue的router-link里传入的userId返回,</span></span><br><span class="line"><span class="comment">//以作为计算属性userID()的值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>User.vue里为了获取用户信息而使用的params,其获取哪个属性依赖于index.js里的path,的如果path:’/user/:abc’,那么User.vue的&lt; script&gt;里应当为:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    name:<span class="string">&quot;user&quot;</span>,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            <span class="function"><span class="title">userId</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="comment">//这里也应为获取abc属性;</span></span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">this</span>.$router.params.abc</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>昨天拿到通知,说咱HTML5设计大赛拿了一等奖….<br>就挺离谱的,做的算是中规中矩吧个人感觉.这几天要赶赶Vue的进度了.<br>您要是觉得写的还不错,就给点个赞或者说几句吧:) 我都会回复 &amp; 回赞哒 !</p>
-
-                        
+                  <h1 id="vue-cli4-路由配置"><a href="#vue-cli4-路由配置" class="headerlink" title="vue-cli4 路由配置"></a>vue-cli4 路由配置</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -785,7 +479,9 @@
           
 
                 
-                      <h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p>使用node-sass设置Vue页面控件的样式,需要安装node-sass.<br>在安装<a href="mailto:&#110;&#x6f;&#100;&#x65;&#x2d;&#x73;&#97;&#x73;&#115;&#64;&#x34;&#x2e;&#49;&#x34;&#46;&#49;">&#110;&#x6f;&#100;&#x65;&#x2d;&#x73;&#97;&#x73;&#115;&#64;&#x34;&#x2e;&#49;&#x34;&#46;&#49;</a> 时报错出现.</p>
+                      <a id="more"></a>
+
+<h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p>使用node-sass设置Vue页面控件的样式,需要安装node-sass.<br>在安装<a href="mailto:&#110;&#111;&#x64;&#x65;&#45;&#115;&#x61;&#115;&#115;&#64;&#52;&#46;&#x31;&#x34;&#46;&#x31;">&#110;&#111;&#x64;&#x65;&#45;&#115;&#x61;&#115;&#115;&#64;&#52;&#46;&#x31;&#x34;&#46;&#x31;</a> 时报错出现.</p>
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
 <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>使用npm安装node-sass时报错:</p>
@@ -1008,31 +704,8 @@
           
 
                 
-                      <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="一、熟悉箭头函数"><a href="#一、熟悉箭头函数" class="headerlink" title="一、熟悉箭头函数"></a>一、熟悉箭头函数</h1><p>箭头函数是ES6新增的语法,当准备把函数作为参数传递时,用箭头函数看起来会比较简洁,简洁,但是可读性略差(尤其是它被省略的根本不像个函数的时候).</p>
-<h2 id="1-传一个参数"><a href="#1-传一个参数" class="headerlink" title="1.传一个参数"></a>1.传一个参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = 参数 =&gt; &#123;</span><br><span class="line">  xxx函数体</span><br><span class="line">  xxx函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参数</span>) =&gt;</span> &#123;</span><br><span class="line">  xxx函数体</span><br><span class="line">  xxx函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-传多个参数"><a href="#2-传多个参数" class="headerlink" title="2.传多个参数"></a>2.传多个参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参<span class="number">1</span>,参<span class="number">2</span></span>) =&gt;</span> &#123;</span><br><span class="line">xxx函数体</span><br><span class="line">xxx函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>更离谱的是如果函数体只有一行,你可以不写大括号.<br>导致有时候会写出来一些看着不太像函数的函数:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aaa = <span class="function"><span class="params">num</span> =&gt;</span> num * num</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br></pre></td></tr></table></figure>
-<h1 id="二、this指向问题"><a href="#二、this指向问题" class="headerlink" title="二、this指向问题"></a>二、this指向问题</h1><p>箭头函数的this指向与用其他写法的函数不同</p>
-<strong>
-箭头函数中的this引用的是距离最近的作用域中的this,从this的所在处向外层层寻找,直到有this的定义.
-</strong>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">     <span class="keyword">const</span> obj = &#123;</span><br><span class="line">         <span class="function"><span class="title">aaa</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">             <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">             &#125;)</span><br><span class="line">             <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"><span class="comment">/* 由自身所在的作用域向外寻找最近的作用域,</span></span><br><span class="line"><span class="comment">   是aaa(),其中的this指向obj&#123;&#125;; */</span></span><br><span class="line">                 <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">             &#125;)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">        <span class="keyword">const</span> obj2 = &#123;</span><br><span class="line">            <span class="function"><span class="title">aaa</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="comment">//aaa(),它的this指向obj2;</span></span><br><span class="line">                <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//setTimeout内部的this永远指向window;</span></span><br><span class="line">                    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="built_in">this</span>);<span class="comment">//window</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line"><span class="comment">/* window,向外寻找,最先找到的setTimeout的作用域,</span></span><br><span class="line"><span class="comment">而这个作用域里的this永远指向window. */</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)</span><br><span class="line"></span><br><span class="line">                <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="built_in">this</span>);<span class="comment">//window</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line"><span class="comment">/* obj,向外找到setTimeout,但是是一个箭头函数,</span></span><br><span class="line"><span class="comment">其中没有this,再向外寻找,aaa()的this,即obj */</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p>为了方便大家看懂最后一个栗子,我拿PS画了个图…..<br>渣技术力,问就是PS课都拿来写代码了…..<br>图中左右两个箭头分别对应第2和4个箭头函数<br><img src="https://img-blog.csdnimg.cn/20210529150229305.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
-                        
+                  <h1 id="解读箭头函数this指向"><a href="#解读箭头函数this指向" class="headerlink" title="解读箭头函数this指向"></a>解读箭头函数this指向</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1137,42 +810,8 @@
           
 
                 
-                      <p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="一、安装vue-cli"><a href="#一、安装vue-cli" class="headerlink" title="一、安装vue-cli"></a>一、安装vue-cli</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i @vue/cli -g</span><br></pre></td></tr></table></figure>
-<h1 id="二、创建项目"><a href="#二、创建项目" class="headerlink" title="二、创建项目"></a>二、创建项目</h1><p>vue-cli会创建一个完整的项目文件夹,内部包含src等,我们仅需要cd进打算放置这个项目文件的文件夹内执行如下代码即可;</p>
-<h2 id="1-生成项目文件"><a href="#1-生成项目文件" class="headerlink" title="1.生成项目文件;"></a>1.生成项目文件;</h2><p>终端输入:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create projectname</span><br></pre></td></tr></table></figure>
-<h2 id="2-选择生成配置方式"><a href="#2-选择生成配置方式" class="headerlink" title="2.选择生成配置方式"></a>2.选择生成配置方式</h2><p>此处选择最下面一项进行手动配置<br>(你要是喜欢用eslint就直接选vue3那项就好)<br><img src="https://img-blog.csdnimg.cn/20210529124320376.jpg#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="3-插件选择"><a href="#3-插件选择" class="headerlink" title="3.插件选择"></a>3.插件选择</h2><p>选择你需要的插件,上下箭头移动,空格切换选取状态<br><img src="https://img-blog.csdnimg.cn/20210529125408133.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>选错或漏选?没事,构建完毕后你依然可以通过Vue UI来修改插件配置(下面会说到)</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>我不太适应ESLint,我这里就不逞能了……<br>最下的单元测试(unit Testing)和端到端测试(E to E Testing),有需求的话就开;<br><img src="https://img-blog.csdnimg.cn/20210529130207283.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="4-单项配置"><a href="#4-单项配置" class="headerlink" title="4.单项配置"></a>4.单项配置</h2><p>选中第一项””Choose Vue version来进行单项配置:<br>是否为vue-router启用HTML5的history模式?<br><img src="https://img-blog.csdnimg.cn/20210529130346623.jpg#pic_center" alt="在这里插入图片描述"><br>这个推荐启用,会让你的url更加整洁好看,可读性更高;<br>在SPA页面中,不少方法会依赖于HTML5的history模式;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>你打算怎么存放这些babel&amp;eslint之类的东西的配置文件?</p>
-<p><img src="https://img-blog.csdnimg.cn/20210529130424897.jpg#pic_center" alt="在这里插入图片描述"><br>这里我推荐第一项吧……生成单独的配置文件,这样修改的时候你只需要找到对应的配置文件即可修改对应的配置;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>好的,你打算把这次构建项目的配置沿用到今后嘛?<br><img src="https://img-blog.csdnimg.cn/20210529131018101.jpg#pic_center" alt="在这里插入图片描述"><br>这个你自己决定喽……<br>选择是的话,下次在执行第一步时就会出现第四个选项,那就是你自定义的配置方法.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>给你自己这套配置取个名字:projectname<br><img src="https://img-blog.csdnimg.cn/20210529131742837.jpg#pic_center" alt="在这里插入图片描述"></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h2 id="5-选择包管理工具"><a href="#5-选择包管理工具" class="headerlink" title="5.选择包管理工具"></a>5.选择包管理工具</h2><p>会让你选择是用npm还是yarn,我这里没有显示直接用了npm ,奇奇怪怪;<br>选自己想用的就好.</p>
-<p><img src="https://img-blog.csdnimg.cn/20210529132427669.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>至此创建完成.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-那我们就运行下看看吧!
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
-<p>进入相应的端口,即可看到Vue的初始界面.<br><img src="https://img-blog.csdnimg.cn/20210529134512979.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="三-VueUI修改配置"><a href="#三-VueUI修改配置" class="headerlink" title="三.VueUI修改配置"></a>三.VueUI修改配置</h1><p>打开cmd,输入”vue ui”等待GUI服务启动,就会自动打开一个基于本地服务的UI界面<br><img src="https://img-blog.csdnimg.cn/20210529133654390.jpg#pic_center" alt="在这里插入图片描述"><br>导入你的项目文件,即可在左侧插件等分类下对项目进行快捷运行&amp;插件安装&amp;插件卸载等等等等操作.</p>
-<h1 id="附-删除已保存的配置选项"><a href="#附-删除已保存的配置选项" class="headerlink" title="附-删除已保存的配置选项"></a>附-删除已保存的配置选项</h1><p>如果你保存了配置,那么下次用的时候会在这里多一项你自己的配置,太多的话可能会有点眼花缭乱?<br><img src="https://img-blog.csdnimg.cn/20210529132822468.jpg#pic_center" alt="在这里插入图片描述"><br>这些配置会保存在C盘Administrator下的”.vuerc”文件中<br><img src="https://img-blog.csdnimg.cn/20210529133143645.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>删除相应的对象即可.</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
-                        
+                  <h1 id="使用Vue-cli4-5-x快速搭建项目"><a href="#使用Vue-cli4-5-x快速搭建项目" class="headerlink" title="使用Vue-cli4.5.x快速搭建项目"></a>使用Vue-cli4.5.x快速搭建项目</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1277,46 +916,8 @@
           
 
                 
-                      <h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p>Vue-cli3执行生成脚手架,这个bug已解决;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>vue-cli3安装完成,执行初始化vue create xxx,提示:<br>is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may want to……;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h1><p><strong>你可以忽略这部分直接看最下解决方案;</strong></p>
-<p>推测未成功安装,依据意见,以管理员权限运行cmd:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">C:\windows\system32&gt;npm install -g @vue/cli</span><br><span class="line">npm WARN deprecated @hapi/joi@<span class="number">15.1</span><span class="number">.1</span>: Switch to <span class="string">&#x27;npm install joi&#x27;</span></span><br><span class="line">npm WARN deprecated request@<span class="number">2.88</span><span class="number">.2</span>: request has been deprecated, see https:<span class="comment">//github.com/request/request/issues/3142</span></span><br><span class="line">npm WARN deprecated @hapi/address@<span class="number">2.1</span><span class="number">.4</span>: This version has been deprecated and is no longer supported or maintained</span><br><span class="line">npm WARN deprecated @hapi/bourne@<span class="number">1.3</span><span class="number">.2</span>: This version has been deprecated and is no longer supported or maintained</span><br><span class="line">npm WARN deprecated @hapi/hoek@<span class="number">8.5</span><span class="number">.1</span>: This version has been deprecated and is no longer supported or maintained</span><br><span class="line">npm WARN deprecated @hapi/topo@<span class="number">3.1</span><span class="number">.6</span>: This version has been deprecated and is no longer supported or maintained</span><br><span class="line">npm WARN deprecated har-validator@<span class="number">5.1</span><span class="number">.5</span>: <span class="built_in">this</span> library is no longer supported</span><br><span class="line">npm WARN deprecated resolve-url@<span class="number">0.2</span><span class="number">.1</span>: https:<span class="comment">//github.com/lydell/resolve-url#deprecated</span></span><br><span class="line">npm WARN deprecated urix@<span class="number">0.1</span><span class="number">.0</span>: Please see https:<span class="comment">//github.com/lydell/urix#deprecated</span></span><br><span class="line">D:\toolkit\node_global\vue -&gt; D:\toolkit\node_global\node_modules\@vue\cli\bin\vue.js</span><br><span class="line">+ @vue/cli@<span class="number">4.5</span><span class="number">.13</span></span><br><span class="line">updated <span class="number">1</span> package <span class="keyword">in</span> <span class="number">56.</span>355s</span><br></pre></td></tr></table></figure>
-
-
-<p>未报错;</p>
-<p>再次执行vue create xxx,相同报错,未解决;</p>
-<p>删除AppData的npm_cache文件,无效,删除后npm安装vuecli3开始报错npm ERR! code EPERM npm ERR! syscall unlink</p>
-<p>已安装cnpm,推测为此导致的权限问题;<br>尝试cnpm安装vuecli3,安装时抛出报告有不同:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">C:\windows\system32&gt;cnpm i @vue/cli -g</span><br><span class="line">Downloading @vue/cli to D:\toolkit\node_global\node_modules\@vue\cli_tmp</span><br><span class="line">Copying D:\toolkit\node_global\node_modules\@vue\cli_tmp\_@vue_cli@<span class="number">4.5</span><span class="number">.13</span>@@vue\cli to D:\toolkit\node_global\node_modules\@vue\cli</span><br><span class="line">Installing @vue/cli<span class="string">&#x27;s dependencies to D:\toolkit\node_global\node_modules\@vue\cli/node_modules</span></span><br><span class="line"><span class="string">[1/35] @types/ejs@^2.7.0 installed at node_modules\_@types_ejs@2.7.0@@types\ejs</span></span><br><span class="line"><span class="string">[2/35] commander@^2.20.0 installed at node_modules\_commander@2.20.3@commander</span></span><br><span class="line"><span class="string">[3/35] deepmerge@^4.2.2 installed at node_modules\_deepmerge@4.2.2@deepmerge</span></span><br><span class="line"><span class="string">[4/35] @vue/cli-ui-addon-widgets@^4.5.13 installed at node_modules\_@vue_cli-ui-addon-widgets@4.5.13@@vue\cli-ui-addon-widgets</span></span><br><span class="line"><span class="string">[5/35] debug@^4.1.0 installed at node_modules\_debug@4.3.1@debug</span></span><br><span class="line"><span class="string">[6/35] @vue/cli-ui-addon-webpack@^4.5.13 installed at node_modules\_@vue_cli-ui-addon-webpack@4.5.13@@vue\cli-ui-addon-webpack</span></span><br><span class="line"><span class="string">[7/35] ejs@^2.7.1 installed at node_modules\_ejs@2.7.4@ejs</span></span><br><span class="line"><span class="string">[8/35] envinfo@^7.5.1 installed at node_modules\_envinfo@7.8.1@envinfo</span></span><br><span class="line"><span class="string">[9/35] cmd-shim@^3.0.3 installed at node_modules\_cmd-shim@3.0.3@cmd-shim</span></span><br><span class="line"><span class="string">[10/35] ini@^1.3.5 installed at node_modules\_ini@1.3.8@ini</span></span><br><span class="line"><span class="string">[11/35] boxen@^4.1.0 installed at node_modules\_boxen@4.2.0@boxen</span></span><br><span class="line"><span class="string">[12/35] isbinaryfile@^4.0.6 installed at node_modules\_isbinaryfile@4.0.8@isbinaryfile</span></span><br><span class="line"><span class="string">[13/35] fs-extra@^7.0.1 installed at node_modules\_fs-extra@7.0.1@fs-extra</span></span><br><span class="line"><span class="string">[14/35] javascript-stringify@^1.6.0 installed at node_modules\_javascript-stringify@1.6.0@javascript-stringify</span></span><br><span class="line"><span class="string">[15/35] import-global@^0.1.0 installed at node_modules\_import-global@0.1.0@import-global</span></span><br><span class="line"><span class="string">//余部略;</span></span><br></pre></td></tr></table></figure>
-<p>未报错;</p>
-<p>重启VSCode,尝试执行vue create xxx;<br>不再报错npm ERR! code EPERM npm ERR! syscall unlink;</p>
-<p>失败,相同报错s a Vue CLI 3 only command and you are using Vue CLI 2.9.6……;</p>
-<p>检查vue -V,返回2.9.6,卸载无效,新版本安装未报错,推测覆盖失败;<br>删除C:/用户/hp/.npmrc文件<br>执行寻找:<br>C:\Users\hp&gt;where vue<br>C:\Users\hp\AppData\Roaming\npm\vue<br>C:\Users\hp\AppData\Roaming\npm\vue.cmd<br>删除上二文件;</p>
-<p>再次执行全局卸载npm uninstall vue-cli -g,出现长时卡顿,等待from21:58;<br>卡顿;<br>等待to22:05:蚌埠住了,取消执行;</p>
-<p>再执行from22:07;<br>till22:10:fetchMetadata: sill resolveWithNewModule <a href="mailto:&#109;&#x69;&#x6d;&#x65;&#45;&#x64;&#98;&#x40;&#x31;&#x2e;&#52;&#55;&#x2e;&#48;">&#109;&#x69;&#x6d;&#x65;&#45;&#x64;&#98;&#x40;&#x31;&#x2e;&#52;&#55;&#x2e;&#48;</a> checking installable status;<br>尝试还原npm-cache文件夹至原位置,还原开始10s+后卸载执行完成,还原未完成,取消还原;<br>推测checking installable status检索花费长时,非因缺失npm-cache内部文件;</p>
-<p>卸载执行完毕,vue -V检查版本号;<br>vue -V未检索到版本号,推测成功卸载;</p>
-<p>开始尝试第5次执行全局安装vue-cli3.0;<br>执行npm install -g @vue/cli from22:16;<br>till22:20,等待长时卡顿中:<br>fetchMetadata: sill resolveWithNewModule <a href="mailto:&#x61;&#110;&#x73;&#105;&#45;&#x72;&#x65;&#103;&#x65;&#120;&#64;&#53;&#x2e;&#48;&#x2e;&#x30;">&#x61;&#110;&#x73;&#105;&#45;&#x72;&#x65;&#103;&#x65;&#120;&#64;&#53;&#x2e;&#48;&#x2e;&#x30;</a> checking installable status;<br>to22:28 卡顿,取消执行;</p>
-<p>再执行cnpm install @vue/cli -g;<br>完成at22:30;<br>执行vue -V:@vue/cli 4.5.13;<br>终止;</p>
-<p>VSCode重启执行vue create testvuecli3;<br>生成配置文件;<br>🎉  Successfully created project testvuecli3. At 22:35;</p>
-<p>完毕 at 22:35;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><p>删除C:/用户/hp/.npmrc文件<br>执行寻找:<br>C:\Users\hp&gt;where vue<br>抛出:<br>C:\Users\hp\AppData\Roaming\npm\vue<br>C:\Users\hp\AppData\Roaming\npm\vue.cmd<br>删除上二;</p>
-<p>再次执行全局卸载npm uninstall vue-cli -g</p>
-<p>(中途尝试还原npm-cache文件夹至原位置,还原开始10s+后卸载执行完成,还原完成小部分,取消还原)</p>
-<p>全局卸载执行完毕,vue -V检查版本号;<br>vue -V未检索到版本号,推测成功卸载;</p>
-<p>执行cnpm install @vue/cli -g;</p>
-<p>执行vue -V:@vue/cli 4.5.13;</p>
-<p>终止;</p>
-<p>VSCode重启执行vue create testvuecli3;<br>🎉  Successfully created project testvuecli3.</p>
-<p>完毕.</p>
-
-                        
+                  <h1 id="is-a-Vue-CLI-3-only-command-and-you-are-using-Vue-CLI-2-9-6-You-may…"><a href="#is-a-Vue-CLI-3-only-command-and-you-are-using-Vue-CLI-2-9-6-You-may…" class="headerlink" title="is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may…"></a>is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may…</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1421,48 +1022,8 @@
           
 
                 
-                      <h1 id="WebPack配置文件的分离"><a href="#WebPack配置文件的分离" class="headerlink" title="WebPack配置文件的分离"></a>WebPack配置文件的分离</h1><p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>对配置文件进行抽离,以达到开发时依赖一个配置文件,发布时依赖一个配置文件的目标,在配置文件的代码量巨大时,此举可有效提升整洁性;<br>所有配置混杂的webpack.config.js在分离完成后可删除</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="一、安装插件-amp-配置"><a href="#一、安装插件-amp-配置" class="headerlink" title="一、安装插件&amp;配置"></a>一、安装插件&amp;配置</h1><p>通常会分离为三个文件,一个开发时依赖的配置文件(这里我命名为dev.config.js),一个发布时依赖的配置文件(这里我命名为prod.config.js),还有一个两模式下都需要依赖的配置文件(这里我命名为base.config.js);</p>
-<p><strong>安装插件</strong><br>没错,这个活webpack还是干不了.<br>webpack-merge协助对两个配置文件进行合并.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-merge -D</span><br></pre></td></tr></table></figure>
-<p>该插件在使用时需要导入:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackMerge = <span class="built_in">require</span>(<span class="string">&#x27;webpack-merge&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="二、抽离存放"><a href="#二、抽离存放" class="headerlink" title="二、抽离存放"></a>二、抽离存放</h1><p>抽离存放可以,但是用的时候也不能让webpack找不着;</p>
-<h2 id="1-分离配置文件"><a href="#1-分离配置文件" class="headerlink" title="1.分离配置文件"></a>1.分离配置文件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是webpack.config.js的内容</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">&#x27;./src/index.js&#x27;</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;built.js&#x27;</span>,</span><br><span class="line">        path: resolve(__dirname, <span class="string">&#x27;build&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                exclude: <span class="regexp">/\.(css|js|html|less)$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;file-loader&#x27;</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    name: <span class="string">&#x27;[hash:10].[ext]&#x27;</span></span><br><span class="line">                &#125;,</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;html-loader&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">&#x27;./src/index.html&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: resolve(__dirname, <span class="string">&#x27;build&#x27;</span>),</span><br><span class="line">        compress: <span class="literal">true</span>,</span><br><span class="line">        prop: <span class="number">3000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>仅生产环境下需要的配置放到prod.config.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是prod.config.js的内容</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: resolve(__dirname, <span class="string">&#x27;build&#x27;</span>),</span><br><span class="line">        compress: <span class="literal">true</span>,</span><br><span class="line">        prop: <span class="number">3000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>仅开发环境下需要的配置放到dev.config,js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是dev.config,js的内容</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">&#x27;./src/index.html&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-开发环境&生产环境下均需要的配置放到base.config,js
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是base.config,js的内容</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">&#x27;./src/index.js&#x27;</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;built.js&#x27;</span>,</span><br><span class="line">        path: resolve(__dirname, <span class="string">&#x27;build&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                exclude: <span class="regexp">/\.(css|js|html|less)$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;file-loader&#x27;</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    name: <span class="string">&#x27;[hash:10].[ext]&#x27;</span></span><br><span class="line">                &#125;,</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;html-loader&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>到此,我们已经把webpack.config.js分开为三个文件,你可以删除原本的webpack.config.js了.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h2 id="2-merge配置文件之间接合"><a href="#2-merge配置文件之间接合" class="headerlink" title="2.merge配置文件之间接合"></a>2.merge配置文件之间接合</h2><p>配置文件在用的时候还是要发挥合在一起时的效果的;这需要用到merge了,它的本意就是”结合”.<br>现在更新一下三个文件的内容:<br>1.prodConfig中进行baseConfig和prodConfig的合并</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*因为在pordConfig内,所以只需要引入baseConfig写在webpackMerge()方法内,再把prodConfig内需要合并的代码也写在webpackMerge()方法内即可.*/</span></span><br><span class="line"><span class="keyword">const</span> webpackMerge = <span class="built_in">require</span>(<span class="string">&#x27;webpack-merge&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> BaseConfig = <span class="built_in">require</span>(<span class="string">&#x27;./base.config.js&#x27;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = webpackMerge(BaseConfig, &#123;</span><br><span class="line">        plugins: [</span><br><span class="line">        <span class="keyword">new</span> UglifyjsWebpackPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-<strong>baseConfig合并于prodConfig内,所以接下来仅需要进行dev.config.js和prodConfig的合并</strong>
-
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p>2.devConfig中进行dev.config.js和prodConfig的合并</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*因为在devConfig内,所以只需要引入ProdConfig写在webpackMerge()方法内,再把devConfig内需要合并的代码也写在webpackMerge()方法内即可.*/</span></span><br><span class="line"><span class="keyword">const</span> webpackMerge = <span class="built_in">require</span>(<span class="string">&#x27;webpack-merge&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> ProdConfig = <span class="built_in">require</span>(<span class="string">&#x27;./prod.config.js&#x27;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = webpackMerge(ProdConfig, &#123;</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: <span class="string">&#x27;./dist&#x27;</span>,</span><br><span class="line">        inline:<span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>完事了吗?但这样直接打包会报错.</p>
-<h1 id="三、打包"><a href="#三、打包" class="headerlink" title="三、打包"></a>三、打包</h1><p>最后需要在package.json中代指 打包指令 的别名中进行配置,比如在build和dev中:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;build&quot;</span>:<span class="string">&quot;webpack --config ./build/prod.config.js&quot;</span></span><br><span class="line"><span class="string">&quot;dev&quot;</span>:<span class="string">&quot;webpack-dev-server --open --config ./build/dev.config.js&quot;</span></span><br></pre></td></tr></table></figure>
-<p>合并完毕后打包,三文件会放到base.config.js所在的文件夹中,因为base中的output的path设置的路径是自身所在文件夹的绝对路径,当然,是可以改的.<br>修改这个绝对路径,以把三个文件输出至合适的位置即可.</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>补下webpack的内容,只捡了一些内容比较多的部分写,准备开更vue-cli了.<br>感谢你读到这里.</p>
-
-                        
+                  <h1 id="WebPack配置文件的分离"><a href="#WebPack配置文件的分离" class="headerlink" title="WebPack配置文件的分离"></a>WebPack配置文件的分离</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1567,23 +1128,8 @@
           
 
                 
-                      <h2 id="WebPack-dev-server搭建本地服务器"><a href="#WebPack-dev-server搭建本地服务器" class="headerlink" title="WebPack-dev-server搭建本地服务器"></a>WebPack-dev-server搭建本地服务器</h2><p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="dev-server简述"><a href="#dev-server简述" class="headerlink" title="dev-server简述"></a>dev-server简述</h1><p>用途:实现浏览器自动刷新来显示效果,这在Vue开发时是个好用的东西.<br>dev-server是一个可选的本地开发服务器,基于node,js创建,内部使用express框架.<br>express框架可以服务于某个文件夹,会一直监听其中的代码是否改变,一旦改变会对所有改变的代码重新编译,编译后的代码会由express生成一些新的东西先放入内存,不会映射入盘,不会有任何输出;发布时npm run build才会添加到盘.<br>服务器读取文件时,存在于盘中的文件,被读取速度远远小于内存中的文件.</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="一、安装-amp-配置dev-server"><a href="#一、安装-amp-配置dev-server" class="headerlink" title="一、安装&amp;配置dev-server"></a>一、安装&amp;配置dev-server</h1><p><strong>安装</strong><br>呼出终端输入指令;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -D</span><br></pre></td></tr></table></figure>
-<p>为了防止跟其他插件不兼容,还是记得规定下版本;<br>这里不推荐高版本,会出现与webpack-cli不兼容;<br><strong>配置</strong><br>在webpack.config.js中添加devserver对象进行配置,对象内可设置属性:<br>|属性| 作用 |<br>|–|–|<br>| contentBase | 为哪个文件夹提供服务,默认是webpack.config.js所在的根文件夹. |<br>|port| 端口号,你可以在哪个端口看到效果,默认8080端口; |<br>|inline| 是否实时监听,页面实时刷新,布尔值; |<br>|historyApiFallback| 在SPA页面中.依赖HTML5的history模式; |<br>|compress| 啓動gzip壓縮,讓代碼體型更小,速度更快,布尔值; |<br>示例:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mode: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line">devServer: &#123;</span><br><span class="line">    contentBase: resolve(__dirname, <span class="string">&#x27;build&#x27;</span>),</span><br><span class="line">    compress: <span class="literal">true</span>,</span><br><span class="line">    prop: <span class="number">3000</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="二、使用dev-server"><a href="#二、使用dev-server" class="headerlink" title="二、使用dev-server"></a>二、使用dev-server</h1><p>我使用的是VSCode,在终端启用本地服务:webpack-dev-server(更高版本使用npx webpack-dev-server或npx webpack serve);</p>
-<p>在package.json中设置”dev”:”webpack-dev-server –open”<br>这样启动本地服务只需:npm run dev,启动服务同时会直接打开浏览器显示效果.<br>当然去掉”–open”也可以,不会自启浏览器,启动仍可以简化成npm run dev;</p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>WebPack-dev-server的知识点,本来打算在Vue教程里顺带着看,看了一集觉得看的不太明白,就去单独找了个webpack5.0.0教程看,完事又回去看了一次Vue里的webpack教程,总算搞懂,把两个教程说到的知识点都记下来了<br>感谢你能读到这里!<br>要是觉得还不错,考虑下给个赞? XD</p>
-
-                        
+                  <h1 id="WebPack-dev-server搭建本地服务器"><a href="#WebPack-dev-server搭建本地服务器" class="headerlink" title="WebPack-dev-server搭建本地服务器"></a>WebPack-dev-server搭建本地服务器</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                    
                           
         </div>
         <div class="article-info article-info-index">
@@ -1656,7 +1202,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1794,15 +1340,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1810,7 +1348,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

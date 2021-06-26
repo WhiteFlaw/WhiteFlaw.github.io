@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Vue组件化、组件通信的一些理解 | 白瑕的外星殖民所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue组件化、组件通信的一些理解@TOC   二、子级组件调用父级数据？也就是“父传子”，需要借助一个存在于Vue组件对象中的属性：props；这个属性会从自己所在的组件向上查找最近的父级元素，并且以数组形式返回父元素data（不是组件模板对象里的函数型data）中的数据。props可以是数组型，亦可以是对象型。 数组型propsprops属性类型是一个数组，数组的每个元素都是一个props变量，">
+  <meta name="description" content="Vue组件化、组件通信的一些理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue组件化、组件通信的一些理解">
 <meta property="og:url" content="http://example.com/2021/04/25/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E3%80%81%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="白瑕的外星殖民所">
-<meta property="og:description" content="Vue组件化、组件通信的一些理解@TOC   二、子级组件调用父级数据？也就是“父传子”，需要借助一个存在于Vue组件对象中的属性：props；这个属性会从自己所在的组件向上查找最近的父级元素，并且以数组形式返回父元素data（不是组件模板对象里的函数型data）中的数据。props可以是数组型，亦可以是对象型。 数组型propsprops属性类型是一个数组，数组的每个元素都是一个props变量，">
+<meta property="og:description" content="Vue组件化、组件通信的一些理解">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210425180014126.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210425174905981.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2021042518111271.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210425181212596.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUyNjk3OTk0,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-04-25T14:34:23.000Z">
-<meta property="article:modified_time" content="2021-06-26T06:26:43.722Z">
+<meta property="article:modified_time" content="2021-06-26T07:00:27.366Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="vue.js">
@@ -202,8 +202,9 @@
           
 
                 
-                      <h1 id="Vue组件化、组件通信的一些理解"><a href="#Vue组件化、组件通信的一些理解" class="headerlink" title="Vue组件化、组件通信的一些理解"></a>Vue组件化、组件通信的一些理解</h1><p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <h1 id="Vue组件化、组件通信的一些理解"><a href="#Vue组件化、组件通信的一些理解" class="headerlink" title="Vue组件化、组件通信的一些理解"></a>Vue组件化、组件通信的一些理解</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+
+<a id="more"></a>
 
 <h1 id="甚麽是Vue组件，为甚麽采用组件化？"><a href="#甚麽是Vue组件，为甚麽采用组件化？" class="headerlink" title="甚麽是Vue组件，为甚麽采用组件化？"></a>甚麽是Vue组件，为甚麽采用组件化？</h1><p>我想，如果您已经接触过一些Vue组件化开发的基础知识，您便可以略过这段了。<br><strong>关于Vue组件</strong>：在开发过程中，如果把需要重复使用的一段框架封装起来，并且能在后面的使用中以极其简便的方式调用（自然是极少能遇到需要框架内容完全相同的情况，后面会有slot插槽的方法来改动需要变化的地方）一定会很方便，于是产生了“Vue组件”这一概念。听到上面说的Vue组件的用法，您会觉得它很像一种“模板”？其实Vue组件的构成中最重要的一部分就是模板属性“template”，它支持您在Vue组件模板对象中书写您需要的框架。<br><strong>关于组件化开发</strong>：其实组件的优点应该放在这里一并说，组件这一概念诞生后，服务器的压力相比以前已经有所改善，但是明显是仍有改进空间的：每个组件都要请求一份属于自己的数据，在数据更新后还要再次请求，出现事件要反馈…… 解决这个问题的途径便是将页面分割为一个个大组件，其内部装载各种子组件，如此一来，大组件只要在请求数据时把子组件的数据也都请求回来等着子组件调用即可，这就缩减了请求总次数。</p>
 <h1 id="一、在Vue组件间传输数据的目的"><a href="#一、在Vue组件间传输数据的目的" class="headerlink" title="一、在Vue组件间传输数据的目的"></a>一、在Vue组件间传输数据的目的</h1><p>前面说到父组件会在请求数据时顺带把子组件的数据也请求回来等待调用，那么既然子组件要调用，也就需要在Vue组件层面进行数据传输，子组件在自身事件触发后也要向服务器提交报告（内部包含触发的事件和触发事件的数据位置），这一过程也要经过父组件。</p>
@@ -550,15 +551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,7 +559,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
