@@ -8,15 +8,13 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Auto.js 控件属性缺失时获取控件 | 白瑕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Auto.js 在控件属性缺失情况下获取控件">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="Auto.js 控件属性缺失时获取控件">
 <meta property="og:url" content="http://example.com/2021/05/23/Auto.js%20%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%BC%BA%E5%A4%B1%E6%97%B6%E8%8E%B7%E5%8F%96%E6%8E%A7%E4%BB%B6/index.html">
 <meta property="og:site_name" content="白瑕">
-<meta property="og:description" content="Auto.js 在控件属性缺失情况下获取控件">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-22T16:24:12.000Z">
-<meta property="article:modified_time" content="2021-06-26T07:18:33.663Z">
+<meta property="article:modified_time" content="2021-07-30T05:14:13.001Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="Auto.js">
 <meta name="twitter:card" content="summary">
@@ -196,7 +194,8 @@
           
 
                 
-                      <h1 id="Auto-js-在控件属性缺失情况下获取控件"><a href="#Auto-js-在控件属性缺失情况下获取控件" class="headerlink" title="Auto.js 在控件属性缺失情况下获取控件"></a>Auto.js 在控件属性缺失情况下获取控件</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+                      <hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
+
 <a id="more"></a>
 
 <p>群里有很多新人问,各种既没有id也没有text的控件无法获取的问题.</p>
@@ -344,7 +343,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Auto-js-%E5%9C%A8%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%BC%BA%E5%A4%B1%E6%83%85%E5%86%B5%E4%B8%8B%E8%8E%B7%E5%8F%96%E6%8E%A7%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">Auto.js 在控件属性缺失情况下获取控件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">使用环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">一、具体操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E7%94%A8%E4%B8%80%E4%B8%AA%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E9%80%89%E5%8F%96"><span class="toc-number">3.1.</span> <span class="toc-text">只用一个控件属性选取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%A4%9A%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%BB%84%E5%90%88%E9%80%89%E5%8F%96"><span class="toc-number">3.2.</span> <span class="toc-text">利用多控件属性组合选取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">使用环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">一、具体操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E7%94%A8%E4%B8%80%E4%B8%AA%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E9%80%89%E5%8F%96"><span class="toc-number">2.1.</span> <span class="toc-text">只用一个控件属性选取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%A4%9A%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%BB%84%E5%90%88%E9%80%89%E5%8F%96"><span class="toc-number">2.2.</span> <span class="toc-text">利用多控件属性组合选取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -508,15 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,6 +520,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,15 +8,13 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>XMLHttpRequest对象解读&amp;AJAX使用 | 白瑕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AJAX技术">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="XMLHttpRequest对象解读&amp;AJAX使用">
 <meta property="og:url" content="http://example.com/2021/02/25/XMLHttpRequest%E5%AF%B9%E8%B1%A1%E8%A7%A3%E8%AF%BB&AJAX%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="白瑕">
-<meta property="og:description" content="AJAX技术">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-25T14:38:00.000Z">
-<meta property="article:modified_time" content="2021-06-26T07:16:38.225Z">
+<meta property="article:modified_time" content="2021-07-30T05:13:05.928Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="AJAX">
 <meta name="twitter:card" content="summary">
@@ -196,10 +194,11 @@
           
 
                 
-                      <h1 id="AJAX技术"><a href="#AJAX技术" class="headerlink" title="AJAX技术"></a>AJAX技术</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-<a id="more"></a>
-@[TOC](文章目录)
+                      <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
+<a id="more"></a>
+
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
 <h1 id="Ajax技术的诞生"><a href="#Ajax技术的诞生" class="headerlink" title="Ajax技术的诞生"></a>Ajax技术的诞生</h1><p>Web应用程序是一种新的潮流，但伴随Web的逐渐发展，出现的是等待；<br>等待服务器的响应，等待刷新和生成。在这样的背景下，2005年，Ajax诞生了。</p>
 <h1 id="一、Ajax的概念？"><a href="#一、Ajax的概念？" class="headerlink" title="一、Ajax的概念？"></a>一、Ajax的概念？</h1><p>Ajax(Asynchronous Javascript And XML)这个短语由Adaptive Path的Jesse James Garrett发明,，其并非某种语言，Ajax是由HTML、JavaScript、DHTML(DynamicHTML)和DOM四者结合组成的构建网站的方法，这一方法可以将Web界面转化成交互性的Ajax应用程序。<br>JavaScript：Ajax技术得以在应用程序中运行的核心代码，其构成Ajax代码的主体。<br>HTML：用于建立Web表单并确定用用程序其他部分使用的字段。<br>DHTML:借助div、span以及其他动态HTML元素对HTML的标记来动态更新表单。<br>DOM（文档对象模型）:借助JavaScript处理HTML结构，也可以处理XML结构的数据。 </p>
 <h1 id="二、XMLHttpRequest对象的概念"><a href="#二、XMLHttpRequest对象的概念" class="headerlink" title="二、XMLHttpRequest对象的概念"></a>二、XMLHttpRequest对象的概念</h1><p>XMLHttpRequest对象是一个JavaScript对象，如果说Ajax是一条鱼，XMLHttpRequest就像这条鱼的脊柱，串通并支持着Ajax。创建XMLHttp对象的方法如下：</p>
@@ -519,7 +518,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">AJAX技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">2.</span> <span class="toc-text">Ajax技术的诞生</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Ajax%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">一、Ajax的概念？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text">二、XMLHttpRequest对象的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">4.1.</span> <span class="toc-text">1.XMLHttpRequest对象的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">2.XMLHttpRequest对象的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Ajax%E6%8A%80%E6%9C%AF%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">三、Ajax技术基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8GET%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text">1.使用GET法提交数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8POST%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">5.2.</span> <span class="toc-text">2.使用POST法提交数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81JQueryAjax"><span class="toc-number">6.</span> <span class="toc-text">四、JQueryAjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.</span> <span class="toc-text">Ajax技术的诞生</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Ajax%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">一、Ajax的概念？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">3.</span> <span class="toc-text">二、XMLHttpRequest对象的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.</span> <span class="toc-text">1.XMLHttpRequest对象的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-XMLHttpRequest%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">2.XMLHttpRequest对象的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Ajax%E6%8A%80%E6%9C%AF%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">三、Ajax技术基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8GET%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">1.使用GET法提交数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8POST%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">4.2.</span> <span class="toc-text">2.使用POST法提交数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81JQueryAjax"><span class="toc-number">5.</span> <span class="toc-text">四、JQueryAjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -683,15 +682,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,6 +695,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">

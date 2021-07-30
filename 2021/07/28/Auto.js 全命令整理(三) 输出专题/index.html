@@ -6,17 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Auto.js 60条常用命令&amp;作用 | 白瑕</title>
+  <title>Auto.js 全命令整理(三) 输出专题 | 白瑕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Auto.js 常用命令及作用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Auto.js 60条常用命令&amp;作用">
-<meta property="og:url" content="http://example.com/2021/06/22/Auto.js%2060%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%20&%20%E4%BD%9C%E7%94%A8/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Auto.js 全命令整理(三) 输出专题">
+<meta property="og:url" content="http://example.com/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%B8%89)%20%E8%BE%93%E5%87%BA%E4%B8%93%E9%A2%98/index.html">
 <meta property="og:site_name" content="白瑕">
-<meta property="og:description" content="Auto.js 常用命令及作用">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-22T15:28:43.000Z">
-<meta property="article:modified_time" content="2021-06-26T07:18:27.173Z">
+<meta property="article:published_time" content="2021-07-28T08:42:40.000Z">
+<meta property="article:modified_time" content="2021-07-30T05:17:10.657Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="Auto.js">
 <meta name="twitter:card" content="summary">
@@ -158,7 +156,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Auto.js 60条常用命令 &amp; 作用"
+            <article id="post-Auto.js 全命令整理(三) 输出专题"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,13 +164,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Auto.js 60条常用命令&amp;作用
+      Auto.js 全命令整理(三) 输出专题
     </h1>
   
 
           
-            <a href="/2021/06/22/Auto.js%2060%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%20&%20%E4%BD%9C%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-06-22T15:28:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-22</time>
+            <a href="/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%B8%89)%20%E8%BE%93%E5%87%BA%E4%B8%93%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-07-28T08:42:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
 </a>
 
               <!-- 需要添加的位置 -->
@@ -196,265 +194,35 @@
           
 
                 
-                      <h1 id="Auto-js-常用命令及作用"><a href="#Auto-js-常用命令及作用" class="headerlink" title="Auto.js 常用命令及作用"></a>Auto.js 常用命令及作用</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
 
 <a id="more"></a>
 
-<h1 id="函数-amp-信息获取"><a href="#函数-amp-信息获取" class="headerlink" title="函数 &amp; 信息获取"></a>函数 &amp; 信息获取</h1><p>——-先获取,才能操控.<br>| 命令 | 目的 |<br>|–|–|<br>| sleep(ms) | 暂停执行?ms |<br>| currentPackage() | 返回最近一次/当前运行的应用的包名 |<br>| currentActivity() | 返回最近一次/当前运行的应用名(Activity名) |<br>| setClip(文本) | 设置剪贴板内容 |<br>| getClip() | 获取当前系统剪贴板的内容 |<br>| waitForActivity(activityName, 检索间隔) | 等待指定Activity启动 |<br>| waitForPackage(PackageName, 检索间隔) | 等待指定Package对应的应用启动 |<br>| requiresAutojsVersion(版本号) | 需要AutoJS达到某个版本 |<br>| random(min, max) | 返回区间内的随机整数 |<br>| runtime.requestPermissions(权限名) | 动态申请安卓权限 |<br>|device.keepScreenOn(持续时间)| 保持屏幕常亮?ms |</p>
+<p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
-<h1 id="对应用命令"><a href="#对应用命令" class="headerlink" title="对应用命令"></a>对应用命令</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>app.versionCode</td>
-<td>获取当前所在软件版本号</td>
-</tr>
-<tr>
-<td>app.versionName</td>
-<td>获取当前所在软件版本名</td>
-</tr>
-<tr>
-<td>app.launchApp(应用名)</td>
-<td>启动应用by应用名</td>
-</tr>
-<tr>
-<td>app.launch(包名)</td>
-<td>启动应用by包名</td>
-</tr>
-<tr>
-<td>app.getAppName(包名)</td>
-<td>获取应用包名对应的应用名</td>
-</tr>
-<tr>
-<td>app.openUrl(URL)</td>
-<td>打开某URL</td>
-</tr>
-<tr>
-<td>app.uninstall</td>
-<td>卸载当前所在的应用</td>
-</tr>
-</tbody></table>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>1.如果您有Vue-router基础,那么放心食用本文吧.<br>2.本文只介绍beforeEach法;<br>3.vue-router2.2以上版本的addRoutes()动态路由注入法可以更好地实现权限系统,我会在后续的更新(二)里补全.</p>
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
-<h1 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>console.show()</td>
-<td>屏幕显示Console</td>
-</tr>
-<tr>
-<td>console.hide()</td>
-<td>屏幕隐藏Console</td>
-</tr>
-<tr>
-<td>console.clear()</td>
-<td>清空Console内容</td>
-</tr>
-<tr>
-<td>console.log(xxx)</td>
-<td>….</td>
-</tr>
-<tr>
-<td>console.warn(xxx)</td>
-<td>输出蓝色字体,警告</td>
-</tr>
-<tr>
-<td>console.info(xxx)</td>
-<td>输出绿色字体,重要</td>
-</tr>
-<tr>
-<td>console.err(xxx)</td>
-<td>输出红色字体,报错警告</td>
-</tr>
-<tr>
-<td>console.assert(判定式, 信息文本)</td>
-<td>判定式false则输出信息文本并终止运行</td>
-</tr>
-<tr>
-<td>console.time(计时器标签,可省略)</td>
-<td>生成并启动定时器,即刻开始计时</td>
-</tr>
-<tr>
-<td>console.timeEnd(计时器标签)</td>
-<td>即刻终止标签为??的定时器,并console出时间</td>
-</tr>
-<tr>
-<td>console.setSize(宽, 高)</td>
-<td>设置Console大小</td>
-</tr>
-<tr>
-<td>console.setPosition(横, 纵)</td>
-<td>设置Console位置</td>
-</tr>
-<tr>
-<td>log(???)</td>
-<td>返回???</td>
-</tr>
-<tr>
-<td>toastLog(文本)</td>
-<td>浮出气泡并打印到Console</td>
-</tr>
-</tbody></table>
+<h1 id="一、路由元信息和beforeEach"><a href="#一、路由元信息和beforeEach" class="headerlink" title="一、路由元信息和beforeEach()"></a>一、路由元信息和beforeEach()</h1><p>用户点击某个模块会让URL发生变化,进而带动router执行切换页面的动作,那么只要阻止路由跳转或者让路由定向跳转就能实现阻止用户进入某些高权限页面.<br>但在开始之前,我还要给您介绍两样东西:</p>
+<h2 id="1、路由元信息"><a href="#1、路由元信息" class="headerlink" title="1、路由元信息"></a>1、路由元信息</h2><p>您可能没听说过这个词,不用着急;<br>我不给您扯那些官方文案了,路由元信息在meta对象里配置,一个元信息针对一份路由,在其内部可以写键值对,即一对自定义字节和他们的值:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path: <span class="string">&#x27;/userinfo&#x27;</span>,</span><br><span class="line">  name: <span class="string">&#x27;Userinfo&#x27;</span>,</span><br><span class="line">  <span class="comment">//路由元信息meta;</span></span><br><span class="line">  meta: &#123;  </span><br><span class="line">    istoken: <span class="literal">true</span></span><br><span class="line">  <span class="comment">//自定义字节istoken,值为true;</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>就是这样了,我不深说了,因为这里我们只是需要用meta对象内的键值对作为该路由记录是否需要执行beforeEach异步判断和需要执行判断时需要执行哪个beforeEach()的判别条件.</p>
+<h2 id="2、beforeEach"><a href="#2、beforeEach" class="headerlink" title="2、beforeEach()"></a>2、beforeEach()</h2><p>router.beforeEach() 用来规定一些进入页面的限制,比如不登陆无法进入<br>你可以拿到一些有关用户账号权限的关键信息(比如meta信息),在里面做一些判断,然后利用beforeEach()的next()方法来告诉路由这波怎么说(是把尊敬的用户踹回去登录还是让他进页面);</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意这里传入的三个参数;</span></span><br><span class="line"> router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (基于meta或其他关键信息进行的判断) &#123;</span><br><span class="line">    <span class="comment">//需要进行的操作;</span></span><br><span class="line">  &#125;</span><br><span class="line">  next()</span><br><span class="line">&#125;) </span><br></pre></td></tr></table></figure>
+<p>我想你该看到那上面传进去了三个参数……<br>| 参数 | 作用 |<br>|–|–|<br>| to | 本次路由跳转的终点,锁定目标页面的路由对象 |<br>| from | 本次路由跳转的起点,锁定当前页面的路由对象 |<br>| next | 进行下一个钩子,类似”接下来要干的事”的意思吧,有点像then()? |</p>
+<p>在index.js(就是写路由表的那个文件)里可以写这个beforeEach(),记得写在router创建后:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//router.beforeEach()的位置</span></span><br></pre></td></tr></table></figure>
+<h1 id="二、权限管理"><a href="#二、权限管理" class="headerlink" title="二、权限管理"></a>二、权限管理</h1><h2 id="1、路由比较少的情况"><a href="#1、路由比较少的情况" class="headerlink" title="1、路由比较少的情况"></a>1、路由比较少的情况</h2><p>.<strong>一般来说用户登录后账号信息会从后端发来,然后你setItem()存储到本地(localStorage)放在token或者cookie,就可以拿getItem()获取来用了;</strong><br>我觉得你也可以简单粗暴一点把能访问1,2,3页面的用户添加到1,2,3页面的meta里,然后到时候他一登录,路由守卫把你meta里那几个人挨个儿过一遍,只要有个条件跟他匹配就行,不过要是你这网站用户很多,这一个个录人估计也是挺蛋疼的……</p>
+<p>下面就是针对多页面多路由的情况了,都需要遍历.</p>
+<h2 id="2、多路由-遍历to-matched"><a href="#2、多路由-遍历to-matched" class="headerlink" title="2、多路由-遍历to.matched"></a>2、多路由-遍历to.matched</h2><p>推荐使用to.matched来进行遍历,to.matched数组中保存着匹配到的所有路由信息;<br>我们来看看官方的说法吧:<br>“一个路由匹配到的所有路由记录会暴露为 $route 对象或导航守卫中路由对象的 $route.matched 数组。<br>因此,我们需要遍历 $route.matched来检查每份路由中的meta字段,来判断这个beforeEach该用于哪份路由.”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//some检测to.match数组中的元素的meta里是否有requiresAuth;</span></span><br><span class="line">  <span class="keyword">if</span> (to.matched.some(<span class="function"><span class="params">record</span> =&gt;</span> record.meta.requiresAuth)) &#123;</span><br><span class="line">  <span class="comment">//some方法测试数组中是否有至少一个元素通过了判断。返回布尔值。</span></span><br><span class="line">    <span class="keyword">if</span> (!auth.loggedIn()) &#123;</span><br><span class="line">      next(&#123;</span><br><span class="line">        path: <span class="string">&#x27;/login&#x27;</span>,</span><br><span class="line">        query: &#123; <span class="attr">redirect</span>: to.fullPath &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next() <span class="comment">// 确保一定要调用 next(),否则钩子不会被resolve;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>遍历to.matched和上面官方文档说的”遍历 $route.matched”大概是在遍历同一个数组, $route是当前激活的路由,to是我们要去到的路由,在我们使用next()把路由阻拦回去之前,to所对应的路由是被激活的,所以我想这个to和 $route所对应的路由该是同一个路由的,那么to.match和 $route.match指的也应该是同一个数组.<br>你要知道, Vue在匹配路由时会匹配到所有符合的路由,也就是说只要你path里出现了这段字符串,我就认为你有这段路由:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path:<span class="string">&quot;/page1/page2/page3&quot;</span></span><br><span class="line"><span class="comment">/* 匹配到的路由:/page1 &amp; /page1/page2 &amp; /page1/page2/page3 */</span></span><br></pre></td></tr></table></figure>
+<p>这就有个好处,就是你遍历完正确的数组之后,可以把所有需要控制的页面全都提权,就是给那个URL最长的高级路由加meta字段,比如我不想让没注册的用户进入个人中心,我就直接给”个人中心/用户详情/文章列表/举报文章”(举个例子,别手滑给咱举报了)页面的路由加上meta,这样整个个人中心都进不来了.<strong>这样是最好,你也可以只给一级路由添加meta判断,一般用户都是一层一层的点进去看,但要是哪天遇见个离谱的老哥直接输二级路由的URL,那是可以直接进到你的二级路由的,虽然一级路由进不去.</strong>(啊当然你要是耐心的把每个把二级路由单独加判断…那当我没说咯).</p>
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
-<h1 id="屏幕操作模拟"><a href="#屏幕操作模拟" class="headerlink" title="屏幕操作模拟"></a>屏幕操作模拟</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>setScreenMetrics(宽, 高)</td>
-<td>设置脚本运行时适用的屏幕尺寸(px),若实际尺寸不一致,脚本会缩放自身比例以求兼容</td>
-</tr>
-<tr>
-<td>click(x, y)</td>
-<td>模拟点击某位置</td>
-</tr>
-<tr>
-<td>longClick(x, y)</td>
-<td>模拟长按某位置,时间默认</td>
-</tr>
-<tr>
-<td>press(x, y, 持续时长)</td>
-<td>模拟长按,持续?ms</td>
-</tr>
-<tr>
-<td>swipe(起点x, 起点y, 终点x, 终点y, 滑动全程耗时)</td>
-<td>模拟定时定位滑动手势</td>
-</tr>
-<tr>
-<td>gesture(全程耗时, [点1x, 点1y], [点2x, 点2y], …)</td>
-<td>模拟定时定位复杂滑动手势</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="硬件按键监听"><a href="#硬件按键监听" class="headerlink" title="硬件按键监听"></a>硬件按键监听</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>events.observeKey()</td>
-<td>按键监听,启动 !</td>
-</tr>
-<tr>
-<td>events.onKeyDown(按键名, 回调函数)</td>
-<td>注册按键按下监听函数</td>
-</tr>
-<tr>
-<td>events.onKeyUp(按键名, 回调函数)</td>
-<td>注册按键弹起监听函数</td>
-</tr>
-<tr>
-<td>events.onceKeyDown(按键名, 回调函数)</td>
-<td>注册仅首次生效的按键按下监听函数</td>
-</tr>
-<tr>
-<td>events.onceKeyUp(按键名, 回调函数)</td>
-<td>注册仅首次生效的按键弹起监听函数</td>
-</tr>
-<tr>
-<td>events.removeAllKeyDownListeners(按键名)</td>
-<td>删除对该按键的所有按下监听</td>
-</tr>
-<tr>
-<td>events.removeAllKeyUpListeners(按键名)</td>
-<td>删除对该按键的所有弹起监听</td>
-</tr>
-<tr>
-<td>volume_up</td>
-<td>音量+键</td>
-</tr>
-<tr>
-<td>volume_down</td>
-<td>音量-键</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="屏幕按键监听"><a href="#屏幕按键监听" class="headerlink" title="屏幕按键监听"></a>屏幕按键监听</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>events.observeTouch()</td>
-<td>屏幕按键监听,启动 !(需拿到root权限)</td>
-</tr>
-<tr>
-<td>events.setTouchEventTimeout(时间间隔)</td>
-<td>设定两次触摸事件的最小间隔(ms)</td>
-</tr>
-<tr>
-<td>events.getTouchEventTimeout()</td>
-<td>返回两次触摸事件的最小间隔(ms)</td>
-</tr>
-<tr>
-<td>events.onTouch(回调函数)</td>
-<td>注册触摸回调函数,只要有屏幕触摸,就回调函数</td>
-</tr>
-<tr>
-<td>events.removeAllTouchListeners()</td>
-<td>移除全部屏幕触摸监听函数</td>
-</tr>
-<tr>
-<td>events.on(“事件”,回调函数)</td>
-<td>当有屏幕按键事件时会触发事件</td>
-</tr>
-<tr>
-<td>Key</td>
-<td>事件,有屏幕按键按下/弹起都会触发</td>
-</tr>
-<tr>
-<td>key_up</td>
-<td>事件,有屏幕按键弹起就触发</td>
-</tr>
-<tr>
-<td>key_down</td>
-<td>事件,有屏幕按键按下就触发</td>
-</tr>
-<tr>
-<td>toast</td>
-<td>事件,有应用弹出气泡就会触发</td>
-</tr>
-<tr>
-<td>notification</td>
-<td>事件,有应用发出通知会触发该事件</td>
-</tr>
-<tr>
-<td>home</td>
-<td>主屏幕键</td>
-</tr>
-<tr>
-<td>back</td>
-<td>返回</td>
-</tr>
-<tr>
-<td>menu</td>
-<td>菜单(运行中应用)</td>
-</tr>
-</tbody></table>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="末"><a href="#末" class="headerlink" title="末"></a>末</h1><p>参赛组的训练计划开始与我制定的自己的学习流程冲突,他们不能打扰我.</p>
-<p>话说Auto.js该分到哪个类别的文章啊喂!</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>今天做登录系统用到了这个,想着先记下来,这种方案并不是最优解,开头提到的动态路由注入博主在学了,估计比较快就能更出来;<br>感谢您的支持,这是博主个人的一些认识,欢迎你指出我的错误,如果对你有帮助,我很高兴;</p>
 
                         
                           
@@ -538,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/22/Auto.js%2060%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%20&%20%E4%BD%9C%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%B8%89)%20%E8%BE%93%E5%87%BA%E4%B8%93%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -552,18 +320,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/03/Vue3%E8%B4%AD%E7%89%A9%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94TabBar/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%B8%80)%20%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%93%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Vue购物商城项目——TabBar制作
+          Auto.js 全命令整理(一) 数据获取专题
         
       </div>
     </a>
   
   
-    <a href="/2021/06/19/Vue-cli4%20%E5%AF%B9%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue-cli4 对路由配置的理解</div>
+    <a href="/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%BA%8C)%20%E5%AF%B9%E5%BA%94%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%93%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Auto.js 全命令整理(二) 对应用命令专题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -590,7 +358,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Auto-js-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%8F%8A%E4%BD%9C%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Auto.js 常用命令及作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0-amp-%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-number">2.</span> <span class="toc-text">函数 &amp; 信息获取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">对应用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Console"><span class="toc-number">4.</span> <span class="toc-text">Console</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E6%93%8D%E4%BD%9C%E6%A8%A1%E6%8B%9F"><span class="toc-number">5.</span> <span class="toc-text">屏幕操作模拟</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E6%8C%89%E9%94%AE%E7%9B%91%E5%90%AC"><span class="toc-number">6.</span> <span class="toc-text">硬件按键监听</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E6%8C%89%E9%94%AE%E7%9B%91%E5%90%AC"><span class="toc-number">7.</span> <span class="toc-text">屏幕按键监听</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AB"><span class="toc-number">8.</span> <span class="toc-text">末</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%B7%AF%E7%94%B1%E5%85%83%E4%BF%A1%E6%81%AF%E5%92%8CbeforeEach"><span class="toc-number">2.</span> <span class="toc-text">一、路由元信息和beforeEach()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%B7%AF%E7%94%B1%E5%85%83%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">1、路由元信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81beforeEach"><span class="toc-number">2.2.</span> <span class="toc-text">2、beforeEach()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">二、权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%B7%AF%E7%94%B1%E6%AF%94%E8%BE%83%E5%B0%91%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">3.1.</span> <span class="toc-text">1、路由比较少的情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%A4%9A%E8%B7%AF%E7%94%B1-%E9%81%8D%E5%8E%86to-matched"><span class="toc-number">3.2.</span> <span class="toc-text">2、多路由-遍历to.matched</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -754,15 +522,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -771,6 +535,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">

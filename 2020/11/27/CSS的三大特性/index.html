@@ -8,17 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CSS的三大特性 | 白瑕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS的三大特性">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="CSS的三大特性">
 <meta property="og:url" content="http://example.com/2020/11/27/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="白瑕">
-<meta property="og:description" content="CSS的三大特性">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B%E4%B8%80.png">
 <meta property="og:image" content="http://example.com/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/%E7%A4%BA%E4%BE%8B2.png">
 <meta property="article:published_time" content="2020-11-27T02:30:56.000Z">
-<meta property="article:modified_time" content="2021-06-26T07:18:41.879Z">
+<meta property="article:modified_time" content="2021-07-30T05:14:26.921Z">
 <meta property="article:author" content="白瑕">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -199,12 +197,13 @@
           
 
                 
-                      <h1 id="CSS的三大特性"><a href="#CSS的三大特性" class="headerlink" title="CSS的三大特性"></a>CSS的三大特性</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
 <a id="more"></a>
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+下面我会依次阐述这三种特性使用时的注意事项与方法。
 
-<p><font color=#999AAA >下面我会依次阐述这三种特性使用时的注意事项与方法。</p>
 <h1 id="一、CSS层叠性"><a href="#一、CSS层叠性" class="headerlink" title="一、CSS层叠性"></a>一、CSS层叠性</h1><p>在对一个元素所设置的多个不同选择器 或者 一个选择器内，对同一样式不同的值，会造成样式冲突，此时需要考虑CSS的层叠性，CSS将根据层叠特性来决定使用哪种样式。</p>
 <p>特性简述：当出现上述情况时，CSS将会采用距离目标元素的代码最近的样式，就近原则。<br>如下所示：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">  <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -360,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">CSS的三大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81CSS%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">一、CSS层叠性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CSS%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">二、CSS继承性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CSS%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.</span> <span class="toc-text">三、CSS优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81CSS%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">一、CSS层叠性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CSS%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">二、CSS继承性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CSS%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.</span> <span class="toc-text">三、CSS优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -524,15 +523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,6 +536,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">

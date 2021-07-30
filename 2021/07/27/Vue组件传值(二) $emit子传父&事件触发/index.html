@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>JS复杂条件下的预解析 | 白瑕</title>
+  <title>Vue组件传值(二) $emit子传父&amp;事件触发 | 白瑕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript预解析">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS复杂条件下的预解析">
-<meta property="og:url" content="http://example.com/2020/12/06/JS%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E9%A2%84%E8%A7%A3%E6%9E%90/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Vue组件传值(二) $emit子传父&amp;事件触发">
+<meta property="og:url" content="http://example.com/2021/07/27/Vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC(%E4%BA%8C)%20$emit%E5%AD%90%E4%BC%A0%E7%88%B6&%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91/index.html">
 <meta property="og:site_name" content="白瑕">
-<meta property="og:description" content="JavaScript预解析">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-06T15:14:40.000Z">
-<meta property="article:modified_time" content="2021-06-26T07:19:50.136Z">
+<meta property="article:published_time" content="2021-07-27T11:25:53.000Z">
+<meta property="article:modified_time" content="2021-07-30T05:18:08.847Z">
 <meta property="article:author" content="白瑕">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Vue.js">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白瑕" type="application/atom+xml">
@@ -158,7 +156,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JS复杂条件预解析"
+            <article id="post-Vue组件传值(二) $emit子传父&amp;事件触发"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,13 +164,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS复杂条件下的预解析
+      Vue组件传值(二) $emit子传父&amp;事件触发
     </h1>
   
 
           
-            <a href="/2020/12/06/JS%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E9%A2%84%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-12-06T15:14:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-06</time>
+            <a href="/2021/07/27/Vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC(%E4%BA%8C)%20$emit%E5%AD%90%E4%BC%A0%E7%88%B6&%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2021-07-27T11:25:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-27</time>
 </a>
 
               <!-- 需要添加的位置 -->
@@ -196,33 +194,41 @@
           
 
                 
-                      <h2 id="JavaScript预解析"><a href="#JavaScript预解析" class="headerlink" title="JavaScript预解析"></a>JavaScript预解析</h2><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+                      <hr style=" border:solid; width:100px; height:1px;" color=#000000 size="1">
 
 <a id="more"></a>
 
-<h1 id="JS预解析？"><a href="#JS预解析？" class="headerlink" title="JS预解析？"></a>JS预解析？</h1><p>浏览器中的JS解析器运行JavaScript的过程为先进行 预解析 之后再进行 代码执行。主要为JS执行机制的问题。</p>
-<h1 id="一、预解析受体"><a href="#一、预解析受体" class="headerlink" title="一、预解析受体"></a>一、预解析受体</h1><p>预解析会把JS代码中的所有var和function提升至其<strong>所在作用域的最上方(内部的最上方）</strong>，以进行优先的声明/定义。告诉全局作用域某某变量被声明出来了，并在内存中提前开辟空间。<br>受体：  var    、 function</p>
-<h1 id="二、对var的预解析"><a href="#二、对var的预解析" class="headerlink" title="二、对var的预解析"></a>二、对var的预解析</h1><p>对var的预解析不提升|赋值|操作，只提升|声明变量|部分的代码，提升完毕后对声明变量部分进行预解析，全局作用域中加入了这个变量的信息，之后代码依然遵循由上到下的顺序来进行执行。下面举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">  <span class="keyword">var</span> up = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;up&#x27;</span>);</span><br><span class="line">  <span class="keyword">var</span> down = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;down&#x27;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>人类与机器解析方式的不同也将导致他们看到的代码不同，上方代码在解析器看来应当是以下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> div</span><br><span class="line">  <span class="keyword">var</span> up</span><br><span class="line">  <span class="keyword">var</span> down</span><br><span class="line">  div = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">  up = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;up&#x27;</span>);</span><br><span class="line">  down = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;down&#x27;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>只提升了声明部分而没有提升赋值部分。</p>
-<h1 id="三、对function的预解析"><a href="#三、对function的预解析" class="headerlink" title="三、对function的预解析"></a>三、对function的预解析</h1><p>对function的预解析不提升|函数体|部分，只提升|声明函数|部分的代码，因此也没必要写括号了，提升完毕后对声明函数部分进行预解析，全局作用域中加入了这个函数的信息，之后代码依然遵循由上到下的顺序来进行执行此函数。下面举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">demo()</span><br><span class="line"><span class="keyword">var</span> demo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>以上代码在进行解析时可以看作以下格式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> demo;</span><br><span class="line">demo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br><span class="line">demo();</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="四、var在作用域内"><a href="#四、var在作用域内" class="headerlink" title="四、var在作用域内"></a>四、var在作用域内</h1><p>在一些比较常规的作用域内声明变量时使用了var，那么声明出来的变量可以在全局范围内使用，但是也有不行的时候，以下我各举一个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">    fn(i)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，for循环里的var是全局变量，下面的函数会输出“10”。<br>但接下来这个：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(i)<span class="comment">//5</span></span><br><span class="line">&#125;</span><br><span class="line">fn1()</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//i is not defined</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>var也在另一个函数function fn1内，变量就成为了这个函数作用域中的变量，只能提升至这个函数作用域的顶部。</p>
-<h1 id="五、function作参、在事件处理程序内"><a href="#五、function作参、在事件处理程序内" class="headerlink" title="五、function作参、在事件处理程序内"></a>五、function作参、在事件处理程序内</h1><p>函数在使用时会有作为参数、被包含于侦听器等等诸多情况，我们首先应该从“这部分函数所处的作用域”着手。<br>我们看下面这段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    div.addEventListener(<span class="string">&#x27;mousemove&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      e = event || <span class="built_in">window</span>.event;</span><br><span class="line">      <span class="keyword">var</span> x = e.pageX;</span><br><span class="line">      <span class="keyword">var</span> y = e.pageY;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;当前坐标：（&#x27;</span> + x + <span class="string">&#x27;,&#x27;</span> + y + <span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">      pic.style.left = x - <span class="number">50</span> + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">      pic.style.top = y - <span class="number">25</span> + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>预解析时相当于以下(”var ???”这一步并不存在，为了能表达将内部函数提升并且能顺利调用才加上）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ??? = <span class="function"><span class="keyword">function</span> ???(<span class="params">e</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">??? = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="function">     <span class="title">e</span> = <span class="title">event</span> || <span class="title">window</span>.<span class="title">event</span></span>;</span><br><span class="line">     <span class="keyword">var</span> x = e.pageX;</span><br><span class="line">     <span class="keyword">var</span> y = e.pageY;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;当前坐标：（&#x27;</span> + x + <span class="string">&#x27;,&#x27;</span> + y + <span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">     pic.style.left = x - <span class="number">50</span> + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">     pic.style.top = y - <span class="number">25</span> + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   div.addEventListener(<span class="string">&#x27;mousemove&#x27;</span>, ???)</span><br></pre></td></tr></table></figure>
-<p>传参过程中，参数是函数的类型传入了侦听器内。</p>
-<p>传参的作用域面向全局，传参的作用域在全局作用域，所以|传入侦听器作为参数的函数|若是进行提升应当在其所在的作用域——全局作用域  中进行提升，上面最近的例子，函数直接进入全局作用域进行提升。函数体不动。</p>
-<p>以上是我对于JS预解析的一些见解与猜想。<br>若是您发现了错误的观点，可以通过私信联系我，不胜感激。</p>
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="一、-emit传递事件"><a href="#一、-emit传递事件" class="headerlink" title="一、$emit传递事件"></a>一、$emit传递事件</h1><p>用来从子组件往父组件内传值,也能传事件,我们可以使用$ emit()让子组件得以触发父组件(子组件被哪个组件作为模板调用,哪个组件就是这个子组件的父组件;)中的事件函数.<br>$ emit()被执行后会向父组件内发送自己括号内的参数,事件、值作参数都可以,值可以是data里的值,绑定到子组件的HTML上, 时刻变化.</p>
+<p>但是在<strong>父组件内的子组件标签上</strong>要有能被$emit()发送来的事件触发的事件函数,即<strong>父组件内的子组件标签上</strong>要有针对[子组件发送来的事件]的监听,不然我们传过去一个事件也没什么用</p>
+<p>我们通常不会直接放任子组件向父组件发送事件,你开局就发过去把事件函数触发了也没有什么意义.<br>更多的使用方法是在子组件内定义一个点击事件(或者什么其他事件),能触发子组件内某个函数,然后这个子组件内的函数被触发后会使用$emit()向父组件内发送一个什么事件来触发父组件内某个已绑定的事件函数,这样就能做到在子组件内控制父组件事件函数的触发,就像这样:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里是子组件; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">&quot;bannerClick&quot;</span>&gt;</span> <span class="comment">&lt;!-- !!!! --&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- ^点击触发bannerClick事件函数^ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;editbanner&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; left &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里是子组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: [<span class="string">&quot;left&quot;</span>],</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">bannerClick</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">//bannerClick事件函数触发;</span></span><br><span class="line">      <span class="built_in">this</span>.$emit(<span class="string">&quot;bannerClick&quot;</span>);<span class="comment">//!!!!</span></span><br><span class="line">    <span class="comment">//向父组件发送bannerClick事件;</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面子组件已经发出了事件,那么父组件:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里是父组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">edit-banner</span> <span class="attr">left</span>=<span class="string">&quot;昵称&quot;</span> @<span class="attr">bannerClick</span>=<span class="string">&quot;show = true&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ^bannerClick事件在此处被监听,</span></span><br><span class="line"><span class="comment">    触发后使data()里的show属性值变为true,让edit-banner组件出现^ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">edit-banner</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里是父组件;</span></span><br><span class="line"><span class="keyword">import</span> EditBanner <span class="keyword">from</span> <span class="string">&quot;@/components/common/EditBanner&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&quot;Edit&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      show: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">//show属性,在bannerClick事件触发后变为true;</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    EditBanner,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就先这样,您要是有看不明白地方的可以在评论区指出,我会再次更新来完善.</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h1 id="二、-emit传递值"><a href="#二、-emit传递值" class="headerlink" title="二、$emit传递值"></a>二、$emit传递值</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是在子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;forms&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;contentToSubmit&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 绑定data中的contentToSubmit --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;Submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- ^点击input触发子组件Submit函数^ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在子组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;Form&#x27;</span>,</span><br><span class="line">  data:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">      contentToSubmit:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">      formSubmit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="built_in">this</span>.$emit(<span class="string">&#x27;Submit&#x27;</span>, <span class="built_in">this</span>.contentToSubmit); </span><br><span class="line">      <span class="comment">//拿到data中的contentToSubmit,连同Submit一起传到父组件;</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是在父组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">forms</span> <span class="attr">v-on:Submit</span>=<span class="string">&#x27;addContent&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">forms</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 此处监听了子组件的Sumit事件,触发addContent事件函数 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Forms <span class="keyword">from</span> <span class="string">&#x27;./components/Forms&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  components:&#123;</span><br><span class="line">      Forms</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">      addContent:<span class="function"><span class="keyword">function</span>(<span class="params">contentToSubmit</span>)</span>&#123;</span><br><span class="line">      <span class="comment">//addContent接收了伴随Submit事件传递过来的contentToSubmit</span></span><br><span class="line">          alert(contentToSubmit)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p>Vue传值决定出多出几期来记述各种传值方法,所以就把以前写的分类了,下面这部分是以前写的,可能理解上有些粗略,主要是围绕例子来的, 您要有兴趣就看看,不想看也无所谓啦.</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h1 id="三、子传父-emit"><a href="#三、子传父-emit" class="headerlink" title="三、子传父$emit"></a>三、子传父$emit</h1><p>子组件需要向父组件提交其自身发生的事件，和事件发生的位置对应的数据，父组件才能判断下次请求什么数据。</p>
+<p>为子组件添加事件监听，连携调用了子组件事件函数内部的”$emit”方法(子传父开始)，然后为父组件添加的针对 $emit内自定义事件的事件监听迅速监听到： $emit内的自定义事件被触发了，于是父组件马上开始执行针对这个自定义事件的事件函数。<br>您需要的数据在每一次事件函数被触发的时候，都会顺带传输一份携带数据的变量(这个变量通常是在子组件中存储数据的那个),传到最后一步的事件函数处，至此数据便进入父组件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cpn = &#123;</span><br><span class="line">  template: <span class="string">&#x27;#cpn&#x27;</span>,</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        categories: [</span><br><span class="line">           &#123; <span class="attr">id</span>: <span class="string">&#x27;1&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;one&#x27;</span> &#125;,</span><br><span class="line">           &#123; <span class="attr">id</span>: <span class="string">&#x27;2&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;two&#x27;</span> &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">btnClick</span>(<span class="params">item</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.$emit(<span class="string">&#x27;itemClick&#x27;</span>, item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Vue对象app挂载到id为app的DOM元素</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line"><span class="comment">//子组件在父组件app内部注册以成为其子组件;</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    cpn</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">cpnClick</span>(<span class="params">item</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;cpnClick&#x27;</span>, item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在这个栗子中，cpn的data()中的数据被v-for提取到了item中，所以cpn是子组件(用谁的数据，谁就是本次通信的子组件)，</p>
+<p>触发button上的点击事件后，btnClick函数被调用并传参item，此时btnClick中的$emit方法被调用，自定义事件itemClick被触发，并且传一个item；</p>
+<p>然后itemClick这个自定义的事件会被父元素cpn的@itemClick=”cpnClick”监听到，并且触发cpnClick方法，item也会就此从 $emit 处，伴随itemClick事件的触发被传到cpnClick内，进入父元素，至此item传输完毕。</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>“啊, 这么简单的一点事情这个博主怎么讲的这么麻烦啊?”<br>确实,但我就是想讲的详细一点,毕竟我将来哪天说不定忘了也得回来看的,我要是回来查看到自己以前写的东西寥寥几笔带过那得多…<br>这一系列关于传值的文章还会有的.我会在最近继续更新;</p>
+<p>这是我个人的一些理解啦,如果您发现我的不足,我很高兴您能为我指出!</p>
 
                         
                           
@@ -235,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
         		</li>
       		
 		</ul>
@@ -251,7 +257,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/前端/JavaScript//" class="article-tag-list-link color1">JavaScript</a>
+        			<a href="/categories/前端/Vue-js//" class="article-tag-list-link color2">Vue.js</a>
         		</li>
       		
 		</ul>
@@ -306,7 +312,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/06/JS%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E9%A2%84%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/27/Vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC(%E4%BA%8C)%20$emit%E5%AD%90%E4%BC%A0%E7%88%B6&%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +326,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/02/07/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/07/28/Auto.js%20%E5%85%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86(%E4%BA%8C)%20%E5%AF%B9%E5%BA%94%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%93%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript数据类型
+          Auto.js 全命令整理(二) 对应用命令专题
         
       </div>
     </a>
   
   
-    <a href="/2020/12/06/JavaScript%E9%A2%84%E8%A7%A3%E6%9E%90%E6%9C%BA%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS预解析机制</div>
+    <a href="/2021/07/27/async&await%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">async&amp;await异步请求处理办法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -358,7 +364,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E9%A2%84%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">JavaScript预解析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS%E9%A2%84%E8%A7%A3%E6%9E%90%EF%BC%9F"><span class="toc-number"></span> <span class="toc-text">JS预解析？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A2%84%E8%A7%A3%E6%9E%90%E5%8F%97%E4%BD%93"><span class="toc-number"></span> <span class="toc-text">一、预解析受体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9var%E7%9A%84%E9%A2%84%E8%A7%A3%E6%9E%90"><span class="toc-number"></span> <span class="toc-text">二、对var的预解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9function%E7%9A%84%E9%A2%84%E8%A7%A3%E6%9E%90"><span class="toc-number"></span> <span class="toc-text">三、对function的预解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81var%E5%9C%A8%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%86%85"><span class="toc-number"></span> <span class="toc-text">四、var在作用域内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81function%E4%BD%9C%E5%8F%82%E3%80%81%E5%9C%A8%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E5%86%85"><span class="toc-number"></span> <span class="toc-text">五、function作参、在事件处理程序内</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81-emit%E4%BC%A0%E9%80%92%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">一、$emit传递事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-emit%E4%BC%A0%E9%80%92%E5%80%BC"><span class="toc-number">2.</span> <span class="toc-text">二、$emit传递值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AD%90%E4%BC%A0%E7%88%B6-emit"><span class="toc-number">3.</span> <span class="toc-text">三、子传父$emit</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -522,15 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,6 +541,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
