@@ -1,3 +1,12 @@
+---
+title: 解读ES6 Promise
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 解读ES6 Promise
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 详解ES6 Promise异步
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 

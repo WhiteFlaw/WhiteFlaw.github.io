@@ -1,3 +1,12 @@
+---
+title: Auto.js实现自动填充文本
+date: 2020-11-27
+cover: /img/d1.webp
+desc: Auto.js实现自动填充文本
+tags: [CSS, 前端]
+sticky: false
+---
+
 # Auto.js文本框自动文本填充
 
 @[TOC](文章目录)

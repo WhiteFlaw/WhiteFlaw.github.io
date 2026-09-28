@@ -1,3 +1,11 @@
+---
+title: WARNING in configuration The ‘mode‘ option hasnot been set, webpack will fallback
+date: 2020-11-27
+cover: /img/d1.webp
+desc: WARNING in configuration The ‘mode‘ option hasnot been set, webpack will fallback
+tags: [CSS, 前端]
+sticky: false
+---
 
 # 项目场景：
 

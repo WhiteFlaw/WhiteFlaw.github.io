@@ -1,3 +1,11 @@
+---
+title: 原生JS跨页面传值的方法
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 原生JS跨页面传值的方法
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

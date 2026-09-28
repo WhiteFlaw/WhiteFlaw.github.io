@@ -17,18 +17,17 @@ function getEnvVar(key: string, defaultValue: string): string {
 
 // 站点配置 - 支持环境变量覆盖
 export const SITE_CONFIG = {
-  icon: getEnvVar('VITE_SITE_ICON', 'Pj'),
-  title: getEnvVar('VITE_SITE_TITLE', 'Pjfun Blog'),
-  description: getEnvVar('VITE_SITE_DESCRIPTION', '一个现代化的个人博客和技术分享平台'),
+  icon: getEnvVar('VITE_SITE_ICON', 'Wf'),
+  title: getEnvVar('VITE_SITE_TITLE', `WhiteFlaw's Blog`),
+  description: getEnvVar('VITE_SITE_DESCRIPTION', 'Time to craft code and change lives'),
   author: getEnvVar('VITE_SITE_AUTHOR', 'Simon'),
   keywords: (getEnvVar('VITE_SITE_KEYWORDS', '博客,技术分享,前端开发,Vue,TypeScript')||'').split(',').map(k => k.trim()),
   email: getEnvVar('VITE_SITE_EMAIL', 'pjfun@aliyun.com'),
   socialLinks: {
-    github: getEnvVar('VITE_SOCIAL_GITHUB', 'https://github.com/LXC-9349/pjfun-blog'),
-    Telegram: getEnvVar('VITE_SOCIAL_TELEGRAM', 'https://t.me/pjfun_top'),
+    github: getEnvVar('VITE_SOCIAL_GITHUB', 'https://github.com/WhiteFlaw/WhiteFlaw.github.io')
   },
   foot: {
-    github: getEnvVar('VITE_FOOT_GITHUB', 'https://github.com/LXC-9349/pjfun-blog'),
+    github: getEnvVar('VITE_FOOT_GITHUB', 'https://github.com/WhiteFlaw/WhiteFlaw.github.io'),
   }
 }
 
@@ -37,7 +36,7 @@ export const GIT_REPO = SITE_CONFIG.socialLinks.github
 
 // Giscus 评论系统配置 https://giscus.app/zh-CN
 export const GISCUS_CONFIG = {
-  enabled: getEnvVar('VITE_GISCUS_ENABLED', 'true') === 'true', // 启用评论系统
+  enabled: getEnvVar('VITE_GISCUS_ENABLED', 'true') === 'false', // 启用评论系统
   repo: getEnvVar('VITE_GISCUS_REPO', 'LXC-9349/blog-comment'), // GitHub 仓库
   repoId: getEnvVar('VITE_GISCUS_REPO_ID', 'R_kgDOQmj5WA'), // 仓库 ID
   category: getEnvVar('VITE_GISCUS_CATEGORY', 'Announcements'), // Discussion 分类
@@ -51,14 +50,14 @@ export const GISCUS_CONFIG = {
 }
 
 // 热门标签 - 支持环境变量配置（逗号分隔）
-const hotTagsStr = getEnvVar('VITE_HOT_TAGS', 'Vue,网页,文本,在线课程,编程教程,职业技能,知识管理,思维导图,学习笔记,教育心得,自我提升')||''
+const hotTagsStr = getEnvVar('VITE_HOT_TAGS', '网页,文本,编程教程,职业技能,知识管理,学习笔记,自我提升')||''
 // @ts-ignore
 export const HOT_TAGS = hotTagsStr.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
 
 export const I18N_CONFIG = {
   zh: {
     siteTitle: SITE_CONFIG.title,
-    siteDescription: '零后端、纯静态、顶级动效、全球秒开的现代化个人博客系统。支持 Markdown/HTML/PDF/Word/Excel，一键部署。',
+    siteDescription: 'Time to craft code and change lives',
     articleDirectory: '文章目录',
     latestPosts: '最新文章',
     searchPlaceholder: '搜索文章...',
@@ -150,7 +149,7 @@ export const I18N_CONFIG = {
     passwordProtectionNotConfigured: '密码保护未正确配置',
     logout: '退出登录',
     // 页脚相关翻译
-    footerDescription: '一个现代化的个人博客和技术分享平台',
+    footerDescription: 'Time to craft code and change lives',
     allRightsReserved: '保留所有权利',
     siteVisitors: '本站访客数',
     siteViews: '本站总访问量',

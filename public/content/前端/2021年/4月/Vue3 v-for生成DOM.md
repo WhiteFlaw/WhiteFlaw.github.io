@@ -1,3 +1,12 @@
+---
+title: Vue3 v-for生成DOM
+date: 2020-11-27
+cover: /img/d1.webp
+desc: Vue3 v-for生成DOM
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 前言
 v-for的用法, 代码可跑.
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

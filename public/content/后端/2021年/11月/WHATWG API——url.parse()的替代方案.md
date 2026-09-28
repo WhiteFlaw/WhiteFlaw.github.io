@@ -1,3 +1,12 @@
+---
+title: WHATWG API——url.parse()的替代方案
+date: 2021-10-23
+cover: /img/d1.webp
+desc: WHATWG API——url.parse()的替代方案
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 # 前言

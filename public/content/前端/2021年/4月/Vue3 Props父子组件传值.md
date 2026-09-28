@@ -1,3 +1,11 @@
+---
+title: Vue3 Props父子组件传值
+date: 2020-11-27
+cover: /img/d1.webp
+desc: Vue3 Props父子组件传值
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

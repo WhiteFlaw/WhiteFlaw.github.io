@@ -33,8 +33,8 @@ export function rssPlugin(): Plugin {
 
           // 创建 Feed 实例
           const feed = new Feed({
-            title: process.env.VITE_SITE_TITLE || 'Pjfun Blog',
-            description: process.env.VITE_SITE_DESCRIPTION || '一个现代化的个人博客和技术分享平台',
+            title: process.env.VITE_SITE_TITLE || `WhiteFlaw's Blog`,
+            description: process.env.VITE_SITE_DESCRIPTION || 'Time to craft code and change lives.',
             id: siteUrl,
             link: siteUrl,
             language: 'zh-CN',

@@ -1,3 +1,12 @@
+---
+title: GitHub改token验证后如何提交
+date: 2021-04-14
+cover: /img/d1.webp
+desc: GitHub改token验证后如何提交
+tags: [Vue, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

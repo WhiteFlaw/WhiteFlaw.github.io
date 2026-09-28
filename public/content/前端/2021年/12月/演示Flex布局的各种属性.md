@@ -1,4 +1,11 @@
-
+---
+title: 演示Flex布局的各种属性
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 演示Flex布局的各种属性
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

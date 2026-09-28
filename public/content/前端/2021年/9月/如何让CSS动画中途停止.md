@@ -1,3 +1,12 @@
+---
+title: 如何让CSS动画中途停止
+date: 2021-04-14
+cover: /img/d1.webp
+desc: 如何让CSS动画中途停止
+tags: [Vue, 前端]
+sticky: false
+---
+
 # 如何让CSS动画中途暂停在某一状态
 
 @[TOC](文章目录)

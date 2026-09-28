@@ -1,3 +1,12 @@
+---
+title: Auto.js 各种数据获取方法
+date: 2021-10-23
+cover: /img/d1.webp
+desc: Auto.js 各种数据获取方法
+tags: [CSS, 前端]
+sticky: false
+---
+
 # Auto.js 命令&作用(一) 信息获取专题
 
 @[TOC](目录)

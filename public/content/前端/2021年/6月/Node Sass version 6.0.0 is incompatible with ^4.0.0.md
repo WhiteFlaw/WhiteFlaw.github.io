@@ -1,3 +1,12 @@
+---
+title: Node Sass version 6.0.0 is incompatible with ^4.0.0
+date: 2021-04-14
+cover: /img/d1.webp
+desc: Node Sass version 6.0.0 is incompatible with ^4.0.0
+tags: [Vue, 前端]
+sticky: false
+---
+
 node-sass已经弃用了,现在它已经被dart-sass所替代,dart-sass的安装更加稳定,去试试它吧.
 # 项目场景：
 使用scss文件配置Vue页面控件的样式.

@@ -1,5 +1,13 @@
+---
+title: JavaScript 预解析机制
+date: 2021-10-23
+cover: /img/d1.webp
+desc: JavaScript 预解析机制
+tags: [CSS, 前端]
+sticky: false
+---
 
-## JavaScript预解析
+# JavaScript预解析
 @[TOC](文章目录)
 
 # JS预解析？

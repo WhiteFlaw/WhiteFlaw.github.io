@@ -1,3 +1,12 @@
+---
+title: ElementUI-Transfer组件与进度条绑定
+date: 2021-04-14
+cover: /img/d1.webp
+desc: ElementUI-Transfer组件与进度条绑定
+tags: [Vue, 前端]
+sticky: false
+---
+
 # Transfer与进度条组件绑定
 
 @[TOC](文章目录)

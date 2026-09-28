@@ -1,3 +1,12 @@
+---
+title: Webpack dev-server搭建本地服务
+date: 2020-11-27
+cover: /img/d1.webp
+desc: Webpack dev-server搭建本地服务
+tags: [CSS, 前端]
+sticky: false
+---
+
 ## WebPack-dev-server搭建本地服务器
 
 @[TOC](文章目录)

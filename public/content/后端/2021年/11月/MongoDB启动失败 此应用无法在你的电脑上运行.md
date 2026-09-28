@@ -1,3 +1,11 @@
+---
+title: MongoDB启动失败 此应用无法在你的电脑上运行
+date: 2021-10-23
+cover: /img/d1.webp
+desc: MongoDB启动失败 此应用无法在你的电脑上运行
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

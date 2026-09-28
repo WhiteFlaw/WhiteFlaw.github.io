@@ -1,4 +1,11 @@
-
+---
+title: MySQL设置数据格为空白
+date: 2021-10-23
+cover: /img/d1.webp
+desc: MySQL设置数据格为空白
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

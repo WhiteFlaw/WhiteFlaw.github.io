@@ -1,3 +1,11 @@
+---
+title: Vue权限控制
+date: 2021-04-14
+cover: /img/d1.webp
+desc: Vue权限控制
+tags: [Vue, 前端]
+sticky: false
+---
 
 @[TOC](目录)
 

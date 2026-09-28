@@ -1,3 +1,12 @@
+---
+title: 用接口调试工具Insomnia发送请求
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 用接口调试工具Insomnia发送请求
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 # 新建Document

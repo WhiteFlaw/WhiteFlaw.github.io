@@ -1,3 +1,12 @@
+---
+title: WebPack配置文件抽离
+date: 2020-11-27
+cover: /img/d1.webp
+desc: WebPack配置文件抽离
+tags: [CSS, 前端]
+sticky: false
+---
+
 # WebPack配置文件的分离
 @[TOC](文章目录)
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

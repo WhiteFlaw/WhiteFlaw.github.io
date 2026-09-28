@@ -1,3 +1,12 @@
+---
+title: Invalid prop type check failed for prop ““. Expected Number or String, got Array
+date: 2021-10-23
+cover: /img/d1.webp
+desc: Invalid prop type check failed for prop ““. Expected Number or String, got Array
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 项目场景：
 二次封装ElAvatar, 父组件向子组件传值:
 ```html

@@ -1,3 +1,12 @@
+---
+title: for...in遍历对象和数组
+date: 2021-10-23
+cover: /img/d1.webp
+desc: for...in遍历对象和数组
+tags: [CSS, 前端]
+sticky: false
+---
+
 ## 一、for in遍历
 这个方法还可以遍历数组，就放在一起写了。
 在遍历对象时：

@@ -1,3 +1,12 @@
+---
+title: 理解JavaScript的宏微任务
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 理解JavaScript的宏微任务
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 尝试理解JavaScript中的宏任务与微任务
 
 @[TOC](文章目录)

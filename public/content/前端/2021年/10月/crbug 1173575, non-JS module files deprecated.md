@@ -1,8 +1,8 @@
 ---
-title: CSS中的Positon属性
+title: crbug 1173575, non-JS module files deprecated
 date: 2021-10-23
 cover: /img/d1.webp
-desc: CSS中的Positon属性
+desc: crbug 1173575, non-JS module files deprecated
 tags: [CSS, 前端]
 sticky: false
 ---

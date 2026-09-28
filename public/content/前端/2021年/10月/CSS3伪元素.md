@@ -1,3 +1,11 @@
+---
+title: CSS3伪元素
+date: 2021-10-23
+cover: /img/d1.webp
+desc: CSS3伪元素
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

@@ -1,3 +1,11 @@
+---
+title: NodeJS实现静态web
+date: 2021-10-23
+cover: /img/d1.webp
+desc: NodeJS实现静态web
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

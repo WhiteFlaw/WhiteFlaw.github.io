@@ -1,3 +1,12 @@
+---
+title: JavaScript正则表达式一
+date: 2021-10-23
+cover: /img/d1.webp
+desc: JavaScript正则表达式一
+tags: [CSS, 前端]
+sticky: false
+---
+
 ## 正则表达式基础
 # 一、正则表达式的解读
 ## 1.正则表达式的概念和作用

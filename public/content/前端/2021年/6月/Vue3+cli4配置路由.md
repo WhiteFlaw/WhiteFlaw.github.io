@@ -1,3 +1,12 @@
+---
+title: Vue3+cli4配置路由
+date: 2021-04-14
+cover: /img/d1.webp
+desc: Vue3+cli4配置路由
+tags: [Vue, 前端]
+sticky: false
+---
+
 # vue-cli4 路由配置
 
 @[TOC](文章目录)

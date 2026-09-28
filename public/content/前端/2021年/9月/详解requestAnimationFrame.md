@@ -1,3 +1,12 @@
+---
+title: 详解requestAnimationFrame
+date: 2021-04-14
+cover: /img/d1.webp
+desc: 详解requestAnimationFrame
+tags: [Vue, 前端]
+sticky: false
+---
+
 <strong>详解Web API     requestAnimationFrame</strong>
 @[TOC](文章目录)
 

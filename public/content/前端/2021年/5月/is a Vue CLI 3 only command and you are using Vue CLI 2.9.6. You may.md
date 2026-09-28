@@ -1,3 +1,11 @@
+---
+title: is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may
+date: 2020-11-27
+cover: /img/d1.webp
+desc: is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may
+tags: [CSS, 前端]
+sticky: false
+---
 
 # 项目场景：
 Vue-cli3执行生成脚手架,这个bug已解决;

@@ -1,3 +1,12 @@
+---
+title: Vue-cli 4中的全局样式配置
+date: 2021-04-14
+cover: /img/d1.webp
+desc: Vue-cli 4中的全局样式配置
+tags: [Vue, 前端]
+sticky: false
+---
+
 # 在Vue-cli 4.x 中配置样式
 在使用vue-cli 4.x搭建项目完毕后,你可以选择在项目目录下创建"style"文件夹,在里面创建scss文件来作为全局可用的样式文件.
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

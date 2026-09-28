@@ -1,3 +1,12 @@
+---
+title: 27日MySQL命令
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 27日MySQL命令
+tags: [CSS, 前端]
+sticky: false
+---
+
 2021.09.27 MySQL笔记# 2021.09.27 MySQL笔记
 @[TOC](文章目录)
 

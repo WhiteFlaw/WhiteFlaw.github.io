@@ -1,3 +1,12 @@
+---
+title: 读《学习JavaScript数据结构与算法》第二章
+date: 2021-04-14
+cover: /img/d1.webp
+desc: 读《学习JavaScript数据结构与算法》第二章
+tags: [Vue, 前端]
+sticky: false
+---
+
 # 第二章 ECMAScript和TypeScript概述
 @[TOC](文章目录)
 

@@ -1,3 +1,11 @@
+---
+title: 解决PHPStudy8.1.1 mySQL服务启动失败 数据库工具报错卡死
+date: 2021-10-23
+cover: /img/d1.webp
+desc: 解决PHPStudy8.1.1 mySQL服务启动失败 数据库工具报错卡死
+tags: [CSS, 前端]
+sticky: false
+---
 
 # 项目场景：
 最近在学PHP,学到mySQL的时候我掏出了我积满灰尘的PHPStudy,但是版本太低了,就去下了个新版:

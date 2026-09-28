@@ -1,3 +1,11 @@
+---
+title: 使用vue-cli4搭建项目
+date: 2020-11-27
+cover: /img/d1.webp
+desc: 使用vue-cli4搭建项目
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](目录)
 

@@ -1,3 +1,11 @@
+---
+title: Vue3 $emit父子传值
+date: 2021-04-14
+cover: /img/d1.webp
+desc: Vue3 $emit父子传值
+tags: [Vue, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

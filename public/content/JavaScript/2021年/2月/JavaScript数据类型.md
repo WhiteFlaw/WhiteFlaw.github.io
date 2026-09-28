@@ -1,3 +1,12 @@
+---
+title: JavaScript数据类型
+date: 2021-10-23
+cover: /img/d1.webp
+desc: JavaScript数据类型
+tags: [CSS, 前端]
+sticky: false
+---
+
 # JavaScript数据类型
 
 @[TOC](文章目录)
