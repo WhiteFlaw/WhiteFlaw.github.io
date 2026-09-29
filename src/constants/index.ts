@@ -18,7 +18,7 @@ function getEnvVar(key: string, defaultValue: string): string {
 // 站点配置 - 支持环境变量覆盖
 export const SITE_CONFIG = {
   icon: getEnvVar('VITE_SITE_ICON', 'Wf'),
-  title: getEnvVar('VITE_SITE_TITLE', `WhiteFlaw's Blog`),
+  title: getEnvVar('VITE_SITE_TITLE', `WhiteFlaw's blog`),
   description: getEnvVar('VITE_SITE_DESCRIPTION', 'Time to craft code and change lives'),
   author: getEnvVar('VITE_SITE_AUTHOR', 'Simon'),
   keywords: (getEnvVar('VITE_SITE_KEYWORDS', '博客,技术分享,前端开发')||'').split(',').map(k => k.trim()),
