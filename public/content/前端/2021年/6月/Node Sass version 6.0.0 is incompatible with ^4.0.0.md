@@ -1,6 +1,6 @@
 ---
 title: Node Sass version 6.0.0 is incompatible with ^4.0.0
-date: 2021-04-14
+date: 2021-06-17
 cover: /img/d1.webp
 desc: Node Sass version 6.0.0 is incompatible with ^4.0.0
 tags: [Vue, 前端]

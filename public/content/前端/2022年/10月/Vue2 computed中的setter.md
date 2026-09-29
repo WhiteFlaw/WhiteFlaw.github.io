@@ -1,3 +1,11 @@
+---
+title: Vue2 computed中的setter
+date: 2022-10-02
+cover: /img/d1.webp
+desc: Vue2 computed中的setter
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

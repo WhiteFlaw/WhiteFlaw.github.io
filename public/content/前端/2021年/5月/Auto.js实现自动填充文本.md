@@ -1,6 +1,6 @@
 ---
 title: Auto.js实现自动填充文本
-date: 2020-11-27
+date: 2021-05-23
 cover: /img/d1.webp
 desc: Auto.js实现自动填充文本
 tags: [CSS, 前端]

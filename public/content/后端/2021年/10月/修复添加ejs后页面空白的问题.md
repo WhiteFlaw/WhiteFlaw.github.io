@@ -1,6 +1,6 @@
 ---
 title: 修复添加ejs后页面空白的问题
-date: 2021-10-23
+date: 2021-10-28
 cover: /img/d1.webp
 desc: 修复添加ejs后页面空白的问题
 tags: [CSS, 前端]

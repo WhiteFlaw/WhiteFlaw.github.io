@@ -1,5 +1,5 @@
 {
-  "name": "pjblog",
+  "name": "WhiteFlaw's blog",
   "installCommand": "npm install",
   "assets": {
     "directory": "./dist",

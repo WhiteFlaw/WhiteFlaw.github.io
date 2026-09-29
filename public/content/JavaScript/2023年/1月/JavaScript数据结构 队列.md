@@ -1,3 +1,12 @@
+---
+title: JavaScript数据结构 队列
+date: 2023-01-08
+cover: /img/d1.webp
+desc: JavaScript数据结构 队列
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

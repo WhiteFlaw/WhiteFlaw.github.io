@@ -1,6 +1,6 @@
 ---
 title: Vue3+cli4配置路由
-date: 2021-04-14
+date: 2021-06-19
 cover: /img/d1.webp
 desc: Vue3+cli4配置路由
 tags: [Vue, 前端]

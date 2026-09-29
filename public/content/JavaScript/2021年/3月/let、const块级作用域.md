@@ -1,6 +1,6 @@
 ---
 title: let、const块级作用域
-date: 2021-10-23
+date: 2021-03-08
 cover: /img/d1.webp
 desc: let、const块级作用域
 tags: [CSS, 前端]
@@ -8,7 +8,7 @@ sticky: false
 ---
 
 # let、const块级声明与块级作用域绑定
-@[TOC](目录)
+ 
 # let、const与块级作用域
 在ES6之前JS的作用域有三种，它们分别为：
 全局作用域

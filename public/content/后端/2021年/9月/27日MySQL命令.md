@@ -1,6 +1,6 @@
 ---
 title: 27日MySQL命令
-date: 2021-10-23
+date: 2021-09-27
 cover: /img/d1.webp
 desc: 27日MySQL命令
 tags: [CSS, 前端]

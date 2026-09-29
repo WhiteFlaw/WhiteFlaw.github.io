@@ -1,6 +1,6 @@
 ---
 title: Webpack dev-server搭建本地服务
-date: 2020-11-27
+date: 2021-05-24
 cover: /img/d1.webp
 desc: Webpack dev-server搭建本地服务
 tags: [CSS, 前端]

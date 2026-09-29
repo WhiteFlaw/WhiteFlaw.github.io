@@ -33,7 +33,7 @@ export function rssPlugin(): Plugin {
 
           // 创建 Feed 实例
           const feed = new Feed({
-            title: process.env.VITE_SITE_TITLE || `WhiteFlaw's Blog`,
+            title: process.env.VITE_SITE_TITLE || `WhiteFlaw's blog`,
             description: process.env.VITE_SITE_DESCRIPTION || 'Time to craft code and change lives.',
             id: siteUrl,
             link: siteUrl,

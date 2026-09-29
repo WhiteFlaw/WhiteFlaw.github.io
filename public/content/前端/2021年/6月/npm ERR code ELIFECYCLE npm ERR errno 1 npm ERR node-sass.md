@@ -1,6 +1,6 @@
 ---
 title: npm ERR code ELIFECYCLE npm ERR errno 1 npm ERR node-sass
-date: 2021-04-14
+date: 2021-06-17
 cover: /img/d1.webp
 desc: npm ERR code ELIFECYCLE npm ERR errno 1 npm ERR node-sass
 tags: [Vue, 前端]

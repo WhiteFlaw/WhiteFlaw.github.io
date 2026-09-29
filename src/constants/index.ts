@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
   title: getEnvVar('VITE_SITE_TITLE', `WhiteFlaw's Blog`),
   description: getEnvVar('VITE_SITE_DESCRIPTION', 'Time to craft code and change lives'),
   author: getEnvVar('VITE_SITE_AUTHOR', 'Simon'),
-  keywords: (getEnvVar('VITE_SITE_KEYWORDS', '博客,技术分享,前端开发,Vue,TypeScript')||'').split(',').map(k => k.trim()),
+  keywords: (getEnvVar('VITE_SITE_KEYWORDS', '博客,技术分享,前端开发')||'').split(',').map(k => k.trim()),
   email: getEnvVar('VITE_SITE_EMAIL', 'pjfun@aliyun.com'),
   socialLinks: {
     github: getEnvVar('VITE_SOCIAL_GITHUB', 'https://github.com/WhiteFlaw/WhiteFlaw.github.io')
@@ -36,8 +36,8 @@ export const GIT_REPO = SITE_CONFIG.socialLinks.github
 
 // Giscus 评论系统配置 https://giscus.app/zh-CN
 export const GISCUS_CONFIG = {
-  enabled: getEnvVar('VITE_GISCUS_ENABLED', 'true') === 'false', // 启用评论系统
-  repo: getEnvVar('VITE_GISCUS_REPO', 'LXC-9349/blog-comment'), // GitHub 仓库
+  enabled: getEnvVar('VITE_GISCUS_ENABLED', 'true') === 'true', // 启用评论系统
+  repo: getEnvVar('VITE_GISCUS_REPO', 'WhiteFlaw/WhiteFlaw.github.io'), // GitHub 仓库
   repoId: getEnvVar('VITE_GISCUS_REPO_ID', 'R_kgDOQmj5WA'), // 仓库 ID
   category: getEnvVar('VITE_GISCUS_CATEGORY', 'Announcements'), // Discussion 分类
   categoryId: getEnvVar('VITE_GISCUS_CATEGORY_ID', 'DIC_kwDOQmj5WM4CzpLf'), // 分类 ID
@@ -50,7 +50,7 @@ export const GISCUS_CONFIG = {
 }
 
 // 热门标签 - 支持环境变量配置（逗号分隔）
-const hotTagsStr = getEnvVar('VITE_HOT_TAGS', '网页,文本,编程教程,职业技能,知识管理,学习笔记,自我提升')||''
+const hotTagsStr = getEnvVar('VITE_HOT_TAGS', 'CSS,HTML,Vue,C#,JavaScript,后端')||''
 // @ts-ignore
 export const HOT_TAGS = hotTagsStr.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
 

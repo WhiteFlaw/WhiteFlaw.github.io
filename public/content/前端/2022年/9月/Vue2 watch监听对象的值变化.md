@@ -1,4 +1,11 @@
-@[TOC](文章目录)
+---
+title: Vue2 watch监听对象的值变化
+date: 2022-09-01
+cover: /img/d1.webp
+desc: Vue2 watch监听对象的值变化
+tags: [CSS, 前端]
+sticky: false
+---
 
 ---
 

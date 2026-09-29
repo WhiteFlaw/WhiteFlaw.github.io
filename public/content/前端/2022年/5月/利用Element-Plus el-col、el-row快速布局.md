@@ -1,6 +1,6 @@
 ---
 title: 利用Element-Plus el-col、el-row快速布局
-date: 2021-10-23
+date: 2022-05-11
 cover: /img/d1.webp
 desc: 利用Element-Plus el-col、el-row快速布局
 tags: [CSS, 前端]

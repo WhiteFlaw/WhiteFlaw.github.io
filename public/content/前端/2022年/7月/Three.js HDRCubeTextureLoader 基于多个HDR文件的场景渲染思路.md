@@ -1,6 +1,6 @@
 ---
 title: Three.js HDRCubeTextureLoader 基于多个HDR文件的场景渲染思路
-date: 2021-10-23
+date: 2022-07-08
 cover: /img/d1.webp
 desc: Three.js HDRCubeTextureLoader 基于多个HDR文件的场景渲染思路
 tags: [CSS, 前端]

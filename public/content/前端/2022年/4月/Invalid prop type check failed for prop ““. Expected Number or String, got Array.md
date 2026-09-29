@@ -1,6 +1,6 @@
 ---
 title: Invalid prop type check failed for prop ““. Expected Number or String, got Array
-date: 2021-10-23
+date: 2022-04-30
 cover: /img/d1.webp
 desc: Invalid prop type check failed for prop ““. Expected Number or String, got Array
 tags: [CSS, 前端]

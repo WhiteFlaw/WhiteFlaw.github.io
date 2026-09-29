@@ -1,3 +1,12 @@
+---
+title: Vue2 Element Pagination组件 每页数据量不同的解决方案
+date: 2022-09-07
+cover: /img/d1.webp
+desc: Vue2 Element Pagination组件 每页数据量不同的解决方案
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

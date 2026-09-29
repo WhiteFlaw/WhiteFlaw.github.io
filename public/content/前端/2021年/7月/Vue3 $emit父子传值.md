@@ -1,6 +1,6 @@
 ---
 title: Vue3 $emit父子传值
-date: 2021-04-14
+date: 2021-07-27
 cover: /img/d1.webp
 desc: Vue3 $emit父子传值
 tags: [Vue, 前端]

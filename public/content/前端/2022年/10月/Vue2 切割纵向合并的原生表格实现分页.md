@@ -1,3 +1,12 @@
+---
+title: Vue2 切割纵向合并的原生表格实现分页
+date: 2022-10-31
+cover: /img/d1.webp
+desc: Vue2 切割纵向合并的原生表格实现分页
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

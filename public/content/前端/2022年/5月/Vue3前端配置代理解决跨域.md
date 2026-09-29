@@ -1,6 +1,6 @@
 ---
 title: Vue3前端配置代理解决跨域
-date: 2021-10-23
+date: 2022-05-06
 cover: /img/d1.webp
 desc: Vue3前端配置代理解决跨域
 tags: [CSS, 前端]

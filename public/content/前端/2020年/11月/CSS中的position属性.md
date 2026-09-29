@@ -4,7 +4,7 @@ date: 2020-11-19
 cover: /img/d1.webp
 desc: CSS中的Positon属性
 tags: [CSS, 前端]
-sticky: true
+sticky: false
 ---
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

@@ -1,13 +1,13 @@
 ---
 title: Vue3抽离封装axios请求方法
-date: 2021-10-23
+date: 2022-05-15
 cover: /img/d1.webp
 desc: Vue3抽离封装axios请求方法
 tags: [CSS, 前端]
 sticky: false
 ---
 
-@[TOC](目录)
+ 
 
 ---
 

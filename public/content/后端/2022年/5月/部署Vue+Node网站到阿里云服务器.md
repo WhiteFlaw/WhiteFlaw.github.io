@@ -1,6 +1,6 @@
 ---
 title: 部署Vue+Node网站到阿里云服务器
-date: 2021-10-23
+date: 2022-05-06
 cover: /img/d1.webp
 desc: 部署Vue+Node网站到阿里云服务器
 tags: [CSS, 前端]

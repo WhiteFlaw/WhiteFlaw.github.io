@@ -1,3 +1,12 @@
+---
+title: 解决Element表单回车提交会刷新页面的问题
+date: 2022-09-22
+cover: /img/d1.webp
+desc: 解决Element表单回车提交会刷新页面的问题
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 问题描述
 `Element`表单, 提交按钮添加回车按键提交事件.
 偶尔出现回车提交直接刷新页面的情况.

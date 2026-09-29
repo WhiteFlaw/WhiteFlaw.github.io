@@ -1,6 +1,6 @@
 ---
 title: HTML5 classList操作类名
-date: 2021-04-14
+date: 2021-09-28
 cover: /img/d1.webp
 desc: HTML5 classList操作类名
 tags: [Vue, 前端]

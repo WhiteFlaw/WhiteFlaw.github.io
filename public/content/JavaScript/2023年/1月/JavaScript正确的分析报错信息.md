@@ -1,3 +1,12 @@
+---
+title: JavaScript正确的分析报错信息
+date: 2023-01-14
+cover: /img/d1.webp
+desc: JavaScript正确的分析报错信息
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

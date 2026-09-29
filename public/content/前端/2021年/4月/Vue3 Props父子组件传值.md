@@ -1,6 +1,6 @@
 ---
 title: Vue3 Props父子组件传值
-date: 2020-11-27
+date: 2021-04-25
 cover: /img/d1.webp
 desc: Vue3 Props父子组件传值
 tags: [CSS, 前端]

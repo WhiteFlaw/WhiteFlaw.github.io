@@ -1,6 +1,6 @@
 ---
 title: 使用json-server搭建接口
-date: 2021-10-23
+date: 2022-06-12
 cover: /img/d1.webp
 desc: 使用json-server搭建接口
 tags: [CSS, 前端]

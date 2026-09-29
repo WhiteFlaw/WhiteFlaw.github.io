@@ -1,3 +1,12 @@
+---
+title: not defined on the instance but referenced during render
+date: 2022-10-11
+cover: /img/d1.webp
+desc: not defined on the instance but referenced during render
+tags: [CSS, 前端]
+sticky: false
+---
+
 # 项目场景：
 子组件内的表单报错, 该表单数据对象存在且绑定无误.
 

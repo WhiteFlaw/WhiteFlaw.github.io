@@ -1,3 +1,11 @@
+---
+title: JavaScript 二叉树
+date: 2023-02-13
+cover: /img/d1.webp
+desc: JavaScript 二叉树
+tags: [CSS, 前端]
+sticky: false
+---
 
 @[TOC](文章目录)
 

@@ -1,3 +1,12 @@
+---
+title: Vue2 Element el-table多选表格控制选取
+date: 2022-08-29
+cover: /img/d1.webp
+desc: Vue2 Element el-table多选表格控制选取
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: Auto.js行为监听语法
-date: 2021-10-23
+date: 2022-05-04
 cover: /img/d1.webp
 desc: Auto.js行为监听语法
 tags: [CSS, 前端]
@@ -9,7 +9,7 @@ sticky: false
 
 # Auto.js 全命令整理(四) 屏幕按键监听
 
-@[TOC](目录)
+ 
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 

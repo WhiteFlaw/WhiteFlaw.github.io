@@ -1,6 +1,6 @@
 ---
 title: 微信小程序properties组件传值
-date: 2021-10-23
+date: 2022-06-05
 cover: /img/d1.webp
 desc: 微信小程序properties组件传值
 tags: [CSS, 前端]

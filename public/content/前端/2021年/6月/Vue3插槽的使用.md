@@ -1,6 +1,6 @@
 ---
 title: Vue3插槽的使用
-date: 2021-04-14
+date: 2021-06-25
 cover: /img/d1.webp
 desc: Vue3插槽的使用
 tags: [Vue, 前端]
@@ -8,7 +8,7 @@ sticky: false
 ---
 
 Vue3 插槽使用详解
-@[TOC](目录)
+ 
 
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

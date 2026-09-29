@@ -1,6 +1,6 @@
 ---
 title: 3日Three.js笔记
-date: 2021-10-23
+date: 2022-07-03
 cover: /img/d1.webp
 desc: 3日Three.js笔记
 tags: [CSS, 前端]

@@ -1,3 +1,12 @@
+---
+title: JavaScript 代码不嵌套主义
+date: 2023-02-18
+cover: /img/d1.webp
+desc: JavaScript 代码不嵌套主义
+tags: [CSS, 前端]
+sticky: false
+---
+
 @[TOC](文章目录)
 
 ---

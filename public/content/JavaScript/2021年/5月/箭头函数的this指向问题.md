@@ -1,6 +1,6 @@
 ---
 title: 箭头函数的this指向问题
-date: 2021-10-23
+date: 2021-05-29
 cover: /img/d1.webp
 desc: 箭头函数的this指向问题
 tags: [CSS, 前端]

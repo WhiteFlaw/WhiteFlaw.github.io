@@ -1,6 +1,6 @@
 ---
 title: JavaScript闭包
-date: 2021-10-23
+date: 2021-08-04
 cover: /img/d1.webp
 desc: JavaScript闭包
 tags: [CSS, 前端]

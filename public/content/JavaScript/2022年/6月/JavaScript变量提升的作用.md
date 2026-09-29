@@ -1,6 +1,6 @@
 ---
 title: JavaScript变量提升的作用
-date: 2021-10-23
+date: 2022-06-22
 cover: /img/d1.webp
 desc: JavaScript变量提升的作用
 tags: [CSS, 前端]

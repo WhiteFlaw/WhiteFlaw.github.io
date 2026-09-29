@@ -1,6 +1,6 @@
 ---
 title: Vue3传参修改子组件元素
-date: 2021-10-23
+date: 2022-05-02
 cover: /img/d1.webp
 desc: Vue3传参修改子组件元素
 tags: [CSS, 前端]
