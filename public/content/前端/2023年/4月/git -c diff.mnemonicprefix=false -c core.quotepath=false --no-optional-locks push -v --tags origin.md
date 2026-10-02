@@ -3,7 +3,7 @@ title: git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-lo
 date: 2023-04-13
 cover: /img/d1.webp
 desc: git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v --tags origin
-tags: [CSS, 前端]
+tags: [前端]
 sticky: false
 ---
 

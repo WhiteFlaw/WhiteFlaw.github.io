@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
+  <div class="min-h-screen bg-gray-50 dark:bg-transparent lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
     <header
         :class="[

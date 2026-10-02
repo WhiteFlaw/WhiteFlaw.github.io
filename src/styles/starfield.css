@@ -1,0 +1,126 @@
+/* ==========================================================================
+   星空背景（Starfield）— 纯 CSS 实现，不使用图片 / Canvas / JS
+   --------------------------------------------------------------------------
+   仅在暗色主题（<html class="dark">）下生效，浅色主题保持原样。
+
+   叠加顺序（由下到上）：
+     1. body            近黑深空底色 + 极淡星云光晕
+     2. #app::before    远景星层：16 颗 / 240px 瓦片，数量多、个头中等
+     3. #app::after     近景星层：11 颗 / 460px 瓦片，个头大、中心纯白带光晕
+     4. 页面内容        各页面根节点已改为 dark:bg-transparent，星空得以透出
+
+   星点为什么这样写：每颗星用「多段色标」而不是简单的 白→透明 两段。
+   两段色标会把能量均匀摊薄成一片灰雾；多段色标先保留一段实心核心，
+   再向外衰减成光晕，看起来才是一颗"星"而不是一个"灰点"。
+
+   想再亮/再暗，调这三处：
+     · 星点半径（circle Npx）
+     · 核心段的透明度（第一个 rgba 的最后一个数）
+     · starfield-twinkle 的 from 值（闪烁时的最暗程度）
+
+   关闭方式：删除 src/main.ts 中的 `import '@/styles/starfield.css'`。
+   ========================================================================== */
+
+/* ---------- 1. 深空底色 ---------- */
+/* 只写在 body 上：body 的背景会被提升为「画布背景」，永远绘制在最底层，
+   这样 z-index:-1 的星层才不会被底色盖住（写在 html 上则会盖住星层）。 */
+.dark body {
+  background-color: #04050a;
+
+  /* 极淡的星云光晕，让深空不至于死黑。
+     想要纯黑底色，删掉下面整个 background-image 声明即可。 */
+  background-image:
+    radial-gradient(ellipse 60% 50% at 12% 8%, rgba(56, 89, 189, 0.2), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(ellipse 50% 45% at 88% 18%, rgba(126, 66, 189, 0.16), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(ellipse 70% 50% at 50% 108%, rgba(30, 90, 140, 0.18), rgba(0, 0, 0, 0) 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- 2 & 3. 星层公共样式 ---------- */
+#app::before,
+#app::after {
+  content: '';
+  position: fixed;
+  /* 比视口大一圈，留出漂移余量，避免动画时边缘露白 */
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: repeat;
+}
+
+/* 仅在暗色主题下提示合成器为该层单独建层（浅色下星层不显示，无需占用显存） */
+.dark #app::before,
+.dark #app::after {
+  will-change: transform, opacity;
+}
+
+/* 远景星层：半径 2.2px，核心保持约 45% 实心后再衰减 */
+.dark #app::before {
+  background-image:
+    radial-gradient(circle 2.2px at 18px 30px, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 86px 112px, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 142px 20px, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.84) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 186px 148px, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.66) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 228px 68px, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 44px 176px, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.78) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 118px 218px, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 170px 168px, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.66) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 218px 232px, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.84) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 28px 228px, rgba(213, 231, 255, 0.72) 0%, rgba(213, 231, 255, 0.64) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 152px 78px, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.78) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 94px 30px, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.66) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 200px 198px, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 62px 134px, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 136px 178px, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.2px at 206px 118px, rgba(213, 231, 255, 0.75) 0%, rgba(213, 231, 255, 0.68) 45%, rgba(255, 255, 255, 0) 100%);
+  background-size: 240px 240px;
+  animation: starfield-twinkle 7s ease-in-out infinite alternate;
+}
+
+/* 近景星层：半径 2.4~4.5px，中心纯白实心 + 外层光晕，最抓眼睛的一层 */
+.dark #app::after {
+  background-image:
+    radial-gradient(circle 4px at 58px 84px, #fff 0%, rgba(255, 255, 255, 0.85) 22%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3px at 268px 44px, #fff 0%, rgba(255, 255, 255, 0.8) 22%, rgba(255, 255, 255, 0.22) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 4.5px at 386px 156px, #fff 0%, rgba(255, 255, 255, 0.88) 22%, rgba(255, 255, 255, 0.28) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3.2px at 132px 248px, rgba(213, 231, 255, 1) 0%, rgba(213, 231, 255, 0.8) 22%, rgba(213, 231, 255, 0.24) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3.8px at 300px 300px, #fff 0%, rgba(255, 255, 255, 0.86) 22%, rgba(255, 255, 255, 0.26) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3px at 52px 372px, #fff 0%, rgba(255, 255, 255, 0.8) 22%, rgba(255, 255, 255, 0.22) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3.4px at 398px 388px, #fff 0%, rgba(255, 255, 255, 0.84) 22%, rgba(255, 255, 255, 0.24) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.8px at 196px 424px, rgba(213, 231, 255, 1) 0%, rgba(213, 231, 255, 0.78) 22%, rgba(213, 231, 255, 0.22) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.6px at 232px 176px, #fff 0%, rgba(255, 255, 255, 0.78) 22%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 3.2px at 428px 262px, #fff 0%, rgba(255, 255, 255, 0.82) 22%, rgba(255, 255, 255, 0.24) 55%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle 2.4px at 108px 130px, #fff 0%, rgba(255, 255, 255, 0.76) 22%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0) 100%);
+  background-size: 460px 460px;
+  animation:
+    starfield-drift 120s ease-in-out infinite alternate,
+    starfield-twinkle 11s ease-in-out infinite alternate;
+}
+
+/* ---------- 动画 ---------- */
+/* from 值就是「最暗时刻」的整体亮度。原来写 0.35，等于一半时间整片星空
+   只剩三成亮度，这是"看不清"的主因；现在抬到 0.82，只留轻微呼吸感。 */
+@keyframes starfield-twinkle {
+  from {
+    opacity: 0.82;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes starfield-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-1.5%, -1%, 0);
+  }
+}
+
+/* 说明：global.css 中的 `prefers-reduced-motion: reduce` 规则会自动把这些
+   动画降到 0.01ms，因此无需在这里重复处理无障碍偏好。 */

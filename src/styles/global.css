@@ -77,3 +77,40 @@ a,
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
+/* ===== 暗色主题：文章正文配色与背景 ===== */
+/* 为什么写在这里而不是页面里：正文 HTML 是 marked 渲染后经 v-html 注入的，
+   articleDetail.vue 的 <style scoped> 里的 .markdown-body 规则打不到这些节点
+   （它们不带 scope 属性），因此必须放在全局样式表中。
+
+   分工：
+     · 正文文字（段落/列表等继承此色）      → darkreader-text-f1feed / #d0fcc2
+     · h1(文章大标题) + h2~h6(小标题)      → darkreader-text-fc013f / #fe1d55
+     · 面板底色：半透明，让星空透过来
+
+   优先级：.dark .markdown-body (0,2,0) 高于 github-markdown.css 里的
+   .markdown-body (0,1,0)；标题选择器再多一个元素名，同样稳压，无需 !important。 */
+.dark .markdown-body {
+  color: var(--darkreader-text-f1feed, #d0fcc2);
+  background-color: var(--darkreader-background-0000007a, rgba(24, 26, 27, 0.48));
+}
+
+.dark .markdown-body h1,
+.dark .markdown-body h2,
+.dark .markdown-body h3,
+.dark .markdown-body h4,
+.dark .markdown-body h5,
+.dark .markdown-body h6 {
+  color: var(--darkreader-text-fc013f, #fe1d55);
+}
+
+/* ===== 全站：禁止浏览器默认的拖拽行为 ===== */
+/* 拖拽图片到桌面、拖拽链接到书签栏、拖拽选中的文字，都属于浏览器默认行为。
+   -webkit-user-drag 覆盖 Blink/WebKit；Firefox 不支持该属性，
+   由 main.ts 里的全局 dragstart 监听统一兜底。 */
+img,
+a,
+svg,
+video,
+canvas {
+  -webkit-user-drag: none;
+}

@@ -3,7 +3,7 @@ title: 使用vue-cli4搭建项目
 date: 2021-05-29
 cover: /img/d1.webp
 desc: 使用vue-cli4搭建项目
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

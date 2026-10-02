@@ -3,7 +3,7 @@ title: 解决Element-Plus Pagination分页初始空白问题
 date: 2022-04-28
 cover: /img/d1.webp
 desc: 解决Element-Plus Pagination分页初始空白问题
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: 解决Element表单回车提交会刷新页面的问题
 date: 2022-09-22
 cover: /img/d1.webp
 desc: 解决Element表单回车提交会刷新页面的问题
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

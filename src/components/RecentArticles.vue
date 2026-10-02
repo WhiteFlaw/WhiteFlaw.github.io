@@ -1,7 +1,7 @@
 <template>
   <div class="card p-6 transition-all duration-300 hover:shadow-xl">
     <div class="flex justify-between items-center mb-5">
-      <h3 class="text-lg font-bold flex items-center gap-2 dark:text-white">
+      <h3 class="text-lg font-bold flex items-center gap-2 theme-title">
         <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
         {{ t('recentlyViewed') }}
       </h3>
@@ -15,8 +15,8 @@
     </div>
     
     <div v-if="recentArticles.length === 0" class="text-center py-8">
-      <IconCarbonDocumentBlank class="w-12 h-12 mx-auto text-gray-400 dark:text-gray-500" />
-      <p class="mt-3 text-gray-500 dark:text-gray-400 text-sm">
+      <IconCarbonDocumentBlank class="w-12 h-12 mx-auto text-gray-400 theme-text" />
+      <p class="mt-3 text-gray-500 theme-text text-sm">
         {{ t('noRecentArticles') }}
       </p>
     </div>
@@ -36,10 +36,10 @@
           >
         </div>
         <div class="flex-1 min-w-0">
-          <h4 class="font-medium text-gray-800 dark:text-white line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors text-sm">
+          <h4 class="font-medium text-gray-800 theme-title line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors text-sm">
             {{ article.title }}
           </h4>
-          <p v-if="article.excerpt" class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
+          <p v-if="article.excerpt" class="text-xs text-gray-500 theme-text mt-1 line-clamp-2">
             {{ article.excerpt }}
           </p>
           <div class="flex flex-wrap gap-1 mt-2">

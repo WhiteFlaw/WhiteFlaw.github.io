@@ -3,7 +3,7 @@ title: Vue2 Element多选表格 row-click选取与行禁用
 date: 2022-11-08
 cover: /img/d1.webp
 desc: Vue2 Element多选表格 row-click选取与行禁用
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

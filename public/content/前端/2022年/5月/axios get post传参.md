@@ -3,7 +3,7 @@ title: axios get post传参
 date: 2022-05-27
 cover: /img/d1.webp
 desc: axios get post传参
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

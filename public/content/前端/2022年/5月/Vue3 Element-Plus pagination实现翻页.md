@@ -3,7 +3,7 @@ title: Vue3 Element-Plus pagination实现翻页
 date: 2022-05-05
 cover: /img/d1.webp
 desc: Vue3 Element-Plus pagination实现翻页
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

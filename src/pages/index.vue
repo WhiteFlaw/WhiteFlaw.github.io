@@ -1,6 +1,6 @@
 <template>
   <div
-      class="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
+      class="min-h-screen bg-gray-50 dark:bg-transparent flex flex-col lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
     <header
         :class="[
@@ -70,7 +70,7 @@
     <div class="px-4 sm:px-6 lg:px-8 py-4 border-b border-gray-200 dark:border-gray-700">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center gap-3">
-          <span class="text-sm font-medium text-gray-600 dark:text-gray-300 flex-shrink-0">{{ t('filterByTag') || '热门标签' }}:</span>
+          <span class="text-sm font-medium text-gray-600 theme-title flex-shrink-0">{{ t('filterByTag') || '热门标签' }}:</span>
           <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mb-1 flex-1" style="scrollbar-width: none; -ms-overflow-style: none;">
             <button
                 v-for="tag in hotTags"
@@ -80,13 +80,13 @@
                 'flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap cursor-pointer',
                 selectedTag === tag
                   ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-white dark:text-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-blue-400'
+                  : 'bg-white theme-text theme-panel border border-gray-300 dark:border-gray-600 hover:border-blue-400'
               ]"
             >
               {{ tag }}
             </button>
           </div>
-          <button @click="selectedTag = ''" v-if="selectedTag" class="flex-shrink-0 ml-2 text-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors cursor-pointer">
+          <button @click="selectedTag = ''" v-if="selectedTag" class="flex-shrink-0 ml-2 text-sm text-gray-600 hover:text-gray-800 theme-text dark:hover:text-gray-200 transition-colors cursor-pointer">
             {{ t('clear') || '清除' }}
           </button>
         </div>
@@ -100,13 +100,13 @@
         <aside :class="[
           'lg:w-80 flex-shrink-0',
           'lg:sticky lg:top-16 lg:self-start',
-          'fixed inset-0 left-0 z-50 w-4/5 bg-white dark:bg-gray-900 shadow-2xl lg:relative lg:shadow-lg transform transition-transform duration-300 ease-out-back',
+          'fixed inset-0 left-0 z-50 w-4/5 bg-white theme-panel shadow-2xl lg:relative lg:shadow-lg transform transition-transform duration-300 ease-out-back',
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         ]">
           <div class="h-full flex flex-col">
             <!-- 移动端头部 -->
             <div class="flex-shrink-0 flex justify-between items-center p-5 border-b border-gray-200 dark:border-gray-700 lg:hidden">
-              <h2 class="text-lg font-bold flex items-center gap-2 dark:text-white">
+              <h2 class="text-lg font-bold flex items-center gap-2 theme-title">
                 <IconCarbonBook class="w-5 h-5 text-blue-500" />
                 {{ t('articleDirectory') }}
               </h2>
@@ -118,7 +118,7 @@
             <!-- 目录标题（PC） -->
             <div class="hidden lg:block p-6 pb-4">
               <div class="flex justify-between items-center">
-                <h2 class="text-lg font-bold flex items-center gap-2 dark:text-white">
+                <h2 class="text-lg font-bold flex items-center gap-2 theme-title">
                   <IconCarbonBook class="w-5 h-5 text-blue-500" />
                   {{ t('articleDirectory') }}
                 </h2>
@@ -127,14 +127,14 @@
 
             <!-- 目录树 -->
             <div class="flex-1 overflow-y-auto px-6 pb-4">
-              <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+              <div class="bg-gray-50 theme-panel rounded-xl p-4">
                 <NavTree :tree="tree" />
               </div>
             </div>
 
             <!-- 移动端最新文章（在抽屉底部） -->
             <div class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto">
-              <h3 class="text-lg font-bold mb-4 flex items-center gap-2 dark:text-white">
+              <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
                 <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
                 {{ t('latestPosts') }}
               </h3>
@@ -150,8 +150,8 @@
                     {{ i + 1 }}
                   </div>
                   <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-gray-900 dark:text-white truncate group-hover:text-blue-600 transition-colors">{{ post.title }}</h4>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 flex items-center">
+                    <h4 class="text-sm font-medium text-gray-900 theme-title truncate group-hover:text-blue-600 transition-colors">{{ post.title }}</h4>
+                    <p class="text-xs text-gray-500 theme-text mt-1 flex items-center">
                       <IconCarbonTime class="w-3 h-3 mr-1" />
                       {{ formatDate(post.date) }}
                     </p>
@@ -199,7 +199,7 @@
             <article
                 v-for="(post, i) in displayedPosts"
                 :key="post.path"
-                class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
+                class="group bg-white theme-panel rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
                 v-motion
                 :initial="{ opacity: 0, y: 40 }"
                 :enter="{ opacity: 1, y: 0, transition: { delay: i * 60, duration: 600 } }"
@@ -231,12 +231,12 @@
 
                 <div class="p-5 flex flex-col flex-1">
                   <!-- 标题 -->
-                  <h2 class="text-base font-bold text-gray-900 dark:text-white leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h2 class="text-base font-bold text-gray-900 theme-title leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {{ post.title }}
                   </h2>
 
                   <!-- 摘要 -->
-                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed line-clamp-2 flex-1">
+                  <p class="text-sm text-gray-600 theme-text mt-2 leading-relaxed line-clamp-2 flex-1">
                     {{ post.excerpt || t('noExcerpt') || '暂无摘要' }}
                   </p>
 
@@ -248,26 +248,26 @@
                         <span
                             v-for="tag in (post.tags || []).slice(0, 2)"
                             :key="tag"
-                            class="text-[11px] px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-medium whitespace-nowrap"
+                            class="text-[11px] px-2 py-0.5 rounded-md bg-gray-100 theme-panel text-gray-500 theme-text font-medium whitespace-nowrap"
                         >
                           {{ tag }}
                         </span>
-                        <span v-if="(post.tags || []).length > 2" class="text-[11px] text-gray-400 dark:text-gray-500 self-center">
+                        <span v-if="(post.tags || []).length > 2" class="text-[11px] text-gray-400 theme-text self-center">
                           +{{ (post.tags || []).length - 2 }}
                         </span>
                       </div>
                       <!-- 日期 -->
-                      <time class="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap flex items-center gap-1">
+                      <time class="text-xs text-gray-400 theme-text whitespace-nowrap flex items-center gap-1">
                         <IconCarbonTime class="w-3.5 h-3.5" />
                         {{ formatDate(post.date) }}
                       </time>
-                      <span v-if="post.excerpt" class="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap flex items-center gap-1">
+                      <span v-if="post.excerpt" class="text-xs text-gray-400 theme-text whitespace-nowrap flex items-center gap-1">
                         <IconCarbonBook class="w-3.5 h-3.5" />
                         {{ Math.max(1, Math.ceil((post.excerpt?.length || 0) / 100)) }}min
                       </span>
                     </div>
                     <!-- 阅读箭头 -->
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 dark:bg-gray-700/50 text-gray-400 dark:text-gray-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300 group-hover:translate-x-0.5">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 theme-panel text-gray-400 theme-text group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300 group-hover:translate-x-0.5">
                       <IconCarbonArrowRight class="w-4 h-4" />
                     </span>
                   </div>
@@ -285,7 +285,7 @@
             <!-- 空状态 -->
             <div v-if="!loading && displayedPosts.length === 0" class="col-span-full text-center py-20 animate-fade-in">
               <IconCarbonFaceDizzy class="w-20 h-20 mx-auto text-gray-400" />
-              <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">
+              <p class="mt-4 text-xl text-gray-600 theme-text">
                 {{ selectedTag ? t('noArticlesWithTag', { tag: selectedTag }) : t('noArticles') }}
               </p>
             </div>
@@ -295,8 +295,8 @@
         <!-- 右侧最新文章侧栏（仅 ≥xl 显示） -->
         <aside class="hidden xl:block w-72 flex-shrink-0 space-y-6">
           <RecentArticles />
-          <div class="sticky top-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-            <h3 class="text-lg font-bold mb-5 flex items-center gap-2 dark:text-white">
+          <div class="sticky top-6 bg-white theme-panel rounded-xl shadow-sm p-6">
+            <h3 class="text-lg font-bold mb-5 flex items-center gap-2 theme-title">
               <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
               {{ t('latestPosts') }}
             </h3>
@@ -313,11 +313,11 @@
                 </div>
                 <div class="flex-1 min-w-0">
                   <h4
-                      class="font-medium dark:text-white line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors"
+                      class="font-medium theme-title line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors"
                       :title="post.title">
                     {{ post.title }}
                   </h4>
-                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 flex items-center">
+                  <p class="text-xs text-gray-500 theme-text mt-2 flex items-center">
                     <IconCarbonTime class="w-3.5 h-3.5 mr-1" />
                     {{ formatDate(post.date) }}
                   </p>

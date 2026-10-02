@@ -5,6 +5,7 @@ import '@unocss/reset/tailwind-compat.css'
 import 'uno.css'
 import 'lenis/dist/lenis.css'
 import '@/styles/global.css'
+import '@/styles/starfield.css'
 import App from "./App.vue";
 import { getLanguage, setLanguage } from '@/utils/i18n'
 import { setupSEO } from '@/plugins/seo'
@@ -13,6 +14,13 @@ import { getEnvVariable } from '@/utils/tool'
 // 引入 SVG 图标
 import 'virtual:svg-icons-register'
 import {passwordApi} from "@/utils/password";
+
+// 开发环境下 Vite 的 HMR 会以动态 import 重新执行本模块（而不是整页刷新），
+// 导致 Lenis、主题监听、createApp().mount() 等被重复初始化。
+// 所以这里让 main.ts 接受更新后直接整页刷新，保证运行状态始终干净。
+if (import.meta.hot) {
+  import.meta.hot.accept(() => window.location.reload())
+}
 
 // 初始化平滑滚动
 export const lenis = new Lenis({
@@ -40,7 +48,7 @@ function initializeTheme() {
     const savedTheme = localStorage.getItem('theme')
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-    let theme = 'light'
+    let theme = 'dark'
     if (savedTheme) {
         theme = savedTheme
     } else if (systemPrefersDark) {
@@ -189,14 +197,32 @@ async function mountApp() {
 
 mountApp()
 // 将 passwordApi 暴露到全局，供各页面调用登出等功能
+// 注意：必须允许重新配置（configurable: true）。
+// Vite 的 HMR 会以动态 import 的方式重新执行本模块，属性若不可配置，
+// 第二次 defineProperty 就会抛出 "Cannot redefine property: pjfun"。
+// 对外依然只读：writable: false 已保证无法被赋值改写。
 Object.defineProperty(window, 'pjfun', {
   value: Object.freeze({
     ...((window as any).pjfun || {}),
     loaded: true,
     passwordApi: passwordApi
   }),
-  writable: false
+  writable: false,
+  configurable: true
 });
 window.onerror = function(message, source, lineno, colno, error) {
     console.error('Global error:', { message, source, lineno, colno, error });
 };
+
+// 禁止浏览器默认的拖拽行为：拖拽选中的文字、把图片/链接拖到桌面或书签栏。
+// global.css 里的 -webkit-user-drag 只对 Blink/WebKit 生效，这里统一兜底（含 Firefox）。
+// 输入框与可编辑区域内的拖拽保留，避免影响正常的文字编辑。
+document.addEventListener(
+  'dragstart',
+  (event) => {
+    const target = event.target as HTMLElement | null
+    if (target?.closest('input, textarea, [contenteditable="true"]')) return
+    event.preventDefault()
+  },
+  { capture: true }
+)

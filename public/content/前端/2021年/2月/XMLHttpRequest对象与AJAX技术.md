@@ -3,7 +3,7 @@ title: XMLHttpRequest对象与AJAX技术
 date: 2021-02-25
 cover: /img/d1.webp
 desc: XMLHttpRequest对象与AJAX技术
-tags: [前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: JavaScript 基于MutationObserver实现拖拽防抖
 date: 2023-04-16
 cover: /img/d1.webp
 desc: JavaScript 基于MutationObserver实现拖拽防抖
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

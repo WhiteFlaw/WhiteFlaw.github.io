@@ -3,7 +3,7 @@ title: is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may
 date: 2021-05-24
 cover: /img/d1.webp
 desc: is a Vue CLI 3 only command and you are using Vue CLI 2.9.6. You may
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

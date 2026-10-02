@@ -3,7 +3,7 @@ title: Invalid prop type check failed for prop ““. Expected Number or String
 date: 2022-04-30
 cover: /img/d1.webp
 desc: Invalid prop type check failed for prop ““. Expected Number or String, got Array
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

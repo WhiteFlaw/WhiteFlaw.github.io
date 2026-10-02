@@ -3,7 +3,7 @@ title: Component is not found in path “miniprogram_npm weui-miniprogram“
 date: 2022-07-24
 cover: /img/d1.webp
 desc: Component is not found in path “miniprogram_npm weui-miniprogram“
-tags: [CSS, 前端]
+tags: [前端]
 sticky: false
 ---
 

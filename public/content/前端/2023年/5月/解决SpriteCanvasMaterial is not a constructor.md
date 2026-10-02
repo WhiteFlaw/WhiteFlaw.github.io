@@ -3,7 +3,7 @@ title: 解决SpriteCanvasMaterial is not a constructor
 date: 2023-05-18
 cover: /img/d1.webp
 desc: 解决SpriteCanvasMaterial is not a constructor
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

@@ -108,7 +108,7 @@ function injectDialogStyles() {
         width: 100%;
         height: 100%;
         z-index: 10000;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Courier New', monospace;
       }
       
       .dialog-overlay {
@@ -823,6 +823,19 @@ export const fetchWithFallback = async (urls: string[], dataType: string) => {
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
+
+            // 必须确认拿到的确实是 JSON 再返回。
+            // Vite 开发服务器（以及部分静态托管）对不存在的文件会返回 200 + index.html，
+            // 只判断 response.ok 会把这段 HTML 当成数据返回，调用方再去 .json() 时才抛
+            // "Unexpected token '<', "<!doctype "... is not valid JSON"，
+            // 导致后面备用的 nav.json 根本没机会被尝试。
+            // 用 clone 试解析一次（不消耗原响应体），不依赖服务器给的 Content-Type。
+            try {
+                await response.clone().json();
+            } catch {
+                throw new Error('响应不是合法 JSON，可能是 SPA 回退返回的 index.html');
+            }
+
             return response;
         } catch (error) {
             console.warn(`请求失败 ${url}:`, error);

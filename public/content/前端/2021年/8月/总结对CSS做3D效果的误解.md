@@ -3,7 +3,7 @@ title: 总结对CSS做3D效果的误解
 date: 2021-08-13
 cover: /img/d1.webp
 desc: 总结对CSS做3D效果的误解
-tags: [Vue, 前端]
+tags: [CSS, 前端]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: WARNING in configuration The ‘mode‘ option hasnot been set, webpack w
 date: 2021-05-10
 cover: /img/d1.webp
 desc: WARNING in configuration The ‘mode‘ option hasnot been set, webpack will fallback
-tags: [CSS, 前端]
+tags: [前端]
 sticky: false
 ---
 

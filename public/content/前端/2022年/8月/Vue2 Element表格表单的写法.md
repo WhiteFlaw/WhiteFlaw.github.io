@@ -3,7 +3,7 @@ title: Vue2 Element表格表单的写法
 date: 2022-08-13
 cover: /img/d1.webp
 desc: Vue2 Element表格表单的写法
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

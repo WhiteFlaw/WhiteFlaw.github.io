@@ -3,7 +3,7 @@ title: No data sources are configured to run this SQL and provide advanced code 
 date: 2022-06-07
 cover: /img/d1.webp
 desc: No data sources are configured to run this SQL and provide advanced code assistanc
-tags: [CSS, 前端]
+tags: [后端]
 sticky: false
 ---
 

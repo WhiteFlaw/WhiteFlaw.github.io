@@ -3,7 +3,7 @@ title: Auto.js 输出方法
 date: 2021-10-23
 cover: /img/d1.webp
 desc: Auto.js 输出方法
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

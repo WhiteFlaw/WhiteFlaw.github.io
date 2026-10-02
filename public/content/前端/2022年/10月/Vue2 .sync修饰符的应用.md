@@ -3,7 +3,7 @@ title: Vue2 .sync修饰符的应用
 date: 2022-10-01
 cover: /img/d1.webp
 desc: Vue2 .sync修饰符的应用
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: 理解JavaScript的宏微任务
 date: 2021-09-24
 cover: /img/d1.webp
 desc: 理解JavaScript的宏微任务
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

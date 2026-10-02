@@ -3,7 +3,7 @@ title: 读《学习JavaScript数据结构与算法》第三章补
 date: 2022-08-03
 cover: /img/d1.webp
 desc: 读《学习JavaScript数据结构与算法》第三章补
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

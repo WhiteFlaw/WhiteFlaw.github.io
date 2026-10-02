@@ -41,7 +41,7 @@
     <ThemeToggle />
   </div>
 
-  <article class="min-h-screen dark:bg-[#0d1117] transition-colors duration-300 lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));"
+  <article class="min-h-screen dark:bg-transparent transition-colors duration-300 lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));"
     @touchstart.passive="handleTouchStart"
     @touchend.passive="handleTouchEnd"
   >
@@ -244,7 +244,7 @@
             :category="GISCUS_CONFIG.category"
             :category-id="GISCUS_CONFIG.categoryId"
             :mapping="GISCUS_CONFIG.mapping"
-            :term="windowLocation"
+            :term="giscusTerm"
             :strict="GISCUS_CONFIG.strict"
             :reactions-enabled="GISCUS_CONFIG.reactionsEnabled"
             :emit-metadata="GISCUS_CONFIG.emitMetadata"
@@ -543,6 +543,22 @@ let saveProgressTimer: number | null = null
 
 // 当前页面URL，供分享使用
 const windowLocation = computed(() => window.location.href)
+
+// giscus 讨论的标识（term）。
+// 不能直接用 window.location.pathname：它是百分号编码的，中文会变成 %E5%B9%B4，
+// 拿它当 term 会让 GitHub 上的 Discussion 标题变成一串乱码。
+// 这里解码成可读文本，并按 giscus 自身的 pathname 约定去掉前导斜杠。
+const giscusTerm = computed(() => {
+  const raw = window.location.pathname
+  let decoded = raw
+  try {
+    decoded = decodeURIComponent(raw)
+  } catch {
+    // 路径里出现非法百分号转义时兜底，保持原样，保证不抛异常
+  }
+  // 去掉首尾斜杠与空段（不用正则，避免转义问题），与 giscus 的 pathname 约定一致
+  return decoded.split('/').filter(Boolean).join('/')
+})
 
 const isOfficeFile = computed(() => currentFileExtension.value && ['pdf', 'doc', 'docx', 'xls', 'xlsx'].includes(currentFileExtension.value))
 

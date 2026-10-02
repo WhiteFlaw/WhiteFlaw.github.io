@@ -3,7 +3,7 @@ title: JavaScript判定用户输入文本的方式
 date: 2024-09-21
 cover: /img/d1.webp
 desc: JavaScript判定用户输入文本的方式
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

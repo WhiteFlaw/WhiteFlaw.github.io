@@ -270,7 +270,7 @@ const printExcel = () => {
             body {
               margin: 0;
               padding: 20px;
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              font-family: 'Courier New', monospace;
             }
             .print-container {
               text-align: center;

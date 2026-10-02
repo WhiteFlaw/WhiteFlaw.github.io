@@ -3,7 +3,7 @@ title: Blender变换游标坐标系后坐标系歪斜问题
 date: 2022-05-22
 cover: /img/d1.webp
 desc: Blender变换游标坐标系后坐标系歪斜问题
-tags: [CSS, 前端]
+tags: [3D建模]
 sticky: false
 ---
 

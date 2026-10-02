@@ -3,7 +3,7 @@ title: 数据标注系统实现2D标注功能
 date: 2023-03-27
 cover: /img/d1.webp
 desc: 数据标注系统实现2D标注功能
-tags: [CSS, 前端]
+tags: [Node, 后端]
 sticky: false
 ---
 

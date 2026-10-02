@@ -16,7 +16,7 @@ export default defineConfig({
     shortcuts: {
         'flex-center': 'flex items-center justify-center',
         'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
-        'card': 'bg-white dark:bg-gray-800 rounded-xl shadow-sm',
+        'card': 'bg-white dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))] rounded-xl shadow-sm',
         'btn': 'px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors',
         'btn-secondary': 'px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors',
         // 常用工具类
@@ -24,7 +24,7 @@ export default defineConfig({
         'scrollbar-hide': 'overflow-auto',
         'toc-scrollbar': 'overflow-y-auto',
         // 页面级复用组件
-        'sticky-header': 'sticky top-0 z-50 px-4 sm:px-6 lg:px-8 border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-colors duration-300',
+        'sticky-header': 'sticky top-0 z-50 px-4 sm:px-6 lg:px-8 border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black backdrop-blur-sm transition-colors duration-300',
         'scroll-top-btn': 'fixed bottom-20 lg:bottom-8 right-8 p-3 flex-center bg-gray-900 dark:bg-gray-700 text-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 active:scale-95 z-50 cursor-pointer',
         // 图标按钮
         'icon-btn': 'w-10 h-10 flex-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors cursor-pointer',
@@ -39,6 +39,10 @@ export default defineConfig({
         'theme-toggle-btn': 'p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer',
         // 卡片链接包装器
         'card-link': 'cursor-pointer block',
+        // 暗色主题三色：与指定的 Dark Reader 变量一致，未安装该扩展时用逗号后的兜底色
+        'theme-title': 'dark:text-[var(--darkreader-text-fc013f,#fe1d55)]',
+        'theme-text': 'dark:text-[var(--darkreader-text-f1feed,#d0fcc2)]',
+        'theme-panel': 'dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))]',
     },
     rules: [
         // .line-clamp-2 的多行截断

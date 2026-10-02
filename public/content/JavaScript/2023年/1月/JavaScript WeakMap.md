@@ -3,7 +3,7 @@ title: JavaScript WeakMap
 date: 2023-01-24
 cover: /img/d1.webp
 desc: JavaScript WeakMap
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

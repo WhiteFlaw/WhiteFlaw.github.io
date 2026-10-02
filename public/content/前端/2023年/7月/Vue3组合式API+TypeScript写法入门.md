@@ -3,7 +3,7 @@ title: Vue3组合式API+TypeScript写法入门
 date: 2023-07-21
 cover: /img/d1.webp
 desc: Vue3组合式API+TypeScript写法入门
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

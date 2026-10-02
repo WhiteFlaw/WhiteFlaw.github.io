@@ -3,7 +3,7 @@ title: JavaScipt代理模式虚拟代理
 date: 2022-07-30
 cover: /img/d1.webp
 desc: JavaScipt代理模式虚拟代理
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

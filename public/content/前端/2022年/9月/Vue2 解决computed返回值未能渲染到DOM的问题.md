@@ -3,7 +3,7 @@ title: Vue2 解决computed返回值未能渲染到DOM的问题
 date: 2022-09-13
 cover: /img/d1.webp
 desc: Vue2 解决computed返回值未能渲染到DOM的问题
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

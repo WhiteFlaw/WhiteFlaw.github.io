@@ -3,7 +3,7 @@ title: You are running Vue in development mode.Make sure to turn on production m
 date: 2021-03-29
 cover: /img/d1.webp
 desc: You are running Vue in development mode.Make sure to turn on production mode when deploying for
-tags: [Bug, Vue, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

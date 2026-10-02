@@ -3,7 +3,7 @@ title: 解读ES6 Promise
 date: 2021-09-07
 cover: /img/d1.webp
 desc: 解读ES6 Promise
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

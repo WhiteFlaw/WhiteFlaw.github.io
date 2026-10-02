@@ -3,7 +3,7 @@ title: Vue2 Vuex的使用
 date: 2022-07-15
 cover: /img/d1.webp
 desc: Vue2 Vuex的使用
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

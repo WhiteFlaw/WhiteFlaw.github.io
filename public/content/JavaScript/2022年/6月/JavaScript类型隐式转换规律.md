@@ -3,7 +3,7 @@ title: JavaScript类型隐式转换规律
 date: 2022-06-01
 cover: /img/d1.webp
 desc: JavaScript类型隐式转换规律
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

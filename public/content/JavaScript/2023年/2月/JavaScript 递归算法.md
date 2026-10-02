@@ -3,7 +3,7 @@ title: JavaScript 递归算法
 date: 2023-02-04
 cover: /img/d1.webp
 desc: JavaScript 递归算法
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: 解决Bridge材质导入到Blender为白色的问题
 date: 2023-07-10
 cover: /img/d1.webp
 desc: 解决Bridge材质导入到Blender为白色的问题
-tags: [CSS, 前端]
+tags: [3D建模]
 sticky: false
 ---
 

@@ -3,7 +3,7 @@ title: Vue2 Element description组件列合并
 date: 2022-08-16
 cover: /img/d1.webp
 desc: Vue2 Element description组件列合并
-tags: [CSS, 前端]
+tags: [Vue, 前端]
 sticky: false
 ---
 

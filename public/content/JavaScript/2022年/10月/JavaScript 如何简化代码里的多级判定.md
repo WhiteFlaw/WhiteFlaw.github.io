@@ -3,7 +3,7 @@ title: JavaScript 如何简化代码里的多级判定
 date: 2022-10-26
 cover: /img/d1.webp
 desc: JavaScript 如何简化代码里的多级判定
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

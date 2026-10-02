@@ -3,7 +3,7 @@ title: 解决HTML文档引入js模块出现的路径问题
 date: 2023-06-12
 cover: /img/d1.webp
 desc: 解决HTML文档引入js模块出现的路径问题
-tags: [CSS, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

@@ -37,11 +37,11 @@ export const GIT_REPO = SITE_CONFIG.socialLinks.github
 // Giscus 评论系统配置 https://giscus.app/zh-CN
 export const GISCUS_CONFIG = {
   enabled: getEnvVar('VITE_GISCUS_ENABLED', 'true') === 'true', // 启用评论系统
-  repo: getEnvVar('VITE_GISCUS_REPO', 'WhiteFlaw/WhiteFlaw.github.io'), // GitHub 仓库
-  repoId: getEnvVar('VITE_GISCUS_REPO_ID', 'R_kgDOQmj5WA'), // 仓库 ID
+  repo: getEnvVar('VITE_GISCUS_REPO', 'WhiteFlaw/WhiteFlaw.github.io'), // GitHub 仓库（必须与下面的 repoId 属于同一个仓库）
+  repoId: getEnvVar('VITE_GISCUS_REPO_ID', 'MDEwOlJlcG9zaXRvcnkzMjk1MTEzNTM='), // 仓库 ID
   category: getEnvVar('VITE_GISCUS_CATEGORY', 'Announcements'), // Discussion 分类
-  categoryId: getEnvVar('VITE_GISCUS_CATEGORY_ID', 'DIC_kwDOQmj5WM4CzpLf'), // 分类 ID
-  mapping: getEnvVar('VITE_GISCUS_MAPPING', 'pathname'), // 映射方式
+  categoryId: getEnvVar('VITE_GISCUS_CATEGORY_ID', 'DIC_kwDOE6Pxuc4DG2-C'), // 分类 ID
+  mapping: getEnvVar('VITE_GISCUS_MAPPING', 'specific'), // 映射方式（specific：用下面传入的 term，即解码后的文章路径）
   strict: getEnvVar('VITE_GISCUS_STRICT', 'false') === 'true', // 严格匹配
   reactionsEnabled: getEnvVar('VITE_GISCUS_REACTIONS', 'true') === 'true', // 启用反应
   emitMetadata: getEnvVar('VITE_GISCUS_METADATA', 'false') === 'true', // 发送元数据

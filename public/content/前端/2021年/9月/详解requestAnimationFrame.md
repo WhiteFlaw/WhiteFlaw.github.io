@@ -3,7 +3,7 @@ title: 详解requestAnimationFrame
 date: 2021-09-01
 cover: /img/d1.webp
 desc: 详解requestAnimationFrame
-tags: [Vue, 前端]
+tags: [JavaScript, 前端]
 sticky: false
 ---
 

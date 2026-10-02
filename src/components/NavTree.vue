@@ -73,7 +73,7 @@ defineProps<{
 }
 
 .chevron-icon {
-  @apply w-3.5 h-3.5 text-gray-500 dark:text-gray-400 transition-transform duration-300 flex-shrink-0;
+  @apply w-3.5 h-3.5 text-gray-500 dark:text-[var(--darkreader-text-f1feed,#d0fcc2)] transition-transform duration-300 flex-shrink-0;
 }
 
 .nav-folder[open] .chevron-icon {
@@ -109,11 +109,11 @@ defineProps<{
 }
 
 .folder-title {
-  @apply flex-grow text-sm font-medium text-gray-800 dark:text-gray-200;
+  @apply flex-grow text-sm font-medium text-gray-800 dark:text-[var(--darkreader-text-f1feed,#d0fcc2)];
 }
 
 .folder-count {
-  @apply flex-shrink-0 text-xs bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 rounded-full w-5 h-5 flex items-center justify-center transition-all duration-200;
+  @apply flex-shrink-0 text-xs bg-gray-200 dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))] text-gray-600 dark:text-[var(--darkreader-text-f1feed,#d0fcc2)] rounded-full w-5 h-5 flex items-center justify-center transition-all duration-200;
 }
 
 .folder-children {
@@ -135,7 +135,7 @@ defineProps<{
 }
 
 .nav-item-icon {
-  @apply w-3.5 h-3.5 text-gray-500 dark:text-gray-400 flex-shrink-0 transition-all duration-200;
+  @apply w-3.5 h-3.5 text-gray-500 dark:text-[var(--darkreader-text-f1feed,#d0fcc2)] flex-shrink-0 transition-all duration-200;
 }
 
 .nav-item-active .nav-item-icon {
@@ -143,7 +143,7 @@ defineProps<{
 }
 
 .nav-item-title {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700 dark:text-[var(--darkreader-text-f1feed,#d0fcc2)];
 }
 
 .nav-item-active .nav-item-title {
