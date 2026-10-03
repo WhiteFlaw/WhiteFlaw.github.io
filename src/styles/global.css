@@ -33,6 +33,7 @@ textarea:focus:not(:focus-visible) {
 
 /* ===== 可访问性：减少动画 ===== */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -77,6 +78,7 @@ a,
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
+
 /* ===== 暗色主题：文章正文配色与背景 ===== */
 /* 为什么写在这里而不是页面里：正文 HTML 是 marked 渲染后经 v-html 注入的，
    articleDetail.vue 的 <style scoped> 里的 .markdown-body 规则打不到这些节点

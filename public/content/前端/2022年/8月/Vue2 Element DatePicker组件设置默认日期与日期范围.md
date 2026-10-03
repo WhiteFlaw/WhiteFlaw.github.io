@@ -1,7 +1,7 @@
 ---
 title: Vue2 Element DatePicker组件设置默认日期与日期范围
 date: 2022-08-23
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: Vue2 Element DatePicker组件设置默认日期与日期范围
 tags: [Vue, 前端]
 sticky: false

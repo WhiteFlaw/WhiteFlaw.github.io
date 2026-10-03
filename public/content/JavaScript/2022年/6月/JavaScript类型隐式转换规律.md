@@ -1,7 +1,7 @@
 ---
 title: JavaScript类型隐式转换规律
 date: 2022-06-01
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: JavaScript类型隐式转换规律
 tags: [JavaScript, 前端]
 sticky: false

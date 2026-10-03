@@ -1,7 +1,7 @@
 ---
 title: GiWiFi普通用户无客户端登入
 date: 2021-11-27
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: GiWiFi普通用户无客户端登入
 tags: [前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Node实现用户注册功能
 date: 2021-12-01
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: Node实现用户注册功能
 tags: [Node, 后端]
 sticky: false

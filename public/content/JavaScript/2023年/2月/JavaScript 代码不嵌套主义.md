@@ -1,7 +1,7 @@
 ---
 title: JavaScript 代码不嵌套主义
 date: 2023-02-18
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: JavaScript 代码不嵌套主义
 tags: [JavaScript, 前端]
 sticky: false

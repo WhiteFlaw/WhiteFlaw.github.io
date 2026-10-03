@@ -1,7 +1,7 @@
 ---
 title: JavaScript数据结构 队列
 date: 2023-01-08
-cover: /img/d1.webp
+cover: /img/d7.webp
 desc: JavaScript数据结构 队列
 tags: [JavaScript, 前端]
 sticky: false

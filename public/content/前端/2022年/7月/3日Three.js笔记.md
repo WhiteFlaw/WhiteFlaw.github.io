@@ -1,7 +1,7 @@
 ---
 title: 3日Three.js笔记
 date: 2022-07-03
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: 3日Three.js笔记
 tags: [JavaScript, 前端]
 sticky: false

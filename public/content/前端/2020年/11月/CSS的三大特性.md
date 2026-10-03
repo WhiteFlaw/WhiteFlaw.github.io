@@ -1,7 +1,7 @@
 ---
 title: CSS的三大特性
 date: 2020-11-27
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: CSS的三大特性
 tags: [CSS, 前端]
 sticky: false

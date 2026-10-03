@@ -1,7 +1,7 @@
 ---
 title: JavaScript 预解析机制
 date: 2020-12-06
-cover: /img/d1.webp
+cover: /img/d5.webp
 desc: JavaScript 预解析机制
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: not defined on the instance but referenced during render
 date: 2022-10-11
-cover: /img/d1.webp
+cover: /img/d7.webp
 desc: not defined on the instance but referenced during render
 tags: [Vue, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Vue-cli 4中的全局样式配置
 date: 2021-06-17
-cover: /img/d1.webp
+cover: /img/d9.webp
 desc: Vue-cli 4中的全局样式配置
 tags: [Vue, 前端]
 sticky: false

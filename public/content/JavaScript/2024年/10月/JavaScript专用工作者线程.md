@@ -1,7 +1,7 @@
 ---
 title: JavaScript专用工作者线程
 date: 2024-10-19
-cover: /img/d1.webp
+cover: /img/d9.webp
 desc: JavaScript专用工作者线程
 tags: [JavaScript, 前端]
 sticky: false

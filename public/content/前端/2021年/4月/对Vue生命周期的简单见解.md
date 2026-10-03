@@ -1,7 +1,7 @@
 ---
 title: 对Vue生命周期的简单见解
 date: 2021-04-14
-cover: /img/d1.webp
+cover: /img/d5.webp
 desc: 对Vue生命周期的简单见解
 tags: [Vue, 前端]
 sticky: false

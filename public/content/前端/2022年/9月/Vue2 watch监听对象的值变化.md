@@ -1,7 +1,7 @@
 ---
 title: Vue2 watch监听对象的值变化
 date: 2022-09-01
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: Vue2 watch监听对象的值变化
 tags: [Vue, 前端]
 sticky: false

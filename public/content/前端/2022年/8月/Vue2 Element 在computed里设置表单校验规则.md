@@ -1,7 +1,7 @@
 ---
 title: Vue2 Element 在computed里设置表单校验规则
 date: 2022-08-14
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: Vue2 Element 在computed里设置表单校验规则
 tags: [Vue, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Uncaught ReferenceError key is not defined
 date: 2022-05-03
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: Uncaught ReferenceError key is not defined
 tags: [JavaScript, 前端]
 sticky: false

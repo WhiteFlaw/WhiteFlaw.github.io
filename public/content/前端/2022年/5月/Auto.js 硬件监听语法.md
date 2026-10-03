@@ -1,7 +1,7 @@
 ---
 title: Auto.js 硬件监听语法
 date: 2022-05-04
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: Auto.js 硬件监听语法
 tags: [JavaScript, 前端]
 sticky: false

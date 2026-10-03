@@ -1,7 +1,7 @@
 ---
 title: Vue2+Vuex在大型项目中的应用
 date: 2023-01-13
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: Vue2+Vuex在大型项目中的应用
 tags: [Vue, 前端]
 sticky: false

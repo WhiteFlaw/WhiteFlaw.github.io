@@ -1,7 +1,7 @@
 ---
 title: 用接口调试工具Insomnia发送请求
 date: 2021-11-14
-cover: /img/d1.webp
+cover: /img/d9.webp
 desc: 用接口调试工具Insomnia发送请求
 tags: [Node, 后端]
 sticky: false

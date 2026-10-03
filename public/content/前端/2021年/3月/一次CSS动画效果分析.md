@@ -1,7 +1,7 @@
 ---
 title: 一次CSS动画效果分析
 date: 2021-03-28
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: 一次CSS动画效果分析
 tags: [CSS, 前端]
 sticky: false

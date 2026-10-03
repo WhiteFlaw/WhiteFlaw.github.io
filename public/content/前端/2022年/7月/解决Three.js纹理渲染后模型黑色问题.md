@@ -1,7 +1,7 @@
 ---
 title: 解决Three.js纹理渲染后模型黑色问题
 date: 2022-07-05
-cover: /img/d1.webp
+cover: /img/d7.webp
 desc: 解决Three.js纹理渲染后模型黑色问题
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Auto.js实现自动填充文本
 date: 2021-05-23
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: Auto.js实现自动填充文本
 tags: [JavaScript, 前端]
 sticky: false

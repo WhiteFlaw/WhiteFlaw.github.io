@@ -1,7 +1,7 @@
 ---
 title: let、const块级作用域
 date: 2021-03-08
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: let、const块级作用域
 tags: [JavaScript, 前端]
 sticky: false
