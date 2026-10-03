@@ -1,7 +1,7 @@
 ---
 title: 解决PHPStudy8.1.1 mySQL服务启动失败 数据库工具报错卡死
 date: 2021-09-26
-cover: /img/d1.webp
+cover: /img/d7.webp
 desc: 解决PHPStudy8.1.1 mySQL服务启动失败 数据库工具报错卡死
 tags: [后端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: JavaScipt代理模式一
 date: 2022-07-29
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: JavaScipt代理模式一
 tags: [JavaScript, 前端]
 sticky: false

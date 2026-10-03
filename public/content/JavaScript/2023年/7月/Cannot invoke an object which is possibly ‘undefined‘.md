@@ -1,7 +1,7 @@
 ---
 title: Cannot invoke an object which is possibly ‘undefined‘
 date: 2023-07-15
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: Cannot invoke an object which is possibly ‘undefined‘
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: CSS如何让hover效果平滑过渡回初始状态
 date: 2021-09-24
-cover: /img/d1.webp
+cover: /img/d5.webp
 desc: CSS如何让hover效果平滑过渡回初始状态
 tags: [CSS, 前端]
 sticky: false

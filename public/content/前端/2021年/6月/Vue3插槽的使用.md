@@ -1,7 +1,7 @@
 ---
 title: Vue3插槽的使用
 date: 2021-06-25
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: Vue3插槽的使用
 tags: [Vue, 前端]
 sticky: false

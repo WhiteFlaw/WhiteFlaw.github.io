@@ -1,7 +1,7 @@
 ---
 title: Vue3传参修改子组件元素
 date: 2022-05-02
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: Vue3传参修改子组件元素
 tags: [Vue, 前端]
 sticky: false

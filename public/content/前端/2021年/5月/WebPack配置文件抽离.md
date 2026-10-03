@@ -1,7 +1,7 @@
 ---
 title: WebPack配置文件抽离
 date: 2021-05-24
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: WebPack配置文件抽离
 tags: [前端]
 sticky: false

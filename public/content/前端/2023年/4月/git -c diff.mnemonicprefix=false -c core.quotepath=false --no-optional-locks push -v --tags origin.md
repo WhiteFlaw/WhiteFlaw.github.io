@@ -1,7 +1,7 @@
 ---
 title: git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v --tags origin
 date: 2023-04-13
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v --tags origin
 tags: [前端]
 sticky: false

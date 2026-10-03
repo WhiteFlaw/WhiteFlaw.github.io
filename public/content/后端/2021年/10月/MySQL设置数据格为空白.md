@@ -1,7 +1,7 @@
 ---
 title: MySQL设置数据格为空白
 date: 2021-10-12
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: MySQL设置数据格为空白
 tags: [后端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Git基础指令
 date: 2021-07-21
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: Git基础指令
 tags: [前端]
 sticky: false

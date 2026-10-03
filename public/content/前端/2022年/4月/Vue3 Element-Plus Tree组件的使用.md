@@ -1,7 +1,7 @@
 ---
 title: Vue3 Element-Plus Tree组件的使用
 date: 2022-04-29
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: Vue3 Element-Plus Tree组件的使用
 tags: [Vue, 前端]
 sticky: false

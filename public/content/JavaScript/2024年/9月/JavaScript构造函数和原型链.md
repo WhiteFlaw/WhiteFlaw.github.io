@@ -1,7 +1,7 @@
 ---
 title: javascript监听鼠标按键的补充
 date: 2024-09-21
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: javascript监听鼠标按键的补充
 tags: [JavaScript, 前端]
 sticky: false

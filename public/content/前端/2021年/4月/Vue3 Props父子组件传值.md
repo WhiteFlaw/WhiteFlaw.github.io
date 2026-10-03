@@ -1,7 +1,7 @@
 ---
 title: Vue3 Props父子组件传值
 date: 2021-04-25
-cover: /img/d1.webp
+cover: /img/d7.webp
 desc: Vue3 Props父子组件传值
 tags: [Vue, 前端]
 sticky: false

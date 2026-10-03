@@ -1,7 +1,7 @@
 ---
 title: JavaScript ArrayBuffer定形数组
 date: 2024-10-13
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: JavaScript ArrayBuffer定形数组
 tags: [JavaScript, 前端]
 sticky: false

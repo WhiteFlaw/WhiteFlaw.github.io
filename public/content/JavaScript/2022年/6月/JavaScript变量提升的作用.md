@@ -1,7 +1,7 @@
 ---
 title: JavaScript变量提升的作用
 date: 2022-06-22
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: JavaScript变量提升的作用
 tags: [JavaScript, 前端]
 sticky: false

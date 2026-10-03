@@ -1,7 +1,7 @@
 ---
 title: Javascript利用对象池避免频繁的垃圾回收
 date: 2024-09-08
-cover: /img/d1.webp
+cover: /img/d9.webp
 desc: Javascript利用对象池避免频繁的垃圾回收
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: JavaScript事件处理的优化
 date: 2024-09-27
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: JavaScript事件处理的优化
 tags: [JavaScript, 前端]
 sticky: false

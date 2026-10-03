@@ -1,7 +1,7 @@
 ---
 title: Vue3 $emit父子传值
 date: 2021-07-27
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: Vue3 $emit父子传值
 tags: [Vue, 前端]
 sticky: false

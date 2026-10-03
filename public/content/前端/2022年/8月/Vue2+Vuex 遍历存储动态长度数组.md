@@ -1,7 +1,7 @@
 ---
 title: Vue2+Vuex 遍历存储动态长度数组
 date: 2022-08-26
-cover: /img/d1.webp
+cover: /img/d4.webp
 desc: Vue2+Vuex 遍历存储动态长度数组
 tags: [Vue, 前端]
 sticky: false

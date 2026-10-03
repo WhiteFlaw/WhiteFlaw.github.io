@@ -1,7 +1,7 @@
 ---
 title: 利用Element-Plus el-col、el-row快速布局
 date: 2022-05-11
-cover: /img/d1.webp
+cover: /img/d9.webp
 desc: 利用Element-Plus el-col、el-row快速布局
 tags: [Vue, 前端]
 sticky: false

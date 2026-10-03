@@ -1,7 +1,7 @@
 ---
 title: CSS选择器的种类与使用
 date: 2020-11-22
-cover: /img/d1.webp
+cover: /img/d3.webp
 desc: CSS选择器的种类与使用
 tags: [CSS, 前端]
 sticky: false

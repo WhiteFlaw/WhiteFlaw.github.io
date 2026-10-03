@@ -1,7 +1,7 @@
 ---
 title: 部署Vue+Node网站到阿里云服务器
 date: 2022-05-06
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: 部署Vue+Node网站到阿里云服务器
 tags: [Vue, 后端]
 sticky: false

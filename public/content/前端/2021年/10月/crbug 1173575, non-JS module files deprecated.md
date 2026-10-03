@@ -1,7 +1,7 @@
 ---
 title: crbug 1173575, non-JS module files deprecated
 date: 2021-10-23
-cover: /img/d1.webp
+cover: /img/d8.webp
 desc: crbug 1173575, non-JS module files deprecated
 tags: [JavaScript, 前端]
 sticky: false

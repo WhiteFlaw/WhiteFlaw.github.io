@@ -1,7 +1,7 @@
 ---
 title: JavaScript 二叉树
 date: 2023-02-13
-cover: /img/d1.webp
+cover: /img/d5.webp
 desc: JavaScript 二叉树
 tags: [JavaScript, 前端]
 sticky: false

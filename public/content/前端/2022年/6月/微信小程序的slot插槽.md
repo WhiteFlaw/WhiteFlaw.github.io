@@ -1,7 +1,7 @@
 ---
 title: 微信小程序的slot插槽
 date: 2022-06-11
-cover: /img/d1.webp
+cover: /img/d2.webp
 desc: 微信小程序的slot插槽
 tags: [前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: JavaScript 基于栈和命令模式的撤销恢复操作
 date: 2023-01-06
-cover: /img/d1.webp
+cover: /img/d6.webp
 desc: JavaScript 基于栈和命令模式的撤销恢复操作
 tags: [JavaScript, 前端]
 sticky: false
