@@ -1,7 +1,7 @@
 ---
 title: Vue2 操作Element表格单列数据
 date: 2022-08-15
-cover: /img/d9.webp
+cover: /img/d1.webp
 desc: Vue2 操作Element表格单列数据
 tags: [Vue, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: 26日Node笔记
 date: 2021-10-26
-cover: /img/d3.webp
+cover: /img/d1.webp
 desc: 26日Node笔记
 tags: [Node, 后端]
 sticky: false

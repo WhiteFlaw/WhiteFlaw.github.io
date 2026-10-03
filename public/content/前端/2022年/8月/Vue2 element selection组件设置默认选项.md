@@ -1,7 +1,7 @@
 ---
 title: Vue2 element selection组件设置默认选项
 date: 2022-08-22
-cover: /img/d2.webp
+cover: /img/d1.webp
 desc: Vue2 element selection组件设置默认选项
 tags: [Vue, 前端]
 sticky: false

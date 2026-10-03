@@ -1,7 +1,7 @@
 ---
 title: HTML元信息设置
 date: 2020-11-20
-cover: /img/d2.webp
+cover: /img/d1.webp
 desc: HTML元信息设置
 tags: [HTML, 前端]
 sticky: false

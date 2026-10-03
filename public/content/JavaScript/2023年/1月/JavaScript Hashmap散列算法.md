@@ -1,7 +1,7 @@
 ---
 title: JavaScript Hashmap散列算法
 date: 2023-01-29
-cover: /img/d2.webp
+cover: /img/d1.webp
 desc: JavaScript Hashmap散列算法
 tags: [JavaScript, 前端]
 sticky: false

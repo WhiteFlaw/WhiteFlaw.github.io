@@ -1,7 +1,7 @@
 ---
 title: JavaScript用requestAnimationFrame与定时器做节流
 date: 2024-09-27
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: JavaScript用requestAnimationFrame与定时器做节流
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: 箭头函数的this指向问题
 date: 2021-05-29
-cover: /img/d6.webp
+cover: /img/d1.webp
 desc: 箭头函数的this指向问题
 tags: [JavaScript, 前端]
 sticky: false

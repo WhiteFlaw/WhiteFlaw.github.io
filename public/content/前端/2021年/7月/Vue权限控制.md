@@ -1,7 +1,7 @@
 ---
 title: Vue权限控制
 date: 2021-07-26
-cover: /img/d7.webp
+cover: /img/d1.webp
 desc: Vue权限控制
 tags: [Vue, 前端]
 sticky: false

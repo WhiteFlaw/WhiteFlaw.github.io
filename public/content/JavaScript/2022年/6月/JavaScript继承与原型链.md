@@ -1,7 +1,7 @@
 ---
 title: JavaScript继承与原型链
 date: 2022-06-23
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: JavaScript继承与原型链
 tags: [JavaScript, 前端]
 sticky: false

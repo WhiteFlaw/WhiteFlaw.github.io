@@ -1,7 +1,7 @@
 ---
 title: MongoDB常用数据库命令
 date: 2021-12-04
-cover: /img/d4.webp
+cover: /img/d1.webp
 desc: MongoDB常用数据库命令
 tags: [后端]
 sticky: false

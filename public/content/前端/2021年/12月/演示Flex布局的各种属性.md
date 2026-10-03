@@ -1,7 +1,7 @@
 ---
 title: 演示Flex布局的各种属性
 date: 2021-12-15
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: 演示Flex布局的各种属性
 tags: [CSS, 前端]
 sticky: false

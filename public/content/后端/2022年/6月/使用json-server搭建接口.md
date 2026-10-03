@@ -1,7 +1,7 @@
 ---
 title: 使用json-server搭建接口
 date: 2022-06-12
-cover: /img/d3.webp
+cover: /img/d1.webp
 desc: 使用json-server搭建接口
 tags: [Node, 后端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: Vue3使用vue-axios
 date: 2021-09-09
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: Vue3使用vue-axios
 tags: [Vue, 前端]
 sticky: false

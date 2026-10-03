@@ -1,7 +1,7 @@
 ---
 title: JavaScipt代理模式保护代理
 date: 2022-07-29
-cover: /img/d4.webp
+cover: /img/d1.webp
 desc: JavaScipt代理模式保护代理
 tags: [JavaScript, 前端]
 sticky: false

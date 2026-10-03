@@ -1,6 +1,6 @@
 const loadedResources = new Set()
 
-function loadPublicResource(resourceName, type = 'js', callback) {
+function loadPublicResource (resourceName, type = 'js', callback) {
   // 输入验证
   if (typeof resourceName !== 'string') {
     console.error('resourceName must be a string')
@@ -25,7 +25,7 @@ function loadPublicResource(resourceName, type = 'js', callback) {
   return tryLoadResources(resourceUrls, type === 'js', callback)
 }
 
-async function tryLoadResources(urls, isJs, callback) {
+async function tryLoadResources (urls, isJs, callback) {
   let lastError = null
 
   for (const url of urls) {
@@ -33,8 +33,8 @@ async function tryLoadResources(urls, isJs, callback) {
       const result = await loadResourceMain(url, isJs)
       if (callback) callback(true, url)
       return result // 成功加载，返回结果
-    } catch (error) {
-      console.warn(`Failed to load ${url}, trying next URL if available`)
+    } catch ( error ) {
+      console.warn(`Failed to load ${ url }, trying next URL if available`)
       lastError = error
     }
   }
@@ -45,14 +45,14 @@ async function tryLoadResources(urls, isJs, callback) {
   if (loadingText) {
     loadingText.textContent = '资源加载失败,请刷新'
   }
-  if (callback) callback(false, urls[urls.length - 1])
+  if (callback) callback(false, urls[ urls.length - 1 ])
   throw lastError || new Error('All resource URLs failed')
 }
 
-function loadResourceMain(url, isJs) {
+function loadResourceMain (url, isJs) {
   return new Promise((resolve, reject) => {
     if (loadedResources.has(url)) {
-      console.log(`${isJs ? 'Script' : 'CSS'} already loaded: ${url}`)
+      console.log(`${ isJs ? 'Script' : 'CSS' } already loaded: ${ url }`)
       resolve(url)
       return
     }
@@ -63,7 +63,7 @@ function loadResourceMain(url, isJs) {
       element.src = url
       // 对于所有非CDN的JS文件，都设置为module类型
       // 因为构建后的代码使用了ES模块语法
-      if (!url.startsWith('http') || !url.includes('.js')) {
+      if (!url.startsWith('http')|| !url.includes('.js')) {
         element.type = 'module'
       } else if (url.includes('esm.sh')) {
         element.type = 'module'
@@ -83,15 +83,15 @@ function loadResourceMain(url, isJs) {
     element.onerror = () => {
       clearTimeout(timeoutId)
       document.head.removeChild(element)
-      reject(new Error(`Failed to load ${url}`))
+      reject(new Error(`Failed to load ${ url }`))
     }
 
     // 设置超时
     timeoutId = setTimeout(() => {
-      console.warn(`Loading ${url} timed out`)
+      console.warn(`Loading ${ url } timed out`)
       element.onerror = null
       document.head.removeChild(element)
-      reject(new Error(`Timeout loading ${url}`))
+      reject(new Error(`Timeout loading ${ url }`))
     }, 8000)
   })
 }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 清除超时计时器
       clearTimeout(timeoutId)
-    } catch (err) {
+    } catch ( err ) {
       console.error('Resource loading failed:', err)
       // 不清除超时，让页面在超时后刷新
     }
@@ -154,6 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, 2000)
     }).catch(() => {
-      // 错误已由 loadResources 或 timeoutPromise 处理
-    })
+    // 错误已由 loadResources 或 timeoutPromise 处理
+  })
 })

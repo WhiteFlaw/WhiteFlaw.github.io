@@ -1,7 +1,7 @@
 ---
 title: 27日MySQL命令
 date: 2021-09-27
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: 27日MySQL命令
 tags: [后端]
 sticky: false

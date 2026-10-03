@@ -1,7 +1,7 @@
 ---
 title: Promise回调地狱优化
 date: 2023-09-15
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: Promise回调地狱优化
 tags: [JavaScript, 前端]
 sticky: false

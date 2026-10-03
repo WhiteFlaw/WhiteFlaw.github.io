@@ -1,7 +1,7 @@
 ---
 title: Node的Express路由和express路由比较
 date: 2021-11-14
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: Node的Express路由和express路由比较
 tags: [Node, 后端]
 sticky: false

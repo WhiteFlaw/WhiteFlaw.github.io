@@ -1,7 +1,7 @@
 ---
 title: JavaScript闭包
 date: 2021-08-04
-cover: /img/d2.webp
+cover: /img/d1.webp
 desc: JavaScript闭包
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: CSS3 touch-action设置移动端拖动行为
 date: 2021-10-13
-cover: /img/d4.webp
+cover: /img/d1.webp
 desc: CSS3 touch-action设置移动端拖动行为
 tags: [CSS, 前端]
 sticky: false

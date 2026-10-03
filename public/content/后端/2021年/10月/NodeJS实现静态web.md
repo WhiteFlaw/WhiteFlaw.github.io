@@ -1,7 +1,7 @@
 ---
 title: NodeJS实现静态web
 date: 2021-10-30
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: NodeJS实现静态web
 tags: [Node, 后端]
 sticky: false

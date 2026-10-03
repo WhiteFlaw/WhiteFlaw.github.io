@@ -1,7 +1,7 @@
 ---
 title: WARNING in configuration The ‘mode‘ option hasnot been set, webpack will fallback
 date: 2021-05-10
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: WARNING in configuration The ‘mode‘ option hasnot been set, webpack will fallback
 tags: [前端]
 sticky: false

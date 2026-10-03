@@ -1,7 +1,7 @@
 ---
 title: JavaScript for与forEach结束本轮循环与跳出循环
 date: 2023-05-25
-cover: /img/d7.webp
+cover: /img/d1.webp
 desc: JavaScript for与forEach结束本轮循环与跳出循环
 tags: [JavaScript, 前端]
 sticky: false

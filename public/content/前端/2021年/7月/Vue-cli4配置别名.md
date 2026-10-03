@@ -1,7 +1,7 @@
 ---
 title: Vue-cli4配置别名
 date: 2021-07-03
-cover: /img/d4.webp
+cover: /img/d1.webp
 desc: Vue-cli4配置别名
 tags: [Vue, 前端]
 sticky: false

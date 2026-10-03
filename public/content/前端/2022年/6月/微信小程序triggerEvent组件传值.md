@@ -1,7 +1,7 @@
 ---
 title: 微信小程序triggerEvent组件传值
 date: 2022-06-05
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: 微信小程序triggerEvent组件传值
 tags: [前端]
 sticky: false

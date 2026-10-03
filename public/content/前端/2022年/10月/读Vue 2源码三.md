@@ -1,7 +1,7 @@
 ---
 title: 读Vue 2源码三
 date: 2022-10-09
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: 读Vue 2源码三
 tags: [Vue, 前端]
 sticky: false

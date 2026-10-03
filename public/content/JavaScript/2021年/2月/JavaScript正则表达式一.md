@@ -1,7 +1,7 @@
 ---
 title: JavaScript正则表达式一
 date: 2021-02-24
-cover: /img/d7.webp
+cover: /img/d1.webp
 desc: JavaScript正则表达式一
 tags: [JavaScript, 前端]
 sticky: false

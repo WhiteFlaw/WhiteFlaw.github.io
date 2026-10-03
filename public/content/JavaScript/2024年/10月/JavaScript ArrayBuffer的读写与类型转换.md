@@ -1,7 +1,7 @@
 ---
 title: JavaScript ArrayBuffer的读写与类型转换
 date: 2024-10-01
-cover: /img/d7.webp
+cover: /img/d1.webp
 desc: JavaScript ArrayBuffer的读写与类型转换
 tags: [JavaScript, 前端]
 sticky: false

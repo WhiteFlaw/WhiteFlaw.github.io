@@ -1,7 +1,7 @@
 ---
 title: Vue2 $emit传函数类型回调获取父组件参数
 date: 2022-11-08
-cover: /img/d4.webp
+cover: /img/d1.webp
 desc: Vue2 $emit传函数类型回调获取父组件参数
 tags: [Vue, 前端]
 sticky: false

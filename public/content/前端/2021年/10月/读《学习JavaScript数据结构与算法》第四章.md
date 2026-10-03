@@ -1,7 +1,7 @@
 ---
 title: 读《学习JavaScript数据结构与算法》第四章
 date: 2021-10-22
-cover: /img/d7.webp
+cover: /img/d1.webp
 desc: 读《学习JavaScript数据结构与算法》第四章
 tags: [JavaScript, 前端]
 sticky: false

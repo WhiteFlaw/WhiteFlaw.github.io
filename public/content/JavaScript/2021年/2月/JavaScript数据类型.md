@@ -1,7 +1,7 @@
 ---
 title: JavaScript数据类型
 date: 2021-02-07
-cover: /img/d6.webp
+cover: /img/d1.webp
 desc: JavaScript数据类型
 tags: [JavaScript, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: HTML5 classList操作类名
 date: 2021-09-28
-cover: /img/d9.webp
+cover: /img/d1.webp
 desc: HTML5 classList操作类名
 tags: [JavaScript, 前端]
 sticky: false

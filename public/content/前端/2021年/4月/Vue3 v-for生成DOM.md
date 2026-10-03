@@ -1,7 +1,7 @@
 ---
 title: Vue3 v-for生成DOM
 date: 2021-04-15
-cover: /img/d6.webp
+cover: /img/d1.webp
 desc: Vue3 v-for生成DOM
 tags: [Vue, 前端]
 sticky: false

@@ -1,7 +1,7 @@
 ---
 title: JavaScript new Set抽离数组中具备相同属性值的对象
 date: 2022-10-11
-cover: /img/d6.webp
+cover: /img/d1.webp
 desc: JavaScript new Set抽离数组中具备相同属性值的对象
 tags: [JavaScript, 前端]
 sticky: false

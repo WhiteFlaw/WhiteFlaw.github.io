@@ -1,7 +1,7 @@
 ---
 title: An arithmetic operand must be of type ‘any‘, ‘number‘, ‘bigint‘ or an enum type
 date: 2023-07-18
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: An arithmetic operand must be of type ‘any‘, ‘number‘, ‘bigint‘ or an enum type
 tags: [JavaScript, 前端]
 sticky: false

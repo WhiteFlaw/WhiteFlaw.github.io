@@ -1,7 +1,7 @@
 ---
 title: Auto.js行为监听语法
 date: 2022-05-04
-cover: /img/d5.webp
+cover: /img/d1.webp
 desc: Auto.js行为监听语法
 tags: [JavaScript, 前端]
 sticky: false
