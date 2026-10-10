@@ -7,7 +7,7 @@ tags: [JavaScript, 前端]
 sticky: false
 ---
 
-@[TOC](文章目录)
+
 
 ---
 
@@ -84,7 +84,7 @@ function judge() {
 
 # 总结
 ---
-@[TOC](文章目录)
+
 
 ---
 
