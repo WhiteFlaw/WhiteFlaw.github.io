@@ -7,9 +7,6 @@ tags: [后端]
 sticky: false
 ---
 
-2021.09.27 MySQL笔记# 2021.09.27 MySQL笔记
-@[TOC](文章目录)
-
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
 # 一、展示当前存在的所有数据库

@@ -7,8 +7,6 @@ tags: [Node, 后端]
 sticky: false
 ---
 
-@[TOC](文章目录)
-
 # 新建Document
 启动Insomnia进入项目仪表盘, 点击右上角"create"按钮, 点击Design Document, 命名设计文档为"test"
 ![在这里插入图片描述](../../../../img/后端/2021年/11月/用接口调试工具Insomnia发送请求/1.jpeg)

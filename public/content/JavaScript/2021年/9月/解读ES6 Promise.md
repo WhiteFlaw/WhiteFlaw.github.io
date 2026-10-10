@@ -10,7 +10,7 @@ sticky: false
 # 详解ES6 Promise异步
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
-@[TOC](文章目录)
+
 
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">

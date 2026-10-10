@@ -8,7 +8,7 @@ sticky: false
 ---
 
 # 第二章 ECMAScript和TypeScript概述
-@[TOC](文章目录)
+
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 

@@ -8,7 +8,7 @@ sticky: false
 ---
 
 # JavaScript预解析
-@[TOC](文章目录)
+
 
 # JS预解析？
 浏览器中的JS解析器运行JavaScript的过程为先进行 预解析 之后再进行 代码执行。主要为JS执行机制的问题。
