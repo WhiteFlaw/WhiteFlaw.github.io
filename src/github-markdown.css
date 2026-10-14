@@ -410,10 +410,32 @@ html *::after {
   top: -0.5em;
 }
 
+/* 正文图片统一尺寸：
+   - 主要约束纵向空间：图片最高不超过视口高度的 60%，长截图不再占据好几屏
+   - width/height 为 auto，图片按原始宽高比等比缩放，不会变形
+   - 宽度上限沿用调整后的 540px：去掉它宽图会撑到正文栏通栏（约 896px），
+     高度随之变大、反而更占纵向；第一行作为旧浏览器回退
+   - emoji 等特殊图片由其更高优先级的规则覆盖 */
 .markdown-body img {
   border-style: none;
   max-width: 100%;
+  max-width: min(100%, 540px);
+  max-height: 60vh;
+  width: auto;
+  height: auto;
   box-sizing: content-box;
+}
+
+/* 独占一段的图片、以及紧跟文字后的图片，统一独占一行并水平居中。
+   文章中大量截图写作 "文字说明：\n![图](...)"，与文字同处一个 <p>，若只匹配 :only-child
+   会有半数图片无法居中，因此这里对段落内的图片统一 block 化；
+   行内小图（GitHub 的 .emoji）保持行内，不受影响。 */
+.markdown-body p > img:not(.emoji),
+.markdown-body p > a > img:not(.emoji),
+.markdown-body > img:not(.emoji) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .markdown-body code,
