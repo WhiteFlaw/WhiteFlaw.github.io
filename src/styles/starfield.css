@@ -33,7 +33,7 @@
 /* 只写在 body 上：body 的背景会被提升为「画布背景」，永远绘制在最底层，
    这样 z-index:-1 的星层才不会被底色盖住（写在 html 上则会盖住星层）。 */
 .dark body {
-  background-color: #04050a;
+  background-color: #0a0514;
 
   /* 极淡的星云光晕，让深空不至于死黑。
      想要纯黑底色，删掉下面整个 background-image 声明即可。 */
