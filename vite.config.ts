@@ -26,7 +26,7 @@ export default defineConfig((config) => {
     const isProduction = config.mode === 'production';
     // 获取 VITE_BASE 环境变量，如果未设置则根据是否为生产环境决定默认值
     const base = process.env.VITE_BASE || '/';
-    // const base = '/pjfun-blog/';
+    // const base = '/whiteflaw-blog/';
     console.log('base:', base)
     //开启cdn打包
     const openCdn = isProduction;
@@ -36,8 +36,8 @@ export default defineConfig((config) => {
         'highlight.js',
     ]
 
-    const PJ_BLOG_NAV_NAME='nav'+generateRandomString()+'.json'
-    const PJ_BLOG_TREE_NAME='tree'+generateRandomString()+'.json'
+    const WF_BLOG_NAV_NAME='nav'+generateRandomString()+'.json'
+    const WF_BLOG_TREE_NAME='tree'+generateRandomString()+'.json'
     return {
         base, // 设置 base 路径
         plugins: [
@@ -62,7 +62,7 @@ export default defineConfig((config) => {
             }),
             UnoCSS(),
             Icons({compiler: 'vue3', autoInstall: true}),  // 新增：自动按需加载所有 iconify-icon
-            genNavPlugin(PJ_BLOG_NAV_NAME,PJ_BLOG_TREE_NAME,base),
+            genNavPlugin(WF_BLOG_NAV_NAME,WF_BLOG_TREE_NAME,base),
             VitePWA({
                 registerType: 'autoUpdate',
                 workbox: {
@@ -175,8 +175,8 @@ export default defineConfig((config) => {
                         cssList: cdnConfig.css || [],
                         mainJsList: cdnConfig.mainJs || [],
                         jsList: cdnConfig.js || [],
-                        PJ_BLOG_NAV_NAME,
-                        PJ_BLOG_TREE_NAME
+                        WF_BLOG_NAV_NAME,
+                        WF_BLOG_TREE_NAME
                     }
                 }
             }),
@@ -272,7 +272,7 @@ export default defineConfig((config) => {
                                 }
                             }
                             if (id.includes('src/utils')) {
-                                return `pjt.tool`
+                                return `wf.tool`
                             }
                         }
                     },

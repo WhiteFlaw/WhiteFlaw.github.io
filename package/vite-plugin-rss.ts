@@ -25,7 +25,7 @@ export function rssPlugin(): Plugin {
     async closeBundle() {
       if (config.command === 'build') {
         try {
-          const siteUrl = process.env.VITE_SITE_URL || 'https://pjfun.top'
+          const siteUrl = process.env.VITE_SITE_URL || 'https://whiteflaw.github.io'
 
           // 读取导航数据
           const navPath = path.resolve(config.root, 'public/generated/nav.json')
@@ -34,7 +34,7 @@ export function rssPlugin(): Plugin {
           // 创建 Feed 实例
           const feed = new Feed({
             title: process.env.VITE_SITE_TITLE || `WhiteFlaw's blog`,
-            description: process.env.VITE_SITE_DESCRIPTION || 'Time to craft code and change lives.',
+            description: process.env.VITE_SITE_DESCRIPTION || 'Time to mix drinks and change lives.',
             id: siteUrl,
             link: siteUrl,
             language: 'zh-CN',

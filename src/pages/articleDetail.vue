@@ -1061,7 +1061,7 @@ const loadArticle = async (filePath: string) => {
     loading.value = true
     
     // 先获取导航数据，避免多次网络请求尝试不同扩展名
-    const navName = getEnvVariable('PJ_BLOG_NAV_NAME')
+    const navName = getEnvVariable('WF_BLOG_NAV_NAME')
     const base=getEnvVariable('VITE_BASE')||'/'
     const navRes = await fetchWithFallback([`${base}generated/${navName}`,`${base}generated/nav.json`],'导航数据');
     const navData = await navRes.json();

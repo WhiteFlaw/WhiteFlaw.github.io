@@ -97,8 +97,8 @@ const selectedIndex = ref(-1)
 const searchInput = ref<HTMLInputElement | null>(null)
 
 // ==================== 搜索缓存 ====================
-const SEARCH_CACHE_KEY = 'pjfun_blog_search_cache'
-const NAV_DATA_CACHE_KEY = 'pjfun_blog_nav_data_cache'
+const SEARCH_CACHE_KEY = 'whiteflaw_blog_search_cache'
+const NAV_DATA_CACHE_KEY = 'whiteflaw_blog_nav_data_cache'
 const CACHE_TTL = 5 * 60 * 1000 // 缓存有效期5分钟
 
 interface CacheEntry<T> {
@@ -222,7 +222,7 @@ watch(query, async (q) => {
   }
 
   try {
-    const navName = getEnvVariable('PJ_BLOG_NAV_NAME')
+    const navName = getEnvVariable('WF_BLOG_NAV_NAME')
     const base = getEnvVariable('VITE_BASE') || '/'
 
     // 优先使用导航数据缓存

@@ -214,7 +214,7 @@ const removeFavorite = (path: string) => {
 const clearAllFavorites = () => {
   confirmDialog('',t('confirmClearAll')).then(b=>{
     if (b) {
-      localStorage.removeItem('pjfun_blog_favorites')
+      localStorage.removeItem('whiteflaw_blog_favorites')
       loadFavorites()
     }
   });

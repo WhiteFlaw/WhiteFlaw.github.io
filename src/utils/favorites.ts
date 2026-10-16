@@ -12,7 +12,7 @@ export interface FavoriteItem {
   excerpt?: string;
 }
 
-const FAVORITES_KEY = 'pjfun_blog_favorites';
+const FAVORITES_KEY = 'whiteflaw_blog_favorites';
 
 /**
  * 获取所有收藏的文章

@@ -38,7 +38,7 @@
             &copy; {{ new Date().getFullYear() }} {{ t('siteTitle') }}. {{ t('allRightsReserved') }}
           </p>
           <p class="text-sm">
-             <a href="https://pjfun.top" target="_blank" class="text-orange-500 hover:text-orange-700 dark:text-gray-300">pjfun.top</a>
+             <a href="https://whiteflaw.github.io" target="_blank" class="text-orange-500 hover:text-orange-700 dark:text-gray-300">whiteflaw.github.io</a>
           </p>
         </div>
       </div>

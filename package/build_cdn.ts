@@ -6,7 +6,6 @@ interface CdnSources {
     mengze: string;
     liumingye: string;
     unpkg: string;
-    pj_unpkg: string;
     esm: string;
 }
 
@@ -53,7 +52,6 @@ export function getCDN(LOCAL_DEBUG: boolean): CdnResult {
         //https://jsd.nmmsl.top/
         //https://cdn.jsdmirror.com/npm
         unpkg: 'https://unpkg.com',
-        pj_unpkg: 'https://unpkg.pjfun.top',
         esm: 'https://esm.sh',
     };
 
@@ -113,7 +111,7 @@ export function getCDN(LOCAL_DEBUG: boolean): CdnResult {
 
     // CDN 源（按优先级顺序）
     const backupCdnKeys: BackupCdnKeys = {
-        'cdn_pu': cdnSources.pj_unpkg,
+        'cdn_up': cdnSources.unpkg,
         'cdn_nw': cdnSources.noisework,
         'cdn_jsm': cdnSources.jsdmirrorcn,
         'cdn_th': cdnSources.topthink,
