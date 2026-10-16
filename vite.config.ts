@@ -111,23 +111,6 @@ export default defineConfig((config) => {
                                     statuses: [0, 200]
                                 }
                             }
-                        },
-                        {
-                            // 第三方 CDN 上的库文件（Vue、vue-router、highlight.js 等）也存进本地缓存：
-                            // 首次访问之后即便 CDN 抽风甚至断网，页面也能照常启动，不再被外网牵着走。
-                            // 库版本一变 URL 就变，会自动去拉新文件，不会卡在旧版本上。
-                            urlPattern: /^https:\/\/(jsdelivr\.topthink\.com|unpkg\.com|jsd\.cdn\.noisework\.cn|cdn\.jsdmirror\.cn|cdn\.liumingye\.cn|gcore\.jsdelivr\.net|esm\.sh)\/.*\.(?:js|mjs|css)$/i,
-                            handler: 'CacheFirst',
-                            options: {
-                                cacheName: 'cdn-libs-cache',
-                                expiration: {
-                                    maxEntries: 40,
-                                    maxAgeSeconds: 60 * 60 * 24 * 30 // 30 天
-                                },
-                                cacheableResponse: {
-                                    statuses: [0, 200]
-                                }
-                            }
                         }
                     ]
                 },

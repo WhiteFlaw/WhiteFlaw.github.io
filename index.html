@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhiteFlaw's blog</title>
 
-    <!-- CDN 预连接：让浏览器在解析 HTML 时就完成 DNS + TLS 握手，
-         等真正去拉 Vue 等库时省掉一次往返。域名与顺序对应
-         package/build_cdn.ts 里 backupCdnKeys 的前三项。
-         必须带 crossorigin —— 这些脚本是按 CORS 方式加载的，
-         不带的话浏览器会另建一条连接，预连接就白做了。 -->
-    <link rel="preconnect" href="https://jsdelivr.topthink.com" crossorigin />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="preconnect" href="https://jsd.cdn.noisework.cn" crossorigin />
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
