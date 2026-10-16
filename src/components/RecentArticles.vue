@@ -2,7 +2,7 @@
   <div class="card p-6 transition-all duration-300 hover:shadow-xl">
     <div class="flex justify-between items-center mb-5">
       <h3 class="text-lg font-bold flex items-center gap-2 theme-title">
-        <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+        <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
         {{ t('recentlyViewed') }}
       </h3>
       <button 
@@ -36,7 +36,7 @@
           >
         </div>
         <div class="flex-1 min-w-0">
-          <h4 class="font-medium text-gray-800 theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 transition-colors text-sm">
+          <h4 class="font-medium text-gray-800 theme-title line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors text-sm">
             {{ article.title }}
           </h4>
           <p v-if="article.excerpt" class="text-xs text-gray-500 theme-text mt-1 line-clamp-2">
@@ -46,7 +46,7 @@
             <span
               v-for="tag in (article.tags || []).slice(0, 2)"
               :key="tag"
-              class="px-2 py-0.5 text-xs rounded-full bg-cyber-100 dark:bg-cyber-900/40 text-gray-800 dark:text-cyber-300"
+              class="px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900/40 text-gray-800 dark:text-blue-300"
             >
               {{ tag }}
             </span>

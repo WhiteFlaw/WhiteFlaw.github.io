@@ -19,7 +19,7 @@
             :max="totalPages" 
             :placeholder="t('pageNumber')"
             @keyup.enter="jumpToPage"
-            class="w-20 px-2 py-1 border border-gray-300 dark:border-dark-600 rounded-1.5 text-sm text-center bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-100 focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)] dark:focus:shadow-[0_0_0_3px_rgba(109,40,217,0.2)]"
+            class="w-20 px-2 py-1 border border-gray-300 dark:border-dark-600 rounded-1.5 text-sm text-center bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-100 focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)] dark:focus:shadow-[0_0_0_3px_rgba(31,111,235,0.2)]"
           />
           <button @click="jumpToPage" :title="t('jumpToPage')" class="pdf-toolbar-btn">{{ t('jump') }}</button>
         </div>
@@ -31,7 +31,7 @@
         <button @click="zoomOut" :title="t('zoomOut')" class="pdf-toolbar-btn">
           <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
         </button>
-        <span @click="resetZoom" :title="t('reset')" class="text-sm font-medium text-gray-600 dark:text-gray-400 min-w-12.5 text-center cursor-pointer select-none hover:text-primary dark:hover:text-cyber-400">{{ scalePercentage }}</span>
+        <span @click="resetZoom" :title="t('reset')" class="text-sm font-medium text-gray-600 dark:text-gray-400 min-w-12.5 text-center cursor-pointer select-none hover:text-primary dark:hover:text-blue-400">{{ scalePercentage }}</span>
         <button @click="zoomIn" :title="t('zoomIn')" class="pdf-toolbar-btn">
           <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
         </button>
@@ -54,7 +54,7 @@
 
     <div class="flex-1 overflow-auto flex justify-center items-start p-10 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-dark-600 scrollbar-track-transparent">
       <div v-if="isLoading" class="flex flex-col items-center justify-center h-full text-gray-500 dark:text-gray-400 gap-4">
-        <div class="w-10 h-10 border-3 border-gray-200 dark:border-dark-600 border-t-primary dark:border-t-cyber-400 rounded-1/2 animate-spin"></div>
+        <div class="w-10 h-10 border-3 border-gray-200 dark:border-dark-600 border-t-primary dark:border-t-blue-400 rounded-1/2 animate-spin"></div>
         <p>{{ t('loadingDocument') }}</p>
       </div>
 

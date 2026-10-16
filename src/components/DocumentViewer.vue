@@ -1,13 +1,13 @@
 <template>
   <div class="w-full flex flex-col">
     <div v-if="loading" class="flex flex-col items-center justify-center h-full p-8 text-center">
-      <div class="w-12 h-12 border-4 border-gray-200 border-l-cyber-500 rounded-full animate-spin mb-4"></div>
+      <div class="w-12 h-12 border-4 border-gray-200 border-l-blue-500 rounded-full animate-spin mb-4"></div>
       <p>{{ t('loadingDocument') }}</p>
     </div>
     
     <div v-else-if="error" class="flex flex-col items-center justify-center h-full p-8 text-center">
       <p>{{ t('documentLoadError') }}</p>
-      <button @click="retryLoad" class="mt-4 px-6 py-3 rounded-lg bg-cyber-600 text-white hover:bg-cyber-700 transition-colors shadow">{{ t('retry') }}</button>
+      <button @click="retryLoad" class="mt-4 px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow">{{ t('retry') }}</button>
     </div>
     <pdf-to-html v-else-if="isPdf" :src="props.url" :path="props.path" :fileName="props.title"/>
     <excel :src="props.url" :fileName="props.title" v-else-if="isExcel"/>

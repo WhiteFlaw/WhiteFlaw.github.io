@@ -19,18 +19,14 @@
     <% if (process.env.NODE_ENV === 'production') { %>
     <link rel="manifest" href="/manifest.webmanifest">
     <% } %>
-    <meta name="theme-color" content="#0a0514"/>
+    <meta name="theme-color" content="#ffffff"/>
   </head>
     <style>
-      /* 开屏（首屏加载）配色：背景取暗色主题的深空底色 #0a0514，
-         这样加载完成切进页面时不会出现颜色跳变。
-         想改回浅色开屏：--background-color 换回 #f8fafc、
-         --text-color 换回 #374151 即可。 */
       :root {
-        --primary-color: #7c3aed;
-        --secondary-color: #22d3ee;
-        --background-color: #0a0514;
-        --text-color: #e5e7eb;
+        --primary-color: #3b82f6;
+        --secondary-color: #8b5cf6;
+        --background-color: #f8fafc;
+        --text-color: #374151;
         --loader-size: 80px;
         --transition-duration: 0.3s;
       }
@@ -73,7 +69,7 @@
       .loader {
         width: var(--loader-size);
         height: var(--loader-size);
-        border: 5px solid rgba(255, 255, 255, 0.12);
+        border: 5px solid #e2e8f0;
         border-top: 5px solid var(--primary-color);
         border-radius: 50%;
         animation: spin 1s linear infinite;

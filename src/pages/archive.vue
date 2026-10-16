@@ -15,7 +15,7 @@
           <div class="badge">
             <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
           </div>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
+          <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             {{ t('archiveTitle') }}
           </h1>
         </div>
@@ -41,20 +41,20 @@
               v-model="searchQuery"
               type="text"
               :placeholder="t('searchPlaceholder')"
-              class="w-full py-2 px-4 pr-10 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyber-500 text-sm"
+              class="w-full py-2 px-4 pr-10 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             />
             <IconCarbonSearch class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-300" />
           </div>
         </div>
 
         <!-- 统计信息 -->
-        <div class="mb-6 p-4 bg-cyber-50 dark:bg-cyber-900/20 rounded-lg flex flex-wrap items-center gap-4">
+        <div class="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex flex-wrap items-center gap-4">
           <div class="flex items-center text-sm">
-            <IconCarbonDocument class="w-5 h-5 text-cyber-500 mr-2" />
+            <IconCarbonDocument class="w-5 h-5 text-blue-500 mr-2" />
             <span class="dark:text-gray-300">{{ t('totalArticles') }}: <span class="font-bold">{{ filteredPosts.length }}</span></span>
           </div>
           <div class="flex items-center text-sm">
-            <IconCarbonCalendar class="w-5 h-5 text-cyber-500 mr-2" />
+            <IconCarbonCalendar class="w-5 h-5 text-blue-500 mr-2" />
             <span class="dark:text-gray-300">{{ t('timeRange') }}: <span class="font-bold">{{ oldestYear }} - {{ newestYear }}</span></span>
           </div>
         </div>
@@ -66,7 +66,7 @@
               v-for="year in Object.keys(groupedPosts)" 
               :key="year"
               @click="scrollToYear(year)"
-              class="px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-cyber-100 dark:hover:bg-cyber-900/50 text-gray-700 dark:text-gray-300 hover:text-cyber-600 dark:hover:text-cyber-400 transition-colors whitespace-nowrap cursor-pointer"
+              class="px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap cursor-pointer"
             >
               {{ year }} ({{ groupedPosts[year].count }})
             </button>
@@ -83,7 +83,7 @@
           >
             <!-- 年份标题 -->
             <div class="flex items-center gap-4 mb-6">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                 {{ year.slice(-2) }}
               </div>
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -93,10 +93,10 @@
             </div>
             
             <!-- 时间线 -->
-            <div class="relative pl-8 border-l-2 border-cyber-200 dark:border-cyber-900/50 ml-5 space-y-0">
+            <div class="relative pl-8 border-l-2 border-blue-200 dark:border-blue-900/50 ml-5 space-y-0">
               <div v-for="(monthGroup, month) in yearGroup.months" :key="month" class="relative mb-6">
                 <!-- 月份圆点 -->
-                <div class="absolute -left-[calc(2rem+5px)] top-1 w-3 h-3 rounded-full bg-cyber-500 dark:bg-cyber-400 border-2 border-white dark:border-gray-800 shadow-sm"></div>
+                <div class="absolute -left-[calc(2rem+5px)] top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 border-2 border-white dark:border-gray-800 shadow-sm"></div>
                 <h4 class="text-base font-semibold text-gray-600 dark:text-gray-400 mb-3 ml-2">
                   {{ formatMonth(month) }}
                   <span class="text-xs text-gray-500 dark:text-gray-500 ml-1">({{ monthGroup.count }})</span>
@@ -111,7 +111,7 @@
                     >
                       <div class="flex justify-between items-start gap-4">
                         <div class="flex-1 min-w-0">
-                          <h5 class="font-medium text-gray-800 dark:text-white group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors flex items-center gap-2">
+                          <h5 class="font-medium text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-2">
                             <span v-if="post.sticky" class="text-[10px] px-1.5 py-0.5 rounded bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 font-semibold flex-shrink-0">置顶</span>
                             {{ post.title }}
                           </h5>

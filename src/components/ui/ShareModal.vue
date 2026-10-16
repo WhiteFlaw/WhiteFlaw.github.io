@@ -53,7 +53,7 @@
               />
               <button 
                 @click="copyLink"
-                class="px-4 py-2 bg-cyber-600 hover:bg-cyber-700 text-white rounded-r-lg font-medium text-sm transition-colors flex items-center gap-1 cursor-pointer"
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg font-medium text-sm transition-colors flex items-center gap-1 cursor-pointer"
               >
                 <IconCarbonCopy class="w-4 h-4" />
                 {{ copied ? t('copied') : t('copy') }}
