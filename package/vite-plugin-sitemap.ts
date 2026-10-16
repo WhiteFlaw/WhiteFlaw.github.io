@@ -14,7 +14,7 @@ export function sitemapPlugin(): Plugin {
     async closeBundle() {
       if (config.command === 'build') {
         try {
-          const siteUrl = (process.env.VITE_SITE_URL || 'https://pjfun.top').replace(/\/+$/, '')
+          const siteUrl = (process.env.VITE_SITE_URL || 'https://whiteflaw.github.io').replace(/\/+$/, '')
 
           // 读取导航数据
           const navPath = path.resolve(config.root, 'public/generated/nav.json')

@@ -80,7 +80,6 @@ const PDF_WORKER_VERSION = pdfjsLib.version;
 
 // 多源 Worker 列表（按优先级排序）
 const PDF_WORKER_SOURCES = [
-  `https://unpkg.pjfun.top/pdfjs-dist@${PDF_WORKER_VERSION}/build/pdf.worker.min.mjs`,
   `https://unpkg.com/pdfjs-dist@${PDF_WORKER_VERSION}/build/pdf.worker.min.mjs`,
   `https://cdn.jsdelivr.net/npm/pdfjs-dist@${PDF_WORKER_VERSION}/build/pdf.worker.min.mjs`,
   `https://esm.sh/pdfjs-dist@${PDF_WORKER_VERSION}/build/pdf.worker.min.mjs`,

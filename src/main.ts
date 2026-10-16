@@ -14,6 +14,8 @@ import { getEnvVariable } from '@/utils/tool'
 // 引入 SVG 图标
 import 'virtual:svg-icons-register'
 import {passwordApi} from "@/utils/password";
+import { initCursorTrail } from '@/utils/cursor-trail'
+import { migrateLegacyStorage } from '@/utils/storage-migrate'
 
 // 开发环境下 Vite 的 HMR 会以动态 import 重新执行本模块（而不是整页刷新），
 // 导致 Lenis、主题监听、createApp().mount() 等被重复初始化。
@@ -98,6 +100,9 @@ function initializeSEO() {
     // 设置初始页面标题
     document.title = SITE_CONFIG.title
 }
+
+// 迁移 pjfun 时期的旧 localStorage 键，避免老访客的收藏/阅读进度丢失
+migrateLegacyStorage()
 
 initializeTheme()
 initializeLanguage()
@@ -199,11 +204,11 @@ mountApp()
 // 将 passwordApi 暴露到全局，供各页面调用登出等功能
 // 注意：必须允许重新配置（configurable: true）。
 // Vite 的 HMR 会以动态 import 的方式重新执行本模块，属性若不可配置，
-// 第二次 defineProperty 就会抛出 "Cannot redefine property: pjfun"。
+// 第二次 defineProperty 就会抛出 "Cannot redefine property: whiteflaw"。
 // 对外依然只读：writable: false 已保证无法被赋值改写。
-Object.defineProperty(window, 'pjfun', {
+Object.defineProperty(window, 'whiteflaw', {
   value: Object.freeze({
-    ...((window as any).pjfun || {}),
+    ...((window as any).whiteflaw || {}),
     loaded: true,
     passwordApi: passwordApi
   }),
@@ -226,3 +231,6 @@ document.addEventListener(
   },
   { capture: true }
 )
+
+// 鼠标拖动时的流星尾焰特效（实现与可调参数见 utils/cursor-trail.ts）
+initCursorTrail()

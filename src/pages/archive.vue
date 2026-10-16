@@ -360,7 +360,7 @@ const handleScroll = () => {
 
 onMounted(async () => {
   try {
-    const navName = getEnvVariable('PJ_BLOG_NAV_NAME')
+    const navName = getEnvVariable('WF_BLOG_NAV_NAME')
     const base=getEnvVariable('VITE_BASE')||'/'
     const res = await fetchWithFallback([`${base}generated/${navName}`,`${base}generated/nav.json`],'导航数据')
     const posts = await res.json()

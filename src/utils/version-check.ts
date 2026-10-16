@@ -2,7 +2,7 @@ import {getEnvVariable} from "@/utils/tool";
 
 let timer: number | null = null
 let onNewVersion: (() => void) | null = null
-const key_name: string = 'pj_blog_web_version'
+const key_name: string = 'whiteflaw_blog_web_version'
 let latestVersion: string | null = null
 
 interface VersionData {

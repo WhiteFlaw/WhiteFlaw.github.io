@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**pjfun-blog** is a modern, fully static personal blog built with Vue 3 + Vite. It is a zero-backend SPA that generates all content at build time from Markdown/HTML/TXT/PDF/Word/Excel files placed in `public/content/`. The project serves its own documentation at [pjfun.top](https://pjfun.top).
+**whiteflaw-blog** is a modern, fully static personal blog built with Vue 3 + Vite. It is a zero-backend SPA that generates all content at build time from Markdown/HTML/TXT/PDF/Word/Excel files placed in `public/content/`. The project serves its own documentation at [whiteflaw.github.io](https://whiteflaw.github.io).
 
 ## Key Design Decisions
 
@@ -111,7 +111,7 @@ vite-plugin-html + EJS ──→ index.html with CDN vars
 │   ├── content/                  # Article files (md, html, txt, pdf, doc, docx, xls, xlsx)
 │   ├── generated/                # Auto-generated: nav.json, tree.json
 │   ├── img/                      # Static images (covers, favicon)
-│   └── pj_public.js             # CDN loading orchestration
+│   └── wf_public.js             # CDN loading orchestration
 └── dist/                         # Build output (includes rss.xml, atom.xml, feed.json, sitemap.xml)
 ```
 
@@ -148,15 +148,15 @@ For a Markdown article at `/content/学习/Vue框架/vue3.md`:
 
 ## State Management (All localStorage)
 
-- **Favorites**: `pjfun_blog_favorites`
-- **Reading progress**: `pjfun_blog_reading_progress` (array, 20 max)
-- **Recent articles**: `pjfun_blog_recent_articles` (array, 5 max)
+- **Favorites**: `whiteflaw_blog_favorites`
+- **Reading progress**: `whiteflaw_blog_reading_progress` (array, 20 max)
+- **Recent articles**: `whiteflaw_blog_recent_articles` (array, 5 max)
 - **Theme**: `theme` + `data-theme` on `<html>`
 - **Password**: `blog-access-pwd`
 - **Language**: `language`
-- **Nav tree**: `pjfun_blog_nav_tree_state`
-- **Search cache**: `pjfun_blog_search_cache`
-- **Nav data cache**: `pjfun_blog_nav_data_cache`
+- **Search cache**: `whiteflaw_blog_search_cache`
+- **Nav data cache**: `whiteflaw_blog_nav_data_cache`
+- **Web version**: `whiteflaw_blog_web_version`
 
 ## Known Design Patterns
 

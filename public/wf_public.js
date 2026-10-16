@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ...jsResources.map(js => loadPublicResource(js, 'js'))
       ])
       console.log('Core resources loaded successfully')
-      // 加载 pjJsResources（如果存在）
-      if (pjJsResources.length) {
+      // 加载 wfJsResources（如果存在）
+      if (wfJsResources.length) {
         await Promise.all(
-          pjJsResources.map(js => loadPublicResource(js, 'js')))
-        console.log('Additional pjJsResources loaded successfully')
+          wfJsResources.map(js => loadPublicResource(js, 'js')))
+        console.log('Additional wfJsResources loaded successfully')
       }
 
       // 清除超时计时器
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Promise.race([loadResources(), timeoutPromise])
     .then(() => {
       setTimeout(() => {
-        if (!window.pjfun || window.pjfun.loaded !== true) {
+        if (!window.whiteflaw || window.whiteflaw.loaded !== true) {
           // 通知用户需要刷新页面
           const loadingText = document.querySelector('.loading-text')
           if (loadingText) {

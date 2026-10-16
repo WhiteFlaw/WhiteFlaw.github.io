@@ -79,9 +79,9 @@ const props = withDefaults(defineProps<Props>(), {
 
 // --- 配置项 ---
 const CONTAINER_ID = 'luckysheet-container'
-const CDN_BASE = 'https://unpkg.pjfun.top/luckysheet@2.1.13/dist' // 使用 unpkg 源
-const JQUERY_URL = 'https://unpkg.pjfun.top/jquery@3.7.1/dist/jquery.min.js'
-const LUCKY_EXCEL_URL = 'https://unpkg.pjfun.top/luckyexcel@1.0.1/dist/luckyexcel.umd.js'
+const CDN_BASE = 'https://unpkg.com/luckysheet@2.1.13/dist' // 使用 unpkg 源
+const JQUERY_URL = 'https://unpkg.com/jquery@3.7.1/dist/jquery.min.js'
+const LUCKY_EXCEL_URL = 'https://unpkg.com/luckyexcel@1.0.1/dist/luckyexcel.umd.js'
 
 // --- 状态管理 ---
 const isReady = ref(false)

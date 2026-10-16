@@ -17,8 +17,8 @@ export interface RecentArticle {
   lastVisited: number;
 }
 
-const READING_PROGRESS_KEY = 'pjfun_blog_reading_progress';
-const RECENT_ARTICLES_KEY = 'pjfun_blog_recent_articles';
+const READING_PROGRESS_KEY = 'whiteflaw_blog_reading_progress';
+const RECENT_ARTICLES_KEY = 'whiteflaw_blog_recent_articles';
 
 /**
  * 保存文章阅读进度（按path存储多条记录）

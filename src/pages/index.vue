@@ -563,8 +563,8 @@ onMounted(async () => {
   checkLogin();
   try {
     window.addEventListener('scroll', handleScroll);
-    const navName=getEnvVariable('PJ_BLOG_NAV_NAME')
-    const treeName=getEnvVariable('PJ_BLOG_TREE_NAME')
+    const navName=getEnvVariable('WF_BLOG_NAV_NAME')
+    const treeName=getEnvVariable('WF_BLOG_TREE_NAME')
     const base=getEnvVariable('VITE_BASE')||'/'
     const [navRes, treeRes] = await Promise.all([
       fetchWithFallback([`${base}generated/${navName}`,`${base}generated/nav.json`],'导航数据'),
