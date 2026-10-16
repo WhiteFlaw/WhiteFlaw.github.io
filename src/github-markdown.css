@@ -58,43 +58,44 @@ html *::after {
   line-height: 1.6;
 }
 
-/* highlight.js 亮色主题 (GitHub Light) */
+/* highlight.js 亮色主题 (Cyberpunk Light)
+   浅色底上不宜用霓虹色，关键字/字符串取同色相的深色版以保证对比度 */
 .markdown-body pre code .hljs-comment,
 .markdown-body pre code .hljs-quote {
-  color: #6a737d;
+  color: #7c5c8a;
   font-style: italic;
 }
 .markdown-body pre code .hljs-keyword,
 .markdown-body pre code .hljs-selector-tag,
 .markdown-body pre code .hljs-type {
-  color: #d73a49;
+  color: #6d28d9;
 }
 .markdown-body pre code .hljs-string,
 .markdown-body pre code .hljs-addition {
-  color: #032f62;
+  color: #0a7d8c;
 }
 .markdown-body pre code .hljs-number,
 .markdown-body pre code .hljs-literal {
-  color: #005cc5;
+  color: #c026d3;
 }
 .markdown-body pre code .hljs-built_in,
 .markdown-body pre code .hljs-builtin-name {
-  color: #6f42c1;
+  color: #8b2fd6;
 }
 .markdown-body pre code .hljs-function .hljs-title,
 .markdown-body pre code .hljs-title.function_,
 .markdown-body pre code .hljs-title {
-  color: #6f42c1;
+  color: #7c3aed;
 }
 .markdown-body pre code .hljs-variable,
 .markdown-body pre code .hljs-attr {
-  color: #005cc5;
+  color: #6d28d9;
 }
 .markdown-body pre code .hljs-params {
   color: #24292e;
 }
 .markdown-body pre code .hljs-meta {
-  color: #735c0f;
+  color: #5b21b6;
 }
 .markdown-body pre code .hljs-deletion {
   color: #b31d28;
@@ -102,63 +103,64 @@ html *::after {
 }
 .markdown-body pre code .hljs-selector-class,
 .markdown-body pre code .hljs-selector-id {
-  color: #6f42c1;
+  color: #8b2fd6;
 }
 .markdown-body pre code .hljs-tag {
-  color: #22863a;
+  color: #0a7d8c;
 }
 .markdown-body pre code .hljs-name {
-  color: #22863a;
+  color: #0a7d8c;
 }
 .markdown-body pre code .hljs-attribute {
-  color: #005cc5;
+  color: #6d28d9;
 }
 .markdown-body pre code .hljs-symbol,
 .markdown-body pre code .hljs-bullet {
   color: #e36209;
 }
 .markdown-body pre code .hljs-section {
-  color: #005cc5;
+  color: #7c3aed;
   font-weight: bold;
 }
 
-/* highlight.js 暗色主题 (GitHub Dark) */
+/* highlight.js 暗色主题 (Cyberpunk Dark)
+   深色底上可以用霓虹色：关键字品红、字符串青、注释暗紫 */
 .dark .markdown-body pre code .hljs-comment,
 .dark .markdown-body pre code .hljs-quote {
-  color: #8b949e;
+  color: #7a6b9a;
   font-style: italic;
 }
 .dark .markdown-body pre code .hljs-keyword,
 .dark .markdown-body pre code .hljs-selector-tag,
 .dark .markdown-body pre code .hljs-type {
-  color: #ff7b72;
+  color: #a78bfa;
 }
 .dark .markdown-body pre code .hljs-string,
 .dark .markdown-body pre code .hljs-addition {
-  color: #a5d6ff;
+  color: #4de0d8;
 }
 .dark .markdown-body pre code .hljs-number,
 .dark .markdown-body pre code .hljs-literal {
-  color: #79c0ff;
+  color: #e879f9;
 }
 .dark .markdown-body pre code .hljs-built_in,
 .dark .markdown-body pre code .hljs-builtin-name {
-  color: #d2a8ff;
+  color: #c77dff;
 }
 .dark .markdown-body pre code .hljs-function .hljs-title,
 .dark .markdown-body pre code .hljs-title.function_,
 .dark .markdown-body pre code .hljs-title {
-  color: #d2a8ff;
+  color: #d98cff;
 }
 .dark .markdown-body pre code .hljs-variable,
 .dark .markdown-body pre code .hljs-attr {
-  color: #79c0ff;
+  color: #9d7bff;
 }
 .dark .markdown-body pre code .hljs-params {
   color: #e6edf3;
 }
 .dark .markdown-body pre code .hljs-meta {
-  color: #d29922;
+  color: #c4b5fd;
 }
 .dark .markdown-body pre code .hljs-deletion {
   color: #ffa198;
@@ -166,23 +168,23 @@ html *::after {
 }
 .dark .markdown-body pre code .hljs-selector-class,
 .dark .markdown-body pre code .hljs-selector-id {
-  color: #d2a8ff;
+  color: #d98cff;
 }
 .dark .markdown-body pre code .hljs-tag {
-  color: #7ee787;
+  color: #4de0d8;
 }
 .dark .markdown-body pre code .hljs-name {
-  color: #7ee787;
+  color: #4de0d8;
 }
 .dark .markdown-body pre code .hljs-attribute {
-  color: #79c0ff;
+  color: #9d7bff;
 }
 .dark .markdown-body pre code .hljs-symbol,
 .dark .markdown-body pre code .hljs-bullet {
   color: #ffa657;
 }
 .dark .markdown-body pre code .hljs-section {
-  color: #79c0ff;
+  color: #d98cff;
   font-weight: bold;
 }
 
@@ -195,10 +197,10 @@ html *::after {
   .markdown-body{
     /* dark */
     color-scheme: dark;
-    --focus-outlineColor: #1f6feb;
+    --focus-outlineColor: #6d28d9;
     --fgColor-default: #f0f6fc;
     --fgColor-muted: #9198a1;
-    --fgColor-accent: #4493f8;
+    --fgColor-accent: #a78bfa;
     --fgColor-success: #3fb950;
     --fgColor-attention: #d29922;
     --fgColor-danger: #f85149;
@@ -210,7 +212,7 @@ html *::after {
     --borderColor-default: #3d444d;
     --borderColor-muted: #3d444db3;
     --borderColor-neutral-muted: #3d444db3;
-    --borderColor-accent-emphasis: #1f6feb;
+    --borderColor-accent-emphasis: #6d28d9;
     --borderColor-success-emphasis: #238636;
     --borderColor-attention-emphasis: #9e6a03;
     --borderColor-danger-emphasis: #da3633;
@@ -251,10 +253,10 @@ html *::after {
   .markdown-body{
     /* light */
     color-scheme: light;
-    --focus-outlineColor: #0969da;
+    --focus-outlineColor: #5b21b6;
     --fgColor-default: #1f2328;
     --fgColor-muted: #59636e;
-    --fgColor-accent: #0969da;
+    --fgColor-accent: #5b21b6;
     --fgColor-success: #1a7f37;
     --fgColor-attention: #9a6700;
     --fgColor-danger: #d1242f;
@@ -266,7 +268,7 @@ html *::after {
     --borderColor-default: #d1d9e0;
     --borderColor-muted: #d1d9e0b3;
     --borderColor-neutral-muted: #d1d9e0b3;
-    --borderColor-accent-emphasis: #0969da;
+    --borderColor-accent-emphasis: #5b21b6;
     --borderColor-success-emphasis: #1a7f37;
     --borderColor-attention-emphasis: #9a6700;
     --borderColor-danger-emphasis: #cf222e;

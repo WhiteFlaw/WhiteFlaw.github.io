@@ -10,7 +10,7 @@ router-link {
 
 /* ===== 可访问性：可见焦点状态 ===== */
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #7c3aed;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -18,7 +18,7 @@ router-link {
 button:focus-visible,
 a:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #7c3aed;
   outline-offset: 2px;
 }
 

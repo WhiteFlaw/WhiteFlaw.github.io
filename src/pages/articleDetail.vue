@@ -18,7 +18,7 @@
       :class="{ 'opacity-0': !showProgress, 'opacity-100': showProgress }"
   >
     <div
-        class="h-full bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-200 ease-out"
+        class="h-full bg-gradient-to-r from-sky-400 to-cyber-600 transition-all duration-200 ease-out"
         :style="{ width: progress + '%' }"
     >
     </div>
@@ -53,7 +53,7 @@
       <!-- 封面中的标题信息 -->
       <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white z-10 max-w-7xl mx-auto">
         <div class="flex flex-wrap gap-3 mb-6 opacity-0 animate-slide-up" style="animation-delay: 0.1s">
-          <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
+          <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
             #{{ tag }}
           </span>
         </div>
@@ -82,7 +82,7 @@
         {{ articleMeta.title }}
       </h1>
       <div class="flex dark:text-white dark:text-warmGray flex-wrap justify-center gap-3 mb-2 opacity-0 animate-slide-up" style="animation-delay: 0.1s">
-        <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
+        <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
           #{{ tag }}
         </span>
       </div>
@@ -119,7 +119,7 @@
             </div>
             <div class="h-px w-6 bg-gray-200 dark:bg-gray-700 mx-auto"></div>
             <div class="tooltip tooltip-right" :data-tip="t('share')">
-              <button @click="openShareModal" class="w-10 h-10 flex-center rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors" :aria-label="t('share')">
+              <button @click="openShareModal" class="w-10 h-10 flex-center rounded-full hover:bg-cyber-50 dark:hover:bg-cyber-900/30 text-gray-500 dark:text-gray-400 hover:text-cyber-600 transition-colors" :aria-label="t('share')">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
@@ -228,7 +228,7 @@
           <div
               v-else
               :key="componentKey"
-              class="prose dark:prose-invert max-w-none prose-headings:scroll-mt-28 prose-img:rounded-xl prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:underline prose-pre:bg-transparent prose-pre:p-0 prose-pre:m-0 markdown-body animate-fade-in"
+              class="prose dark:prose-invert max-w-none prose-headings:scroll-mt-28 prose-img:rounded-xl prose-a:text-cyber-600 dark:prose-a:text-cyber-400 hover:prose-a:underline prose-pre:bg-transparent prose-pre:p-0 prose-pre:m-0 markdown-body animate-fade-in"
               :class="fontSizeClasses[fontSizeLevel]"
               @click="handleContentClick"
               v-html="renderedMarkdown"
@@ -259,27 +259,27 @@
             <router-link
               v-if="prevArticle"
               :to="prevArticle.path"
-              class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/10 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 group"
+              class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-cyber-50 dark:hover:bg-cyber-900/10 hover:border-cyber-300 dark:hover:border-cyber-700 transition-all duration-300 group"
               :aria-label="'上一篇: ' + prevArticle.title"
             >
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
               <div class="min-w-0">
                 <div class="text-xs text-gray-400">{{ t('prevArticle') }}</div>
-                <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400">{{ prevArticle.title }}</div>
+                <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-cyber-600 dark:group-hover:text-cyber-400">{{ prevArticle.title }}</div>
               </div>
             </router-link>
             <div v-if="!prevArticle" class="invisible"></div>
             <router-link
               v-if="nextArticle"
               :to="nextArticle.path"
-              class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/10 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 group justify-end"
+              class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-cyber-50 dark:hover:bg-cyber-900/10 hover:border-cyber-300 dark:hover:border-cyber-700 transition-all duration-300 group justify-end"
               :aria-label="'下一篇: ' + nextArticle.title"
             >
               <div class="min-w-0 text-right">
                 <div class="text-xs text-gray-400">{{ t('nextArticle') }}</div>
-                <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400">{{ nextArticle.title }}</div>
+                <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-cyber-600 dark:group-hover:text-cyber-400">{{ nextArticle.title }}</div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </router-link>
             <div v-if="!nextArticle" class="invisible"></div>
           </div>
@@ -288,7 +288,7 @@
             <div class="flex items-center gap-3" v-if="articleMeta.tags.length>0">
               <span class="text-gray-500 font-medium">{{ t('tags') }}:</span>
               <div class="flex flex-wrap gap-2">
-                <span v-for="tag in articleMeta.tags" :key="tag" class="text-sm px-3 py-1 rounded-md bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transition">#{{ tag }}</span>
+                <span v-for="tag in articleMeta.tags" :key="tag" class="text-sm px-3 py-1 rounded-md bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:text-cyber-600 dark:hover:text-cyber-400 cursor-pointer transition">#{{ tag }}</span>
               </div>
             </div>
             <div class="flex gap-3">
@@ -321,7 +321,7 @@
                 </svg>
                 {{ isFavorited ? t('favorited') : t('favorite') }}
               </button>
-              <button @click="openShareModal" class="flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium" :aria-label="t('share')">
+              <button @click="openShareModal" class="flex items-center gap-2 px-6 py-2.5 bg-cyber-600 text-white rounded-full hover:bg-cyber-700 transition-colors font-medium" :aria-label="t('share')">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
@@ -339,13 +339,13 @@
             </div>
             <ul v-else class=" relative">
               <li v-for="h in headings" :key="h.id" class="relative">
-                <div v-if="activeHeadingId === h.id" class="absolute -left-[21px] top-1 bottom-1 w-[3px] bg-blue-600 rounded-r-md transition-all"></div>
+                <div v-if="activeHeadingId === h.id" class="absolute -left-[21px] top-1 bottom-1 w-[3px] bg-cyber-600 rounded-r-md transition-all"></div>
                 <button
                     @click="scrollToHeading(h.id)"
                     class="text-left text-sm py-1.5 transition-all duration-200 block w-full truncate leading-relaxed"
                     :class="[
                     activeHeadingId === h.id
-                      ? 'text-blue-600 font-semibold pl-1'
+                      ? 'text-cyber-600 font-semibold pl-1'
                       : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                   ]"
                     :style="{ paddingLeft: (h.level - 1) * 1 + 'rem' }"
@@ -409,7 +409,7 @@
                   class="text-left w-full text-sm truncate py-2 border-l-2 pl-4 transition-colors"
                   :class="[
                   activeHeadingId === h.id
-                  ? 'border-blue-600 text-blue-600 font-bold dark:bg-blue-900/20'
+                  ? 'border-cyber-600 text-cyber-600 font-bold dark:bg-cyber-900/20'
                   : 'border-transparent text-gray-600 dark:text-gray-400'
                 ]"
                   :aria-current="activeHeadingId === h.id ? 'true' : 'false'"
@@ -438,7 +438,7 @@
         <span class="font-serif font-bold text-sm">{{ ['S','M','L'][fontSizeLevel] }}</span>
       </button>
       <div class="w-px h-5 bg-gray-200 dark:bg-gray-700"></div>
-      <button @click="openShareModal" class="w-9 h-9 flex-center rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors" :aria-label="t('share')">
+      <button @click="openShareModal" class="w-9 h-9 flex-center rounded-full hover:bg-cyber-50 dark:hover:bg-cyber-900/30 text-gray-500 dark:text-gray-400 hover:text-cyber-600 transition-colors" :aria-label="t('share')">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
       </button>
     </div>
