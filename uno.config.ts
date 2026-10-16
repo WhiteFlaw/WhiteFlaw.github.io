@@ -17,7 +17,7 @@ export default defineConfig({
         'flex-center': 'flex items-center justify-center',
         'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
         'card': 'bg-white dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))] rounded-xl shadow-sm',
-        'btn': 'px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors',
+        'btn': 'px-6 py-3 rounded-lg bg-cyber-600 text-white hover:bg-cyber-700 transition-colors',
         'btn-secondary': 'px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors',
         // 常用工具类
         'line-clamp-2': 'overflow-hidden overflow-ellipsis',
@@ -31,8 +31,8 @@ export default defineConfig({
         'icon-btn-sm': 'w-9 h-9 flex-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer',
         // PDF 工具栏按钮
         'pdf-toolbar-btn': 'flex-center w-9 h-9 border-none bg-transparent text-gray-700 dark:text-gray-300 rounded cursor-pointer transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed',
-        // 图标徽章（蓝调渐变，无紫色）
-        'badge': 'w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex-center',
+        // 图标徽章（赛博朋克品红渐变）
+        'badge': 'w-9 h-9 rounded-xl bg-gradient-to-br from-cyber-600 to-cyber-800 flex-center',
         // 玻璃态导航栏按钮
         'glass-nav-btn': 'flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer',
         // 主题切换按钮
@@ -84,7 +84,22 @@ export default defineConfig({
     ],
     theme: {
         colors: {
-            primary: '#3b82f6',
+            // 赛博朋克主题色：暗夜紫为主（低饱和、低亮度，避免"白天感"）
+            primary: '#7c3aed',
+            // cyber 色阶 —— 全站高亮色统一用它（原先散落各处的 blue-* 已整体替换）
+            cyber: {
+                50: '#f5f3ff',
+                100: '#ede9fe',
+                200: '#ddd6fe',
+                300: '#c4b5fd',
+                400: '#a78bfa',
+                500: '#7c3aed',
+                600: '#6d28d9',
+                700: '#5b21b6',
+                800: '#4c1d95',
+                900: '#3b1578',
+                950: '#2e1065',
+            },
         },
         animation: {
             keyframes: {

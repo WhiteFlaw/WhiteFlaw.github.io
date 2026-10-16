@@ -1,7 +1,7 @@
 ---
 title: 《你不知道的JavaScript》作用域闭包
 date: 2025-03-20
-cover: /img/d9.webp
+cover: /img/d8.webp
 desc: 《你不知道的JavaScript》作用域闭包
 tags: [JavaScript]
 sticky: false

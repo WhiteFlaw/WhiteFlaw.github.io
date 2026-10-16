@@ -7,7 +7,7 @@
            :enter="{ y: 0, opacity: 1, scale: 1, transition: { duration: 400 } }"
            :leave="{ y: -80, opacity: 0, scale: 0.9, transition: { duration: 300 } }">
         <div class="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700">
-          <IconCarbonSearch class="w-5 h-5 text-blue-500 dark:text-blue-400 flex-shrink-0" aria-hidden="true" />
+          <IconCarbonSearch class="w-5 h-5 text-cyber-500 dark:text-cyber-400 flex-shrink-0" aria-hidden="true" />
           <input
               ref="searchInput"
               v-model="query"
@@ -32,20 +32,20 @@
                 :to="post.path"
                 @click="isOpen = false"
                 class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-0 transform transition-all duration-200"
-                :class="{ 'bg-blue-50 dark:bg-blue-900/20 scale-[1.02]': index === selectedIndex }"
+                :class="{ 'bg-cyber-50 dark:bg-cyber-900/20 scale-[1.02]': index === selectedIndex }"
                 @mouseenter="selectedIndex = index"
                 :id="`search-result-${index}`"
                 role="option"
                 :aria-selected="index === selectedIndex"
             >
-              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-base font-bold text-white flex-shrink-0">
+              <div class="w-10 h-10 bg-gradient-to-br from-cyber-500 to-cyber-700 rounded-lg flex items-center justify-center text-base font-bold text-white flex-shrink-0">
                 {{ post.title[0] }}
               </div>
               <div class="flex-1 min-w-0">
-                <h3 class="font-semibold text-gray-800 dark:text-white truncate text-sm transform transition-all duration-200 hover:text-blue-600">{{ post.title }}</h3>
+                <h3 class="font-semibold text-gray-800 dark:text-white truncate text-sm transform transition-all duration-200 hover:text-cyber-600">{{ post.title }}</h3>
                 <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">{{ post.excerpt || t('excerpt') }}</p>
                 <div v-if="post.tags && post.tags.length" class="flex flex-wrap gap-1 mt-1.5">
-                  <div v-for="tag in post.tags.slice(0, 3)" :key="tag" class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded transform transition-all hover:scale-110">
+                  <div v-for="tag in post.tags.slice(0, 3)" :key="tag" class="px-1.5 py-0.5 bg-cyber-100 dark:bg-cyber-900/30 text-cyber-800 dark:text-cyber-200 text-xs rounded transform transition-all hover:scale-110">
                     {{ tag }}
                   </div>
                   <div v-if="post.tags.length > 3" class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs rounded">
