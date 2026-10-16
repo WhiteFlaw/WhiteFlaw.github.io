@@ -109,13 +109,18 @@ export function getCDN(LOCAL_DEBUG: boolean): CdnResult {
     let global_cdn: string[] = [];
     let global: { [key: string]: string } = {};
 
-    // CDN 源（按优先级顺序）
+    // CDN 兜底源（按优先级顺序）。
+    // 加载器是「失败才试下一个」，所以顺序就等于国内网络下的实测延迟，
+    // 越快越靠前（以下为实测值）：
+    //   topthink 0.7s / unpkg 官方 1.4s / noisework 1.5s
+    //   jsdmirror 5.6s / liumingye 8.8s
+    // mengze 实测无法连接，暂时移出队列；恢复后在下面加回
+    //   'cdn_mz': cdnSources.mengze,  即可。
     const backupCdnKeys: BackupCdnKeys = {
-        'cdn_up': cdnSources.unpkg,
-        'cdn_nw': cdnSources.noisework,
-        'cdn_jsm': cdnSources.jsdmirrorcn,
         'cdn_th': cdnSources.topthink,
-        'cdn_mz': cdnSources.mengze,
+        'cdn_nw': cdnSources.noisework,
+        'cdn_up': cdnSources.unpkg,
+        'cdn_jsm': cdnSources.jsdmirrorcn,
         'cdn_ly': cdnSources.liumingye,
     };
 
