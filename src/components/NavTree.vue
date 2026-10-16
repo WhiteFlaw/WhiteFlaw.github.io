@@ -81,15 +81,15 @@ defineProps<{
 }
 
 .folder-icon {
-  @apply w-3.5 h-3.5 text-cyber-500 flex-shrink-0 transition-all duration-300;
+  @apply w-3.5 h-3.5 text-blue-500 flex-shrink-0 transition-all duration-300;
 }
 
 .folder-icon.closed {
-  @apply dark:text-cyber-400;
+  @apply dark:text-blue-400;
 }
 
 .folder-icon.open {
-  @apply dark:text-cyber-400;
+  @apply dark:text-blue-400;
 }
 
 .closed {
@@ -131,7 +131,7 @@ defineProps<{
 }
 
 .nav-item-active {
-  @apply bg-cyber-100 dark:bg-cyber-900/30 text-cyber-600 dark:text-cyber-300 font-medium ring-2 ring-cyber-500/20;
+  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 font-medium ring-2 ring-blue-500/20;
 }
 
 .nav-item-icon {
@@ -139,7 +139,7 @@ defineProps<{
 }
 
 .nav-item-active .nav-item-icon {
-  @apply text-cyber-500;
+  @apply text-blue-500;
 }
 
 .nav-item-title {
@@ -147,7 +147,7 @@ defineProps<{
 }
 
 .nav-item-active .nav-item-title {
-  @apply text-cyber-600 dark:text-cyber-300;
+  @apply text-blue-600 dark:text-blue-300;
 }
 
 .nav-folder-empty .nav-folder-summary {

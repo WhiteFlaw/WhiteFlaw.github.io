@@ -58,44 +58,43 @@ html *::after {
   line-height: 1.6;
 }
 
-/* highlight.js 亮色主题 (Cyberpunk Light)
-   浅色底上不宜用霓虹色，关键字/字符串取同色相的深色版以保证对比度 */
+/* highlight.js 亮色主题 (GitHub Light) */
 .markdown-body pre code .hljs-comment,
 .markdown-body pre code .hljs-quote {
-  color: #7c5c8a;
+  color: #6a737d;
   font-style: italic;
 }
 .markdown-body pre code .hljs-keyword,
 .markdown-body pre code .hljs-selector-tag,
 .markdown-body pre code .hljs-type {
-  color: #6d28d9;
+  color: #d73a49;
 }
 .markdown-body pre code .hljs-string,
 .markdown-body pre code .hljs-addition {
-  color: #0a7d8c;
+  color: #032f62;
 }
 .markdown-body pre code .hljs-number,
 .markdown-body pre code .hljs-literal {
-  color: #c026d3;
+  color: #005cc5;
 }
 .markdown-body pre code .hljs-built_in,
 .markdown-body pre code .hljs-builtin-name {
-  color: #8b2fd6;
+  color: #6f42c1;
 }
 .markdown-body pre code .hljs-function .hljs-title,
 .markdown-body pre code .hljs-title.function_,
 .markdown-body pre code .hljs-title {
-  color: #7c3aed;
+  color: #6f42c1;
 }
 .markdown-body pre code .hljs-variable,
 .markdown-body pre code .hljs-attr {
-  color: #6d28d9;
+  color: #005cc5;
 }
 .markdown-body pre code .hljs-params {
   color: #24292e;
 }
 .markdown-body pre code .hljs-meta {
-  color: #5b21b6;
+  color: #735c0f;
 }
 .markdown-body pre code .hljs-deletion {
   color: #b31d28;
@@ -103,64 +102,63 @@ html *::after {
 }
 .markdown-body pre code .hljs-selector-class,
 .markdown-body pre code .hljs-selector-id {
-  color: #8b2fd6;
+  color: #6f42c1;
 }
 .markdown-body pre code .hljs-tag {
-  color: #0a7d8c;
+  color: #22863a;
 }
 .markdown-body pre code .hljs-name {
-  color: #0a7d8c;
+  color: #22863a;
 }
 .markdown-body pre code .hljs-attribute {
-  color: #6d28d9;
+  color: #005cc5;
 }
 .markdown-body pre code .hljs-symbol,
 .markdown-body pre code .hljs-bullet {
   color: #e36209;
 }
 .markdown-body pre code .hljs-section {
-  color: #7c3aed;
+  color: #005cc5;
   font-weight: bold;
 }
 
-/* highlight.js 暗色主题 (Cyberpunk Dark)
-   深色底上可以用霓虹色：关键字品红、字符串青、注释暗紫 */
+/* highlight.js 暗色主题 (GitHub Dark) */
 .dark .markdown-body pre code .hljs-comment,
 .dark .markdown-body pre code .hljs-quote {
-  color: #7a6b9a;
+  color: #8b949e;
   font-style: italic;
 }
 .dark .markdown-body pre code .hljs-keyword,
 .dark .markdown-body pre code .hljs-selector-tag,
 .dark .markdown-body pre code .hljs-type {
-  color: #a78bfa;
+  color: #ff7b72;
 }
 .dark .markdown-body pre code .hljs-string,
 .dark .markdown-body pre code .hljs-addition {
-  color: #4de0d8;
+  color: #a5d6ff;
 }
 .dark .markdown-body pre code .hljs-number,
 .dark .markdown-body pre code .hljs-literal {
-  color: #e879f9;
+  color: #79c0ff;
 }
 .dark .markdown-body pre code .hljs-built_in,
 .dark .markdown-body pre code .hljs-builtin-name {
-  color: #c77dff;
+  color: #d2a8ff;
 }
 .dark .markdown-body pre code .hljs-function .hljs-title,
 .dark .markdown-body pre code .hljs-title.function_,
 .dark .markdown-body pre code .hljs-title {
-  color: #d98cff;
+  color: #d2a8ff;
 }
 .dark .markdown-body pre code .hljs-variable,
 .dark .markdown-body pre code .hljs-attr {
-  color: #9d7bff;
+  color: #79c0ff;
 }
 .dark .markdown-body pre code .hljs-params {
   color: #e6edf3;
 }
 .dark .markdown-body pre code .hljs-meta {
-  color: #c4b5fd;
+  color: #d29922;
 }
 .dark .markdown-body pre code .hljs-deletion {
   color: #ffa198;
@@ -168,23 +166,23 @@ html *::after {
 }
 .dark .markdown-body pre code .hljs-selector-class,
 .dark .markdown-body pre code .hljs-selector-id {
-  color: #d98cff;
+  color: #d2a8ff;
 }
 .dark .markdown-body pre code .hljs-tag {
-  color: #4de0d8;
+  color: #7ee787;
 }
 .dark .markdown-body pre code .hljs-name {
-  color: #4de0d8;
+  color: #7ee787;
 }
 .dark .markdown-body pre code .hljs-attribute {
-  color: #9d7bff;
+  color: #79c0ff;
 }
 .dark .markdown-body pre code .hljs-symbol,
 .dark .markdown-body pre code .hljs-bullet {
   color: #ffa657;
 }
 .dark .markdown-body pre code .hljs-section {
-  color: #d98cff;
+  color: #79c0ff;
   font-weight: bold;
 }
 
@@ -197,10 +195,10 @@ html *::after {
   .markdown-body{
     /* dark */
     color-scheme: dark;
-    --focus-outlineColor: #6d28d9;
+    --focus-outlineColor: #1f6feb;
     --fgColor-default: #f0f6fc;
     --fgColor-muted: #9198a1;
-    --fgColor-accent: #a78bfa;
+    --fgColor-accent: #4493f8;
     --fgColor-success: #3fb950;
     --fgColor-attention: #d29922;
     --fgColor-danger: #f85149;
@@ -212,7 +210,7 @@ html *::after {
     --borderColor-default: #3d444d;
     --borderColor-muted: #3d444db3;
     --borderColor-neutral-muted: #3d444db3;
-    --borderColor-accent-emphasis: #6d28d9;
+    --borderColor-accent-emphasis: #1f6feb;
     --borderColor-success-emphasis: #238636;
     --borderColor-attention-emphasis: #9e6a03;
     --borderColor-danger-emphasis: #da3633;
@@ -253,10 +251,10 @@ html *::after {
   .markdown-body{
     /* light */
     color-scheme: light;
-    --focus-outlineColor: #5b21b6;
+    --focus-outlineColor: #0969da;
     --fgColor-default: #1f2328;
     --fgColor-muted: #59636e;
-    --fgColor-accent: #5b21b6;
+    --fgColor-accent: #0969da;
     --fgColor-success: #1a7f37;
     --fgColor-attention: #9a6700;
     --fgColor-danger: #d1242f;
@@ -268,7 +266,7 @@ html *::after {
     --borderColor-default: #d1d9e0;
     --borderColor-muted: #d1d9e0b3;
     --borderColor-neutral-muted: #d1d9e0b3;
-    --borderColor-accent-emphasis: #5b21b6;
+    --borderColor-accent-emphasis: #0969da;
     --borderColor-success-emphasis: #1a7f37;
     --borderColor-attention-emphasis: #9a6700;
     --borderColor-danger-emphasis: #cf222e;

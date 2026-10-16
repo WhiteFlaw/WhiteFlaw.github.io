@@ -13,7 +13,7 @@
           <div class="badge">
             <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
           </div>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
+          <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             {{ t('siteTitle') }}
           </h1>
         </div>
@@ -24,7 +24,7 @@
             <input
                 type="text"
                 :placeholder="t('searchPlaceholder')"
-                class="w-64 xl:w-80 py-2 px-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyber-500 text-sm transition-shadow duration-200"
+                class="w-64 xl:w-80 py-2 px-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm transition-shadow duration-200"
                 @click="openSearch"
                 readonly
             >
@@ -79,8 +79,8 @@
                 :class="[
                 'flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap cursor-pointer',
                 selectedTag === tag
-                  ? 'bg-cyber-600 text-white shadow-sm'
-                  : 'bg-white theme-text theme-panel border border-gray-300 dark:border-gray-600 hover:border-cyber-400'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-white theme-text theme-panel border border-gray-300 dark:border-gray-600 hover:border-blue-400'
               ]"
             >
               {{ tag }}
@@ -107,7 +107,7 @@
             <!-- 移动端头部 -->
             <div class="flex-shrink-0 flex justify-between items-center p-5 border-b border-gray-200 dark:border-gray-700 lg:hidden">
               <h2 class="text-lg font-bold flex items-center gap-2 theme-title">
-                <IconCarbonBook class="w-5 h-5 text-cyber-500" />
+                <IconCarbonBook class="w-5 h-5 text-blue-500" />
                 {{ t('articleDirectory') }}
               </h2>
               <button @click="toggleMobileMenu" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
@@ -119,7 +119,7 @@
             <div class="hidden lg:block p-6 pb-4">
               <div class="flex justify-between items-center">
                 <h2 class="text-lg font-bold flex items-center gap-2 theme-title">
-                  <IconCarbonBook class="w-5 h-5 text-cyber-500" />
+                  <IconCarbonBook class="w-5 h-5 text-blue-500" />
                   {{ t('articleDirectory') }}
                 </h2>
               </div>
@@ -135,7 +135,7 @@
             <!-- 移动端最新文章（在抽屉底部） -->
             <div class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto">
               <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
-                <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+                <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
                 {{ t('latestPosts') }}
               </h3>
               <div class="space-y-3">
@@ -146,11 +146,11 @@
                     @click="toggleMobileMenu"
                     class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group cursor-pointer"
                 >
-                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white text-xs font-bold">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-xs font-bold">
                     {{ i + 1 }}
                   </div>
                   <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-gray-900 theme-title truncate group-hover:text-cyber-600 transition-colors">{{ post.title }}</h4>
+                    <h4 class="text-sm font-medium text-gray-900 theme-title truncate group-hover:text-blue-600 transition-colors">{{ post.title }}</h4>
                     <p class="text-xs text-gray-500 theme-text mt-1 flex items-center">
                       <IconCarbonTime class="w-3 h-3 mr-1" />
                       {{ formatDate(post.date) }}
@@ -222,7 +222,7 @@
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                   >
-                  <div v-else class="w-full h-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center">
+                  <div v-else class="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
                     <div class="text-white/80 text-2xl font-bold">
                       {{ post.title?.substring(0, 2) || '博客' }}
                     </div>
@@ -231,7 +231,7 @@
 
                 <div class="p-5 flex flex-col flex-1">
                   <!-- 标题 -->
-                  <h2 class="text-base font-bold text-gray-900 theme-title leading-snug line-clamp-2 group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors">
+                  <h2 class="text-base font-bold text-gray-900 theme-title leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {{ post.title }}
                   </h2>
 
@@ -267,7 +267,7 @@
                       </span>
                     </div>
                     <!-- 阅读箭头 -->
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 theme-panel text-gray-400 theme-text group-hover:bg-cyber-50 dark:group-hover:bg-cyber-900/20 group-hover:text-cyber-500 dark:group-hover:text-cyber-400 transition-all duration-300 group-hover:translate-x-0.5">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 theme-panel text-gray-400 theme-text group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300 group-hover:translate-x-0.5">
                       <IconCarbonArrowRight class="w-4 h-4" />
                     </span>
                   </div>
@@ -277,7 +277,7 @@
 
             <!-- 加载更多按钮（无限滚动触发器） -->
             <div v-if="hasManualPagination && !loading" ref="loadMoreTrigger" class="col-span-full text-center py-12">
-              <button @click="loadMore" class="px-8 py-3 rounded-full bg-cyber-600 text-white font-medium hover:bg-cyber-700 shadow-sm transition-colors duration-200 cursor-pointer">
+              <button @click="loadMore" class="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-sm transition-colors duration-200 cursor-pointer">
                 {{ t('loadMore') || '加载更多' }}
               </button>
             </div>
@@ -297,7 +297,7 @@
           <RecentArticles />
           <div class="sticky top-6 bg-white theme-panel rounded-xl shadow-sm p-6">
             <h3 class="text-lg font-bold mb-5 flex items-center gap-2 theme-title">
-              <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+              <IconCarbonRecentlyViewed class="w-5 h-5 text-blue-500" />
               {{ t('latestPosts') }}
             </h3>
             <div class="space-y-4">
@@ -308,12 +308,12 @@
                   class="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group cursor-pointer"
               >
                 <!-- 将原来的序号显示部分替换为以下代码 -->
-                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                   <span>{{ i + 1 }}</span>
                 </div>
                 <div class="flex-1 min-w-0">
                   <h4
-                      class="font-medium theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 transition-colors"
+                      class="font-medium theme-title line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors"
                       :title="post.title">
                     {{ post.title }}
                   </h4>

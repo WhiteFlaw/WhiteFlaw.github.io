@@ -120,9 +120,7 @@ export default defineConfig((config) => {
                     name: SITE_CONFIG.title,
                     short_name: SITE_CONFIG.title,
                     description: SITE_CONFIG.description,
-                    // 与开屏界面、暗色主题底色一致，避免 PWA 启动时闪白
-                    theme_color: '#0a0514',
-                    background_color: '#0a0514',
+                    theme_color: '#ffffff',
                     icons: [
                         {
                             src: '/img/192x192.png',

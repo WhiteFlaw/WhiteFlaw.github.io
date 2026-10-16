@@ -15,7 +15,7 @@
           >
             <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
           </router-link>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
+          <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             {{ t('favoritesTitle') }}
           </h1>
         </div>
@@ -48,15 +48,15 @@
           </div>
           <nav class="flex-1 overflow-y-auto space-y-2">
             <router-link to="/" @click="toggleMobileMenu" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors dark:text-white">
-              <IconCarbonHome class="w-5 h-5 text-cyber-500" />
+              <IconCarbonHome class="w-5 h-5 text-blue-500" />
               {{ t('home') }}
             </router-link>
             <router-link to="/archive" @click="toggleMobileMenu" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors dark:text-white">
-              <IconCarbonArchive class="w-5 h-5 text-cyber-500" />
+              <IconCarbonArchive class="w-5 h-5 text-blue-500" />
               {{ t('archive') }}
             </router-link>
             <router-link to="/favorites" @click="toggleMobileMenu" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors dark:text-white">
-              <IconCarbonStar class="w-5 h-5 text-cyber-500" />
+              <IconCarbonStar class="w-5 h-5 text-blue-500" />
               {{ t('favorites') }}
             </router-link>
           </nav>
@@ -67,7 +67,7 @@
       <div class="flex justify-between items-center mb-8">
         <h2 class="text-2xl font-bold  dark:text-white">
           {{ t('yourFavorites') }}
-          <span class="text-cyber-600">({{ favorites.length }})</span>
+          <span class="text-blue-600">({{ favorites.length }})</span>
         </h2>
         <button 
           v-if="favorites.length > 0" 
@@ -111,7 +111,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
               >
-              <div v-else class="w-full h-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center">
+              <div v-else class="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
                 <div class="text-white/80 text-3xl font-bold">
                   {{ fav.title?.substring(0, 2) || '博客' }}
                 </div>
@@ -140,7 +140,7 @@
                 <span
                   v-for="tag in (fav.tags || []).slice(0, 3)"
                   :key="tag"
-                  class="px-3 py-1 text-xs rounded-full bg-cyber-100 dark:bg-cyber-900/40 text-gray-800 dark:text-cyber-300"
+                  class="px-3 py-1 text-xs rounded-full bg-blue-100 dark:bg-blue-900/40 text-gray-800 dark:text-blue-300"
                 >
                   {{ tag }}
                 </span>
@@ -151,7 +151,7 @@
                   <IconCarbonTime class="w-4 h-4 mr-1" />
                   {{ formatDate(fav.date) }}
                 </time>
-                <span class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-800 dark:text-cyber-400 bg-cyber-50 dark:bg-cyber-900/30 rounded-full group-hover:bg-cyber-100 dark:group-hover:bg-cyber-900/50 transition-colors">
+                <span class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-800 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
                   {{ t('readMore') }}
                   <IconCarbonArrowRight class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform duration-200" />
                 </span>
@@ -168,7 +168,7 @@
         <p class="mt-2 text-gray-500 dark:text-gray-400">{{ t('noFavoritesDesc') }}</p>
         <router-link 
           to="/" 
-          class="mt-6 inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyber-600 to-cyber-800 text-white rounded-xl hover:from-cyber-700 hover:to-cyber-900 transition-all shadow-sm"
+          class="mt-6 inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl hover:from-blue-700 hover:to-blue-900 transition-all shadow-sm"
         >
           <IconCarbonArrowLeft class="w-5 h-5 mr-2" />
           {{ t('browseArticles') }}

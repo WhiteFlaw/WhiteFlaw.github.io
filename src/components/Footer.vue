@@ -4,10 +4,10 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 rounded-xl bg-gradient-to-r from-cyber-500 to-cyan-400 flex-center">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex-center">
               <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
             </div>
-            <span class="text-lg font-bold bg-gradient-to-r from-cyber-600 to-cyan-400 bg-clip-text text-transparent">
+            <span class="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {{ t('siteTitle') }}
             </span>
           </div>

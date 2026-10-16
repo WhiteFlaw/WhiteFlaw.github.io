@@ -325,13 +325,13 @@ function injectDialogStyles() {
       }
       
       .dialog-btn-confirm {
-        background: linear-gradient(to right, #7c3aed, #6d28d9);
+        background: linear-gradient(to right, #3b82f6, #2563eb);
         color: white;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       }
       
       .dialog-btn-confirm:hover {
-        background: linear-gradient(to right, #6d28d9, #5b21b6);
+        background: linear-gradient(to right, #2563eb, #1d4ed8);
         transform: translateY(-1px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
