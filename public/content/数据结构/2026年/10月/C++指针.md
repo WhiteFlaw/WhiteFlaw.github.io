@@ -1,7 +1,7 @@
 ---
 title: C++指针
 date: 2026-10-11
-cover: /img/d4.webp
+cover: /img/d3.webp
 desc: C++指针
 tags: [数据结构]
 sticky: false
