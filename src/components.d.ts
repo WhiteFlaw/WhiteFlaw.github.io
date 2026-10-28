@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppNavBar: typeof import('./components/AppNavBar.vue')['default']
     DocumentViewer: typeof import('./components/DocumentViewer.vue')['default']
     Excel: typeof import('./components/preview/Excel.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']

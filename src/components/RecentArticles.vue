@@ -1,5 +1,5 @@
 <template>
-  <div class="card p-6 transition-all duration-300 hover:shadow-xl">
+  <div class="card p-6 transition-all duration-300 ">
     <div class="flex justify-between items-center mb-5">
       <h3 class="text-lg font-bold flex items-center gap-2 theme-title">
         <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />

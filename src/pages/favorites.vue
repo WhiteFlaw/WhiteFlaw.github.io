@@ -1,42 +1,12 @@
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-transparent lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
-    <header
-        :class="[
-          'sticky-header',
-          headerScrolled ? 'py-2 shadow-lg' : 'py-4'
-        ]"
-    >
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <router-link 
-            to="/" 
-            class="badge"
-          >
-            <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
-          </router-link>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
-            {{ t('favoritesTitle') }}
-          </h1>
-        </div>
-
-        <div class="flex items-center space-x-4">
-          <button @click="toggleLanguage" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-            <IconCarbonLanguage class="w-4 h-4" />
-            {{ currentLang === 'zh' ? 'EN' : '中文' }}
-          </button>
-          <ThemeToggle />
-          <button @click="toggleMobileMenu" class="lg:hidden dark:text-gray-300 p-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
-            <IconCarbonMenu class="w-6 h-6" />
-          </button>
-        </div>
-      </div>
-    </header>
+    <AppNavBar :title="t('favoritesTitle')" :show-menu="true" @menu-click="toggleMobileMenu" />
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- 移动端抽屉 -->
       <aside :class="[
-        'fixed inset-y-0 left-0 z-50 w-4/5 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out-back lg:hidden',
+        'fixed inset-y-0 left-0 z-50 w-4/5 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out lg:hidden',
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       ]">
         <div class="h-full flex flex-col p-6">
@@ -65,7 +35,7 @@
       <div v-if="isMobileMenuOpen" class="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in" @click="toggleMobileMenu"></div>
       <!-- 主内容 -->
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-2xl font-bold  dark:text-white">
+        <h2 class="text-2xl font-serif font-bold  dark:text-white">
           {{ t('yourFavorites') }}
           <span class="text-cyber-600">({{ favorites.length }})</span>
         </h2>
@@ -80,7 +50,7 @@
 
       <!-- 骨架屏 -->
       <div v-if="loading" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <div v-for="i in 6" :key="i" class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+        <div v-for="i in 6" :key="i" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
           <div class="h-48 bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
           <div class="p-6 space-y-4">
             <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse w-3/4"></div>
@@ -97,7 +67,7 @@
         <article
           v-for="(fav, i) in favorites"
           :key="fav.path"
-           class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col"
+           class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm  transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col"
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: i * 60, duration: 600 } }"
@@ -111,7 +81,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
               >
-              <div v-else class="w-full h-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center">
+              <div v-else class="w-full h-full bg-cyber-600 flex items-center justify-center">
                 <div class="text-white/80 text-3xl font-bold">
                   {{ fav.title?.substring(0, 2) || '博客' }}
                 </div>
@@ -179,6 +149,7 @@
 </template>
 
 <script setup lang="ts">
+import AppNavBar from '@/components/AppNavBar.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { getFavorites, removeFavorite as removeFavoriteUtil } from '@/utils/favorites'
 import { t, getLanguage } from '@/utils/i18n'

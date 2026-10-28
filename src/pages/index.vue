@@ -2,61 +2,7 @@
   <div
       class="min-h-screen bg-gray-50 dark:bg-transparent flex flex-col lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
-    <header
-        :class="[
-          'sticky-header',
-          headerScrolled ? 'py-2 shadow-lg' : 'py-4'
-        ]"
-    >
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <div class="badge">
-            <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
-          </div>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
-            {{ t('siteTitle') }}
-          </h1>
-        </div>
-
-        <!-- 搜索 + 功能按钮 -->
-        <div class="flex items-center space-x-3">
-          <div class="relative hidden md:block">
-            <input
-                type="text"
-                :placeholder="t('searchPlaceholder')"
-                class="w-64 xl:w-80 py-2 px-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyber-500 text-sm transition-shadow duration-200"
-                @click="openSearch"
-                readonly
-            >
-            <IconCarbonSearch class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-          </div>
-          <!-- 移动端搜索按钮 -->
-          <button @click="openSearch" class="md:hidden glass-nav-btn">
-            <IconCarbonSearch class="w-5 h-5 dark:text-gray-300" />
-          </button>
-          <button @click="toDev" class="hidden sm:flex glass-nav-btn">
-            <IconCarbonLogoGithub class="w-5 h-5 dark:text-gray-300" />
-          </button>
-          <button @click="toggleLanguage" class="hidden sm:flex items-center gap-1 px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-            <IconCarbonLanguage class="w-4 h-4" />
-            <span class="hidden xl:inline">{{ currentLang === 'zh' ? 'EN' : '中文' }}</span>
-          </button>
-          <ThemeToggle />
-          <router-link to="/archive" class="hidden sm:flex glass-nav-btn" :title="t('archive')">
-            <IconCarbonArchive class="w-5 h-5 dark:text-gray-300" />
-          </router-link>
-          <router-link to="/favorites" class="hidden sm:flex glass-nav-btn" :title="t('favorites')">
-            <IconCarbonStar class="w-5 h-5 dark:text-gray-300" />
-          </router-link>
-          <button v-if="isLoggedIn" @click="handleLogout" class="hidden sm:flex items-center p-2 rounded-lg border border-red-300 dark:border-red-600 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors cursor-pointer" :title="t('logout')">
-            <IconCarbonLogout class="w-5 h-5 text-red-500 dark:text-red-400" />
-          </button>
-          <button @click="toggleMobileMenu" class="lg:hidden dark:text-gray-300 glass-nav-btn">
-            <IconCarbonMenu class="w-6 h-6" />
-          </button>
-        </div>
-      </div>
-    </header>
+    <AppNavBar :show-back="false" :show-menu="true" @menu-click="toggleMobileMenu" />
 
     <!-- 移动端搜索栏 - sticky 定位确保滚动时可见 -->
     <div class="md:hidden px-4 pt-4 sticky top-[72px] z-30">
@@ -100,7 +46,7 @@
         <aside :class="[
           'lg:w-80 flex-shrink-0',
           'lg:sticky lg:top-16 lg:self-start',
-          'fixed inset-0 left-0 z-50 w-4/5 bg-white theme-panel shadow-2xl lg:relative lg:shadow-lg transform transition-transform duration-300 ease-out-back',
+          'fixed inset-0 left-0 z-50 w-4/5 bg-white theme-panel shadow-2xl lg:relative lg:shadow-lg transform transition-transform duration-300 ease-out',
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         ]">
           <div class="h-full flex flex-col">
@@ -146,7 +92,7 @@
                     @click="toggleMobileMenu"
                     class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group cursor-pointer"
                 >
-                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white text-xs font-bold">
+                  <div class="w-8 h-8 rounded-full bg-cyber-600 flex items-center justify-center text-white text-xs font-bold">
                     {{ i + 1 }}
                   </div>
                   <div class="flex-1 min-w-0">
@@ -199,10 +145,11 @@
             <article
                 v-for="(post, i) in displayedPosts"
                 :key="post.path"
-                class="group bg-white theme-panel rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
+                class="group card-plus bg-white theme-panel rounded-xl shadow-sm  transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
                 v-motion
                 :initial="{ opacity: 0, y: 40 }"
                 :enter="{ opacity: 1, y: 0, transition: { delay: i * 60, duration: 600 } }"
+                @click.capture="openPostWithFlight(post, $event)"
                 @contextmenu.prevent="showContextMenu($event, post)"
             >
               <router-link :to="post.path" class="flex flex-col h-full card-link">
@@ -222,7 +169,7 @@
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                   >
-                  <div v-else class="w-full h-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center">
+                  <div v-else class="w-full h-full bg-cyber-600 flex items-center justify-center">
                     <div class="text-white/80 text-2xl font-bold">
                       {{ post.title?.substring(0, 2) || '博客' }}
                     </div>
@@ -308,7 +255,7 @@
                   class="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group cursor-pointer"
               >
                 <!-- 将原来的序号显示部分替换为以下代码 -->
-                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                <div class="w-6 h-6 rounded-full bg-cyber-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                   <span>{{ i + 1 }}</span>
                 </div>
                 <div class="flex-1 min-w-0">
@@ -369,7 +316,9 @@
 </template>
 
 <script setup lang="ts">
+import AppNavBar from '@/components/AppNavBar.vue'
 import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import NavTree from '@/components/NavTree.vue'
 import Footer from '@/components/Footer.vue'
 import RecentArticles from '@/components/RecentArticles.vue'
@@ -417,6 +366,129 @@ const handleScroll = () => {
 const scrollToTop = () => {
   lenis.scrollTo(0, { duration: 1 })
 };
+
+/* 点击卡片：克隆一份飞到屏幕中心并放大，动画结束再跳转。
+ * 为什么不用 View Transitions API：Firefox 与旧版 Safari 不支持，
+ * 而且它要求跳转前后元素共享 view-transition-name，改造成本更高、可控性更差。
+ * 这里用"克隆 + FLIP"的思路，任何浏览器都能跑。
+ * 动画期间用 flying 上锁，避免连点叠出好几份克隆。 */
+const router = useRouter()
+const flying = ref(false)
+
+function openPostWithFlight(post: any, ev: MouseEvent) {
+  // 带修饰键 / 中键 / 右键：交给浏览器默认行为（新标签页打开之类）
+  if (ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return
+
+  if (flying.value) {
+    ev.preventDefault()
+    return
+  }
+
+  const card = (ev.currentTarget as HTMLElement).closest('article') as HTMLElement | null
+  if (!card) return
+
+  ev.preventDefault()
+  ev.stopPropagation()
+
+  // 尊重"减少动画"偏好：直接跳转，不做飞行
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    router.push(post.path)
+    return
+  }
+
+  flying.value = true
+
+  const rect = card.getBoundingClientRect()
+  const clone = card.cloneNode(true) as HTMLElement
+
+  // 把克隆钉在卡片原来的位置，尺寸一致，先不做过渡
+  Object.assign(clone.style, {
+    position: 'fixed',
+    left: `${rect.left}px`,
+    top: `${rect.top}px`,
+    width: `${rect.width}px`,
+    height: `${rect.height}px`,
+    margin: '0',
+    zIndex: '9999',
+    pointerEvents: 'none',
+    transformOrigin: 'top left',
+    transition: 'none',
+    borderRadius: '12px',
+    overflow: 'hidden',
+  })
+  document.body.appendChild(clone)
+  card.style.opacity = '0'
+
+  // 目标：视口中心，最大 820×560
+  const vw = window.innerWidth
+  const vh = window.innerHeight
+  const targetW = Math.min(vw * 0.72, 820)
+  const targetH = Math.min(vh * 0.72, 560)
+  // 等比缩放，宽、高两个上限同时生效。
+  // 之前只按 targetW / rect.width 算，卡片宽高比与目标框不一致时，
+  // 放大后的实际高度会偏离 targetH，垂直居中就算偏了（表现为"偏下"）。
+  const scale = Math.min(targetW / rect.width, targetH / rect.height)
+  const finalW = rect.width * scale
+  const finalH = rect.height * scale
+  const dx = (vw - finalW) / 2 - rect.left
+  const dy = (vh - finalH) / 2 - rect.top
+
+  requestAnimationFrame(() => {
+    clone.style.transition =
+      'transform 460ms cubic-bezier(0.22, 0.61, 0.36, 1), border-radius 460ms ease'
+    clone.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
+    clone.style.borderRadius = '16px'
+  })
+
+  let done = false
+  const finish = () => {
+    if (done) return
+    done = true
+    clone.remove()
+    flying.value = false
+  }
+
+  const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms))
+
+  window.setTimeout(async () => {
+    try {
+      // 1. 放大到位后停 0.3s，让人看清落点
+      await sleep(300)
+
+      // 2. 黑幕盖住切换过程：新页面尚未渲染，直接切会闪一下白/灰
+      const curtain = document.createElement('div')
+      Object.assign(curtain.style, {
+        position: 'fixed',
+        inset: '0',
+        background: '#000',
+        opacity: '0',
+        zIndex: '10000',
+        pointerEvents: 'none',
+        transition: 'opacity 200ms ease',
+      })
+      document.body.appendChild(curtain)
+      // 强制回流一次，否则紧接着改 opacity 可能不会触发过渡
+      void curtain.offsetHeight
+      curtain.style.opacity = '1'
+      await sleep(200)
+
+      // 3. 全黑状态下跳转
+      await router.push(post.path)
+      await nextTick()
+      finish()
+
+      // 4. 新页面渲染出来了，再揭开黑幕
+      await sleep(320)
+      curtain.style.opacity = '0'
+      await sleep(220)
+      curtain.remove()
+    } catch {
+      // 跳转失败：把原卡片恢复，别让它一直透明
+      card.style.opacity = ''
+      finish()
+    }
+  }, 470)
+}
 
 // 右键快捷菜单
 const contextMenu = ref({

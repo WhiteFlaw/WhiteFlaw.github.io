@@ -19,7 +19,7 @@
         <input ref="fileInput" type="file" accept=".xlsx" class="hidden" @change="handleFile">
         <button
             @click="triggerUpload"
-            class="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 bg-white/15 hover:bg-white/25 border border-white/30 rounded-lg transition-all duration-300 text-xs md:text-sm font-medium cursor-pointer backdrop-blur-sm shadow-sm hover:shadow-md whitespace-nowrap"
+            class="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 bg-white/15 hover:bg-white/25 border border-white/30 rounded-lg transition-all duration-300 text-xs md:text-sm font-medium cursor-pointer backdrop-blur-sm shadow-sm  whitespace-nowrap"
         >
           <span class="i-mdi-folder-open text-lg"></span>
           <span class="hidden sm:inline">{{ t('openFile') }}</span>
@@ -28,7 +28,7 @@
         <!-- 添加全屏按钮 -->
         <button
             @click="toggleFullscreen"
-            class="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 bg-white/15 hover:bg-white/25 border border-white/30 rounded-lg transition-all duration-300 text-xs md:text-sm font-medium cursor-pointer backdrop-blur-sm shadow-sm hover:shadow-md whitespace-nowrap"
+            class="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 bg-white/15 hover:bg-white/25 border border-white/30 rounded-lg transition-all duration-300 text-xs md:text-sm font-medium cursor-pointer backdrop-blur-sm shadow-sm  whitespace-nowrap"
             :title="t('fullscreen')"
         >{{ t('fullscreen') }}</button>
 

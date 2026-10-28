@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
     <div class="w-full max-w-md">
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
         <div class="text-center mb-8">
-          <div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-r from-cyber-500 to-cyan-400 flex items-center justify-center mb-4">
+          <div class="mx-auto w-16 h-16 rounded-full bg-cyber-600 flex items-center justify-center mb-4">
             <IconCarbonLocked class="w-8 h-8 text-white" />
           </div>
           <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{{ t('passwordProtected') }}</h1>
@@ -32,7 +32,7 @@
           <button
             type="submit"
             :disabled="loading"
-            class="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-cyber-500 to-cyan-400 hover:from-cyber-600 hover:to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 cursor-pointer"
+            class="w-full py-3 px-4 rounded-lg bg-cyber-600 hover:bg-cyber-700 text-white font-medium shadow-lg  transition-all duration-300 disabled:opacity-70 cursor-pointer"
           >
             <span v-if="!loading">{{ t('access') }}</span>
             <span v-else class="flex items-center justify-center">

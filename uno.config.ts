@@ -16,7 +16,7 @@ export default defineConfig({
     shortcuts: {
         'flex-center': 'flex items-center justify-center',
         'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
-        'card': 'bg-white dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))] rounded-xl shadow-sm',
+        'card': 'bg-white dark:bg-[#111113] rounded-xl shadow-sm',
         'btn': 'px-6 py-3 rounded-lg bg-cyber-600 text-white hover:bg-cyber-700 transition-colors',
         'btn-secondary': 'px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors',
         // 常用工具类
@@ -39,10 +39,10 @@ export default defineConfig({
         'theme-toggle-btn': 'p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer',
         // 卡片链接包装器
         'card-link': 'cursor-pointer block',
-        // 暗色主题三色：与指定的 Dark Reader 变量一致，未安装该扩展时用逗号后的兜底色
-        'theme-title': 'dark:text-[var(--darkreader-text-fc013f,#fe1d55)]',
-        'theme-text': 'dark:text-[var(--darkreader-text-f1feed,#d0fcc2)]',
-        'theme-panel': 'dark:bg-[var(--darkreader-background-0000007a,rgba(24,26,27,0.48))]',
+        // 暗色主题三色：只留中性灰阶，强调色交给 primary（紫）
+        'theme-title': 'dark:text-[#f3f4f6]',
+        'theme-text': 'dark:text-[#d1d5db]',
+        'theme-panel': 'dark:bg-[#111113]',
     },
     rules: [
         // .line-clamp-2 的多行截断
@@ -83,6 +83,13 @@ export default defineConfig({
         }],
     ],
     theme: {
+        fontFamily: {
+            // 中文衬线：只给标题用，正文保持无衬线（长文可读性优先）。
+            // 全部走系统字体栈，零网络加载：
+            //   macOS/iOS → Songti SC；装了思源宋体的机器优先用更漂亮的版本；
+            //   Windows → SimSun（宋体，大字号下可读）。
+            serif: ['"Songti SC"', '"STSong"', '"Source Han Serif SC"', '"Noto Serif SC"', 'SimSun', 'serif'],
+        },
         colors: {
             // 赛博朋克主题色：暗夜紫为主（低饱和、低亮度，避免"白天感"）
             primary: '#7c3aed',

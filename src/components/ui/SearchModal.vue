@@ -38,7 +38,7 @@
                 role="option"
                 :aria-selected="index === selectedIndex"
             >
-              <div class="w-10 h-10 bg-gradient-to-br from-cyber-500 to-cyber-700 rounded-lg flex items-center justify-center text-base font-bold text-white flex-shrink-0">
+              <div class="w-10 h-10 bg-cyber-600 rounded-lg flex items-center justify-center text-base font-bold text-white flex-shrink-0">
                 {{ post.title[0] }}
               </div>
               <div class="flex-1 min-w-0">

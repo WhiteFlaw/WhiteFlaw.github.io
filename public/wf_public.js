@@ -86,13 +86,15 @@ function loadResourceMain(url, isJs) {
       reject(new Error(`Failed to load ${url}`))
     }
 
-    // 设置超时
+    // 设置超时：单个源最多等 5 秒就换下一个。
+    // 不宜再大 —— 加载器是串行回退的，等太久会顶到页面整体的 15 秒超时，
+    // 那样用户看到的是长时间白屏后整页刷新，而不是静默换源。
     timeoutId = setTimeout(() => {
       console.warn(`Loading ${url} timed out`)
       element.onerror = null
       document.head.removeChild(element)
       reject(new Error(`Timeout loading ${url}`))
-    }, 8000)
+    }, 5000)
   })
 }
 
