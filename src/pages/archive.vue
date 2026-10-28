@@ -139,8 +139,6 @@
 import AppNavBar from '@/components/AppNavBar.vue'
 import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { t, getLanguage } from '@/utils/i18n'
-import ThemeToggle from '@/components/ui/ThemeToggle.vue'
-import { SITE_CONFIG } from '@/constants'
 import {fetchWithFallback, formatDate, getEnvVariable} from '@/utils/tool'
 
 const allPosts = ref<any[]>([])
@@ -306,12 +304,6 @@ const formatMonth = (month: string | number) => {
   return monthNames[monthIndex] || month
 }
 
-const toggleLanguage = () => {
-  const newLang = currentLang.value === 'zh' ? 'en' : 'zh'
-  currentLang.value = newLang
-  localStorage.setItem('language', newLang)
-  location.reload()
-}
 
 // 滚动到指定年份
 const scrollToYear = (year: string) => {

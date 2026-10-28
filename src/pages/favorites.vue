@@ -152,13 +152,11 @@
 import AppNavBar from '@/components/AppNavBar.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { getFavorites, removeFavorite as removeFavoriteUtil } from '@/utils/favorites'
-import { t, getLanguage } from '@/utils/i18n'
-import { SITE_CONFIG } from '@/constants'
+import { t } from '@/utils/i18n'
 import {confirmDialog, formatDate} from "@/utils/tool";
 
 const favorites = ref<any[]>([])
 const loading = ref(true)
-const currentLang = ref(getLanguage())
 const headerScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
@@ -191,12 +189,6 @@ const clearAllFavorites = () => {
   });
 }
 
-const toggleLanguage = () => {
-  const newLang = currentLang.value === 'zh' ? 'en' : 'zh'
-  currentLang.value = newLang
-  localStorage.setItem('language', newLang)
-  location.reload()
-}
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
