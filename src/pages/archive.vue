@@ -1,39 +1,12 @@
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-transparent lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
-    <header
-        :class="[
-          'sticky-header',
-          headerScrolled ? 'py-2 shadow-lg' : 'py-4'
-        ]"
-    >
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <button @click="$router.back()" class="mr-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">
-            <IconCarbonArrowLeft class="w-6 h-6 text-gray-600 dark:text-gray-300" />
-          </button>
-          <div class="badge">
-            <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
-          </div>
-          <h1 class="text-xl font-bold bg-gradient-to-r from-cyber-600 to-cyber-800 bg-clip-text text-transparent">
-            {{ t('archiveTitle') }}
-          </h1>
-        </div>
-
-        <div class="flex items-center space-x-4">
-          <button @click="toggleLanguage" class="hidden dark:text-gray-300 sm:flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
-            <IconCarbonLanguage class="w-4 h-4" />
-            {{ currentLang === 'zh' ? 'EN' : '中文' }}
-          </button>
-          <ThemeToggle />
-        </div>
-      </div>
-    </header>
+    <AppNavBar :title="t('archiveTitle')" />
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-          <h2 class="text-2xl font-bold dark:text-white">{{ t('archiveTitle') }}</h2>
+          <h2 class="text-2xl font-serif font-bold dark:text-white">{{ t('archiveTitle') }}</h2>
           
           <!-- 搜索框 -->
           <div class="relative w-full md:w-64">
@@ -83,10 +56,10 @@
           >
             <!-- 年份标题 -->
             <div class="flex items-center gap-4 mb-6">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyber-500 to-cyber-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-cyber-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                 {{ year.slice(-2) }}
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white">
                 {{ year }}
                 <span class="text-base font-normal text-gray-400 dark:text-gray-500 ml-2">({{ yearGroup.count }})</span>
               </h3>
@@ -107,7 +80,7 @@
                   <div v-for="post in monthGroup.posts" :key="post.path" class="group">
                     <router-link 
                       :to="post.path" 
-                      class="block py-3 px-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-md"
+                      class="block py-3 px-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 "
                     >
                       <div class="flex justify-between items-start gap-4">
                         <div class="flex-1 min-w-0">
@@ -163,6 +136,7 @@
 </template>
 
 <script setup lang="ts">
+import AppNavBar from '@/components/AppNavBar.vue'
 import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { t, getLanguage } from '@/utils/i18n'
 import ThemeToggle from '@/components/ui/ThemeToggle.vue'

@@ -24,6 +24,9 @@ if (import.meta.hot) {
   import.meta.hot.accept(() => window.location.reload())
 }
 
+// 控制台彩蛋写在 index.html 的内联 <script> 里，不在这里。
+// 原因：生产构建用 terser 且开了 drop_console，这里的 console.log 会被删掉。
+
 // 初始化平滑滚动
 export const lenis = new Lenis({
     duration: 1.2,

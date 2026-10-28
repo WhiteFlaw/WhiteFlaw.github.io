@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhiteFlaw's blog</title>
 
+    <!-- CDN 预连接：让浏览器在解析 HTML 时就完成 DNS + TLS 握手，
+         等真正去拉 Vue 等库时省掉一次往返。域名与顺序对应
+         package/build_cdn.ts 里 backupCdnKeys 的前三项。
+         必须带 crossorigin —— 这些脚本按 CORS 方式加载，
+         不带的话浏览器会另建一条连接，预连接就白做了。 -->
+    <link rel="preconnect" href="https://jsdelivr.topthink.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.liumingye.cn" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -170,6 +179,14 @@
     }
   })();
 
+  </script>
+  <script>
+  // 控制台彩蛋。放在这里而不是 main.ts：生产构建的 terser 开了 drop_console，
+  // 打包进 JS 的 console.log 会被删掉，内联脚本则原样保留。
+  console.log(
+    '%c雄关漫道真如铁，\n而今迈步从头越。',
+    'color:#a78bfa;font-size:15px;font-weight:700;line-height:1.5'
+  );
   </script>
   </body>
 </html>

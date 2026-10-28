@@ -2,7 +2,7 @@
   <div class="article-detail-wrapper">
     <Transition name="fade" mode="out-in">
       <div v-if="showLightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out" @click="showLightbox = false">
-        <img :src="lightboxImg" class="max-w-full max-h-screen object-contain rounded-sm shadow-2xl scale-in animate-zoom-in" :alt="t('lightboxImage')" @click.stop />
+        <img :src="lightboxImg" class="max-w-full max-h-screen object-contain rounded-sm shadow-2xl animate-zoom-in" :alt="t('lightboxImage')" @click.stop />
         <button class="absolute top-6 right-6 text-white/50 hover:text-white p-2 transition-colors" @click="showLightbox = false" aria-label="Close Lightbox">
           <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
@@ -24,22 +24,8 @@
     </div>
   </div>
 
-  <!-- 将返回按钮和主题切换按钮放在一起 -->
-  <div class="fixed lg:hidden top-4 left-4 z-[60]">
-    <router-link
-        to="/"
-        class="flex items-center gap-2 px-3 py-3 bg-black/20 dark:bg-white/20 backdrop-blur-md rounded-full hover:bg-black/30 dark:hover:bg-white/30 transition-colors border border-white/20 dark:border-white/30 text-white"
-    >
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    </router-link>
-  </div>
-
-  <!-- 主题切换按钮 -->
-  <div class="fixed top-4 right-4 z-[9999]">
-    <ThemeToggle />
-  </div>
+  <!-- 顶部导航：所有屏幕尺寸都有，能返回 -->
+  <AppNavBar :title="articleMeta.title || ''" />
 
   <article class="min-h-screen dark:bg-transparent transition-colors duration-300 lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));"
     @touchstart.passive="handleTouchStart"
@@ -52,15 +38,15 @@
 
       <!-- 封面中的标题信息 -->
       <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white z-10 max-w-7xl mx-auto">
-        <div class="flex flex-wrap gap-3 mb-6 opacity-0 animate-slide-up" style="animation-delay: 0.1s">
+        <div class="flex flex-wrap gap-3 mb-6 opacity-0 animate-fade-in" style="animation-delay: 0.1s">
           <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
             #{{ tag }}
           </span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-8 opacity-0 animate-slide-up tracking-tight" style="animation-delay: 0.2s">
+        <h1 class="text-3xl md:text-4xl font-serif font-extrabold leading-tight mb-8 opacity-0 animate-fade-in tracking-tight" style="animation-delay: 0.2s">
           {{ articleMeta.title }}
         </h1>
-        <div class="flex items-center gap-6 text-sm md:text-base font-medium opacity-0 animate-slide-up text-gray-300" style="animation-delay: 0.3s">
+        <div class="flex items-center gap-6 text-sm md:text-base font-medium opacity-0 animate-fade-in text-gray-300" style="animation-delay: 0.3s">
           <time class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-3 2v12a2 2 0 002 2z" />
@@ -78,10 +64,10 @@
 
     <!-- 无封面时显示的标题 -->
     <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center">
-      <h1 class="text-3xl md:text-3xl font-extrabold leading-tight mb-8 tracking-tight text-gray-800 dark:text-white animate-fade-in-down">
+      <h1 class="text-3xl md:text-3xl font-serif font-extrabold leading-tight mb-8 tracking-tight text-gray-800 dark:text-white animate-fade-in-down">
         {{ articleMeta.title }}
       </h1>
-      <div class="flex dark:text-white dark:text-warmGray flex-wrap justify-center gap-3 mb-2 opacity-0 animate-slide-up" style="animation-delay: 0.1s">
+      <div class="flex dark:text-white dark:text-warmGray flex-wrap justify-center gap-3 mb-2 opacity-0 animate-fade-in" style="animation-delay: 0.1s">
         <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
           #{{ tag }}
         </span>
@@ -180,7 +166,7 @@
           <!-- 骨架屏：更贴近真实内容布局 -->
           <div v-if="loading" class="space-y-10 animate-pulse max-w-3xl mx-auto">
             <!-- 封面占位 -->
-            <div class="h-56 md:h-72 bg-gray-200 dark:bg-gray-700 rounded-2xl"></div>
+            <div class="h-56 md:h-72 bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
             <!-- 标题占位 -->
             <div class="space-y-3">
               <div class="h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
@@ -253,7 +239,7 @@
           />
 
           <!-- 上一篇/下一篇导航 -->
-          <div v-motion class="flex flex-col md:flex-row justify-between gap-4 p-6 rounded-2xl border border-gray-100 dark:border-gray-700/50" v-if="prevArticle || nextArticle"
+          <div v-motion class="flex flex-col md:flex-row justify-between gap-4 p-6 rounded-xl border border-gray-100 dark:border-gray-700/50" v-if="prevArticle || nextArticle"
                :initial="{ opacity: 0, y: 20 }"
                :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 200 } }">
             <router-link
@@ -284,7 +270,7 @@
             <div v-if="!nextArticle" class="invisible"></div>
           </div>
 
-          <div class="flex flex-col md:flex-row justify-between items-center gap-8 bg-gray-100/50 dark:bg-gray-800/30 p-6 rounded-2xl border border-gray-200 dark:border-gray-700/50">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-8 bg-gray-100/50 dark:bg-gray-800/30 p-6 rounded-xl border border-gray-200 dark:border-gray-700/50">
             <div class="flex items-center gap-3" v-if="articleMeta.tags.length>0">
               <span class="text-gray-500 font-medium">{{ t('tags') }}:</span>
               <div class="flex flex-wrap gap-2">
@@ -365,7 +351,7 @@
     <button
         v-if="headings.length > 0"
         @click="showMobileToc = true"
-        class="lg:hidden w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 transition active:scale-95"
+        class="lg:hidden w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-lg  border border-gray-200 dark:border-gray-700 transition "
         :aria-label="t('showDirectory')"
     >
       <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -464,6 +450,7 @@ import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import '@/github-markdown.css'
 import ShareModal from '@/components/ui/ShareModal.vue'
+import AppNavBar from '@/components/AppNavBar.vue'
 import DocumentViewer from '@/components/DocumentViewer.vue'
 import GiscusComment from '@/components/GiscusComment.vue'
 import type {FavoriteItem} from "@/utils/favorites"

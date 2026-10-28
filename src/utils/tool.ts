@@ -814,10 +814,10 @@ export const toDev = async () => {
 
 export const fetchWithFallback = async (urls: string[], dataType: string) => {
     let lastError: Error | null = null;
+    const tried: string[] = [];
 
     for (const url of urls) {
         try {
-            console.log(`尝试请求 ${dataType}: ${url}`);
             const response = await fetch(url);
 
             if (!response.ok) {
@@ -838,12 +838,18 @@ export const fetchWithFallback = async (urls: string[], dataType: string) => {
 
             return response;
         } catch (error) {
-            console.warn(`请求失败 ${url}:`, error);
+            // 单个源失败属于预期内：带时间戳的 nav 文件名每次构建都会变，
+            // 旧页面拿着旧名字来请求必然失败一次，然后由下一个源兜住。
+            // 所以这里只在开发模式下打成 debug，不干扰控制台。
+            tried.push(`${url} → ${(error as Error).message}`);
             lastError = error as Error;
-            // 继续尝试下一个URL
+            if (import.meta.env.DEV) {
+                console.debug(`[${dataType}] ${url} 失败，尝试下一个`);
+            }
         }
     }
 
-    // 所有URL都失败
+    // 走到这里表示整条回退链都断了，这才值得报警
+    console.warn(`[${dataType}] 所有源都失败：\n  ${tried.join('\n  ')}`);
     throw new Error(`${dataType} 所有请求都失败了: ${lastError?.message}`);
 };

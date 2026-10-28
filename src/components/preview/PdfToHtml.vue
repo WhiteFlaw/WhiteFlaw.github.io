@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full flex flex-col bg-gray-100 dark:bg-dark-900 overflow-auto font-sans" ref="containerRef">
 
-    <div class="absolute top-0px left-1/2 transform -translate-x-1/2 z-10 flex items-center gap-2 px-4 py-1 bg-white/85 dark:bg-dark-300/85 backdrop-blur-12px rounded-4 shadow-lg hover:shadow-xl border border-white/50 dark:border-dark-600/50 transition-all duration-300 hover:shadow-xl dark:hover:shadow-xl" v-if="!isLoading && !errorMessage">
+    <div class="absolute top-0px left-1/2 transform -translate-x-1/2 z-10 flex items-center gap-2 px-4 py-1 bg-white/85 dark:bg-dark-300/85 backdrop-blur-12px rounded-4 shadow-lg  border border-white/50 dark:border-dark-600/50 transition-all duration-300  dark:" v-if="!isLoading && !errorMessage">
       <div class="flex items-center gap-1">
         <button @click="prevPage" :disabled="pageNum <= 1" :title="t('prevPage')" class="pdf-toolbar-btn">
           <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg>

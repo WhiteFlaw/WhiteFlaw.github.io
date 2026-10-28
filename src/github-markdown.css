@@ -601,6 +601,9 @@ html *::after {
   margin-bottom: var(--base-size-16);
   font-weight: var(--base-text-weight-semibold, 600);
   line-height: 1.25;
+  /* 正文里的标题用中文衬线（与 UnoCSS 的 font-serif 同一套系统字体栈），
+     正文本身保持无衬线，保证长文可读。 */
+  font-family: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", SimSun, serif;
 }
 
 .markdown-body h2 {

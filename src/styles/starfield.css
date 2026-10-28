@@ -36,11 +36,12 @@
   background-color: #0a0514;
 
   /* 极淡的星云光晕，让深空不至于死黑。
-     想要纯黑底色，删掉下面整个 background-image 声明即可。 */
+     想要纯黑底色，删掉下面整个 background-image 声明即可。
+     2026-10-28：整体调暗一档（原来的透明度会让正文区看起来发亮）。 */
   background-image:
-    radial-gradient(ellipse 60% 50% at 12% 8%, rgba(56, 89, 189, 0.2), rgba(0, 0, 0, 0) 70%),
-    radial-gradient(ellipse 50% 45% at 88% 18%, rgba(126, 66, 189, 0.16), rgba(0, 0, 0, 0) 70%),
-    radial-gradient(ellipse 70% 50% at 50% 108%, rgba(30, 90, 140, 0.18), rgba(0, 0, 0, 0) 70%);
+    radial-gradient(ellipse 60% 50% at 12% 8%, rgba(56, 89, 189, 0.11), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(ellipse 50% 45% at 88% 18%, rgba(126, 66, 189, 0.09), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(ellipse 70% 50% at 50% 108%, rgba(30, 90, 140, 0.10), rgba(0, 0, 0, 0) 70%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -81,7 +82,7 @@
 /* ---------- 远景星层 A：8 颗 / 240px 瓦片 ---------- */
 /* 半径 2.2px，核心保持约 45% 实心后再衰减。最活跃的一层，闪得最明显。 */
 .dark #app::before {
-  --starfield-twinkle-min: 0.45;
+  --starfield-twinkle-min: 0.65;
   background-image:
     radial-gradient(circle 2.2px at 18px 30px, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 2.2px at 142px 20px, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.84) 45%, rgba(255, 255, 255, 0) 100%),
@@ -92,14 +93,14 @@
     radial-gradient(circle 2.2px at 200px 198px, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 2.2px at 136px 178px, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%);
   background-size: 240px 240px;
-  animation: starfield-twinkle 3.2s ease-in-out -1.3s infinite;
+  animation: starfield-twinkle 6.5s ease-in-out -1.3s infinite;
 }
 
 /* ---------- 远景星层 B：另 8 颗 / 240px 瓦片 ---------- */
 /* 与 A 层共用同一张 240px 网格，只是取了另外 8 个坐标，
    因此两层叠起来才是原来的 16 颗星；周期与 A 互质，不会同步。 */
 .dark body::before {
-  --starfield-twinkle-min: 0.65;
+  --starfield-twinkle-min: 0.7;
   background-image:
     radial-gradient(circle 2.2px at 86px 112px, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 2.2px at 186px 148px, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.66) 45%, rgba(255, 255, 255, 0) 100%),
@@ -110,13 +111,13 @@
     radial-gradient(circle 2.2px at 62px 134px, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 2.2px at 206px 118px, rgba(213, 231, 255, 0.75) 0%, rgba(213, 231, 255, 0.68) 45%, rgba(255, 255, 255, 0) 100%);
   background-size: 240px 240px;
-  animation: starfield-twinkle 5.1s ease-in-out -3.7s infinite;
+  animation: starfield-twinkle 8.2s ease-in-out -3.7s infinite;
 }
 
 /* ---------- 近景星层 A：6 颗 / 460px 瓦片 ---------- */
 /* 半径 2.4~4.5px，中心纯白实心 + 外层光晕，最抓眼睛的一层；同时缓慢漂移。 */
 .dark #app::after {
-  --starfield-twinkle-min: 0.5;
+  --starfield-twinkle-min: 0.75;
   background-image:
     radial-gradient(circle 4px at 58px 84px, #fff 0%, rgba(255, 255, 255, 0.85) 22%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 4.5px at 386px 156px, #fff 0%, rgba(255, 255, 255, 0.88) 22%, rgba(255, 255, 255, 0.28) 55%, rgba(255, 255, 255, 0) 100%),
@@ -127,13 +128,13 @@
   background-size: 460px 460px;
   animation:
     starfield-drift 120s ease-in-out infinite alternate,
-    starfield-twinkle 4.3s ease-in-out -2.6s infinite;
+    starfield-twinkle 7.1s ease-in-out -2.6s infinite;
 }
 
 /* ---------- 近景星层 B：另 5 颗 / 460px 瓦片 ---------- */
 /* 最暗值抬到 0.72、周期也最长，充当"常亮星"，让星空暗下来时有东西兜底。 */
 .dark body::after {
-  --starfield-twinkle-min: 0.72;
+  --starfield-twinkle-min: 0.8;
   background-image:
     radial-gradient(circle 3px at 268px 44px, #fff 0%, rgba(255, 255, 255, 0.8) 22%, rgba(255, 255, 255, 0.22) 55%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 3.2px at 132px 248px, rgba(213, 231, 255, 1) 0%, rgba(213, 231, 255, 0.8) 22%, rgba(213, 231, 255, 0.24) 55%, rgba(255, 255, 255, 0) 100%),
@@ -141,7 +142,7 @@
     radial-gradient(circle 2.8px at 196px 424px, rgba(213, 231, 255, 1) 0%, rgba(213, 231, 255, 0.78) 22%, rgba(213, 231, 255, 0.22) 55%, rgba(255, 255, 255, 0) 100%),
     radial-gradient(circle 3.2px at 428px 262px, #fff 0%, rgba(255, 255, 255, 0.82) 22%, rgba(255, 255, 255, 0.24) 55%, rgba(255, 255, 255, 0) 100%);
   background-size: 460px 460px;
-  animation: starfield-twinkle 7.4s ease-in-out -5.1s infinite;
+  animation: starfield-twinkle 9.5s ease-in-out -5.1s infinite;
 }
 
 /* ---------- 动画 ---------- */
@@ -157,7 +158,7 @@
 
   45%,
   55% {
-    opacity: var(--starfield-twinkle-min, 0.25);
+    opacity: var(--starfield-twinkle-min, 0.6);
   }
 }
 
