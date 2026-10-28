@@ -322,9 +322,9 @@ import { useRouter } from 'vue-router'
 import NavTree from '@/components/NavTree.vue'
 import Footer from '@/components/Footer.vue'
 import RecentArticles from '@/components/RecentArticles.vue'
-import { t, getLanguage } from '@/utils/i18n'
-import {HOT_TAGS, SITE_CONFIG} from '@/constants'
-import {fetchWithFallback, formatDate, getEnvVariable, showSuccess, toDev} from "@/utils/tool";
+import { t } from '@/utils/i18n'
+import {HOT_TAGS} from '@/constants'
+import {fetchWithFallback, formatDate, getEnvVariable, showSuccess} from "@/utils/tool";
 import { passwordApi } from '@/utils/password';
 import {addFavorite, isFavorite, removeFavorite} from "@/utils/favorites";
 import type {FavoriteItem} from "@/utils/favorites";
@@ -340,15 +340,11 @@ const checkLogin = () => {
   }
 };
 
-const handleLogout = () => {
-  passwordApi.logout();
-};
 
 const allPosts = ref<any[]>([])
 const latestPosts = ref<any[]>([])
 const tree = ref<any>({})
 const loading = ref(true)
-const currentLang = ref(getLanguage())
 const isMobileMenuOpen = ref(false)
 
 // 无限滚动 + 标签筛选
@@ -613,12 +609,6 @@ const setupObserver = () => {
   })
 }
 
-const toggleLanguage = () => {
-  const newLang = currentLang.value === 'zh' ? 'en' : 'zh'
-  currentLang.value = newLang
-  localStorage.setItem('language', newLang)
-  location.reload()
-}
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
