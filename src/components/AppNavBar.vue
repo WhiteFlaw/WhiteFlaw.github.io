@@ -15,8 +15,17 @@
           </svg>
         </button>
 
-        <router-link to="/" class="badge flex-shrink-0" :title="t('siteTitle')">
-          <span class="text-white font-bold text-lg">{{ SITE_CONFIG.icon }}</span>
+        <router-link
+          to="/"
+          class="flex-shrink-0 w-9 h-9 rounded-xl overflow-hidden bg-cyber-600 flex-center"
+          :title="t('siteTitle')"
+        >
+          <img
+            src="/img/192x192.png"
+            alt="logo"
+            class="w-full h-full object-cover rounded-xl"
+            loading="eager"
+          >
         </router-link>
 
         <h1 class="text-xl font-serif font-bold text-cyber-600 truncate">
@@ -93,7 +102,6 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import ThemeToggle from '@/components/ui/ThemeToggle.vue'
 import { t, getLanguage, setLanguage } from '@/utils/i18n'
-import { SITE_CONFIG } from '@/constants'
 import { toDev } from '@/utils/tool'
 import { passwordApi } from '@/utils/password'
 

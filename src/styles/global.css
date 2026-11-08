@@ -116,40 +116,57 @@ canvas {
   -webkit-user-drag: none;
 }
 
-/* ===== 首页文章卡片右上角的「+」 ===== */
-/* 用伪元素做，不占 DOM、不影响布局。
-   平时是淡紫（40% 不透明），鼠标移到卡片上时变亮并顺时针转 90°，
-   像一个"打开"的动作。卡片有封面图时 + 压在图上看不清，所以带文字阴影兜底。 */
-.card-plus {
+/* ===== 首页文章卡片 hover：四角直角框 ===== */
+/* 一个伪元素画 4 个角 —— 用 4 组渐变分别拼出左上、右上、左下、右下的 L 形：
+   每组是「横线 + 竖线」两条背景，靠 background-position 贴到对应角上。
+   静态时透明，hover 时淡入，不做位移和缩放。 */
+.card-corner {
   position: relative;
 }
 
-.card-plus::after {
-  content: '+';
+.card-corner::after {
+  content: '';
   position: absolute;
-  top: 10px;
-  right: 12px;
-  z-index: 3;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1;
-  color: rgba(124, 58, 237, 0.4);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  inset: 10px;
   pointer-events: none;
-  transition: color 0.25s ease, transform 0.25s ease;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background-repeat: no-repeat;
+  background-image:
+    /* 左上：横 */
+    linear-gradient(to right, currentColor 3px, transparent 3px),
+    /* 左上：竖 */
+    linear-gradient(to bottom, currentColor 3px, transparent 3px),
+    /* 右上：横 */
+    linear-gradient(to left, currentColor 3px, transparent 3px),
+    /* 右上：竖 */
+    linear-gradient(to bottom, currentColor 3px, transparent 3px),
+    /* 左下：横 */
+    linear-gradient(to right, currentColor 3px, transparent 3px),
+    /* 左下：竖 */
+    linear-gradient(to top, currentColor 3px, transparent 3px),
+    /* 右下：横 */
+    linear-gradient(to left, currentColor 3px, transparent 3px),
+    /* 右下：竖 */
+    linear-gradient(to top, currentColor 3px, transparent 3px);
+  background-size:
+    28px 3px, 3px 28px,
+    28px 3px, 3px 28px,
+    28px 3px, 3px 28px,
+    28px 3px, 3px 28px;
+  background-position:
+    left top, left top,
+    right top, right top,
+    left bottom, left bottom,
+    right bottom, right bottom;
+  color: rgba(167, 139, 250, 0.9);
 }
 
-.card-plus:hover::after {
-  color: rgba(167, 139, 250, 0.95);
-  transform: rotate(90deg);
+.dark .card-corner::after {
+  color: rgba(196, 181, 253, 0.9);
 }
 
-/* 深色背景上紫色会被吃暗，单独提亮一档 */
-.dark .card-plus::after {
-  color: rgba(167, 139, 250, 0.5);
-}
-
-.dark .card-plus:hover::after {
-  color: rgba(196, 181, 253, 0.95);
+.card-corner:hover::after {
+  opacity: 1;
 }
