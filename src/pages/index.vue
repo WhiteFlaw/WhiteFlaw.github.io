@@ -1,6 +1,6 @@
 <template>
   <div
-      class="min-h-screen bg-gray-50 dark:bg-transparent flex flex-col lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
+      class="min-h-screen bg-transparent flex flex-col lg:pb-0" style="padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));">
     <!-- Header -->
     <AppNavBar :show-back="false" :show-menu="true" @menu-click="toggleMobileMenu" />
 
@@ -46,6 +46,8 @@
         <aside :class="[
           'lg:w-80 flex-shrink-0',
           'lg:sticky lg:top-16 lg:self-start',
+          // 固定视口高度：与右侧栏一致，两边底部才能对齐
+          'lg:h-[calc(100vh-7rem)]',
           'fixed inset-0 left-0 z-50 w-4/5 bg-white theme-panel shadow-2xl lg:relative lg:shadow-lg transform transition-transform duration-300 ease-out',
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         ]">
@@ -71,15 +73,51 @@
               </div>
             </div>
 
-            <!-- 目录树 -->
-            <div class="flex-1 overflow-y-auto px-6 pb-4">
+            <!-- 目录树：滚动发生在卡片内部，滚动条不会贴到侧栏边缘 -->
+            <div class="flex-1 min-h-0 px-6 pb-4">
+              <div class="h-full bg-gray-50 theme-panel rounded-xl p-4">
+                <div class="h-full overflow-y-auto pr-2 toc-scrollbar">
+                  <NavTree :tree="tree" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 更新日志（PC）：独立一块，固定高度，内部滚动 -->
+            <div v-if="changelog.length" class="hidden lg:block flex-shrink-0 px-6 pb-6 pt-6 mt-2 border-t border-gray-200/70 dark:border-gray-700/60">
               <div class="bg-gray-50 theme-panel rounded-xl p-4">
-                <NavTree :tree="tree" />
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
+                  <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+                  更新日志
+                </h3>
+                <ul class="space-y-3 h-[240px] overflow-y-auto pr-2 toc-scrollbar">
+                  <li v-for="(item, i) in changelog" :key="i" class="flex gap-2.5">
+                    <img
+                      v-if="item.avatar"
+                      :src="item.avatar"
+                      :alt="item.author"
+                      class="w-6 h-6 rounded-full flex-shrink-0 mt-0.5 ring-1 ring-black/5 dark:ring-white/10"
+                      loading="lazy"
+                    >
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-baseline gap-2">
+                        <span class="text-[11px] text-gray-400 theme-text tabular-nums">{{ item.date }}</span>
+                        <span v-if="item.author" class="text-[11px] text-cyber-600 dark:text-cyber-400 truncate">{{ item.author }}</span>
+                      </div>
+                      <a
+                        :href="item.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="block text-xs leading-relaxed text-gray-600 theme-text mt-0.5 hover:text-cyber-600 dark:hover:text-cyber-400 transition-colors line-clamp-2"
+                        :title="item.text"
+                      >{{ item.text }}</a>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
 
             <!-- 移动端最新文章（在抽屉底部） -->
-            <div class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto">
+            <div class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto pr-2">
               <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
                 <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
                 {{ t('latestPosts') }}
@@ -96,7 +134,7 @@
                     {{ i + 1 }}
                   </div>
                   <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-gray-900 theme-title truncate group-hover:text-cyber-600 transition-colors">{{ post.title }}</h4>
+                    <h4 class="text-sm font-medium text-gray-900 theme-title truncate group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors">{{ post.title }}</h4>
                     <p class="text-xs text-gray-500 theme-text mt-1 flex items-center">
                       <IconCarbonTime class="w-3 h-3 mr-1" />
                       {{ formatDate(post.date) }}
@@ -145,7 +183,7 @@
             <article
                 v-for="(post, i) in displayedPosts"
                 :key="post.path"
-                class="group card-plus bg-white theme-panel rounded-xl shadow-sm  transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
+                class="group card-corner bg-white theme-panel rounded-xl shadow-sm  transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700/80 flex flex-col cursor-pointer"
                 v-motion
                 :initial="{ opacity: 0, y: 40 }"
                 :enter="{ opacity: 1, y: 0, transition: { delay: i * 60, duration: 600 } }"
@@ -239,37 +277,44 @@
           </div>
         </main>
 
-        <!-- 右侧最新文章侧栏（仅 ≥xl 显示） -->
-        <aside class="hidden xl:block w-72 flex-shrink-0 space-y-6">
-          <RecentArticles />
-          <div class="sticky top-6 bg-white theme-panel rounded-xl shadow-sm p-6">
-            <h3 class="text-lg font-bold mb-5 flex items-center gap-2 theme-title">
-              <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
-              {{ t('latestPosts') }}
-            </h3>
-            <div class="space-y-4">
-              <router-link
-                  v-for="(post, i) in latestPosts"
-                  :key="post.path"
-                  :to="post.path"
-                  class="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group cursor-pointer"
-              >
-                <!-- 将原来的序号显示部分替换为以下代码 -->
-                <div class="w-6 h-6 rounded-full bg-cyber-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                  <span>{{ i + 1 }}</span>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <h4
-                      class="font-medium theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 transition-colors"
-                      :title="post.title">
-                    {{ post.title }}
-                  </h4>
-                  <p class="text-xs text-gray-500 theme-text mt-2 flex items-center">
-                    <IconCarbonTime class="w-3.5 h-3.5 mr-1" />
-                    {{ formatDate(post.date) }}
-                  </p>
-                </div>
-              </router-link>
+        <!-- 右侧栏（仅 ≥xl 显示）：最近浏览 + 最新文章合成一张卡，中间分隔线 -->
+        <aside class="hidden xl:block w-72 flex-shrink-0 h-[calc(100vh-7rem)] xl:sticky xl:top-16 xl:self-start">
+          <div class="h-full flex flex-col bg-white theme-panel rounded-xl shadow-sm overflow-hidden">
+            <!-- 最近浏览：组件内部已限高 240px -->
+            <RecentArticles />
+
+            <!-- 分隔线：两块连成一体，但又不糊在一起 -->
+            <div class="h-px bg-gray-200 dark:bg-gray-700/70"></div>
+
+            <!-- 最新文章：同样限高 240px，与上面等高 -->
+            <div class="flex-1 min-h-0 p-5 flex flex-col">
+              <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
+                <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+                {{ t('latestPosts') }}
+              </h3>
+              <div class="flex-1 min-h-0 space-y-2 overflow-y-auto pr-2 toc-scrollbar">
+                <router-link
+                    v-for="(post, i) in latestPosts"
+                    :key="post.path"
+                    :to="post.path"
+                    class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group cursor-pointer"
+                >
+                  <div class="w-6 h-6 rounded-full bg-cyber-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">
+                    <span>{{ i + 1 }}</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4
+                        class="text-sm font-medium theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors"
+                        :title="post.title">
+                      {{ post.title }}
+                    </h4>
+                    <p class="text-xs text-gray-500 theme-text mt-1 flex items-center">
+                      <IconCarbonTime class="w-3 h-3 mr-1" />
+                      {{ formatDate(post.date) }}
+                    </p>
+                  </div>
+                </router-link>
+              </div>
             </div>
           </div>
         </aside>
@@ -345,6 +390,53 @@ const allPosts = ref<any[]>([])
 const latestPosts = ref<any[]>([])
 const tree = ref<any>({})
 const loading = ref(true)
+
+// 侧栏更新日志：直接读 GitHub 仓库的提交记录，不手写。
+// 限制：未认证的 GitHub API 每 IP 每小时只有 60 次，所以结果缓存 30 分钟；
+// 拉取失败（限流 / 断网）就保持空列表，不显示这一块，也不报错打扰用户。
+interface CommitItem { date: string; text: string; url: string; author: string; avatar: string }
+const changelog = ref<CommitItem[]>([])
+const GITHUB_REPO = 'WhiteFlaw/WhiteFlaw.github.io'
+const CHANGELOG_CACHE_KEY = 'whiteflaw_blog_changelog'
+const CHANGELOG_TTL = 1000 * 60 * 30
+
+const loadChangelog = async () => {
+  // 1. 先看缓存
+  try {
+    const raw = localStorage.getItem(CHANGELOG_CACHE_KEY)
+    if (raw) {
+      const { at, items } = JSON.parse(raw)
+      if (Array.isArray(items) && Date.now() - at < CHANGELOG_TTL) {
+        changelog.value = items
+        return
+      }
+    }
+  } catch { /* 缓存损坏就当没有 */ }
+
+  // 2. 再请 GitHub（多要几条，因为下面要滤掉合并提交）
+  try {
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=12`)
+    if (!res.ok) return
+    const data = await res.json()
+    if (!Array.isArray(data)) return
+
+    changelog.value = data.map((c: any) => ({
+      date: String(c?.commit?.author?.date ?? c?.commit?.committer?.date ?? '').slice(0, 10),
+      // 合并请求的提交信息通常有换行，只显示第一行
+      // noUncheckedIndexedAccess 下 split()[0] 是 string | undefined，补个兜底
+      text: String(c?.commit?.message ?? '').split('\n')[0] ?? '',
+      url: String(c?.html_url ?? ''),
+      // author 为 null 表示提交者邮箱没关联到 GitHub 账号，退回提交里的姓名
+      author: String(c?.author?.login ?? c?.commit?.author?.name ?? ''),
+      avatar: String(c?.author?.avatar_url ?? ''),
+    }))
+      // 合并提交（Merge pull request / Merge branch）标题没有信息量，滤掉，只留实际改动
+      .filter((c: CommitItem) => c.text && !/^Merge\s+(pull request|branch|remote-tracking)/i.test(c.text))
+      .slice(0, 8)
+
+    localStorage.setItem(CHANGELOG_CACHE_KEY, JSON.stringify({ at: Date.now(), items: changelog.value }))
+  } catch { /* 静默失败 */ }
+}
 const isMobileMenuOpen = ref(false)
 
 // 无限滚动 + 标签筛选
@@ -620,6 +712,8 @@ const openSearch = () => {
 
 onMounted(() => {
   scrollToTop()
+  // 更新日志不阻塞首屏：发起请求即可，回来自己更新
+  loadChangelog()
 })
 onMounted(async () => {
   checkLogin();

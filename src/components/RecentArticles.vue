@@ -1,5 +1,5 @@
 <template>
-  <div class="card p-6 transition-all duration-300 ">
+  <div class="p-5">
     <div class="flex justify-between items-center mb-5">
       <h3 class="text-lg font-bold flex items-center gap-2 theme-title">
         <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
@@ -14,14 +14,14 @@
       </button>
     </div>
     
-    <div v-if="recentArticles.length === 0" class="text-center py-8">
+    <div v-if="recentArticles.length === 0" class="text-center py-6">
       <IconCarbonDocumentBlank class="w-12 h-12 mx-auto text-gray-400 theme-text" />
       <p class="mt-3 text-gray-500 theme-text text-sm">
         {{ t('noRecentArticles') }}
       </p>
     </div>
     
-    <div v-else class="space-y-4">
+    <div v-else class="space-y-3 h-[240px] overflow-y-auto pr-1 toc-scrollbar">
       <router-link
         v-for="article in recentArticles"
         :key="article.path"

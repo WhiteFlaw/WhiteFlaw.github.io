@@ -5,7 +5,7 @@ import '@unocss/reset/tailwind-compat.css'
 import 'uno.css'
 import 'lenis/dist/lenis.css'
 import '@/styles/global.css'
-import '@/styles/starfield.css'
+import '@/styles/snow.css'
 import App from "./App.vue";
 import { getLanguage, setLanguage } from '@/utils/i18n'
 import { setupSEO } from '@/plugins/seo'
@@ -15,6 +15,7 @@ import { getEnvVariable } from '@/utils/tool'
 import 'virtual:svg-icons-register'
 import {passwordApi} from "@/utils/password";
 import { initCursorTrail } from '@/utils/cursor-trail'
+import { initSnow } from '@/utils/snow'
 import { migrateLegacyStorage } from '@/utils/storage-migrate'
 
 // 开发环境下 Vite 的 HMR 会以动态 import 重新执行本模块（而不是整页刷新），
@@ -237,3 +238,4 @@ document.addEventListener(
 
 // 鼠标拖动时的流星尾焰特效（实现与可调参数见 utils/cursor-trail.ts）
 initCursorTrail()
+initSnow()
