@@ -16,7 +16,7 @@ export default defineConfig({
     shortcuts: {
         'flex-center': 'flex items-center justify-center',
         'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
-        'card': 'bg-white dark:bg-[#111113] rounded-xl shadow-sm',
+        'card': 'bg-white/80 dark:bg-[rgba(17,17,19,0.72)] rounded-xl shadow-sm',
         'btn': 'px-6 py-3 rounded-lg bg-cyber-600 text-white hover:bg-cyber-700 transition-colors',
         'btn-secondary': 'px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors',
         // 常用工具类
@@ -42,7 +42,7 @@ export default defineConfig({
         // 暗色主题三色：只留中性灰阶，强调色交给 primary（紫）
         'theme-title': 'dark:text-[#f3f4f6]',
         'theme-text': 'dark:text-[#d1d5db]',
-        'theme-panel': 'dark:bg-[#111113]',
+        'theme-panel': 'dark:bg-[rgba(17,17,19,0.72)]',
     },
     rules: [
         // .line-clamp-2 的多行截断

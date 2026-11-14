@@ -1,7 +1,7 @@
 ---
 title: property ‘modelViewMatrix‘ is a read-only and non-configurable data property
 date: 2023-06-13
-cover: /img/d8.webp
+cover: /img/d7.webp
 desc: property ‘modelViewMatrix‘ is a read-only and non-configurable data property
 tags: [JavaScript, 前端]
 sticky: false

@@ -35,6 +35,13 @@ interface LayerSpec {
   alphaMax: number
 }
 
+/**
+ * 帧间隔下限（ms）。
+ * 雪是永不停歇的动画，跑满 60fps 时每秒要做上万次绘制调用。
+ * 限到 30fps 后视觉几乎无差别，主线程与 GPU 占用直接减半。
+ */
+const FRAME_INTERVAL = 1000 / 30
+
 /** 雪花颜色：深色底用浅灰，浅色底用深灰，否则任一方都会看不见 */
 const SNOW_COLOR_DARK = '#9ca3af'
 const SNOW_COLOR_LIGHT = '#64748b'
@@ -45,13 +52,13 @@ const currentSnowColor = () =>
 /** 四层规格：远 → 近 */
 const LAYERS: LayerSpec[] = [
   // 远景：小而密，慢，淡
-  { count: 70, sizeMin: 2, sizeMax: 2, speedMin: 55, speedMax: 80, driftMin: -30, driftMax: -55, alphaMin: 0.18, alphaMax: 0.42 },
+  { count: 42, sizeMin: 2, sizeMax: 2, speedMin: 55, speedMax: 80, driftMin: -30, driftMax: -55, alphaMin: 0.18, alphaMax: 0.42 },
   // 中景
-  { count: 56, sizeMin: 3, sizeMax: 4, speedMin: 85, speedMax: 120, driftMin: -55, driftMax: -95, alphaMin: 0.28, alphaMax: 0.6 },
+  { count: 34, sizeMin: 3, sizeMax: 4, speedMin: 85, speedMax: 120, driftMin: -55, driftMax: -95, alphaMin: 0.28, alphaMax: 0.6 },
   // 近景：最大最快最亮
-  { count: 42, sizeMin: 5, sizeMax: 6, speedMin: 140, speedMax: 200, driftMin: -90, driftMax: -150, alphaMin: 0.45, alphaMax: 0.85 },
+  { count: 26, sizeMin: 5, sizeMax: 6, speedMin: 140, speedMax: 200, driftMin: -90, driftMax: -150, alphaMin: 0.45, alphaMax: 0.85 },
   // 最前：快速掠过的小片，制造速度感
-  { count: 48, sizeMin: 2, sizeMax: 3, speedMin: 110, speedMax: 160, driftMin: -100, driftMax: -170, alphaMin: 0.25, alphaMax: 0.55 },
+  { count: 28, sizeMin: 2, sizeMax: 3, speedMin: 110, speedMax: 160, driftMin: -100, driftMax: -170, alphaMin: 0.25, alphaMax: 0.55 },
 ]
 
 const rand = (min: number, max: number) => min + Math.random() * (max - min)
@@ -168,6 +175,13 @@ export function initSnow(): () => void {
 
   const frame = (time: number) => {
     if (!running) return
+
+    // 限帧：距上一帧不足 FRAME_INTERVAL 就跳过本次绘制，只继续排队
+    if (time - lastTime < FRAME_INTERVAL) {
+      rafId = requestAnimationFrame(frame)
+      return
+    }
+
     // delta 上限 50ms：切回标签页时避免雪瞬间"跳"一大段
     const delta = Math.min((time - lastTime) / 1000, 0.05)
     lastTime = time
