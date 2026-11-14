@@ -37,16 +37,16 @@
       <div class="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-black/60"></div>
 
       <!-- 封面中的标题信息 -->
-      <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white z-10 max-w-7xl mx-auto">
-        <div class="flex flex-wrap gap-3 mb-6 opacity-0 animate-fade-in" style="animation-delay: 0.1s">
-          <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
+      <div class="absolute bottom-0 left-0 w-full px-8 pt-8 pb-10 md:px-16 md:pb-12 text-white z-10 max-w-7xl mx-auto">
+        <div class="flex flex-wrap gap-3 mb-6 animate-fade-in" style="animation-delay: 0.1s">
+          <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
             #{{ tag }}
           </span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-serif font-extrabold leading-tight mb-8 opacity-0 animate-fade-in tracking-tight" style="animation-delay: 0.2s">
+        <h1 class="text-3xl md:text-4xl font-serif font-extrabold leading-tight mb-5 animate-fade-in tracking-tight" style="animation-delay: 0.2s">
           {{ articleMeta.title }}
         </h1>
-        <div class="flex items-center gap-6 text-sm md:text-base font-medium opacity-0 animate-fade-in text-gray-300" style="animation-delay: 0.3s">
+        <div class="flex items-center gap-6 text-sm md:text-base font-medium animate-fade-in text-gray-300" style="animation-delay: 0.3s">
           <time class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-3 2v12a2 2 0 002 2z" />
@@ -67,8 +67,8 @@
       <h1 class="text-3xl md:text-3xl font-serif font-extrabold leading-tight mb-8 tracking-tight text-gray-800 dark:text-white animate-fade-in-down">
         {{ articleMeta.title }}
       </h1>
-      <div class="flex dark:text-white dark:text-warmGray flex-wrap justify-center gap-3 mb-2 opacity-0 animate-fade-in" style="animation-delay: 0.1s">
-        <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
+      <div class="flex dark:text-white dark:text-warmGray flex-wrap justify-center gap-3 mb-2 animate-fade-in" style="animation-delay: 0.1s">
+        <span v-for="tag in articleMeta.tags" :key="tag" class="px-4 py-1.5 bg-cyber-600/20 hover:bg-cyber-600/40 border border-cyber-500/30 rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer">
           #{{ tag }}
         </span>
       </div>
@@ -248,7 +248,7 @@
               class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-cyber-50 dark:hover:bg-cyber-900/10 hover:border-cyber-300 dark:hover:border-cyber-700 transition-all duration-300 group"
               :aria-label="'上一篇: ' + prevArticle.title"
             >
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 dark:group-hover:text-cyber-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
               <div class="min-w-0">
                 <div class="text-xs text-gray-400">{{ t('prevArticle') }}</div>
                 <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-cyber-600 dark:group-hover:text-cyber-400">{{ prevArticle.title }}</div>
@@ -265,7 +265,7 @@
                 <div class="text-xs text-gray-400">{{ t('nextArticle') }}</div>
                 <div class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-cyber-600 dark:group-hover:text-cyber-400">{{ nextArticle.title }}</div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-cyber-500 dark:group-hover:text-cyber-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </router-link>
             <div v-if="!nextArticle" class="invisible"></div>
           </div>
@@ -318,7 +318,7 @@
         </main>
 
         <aside class="hidden xl:block w-72 shrink-0" v-if="headings.length > 0">
-          <div class="sticky top-16 max-h-[calc(100vh-8rem)] overflow-y-auto toc-scrollbar pl-4 border-l border-gray-200 dark:border-gray-800 z-100" style="pointer-events: auto; overscroll-behavior: contain;" @wheel.stop>
+          <div data-lenis-prevent class="sticky top-16 max-h-[calc(100vh-8rem)] overflow-y-auto toc-scrollbar pl-4 border-l border-gray-200 dark:border-gray-800 z-100" style="pointer-events: auto; overscroll-behavior: contain;" @wheel.stop>
             <h4 class="font-bold text-gray-800 dark:text-white mb-4 text-xs uppercase tracking-wider opacity-60">{{ t('articleDirectory') }}</h4>
             <div v-if="headings.length === 0" class="text-gray-500 dark:text-gray-400 text-sm">
               {{ t('noExcerpt') }}
@@ -387,7 +387,7 @@
         <div v-if="headings.length === 0" class="flex-1 flex items-center justify-center text-[#000000ff]">
           {{ t('noExcerpt') }}
         </div>
-        <div v-else class="flex-1 overflow-y-auto min-h-0 p-6 toc-scrollbar">
+        <div v-else data-lenis-prevent class="flex-1 overflow-y-auto min-h-0 p-6 toc-scrollbar">
           <ul class="space-y-1">
           <li v-for="h in headings" :key="h.id">
               <button

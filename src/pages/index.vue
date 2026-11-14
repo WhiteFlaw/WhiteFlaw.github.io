@@ -76,20 +76,21 @@
             <!-- 目录树：滚动发生在卡片内部，滚动条不会贴到侧栏边缘 -->
             <div class="flex-1 min-h-0 px-6 pb-4">
               <div class="h-full bg-gray-50 theme-panel rounded-xl p-4">
-                <div class="h-full overflow-y-auto pr-2 toc-scrollbar">
+                <div data-lenis-prevent class="h-full overflow-y-auto pr-2 toc-scrollbar">
                   <NavTree :tree="tree" />
                 </div>
               </div>
             </div>
 
             <!-- 更新日志（PC）：独立一块，固定高度，内部滚动 -->
-            <div v-if="changelog.length" class="hidden lg:block flex-shrink-0 px-6 pb-6 pt-6 mt-2 border-t border-gray-200/70 dark:border-gray-700/60">
+            <div v-if="changelog.length" class="hidden lg:block flex-shrink-0 px-6 pb-4 pt-5">
+
+              <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
+                <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
+                                  更新日志
+              </h3>
               <div class="bg-gray-50 theme-panel rounded-xl p-4">
-                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
-                  <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
-                  更新日志
-                </h3>
-                <ul class="space-y-3 h-[240px] overflow-y-auto pr-2 toc-scrollbar">
+                <ul data-lenis-prevent class="space-y-3 h-[240px] overflow-y-auto pr-2 toc-scrollbar">
                   <li v-for="(item, i) in changelog" :key="i" class="flex gap-2.5">
                     <img
                       v-if="item.avatar"
@@ -97,6 +98,7 @@
                       :alt="item.author"
                       class="w-6 h-6 rounded-full flex-shrink-0 mt-0.5 ring-1 ring-black/5 dark:ring-white/10"
                       loading="lazy"
+                      decoding="async"
                     >
                     <div class="min-w-0 flex-1">
                       <div class="flex items-baseline gap-2">
@@ -117,7 +119,7 @@
             </div>
 
             <!-- 移动端最新文章（在抽屉底部） -->
-            <div class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto pr-2">
+            <div data-lenis-prevent class="flex-shrink-0 lg:hidden p-6 border-t border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto pr-2">
               <h3 class="text-lg font-bold mb-4 flex items-center gap-2 theme-title">
                 <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
                 {{ t('latestPosts') }}
@@ -154,7 +156,7 @@
           <!-- 骨架屏 -->
           <div v-if="loading" class="grid gap-8 sm:grid-cols-1 xl:grid-cols-2 auto-rows-fr">
             <div v-for="i in 6" :key="i" class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden animate-pulse border border-gray-100 dark:border-gray-700 flex flex-col">
-              <div class="aspect-[16/9] bg-gray-200 dark:bg-gray-700 relative">
+              <div class="aspect-[2/1] bg-gray-200 dark:bg-gray-700 relative">
                 <div class="absolute bottom-4 left-5 right-5">
                   <div class="h-6 bg-gray-300 dark:bg-gray-500 rounded w-3/4 mb-2"></div>
                   <div class="h-4 bg-gray-300 dark:bg-gray-500 rounded w-1/2"></div>
@@ -192,7 +194,7 @@
             >
               <router-link :to="post.path" class="flex flex-col h-full card-link">
                 <!-- 封面图 -->
-                <div class="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-700">
+                <div class="relative aspect-[2/1] overflow-hidden bg-gray-100 dark:bg-gray-700">
                   <!-- 置顶标记 -->
                   <div v-if="post.sticky"
                     class="absolute top-3 left-3 z-10 bg-gradient-to-r from-rose-500 to-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm"
@@ -206,6 +208,7 @@
                       :alt="post.title"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
+                      decoding="async"
                   >
                   <div v-else class="w-full h-full bg-cyber-600 flex items-center justify-center">
                     <div class="text-white/80 text-2xl font-bold">
@@ -214,19 +217,19 @@
                   </div>
                 </div>
 
-                <div class="p-5 flex flex-col flex-1">
+                <div class="p-4 flex flex-col flex-1">
                   <!-- 标题 -->
                   <h2 class="text-base font-bold text-gray-900 theme-title leading-snug line-clamp-2 group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors">
                     {{ post.title }}
                   </h2>
 
                   <!-- 摘要 -->
-                  <p class="text-sm text-gray-600 theme-text mt-2 leading-relaxed line-clamp-2 flex-1">
+                  <p class="text-sm text-gray-600 theme-text mt-1.5 leading-relaxed line-clamp-1">
                     {{ post.excerpt || t('noExcerpt') || '暂无摘要' }}
                   </p>
 
                   <!-- 标签 + 底部信息行 -->
-                  <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-100 dark:border-gray-700/50">
+                  <div class="flex items-center justify-between mt-auto pt-2.5 border-t border-gray-100 dark:border-gray-700/50">
                     <div class="flex items-center gap-3 min-w-0">
                       <!-- 标签 -->
                       <div class="flex gap-1.5 overflow-hidden" v-if="(post.tags || []).length > 0">
@@ -277,14 +280,12 @@
           </div>
         </main>
 
-        <!-- 右侧栏（仅 ≥xl 显示）：最近浏览 + 最新文章合成一张卡，中间分隔线 -->
-        <aside class="hidden xl:block w-72 flex-shrink-0 h-[calc(100vh-7rem)] xl:sticky xl:top-16 xl:self-start">
+        <!-- 右侧栏（仅 ≥xl 显示）：最近浏览 + 最新文章，宽度与左侧栏一致 -->
+        <aside class="hidden xl:block w-80 flex-shrink-0 h-[calc(100vh-7rem)] xl:sticky xl:top-16 xl:self-start">
           <div class="h-full flex flex-col bg-white theme-panel rounded-xl shadow-sm overflow-hidden">
             <!-- 最近浏览：组件内部已限高 240px -->
             <RecentArticles />
 
-            <!-- 分隔线：两块连成一体，但又不糊在一起 -->
-            <div class="h-px bg-gray-200 dark:bg-gray-700/70"></div>
 
             <!-- 最新文章：同样限高 240px，与上面等高 -->
             <div class="flex-1 min-h-0 p-5 flex flex-col">
@@ -292,7 +293,7 @@
                 <IconCarbonRecentlyViewed class="w-5 h-5 text-cyber-500" />
                 {{ t('latestPosts') }}
               </h3>
-              <div class="flex-1 min-h-0 space-y-2 overflow-y-auto pr-2 toc-scrollbar">
+              <div data-lenis-prevent class="flex-1 min-h-0 space-y-2 overflow-y-auto pr-2 toc-scrollbar">
                 <router-link
                     v-for="(post, i) in latestPosts"
                     :key="post.path"

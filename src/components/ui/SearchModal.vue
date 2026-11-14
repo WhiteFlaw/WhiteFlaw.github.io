@@ -24,7 +24,7 @@
           />
           <kbd @click="closeModal" class="kbd kbd-xs hidden sm:block text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">Esc</kbd>
         </div>
-        <div class="max-h-80 overflow-y-auto" role="listbox" id="search-results" aria-label="搜索结果">
+        <div data-lenis-prevent class="max-h-80 overflow-y-auto" role="listbox" id="search-results" aria-label="搜索结果">
           <template v-if="results.length">
             <router-link
                 v-for="(post, index) in results"

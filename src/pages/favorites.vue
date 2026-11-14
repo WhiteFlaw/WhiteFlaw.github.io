@@ -16,7 +16,7 @@
               <IconCarbonClose class="w-5 h-5" />
             </button>
           </div>
-          <nav class="flex-1 overflow-y-auto space-y-2">
+          <nav data-lenis-prevent class="flex-1 overflow-y-auto space-y-2">
             <router-link to="/" @click="toggleMobileMenu" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors dark:text-white">
               <IconCarbonHome class="w-5 h-5 text-cyber-500" />
               {{ t('home') }}

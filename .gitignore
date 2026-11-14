@@ -44,3 +44,6 @@ Thumbs.db
 # Environment files
 .env*
 !.env.example
+
+# 图片压缩前的原图备份（可随时用 scripts/optimize-covers.mjs 重新生成）
+.cache/

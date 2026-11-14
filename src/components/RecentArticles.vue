@@ -21,7 +21,7 @@
       </p>
     </div>
     
-    <div v-else class="space-y-3 h-[240px] overflow-y-auto pr-1 toc-scrollbar">
+    <div v-else data-lenis-prevent class="space-y-3 h-[240px] overflow-y-auto pr-1 toc-scrollbar">
       <router-link
         v-for="article in recentArticles"
         :key="article.path"
@@ -36,7 +36,7 @@
           >
         </div>
         <div class="flex-1 min-w-0">
-          <h4 class="font-medium text-gray-800 theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 transition-colors text-sm">
+          <h4 class="font-medium text-gray-800 theme-title line-clamp-2 leading-tight group-hover:text-cyber-600 dark:group-hover:text-cyber-400 transition-colors text-sm">
             {{ article.title }}
           </h4>
           <p v-if="article.excerpt" class="text-xs text-gray-500 theme-text mt-1 line-clamp-2">

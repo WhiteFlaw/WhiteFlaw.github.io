@@ -93,7 +93,8 @@ a,
    .markdown-body (0,1,0)；标题选择器再多一个元素名，同样稳压，无需 !important。 */
 .dark .markdown-body {
   color: #d1d5db;
-  background-color: #111113;
+  /* 半透明：让雪透过来。0.72 是"能看见雪"与"文字可读"之间的折中 */
+  background-color: rgba(17, 17, 19, 0.72);
 }
 
 .dark .markdown-body h1,

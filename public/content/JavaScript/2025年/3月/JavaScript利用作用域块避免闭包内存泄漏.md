@@ -1,7 +1,7 @@
 ---
 title: JavaScript利用作用域块避免闭包内存泄漏
 date: 2025-03-19
-cover: /img/d8.webp
+cover: /img/d1.webp
 desc: JavaScript利用作用域块避免闭包内存泄漏
 tags: [JavaScript]
 sticky: false
